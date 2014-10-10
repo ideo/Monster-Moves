@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "MonsterSpriteNode.h"
 
 @interface GameViewController : UIViewController
-
 @end

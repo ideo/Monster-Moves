@@ -7,15 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3619931819DF0B43002C2021 /* grunt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3619931719DF0B43002C2021 /* grunt.mp3 */; };
 		3639673319D3890E0044E6EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3639673219D3890E0044E6EE /* main.m */; };
 		3639673619D3890E0044E6EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3639673519D3890E0044E6EE /* AppDelegate.m */; };
-		3639673919D3890E0044E6EE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3639673819D3890E0044E6EE /* GameScene.m */; };
+		3639673919D3890E0044E6EE /* TrainingStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3639673819D3890E0044E6EE /* TrainingStage.m */; };
 		3639673B19D3890E0044E6EE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3639673A19D3890E0044E6EE /* GameScene.sks */; };
 		3639673E19D3890E0044E6EE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3639673D19D3890E0044E6EE /* GameViewController.m */; };
 		3639674119D3890E0044E6EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3639673F19D3890E0044E6EE /* Main.storyboard */; };
-		3639674319D3890E0044E6EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3639674219D3890E0044E6EE /* Images.xcassets */; };
 		3639674619D3890E0044E6EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3639674419D3890E0044E6EE /* LaunchScreen.xib */; };
 		3639675219D3890E0044E6EE /* DanceStudioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3639675119D3890E0044E6EE /* DanceStudioTests.m */; };
+		36798BDA19DDCD74007A8003 /* Stage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36798BD919DDCD74007A8003 /* Stage.m */; };
+		36798BDC19DDDB2D007A8003 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36798BDB19DDDB2D007A8003 /* Images.xcassets */; };
+		36798BDF19DDEF9E007A8003 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36798BDE19DDEF9E007A8003 /* AudioPlayer.m */; };
+		3698EDBA19DE0DE4001FCD40 /* LeBlobAnimationBlink.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDAB19DE0DE4001FCD40 /* LeBlobAnimationBlink.atlas */; };
+		3698EDBB19DE0DE4001FCD40 /* LeBlobAnimationBlow.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDAC19DE0DE4001FCD40 /* LeBlobAnimationBlow.atlas */; };
+		3698EDBC19DE0DE4001FCD40 /* LeBlobAnimationBreathe.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDAD19DE0DE4001FCD40 /* LeBlobAnimationBreathe.atlas */; };
+		3698EDBD19DE0DE4001FCD40 /* LeBlobAnimationEgyptian.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDAE19DE0DE4001FCD40 /* LeBlobAnimationEgyptian.atlas */; };
+		3698EDBE19DE0DE4001FCD40 /* LeBlobAnimationJump.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDAF19DE0DE4001FCD40 /* LeBlobAnimationJump.atlas */; };
+		3698EDBF19DE0DE4001FCD40 /* LeBlobAnimationReactionA.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB019DE0DE4001FCD40 /* LeBlobAnimationReactionA.atlas */; };
+		3698EDC019DE0DE4001FCD40 /* LeBlobAnimationReactionB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB119DE0DE4001FCD40 /* LeBlobAnimationReactionB.atlas */; };
+		3698EDC119DE0DE4001FCD40 /* LeBlobAnimationReactionC.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB219DE0DE4001FCD40 /* LeBlobAnimationReactionC.atlas */; };
+		3698EDC219DE0DE4001FCD40 /* LeBlobAnimationRock.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB319DE0DE4001FCD40 /* LeBlobAnimationRock.atlas */; };
+		3698EDC319DE0DE4001FCD40 /* LeBlobAnimationRoof.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB419DE0DE4001FCD40 /* LeBlobAnimationRoof.atlas */; };
+		3698EDC419DE0DE4001FCD40 /* LeBlobAnimationScrew.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB519DE0DE4001FCD40 /* LeBlobAnimationScrew.atlas */; };
+		3698EDC519DE0DE4001FCD40 /* LeBlobAnimationSearch.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB619DE0DE4001FCD40 /* LeBlobAnimationSearch.atlas */; };
+		3698EDC619DE0DE4001FCD40 /* LeBlobAnimationSpin.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB719DE0DE4001FCD40 /* LeBlobAnimationSpin.atlas */; };
+		3698EDC719DE0DE4001FCD40 /* LeBlobAnimationTwist.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB819DE0DE4001FCD40 /* LeBlobAnimationTwist.atlas */; };
+		3698EDC819DE0DE4001FCD40 /* LeBlobAnimationWave.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDB919DE0DE4001FCD40 /* LeBlobAnimationWave.atlas */; };
+		3698EDDB19DE11E9001FCD40 /* BurningMan.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDC919DE11E4001FCD40 /* BurningMan.WAV */; };
+		3698EDDC19DE11E9001FCD40 /* Celebration.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDCA19DE11E4001FCD40 /* Celebration.mp3 */; };
+		3698EDDD19DE11E9001FCD40 /* Collision.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDCB19DE11E4001FCD40 /* Collision.mp3 */; };
+		3698EDDE19DE11E9001FCD40 /* Party.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDCC19DE11E9001FCD40 /* Party.m4a */; };
+		3698EDDF19DE11E9001FCD40 /* slip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDCD19DE11E9001FCD40 /* slip.mp3 */; };
+		3698EDE019DE11E9001FCD40 /* Snap1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDCE19DE11E9001FCD40 /* Snap1.WAV */; };
+		3698EDE119DE11E9001FCD40 /* Snap2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDCF19DE11E9001FCD40 /* Snap2.WAV */; };
+		3698EDE219DE11E9001FCD40 /* Snap3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD019DE11E9001FCD40 /* Snap3.mp3 */; };
+		3698EDE319DE11E9001FCD40 /* Snap4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD119DE11E9001FCD40 /* Snap4.mp3 */; };
+		3698EDE419DE11E9001FCD40 /* Snap5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD219DE11E9001FCD40 /* Snap5.caf */; };
+		3698EDE519DE11E9001FCD40 /* Snap5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD319DE11E9001FCD40 /* Snap5.mp3 */; };
+		3698EDE619DE11E9001FCD40 /* Space.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD419DE11E9001FCD40 /* Space.m4a */; };
+		3698EDE719DE11E9001FCD40 /* Tap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD519DE11E9001FCD40 /* Tap1.wav */; };
+		3698EDE819DE11E9001FCD40 /* Tap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD619DE11E9001FCD40 /* Tap2.wav */; };
+		3698EDE919DE11E9001FCD40 /* Tap3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD719DE11E9001FCD40 /* Tap3.wav */; };
+		3698EDEA19DE11E9001FCD40 /* Tap4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD819DE11E9001FCD40 /* Tap4.wav */; };
+		3698EDEB19DE11E9001FCD40 /* Tap5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDD919DE11E9001FCD40 /* Tap5.wav */; };
+		3698EDEE19DE1753001FCD40 /* Whale.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDED19DE1521001FCD40 /* Whale.m4a */; };
+		36BFF91019DB3F770094E6D9 /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BFF90F19DB3F770094E6D9 /* Tile.m */; };
+		36BFF91519DC6C2C0094E6D9 /* MonsterSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BFF91419DC6C2C0094E6D9 /* MonsterSpriteNode.m */; };
+		C927373019E63AAF00F71BBC /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = C927372E19E63AAF00F71BBC /* MyParticle.sks */; };
+		C927373119E63AAF00F71BBC /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = C927372F19E63AAF00F71BBC /* spark.png */; };
+		C927373319E6422200F71BBC /* Fireflies.sks in Resources */ = {isa = PBXBuildFile; fileRef = C927373219E6422200F71BBC /* Fireflies.sks */; };
+		C97D30FB19E7635C00D0816E /* LeBlobOrangeAnimationBlink.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30EC19E7635C00D0816E /* LeBlobOrangeAnimationBlink.atlas */; };
+		C97D30FC19E7635C00D0816E /* LeBlobOrangeAnimationBlow.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30ED19E7635C00D0816E /* LeBlobOrangeAnimationBlow.atlas */; };
+		C97D30FD19E7635C00D0816E /* LeBlobOrangeAnimationBreathe.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30EE19E7635C00D0816E /* LeBlobOrangeAnimationBreathe.atlas */; };
+		C97D30FE19E7635C00D0816E /* LeBlobOrangeAnimationEgyptian.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30EF19E7635C00D0816E /* LeBlobOrangeAnimationEgyptian.atlas */; };
+		C97D30FF19E7635C00D0816E /* LeBlobOrangeAnimationJump.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F019E7635C00D0816E /* LeBlobOrangeAnimationJump.atlas */; };
+		C97D310019E7635C00D0816E /* LeBlobOrangeAnimationReactionA.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F119E7635C00D0816E /* LeBlobOrangeAnimationReactionA.atlas */; };
+		C97D310119E7635C00D0816E /* LeBlobOrangeAnimationReactionB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F219E7635C00D0816E /* LeBlobOrangeAnimationReactionB.atlas */; };
+		C97D310219E7635C00D0816E /* LeBlobOrangeAnimationReactionC.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F319E7635C00D0816E /* LeBlobOrangeAnimationReactionC.atlas */; };
+		C97D310319E7635C00D0816E /* LeBlobOrangeAnimationRock.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F419E7635C00D0816E /* LeBlobOrangeAnimationRock.atlas */; };
+		C97D310419E7635C00D0816E /* LeBlobOrangeAnimationRoof.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F519E7635C00D0816E /* LeBlobOrangeAnimationRoof.atlas */; };
+		C97D310519E7635C00D0816E /* LeBlobOrangeAnimationScrew.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F619E7635C00D0816E /* LeBlobOrangeAnimationScrew.atlas */; };
+		C97D310619E7635C00D0816E /* LeBlobOrangeAnimationSearch.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F719E7635C00D0816E /* LeBlobOrangeAnimationSearch.atlas */; };
+		C97D310719E7635C00D0816E /* LeBlobOrangeAnimationSpin.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F819E7635C00D0816E /* LeBlobOrangeAnimationSpin.atlas */; };
+		C97D310819E7635C00D0816E /* LeBlobOrangeAnimationTwist.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30F919E7635C00D0816E /* LeBlobOrangeAnimationTwist.atlas */; };
+		C97D310919E7635C00D0816E /* LeBlobOrangeAnimationWave.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30FA19E7635C00D0816E /* LeBlobOrangeAnimationWave.atlas */; };
+		C97D311A19E76D2D00D0816E /* LeBlobBlueAnimationBlink.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D310B19E76D2D00D0816E /* LeBlobBlueAnimationBlink.atlas */; };
+		C97D311B19E76D2D00D0816E /* LeBlobBlueAnimationBlow.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D310C19E76D2D00D0816E /* LeBlobBlueAnimationBlow.atlas */; };
+		C97D311C19E76D2D00D0816E /* LeBlobBlueAnimationBreathe.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D310D19E76D2D00D0816E /* LeBlobBlueAnimationBreathe.atlas */; };
+		C97D311D19E76D2D00D0816E /* LeBlobBlueAnimationEgyptian.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D310E19E76D2D00D0816E /* LeBlobBlueAnimationEgyptian.atlas */; };
+		C97D311E19E76D2D00D0816E /* LeBlobBlueAnimationJump.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D310F19E76D2D00D0816E /* LeBlobBlueAnimationJump.atlas */; };
+		C97D311F19E76D2D00D0816E /* LeBlobBlueAnimationReactionA.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311019E76D2D00D0816E /* LeBlobBlueAnimationReactionA.atlas */; };
+		C97D312019E76D2D00D0816E /* LeBlobBlueAnimationReactionB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311119E76D2D00D0816E /* LeBlobBlueAnimationReactionB.atlas */; };
+		C97D312119E76D2D00D0816E /* LeBlobBlueAnimationReactionC.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311219E76D2D00D0816E /* LeBlobBlueAnimationReactionC.atlas */; };
+		C97D312219E76D2D00D0816E /* LeBlobBlueAnimationRock.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311319E76D2D00D0816E /* LeBlobBlueAnimationRock.atlas */; };
+		C97D312319E76D2D00D0816E /* LeBlobBlueAnimationRoof.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311419E76D2D00D0816E /* LeBlobBlueAnimationRoof.atlas */; };
+		C97D312419E76D2D00D0816E /* LeBlobBlueAnimationScrew.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311519E76D2D00D0816E /* LeBlobBlueAnimationScrew.atlas */; };
+		C97D312519E76D2D00D0816E /* LeBlobBlueAnimationSearch.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311619E76D2D00D0816E /* LeBlobBlueAnimationSearch.atlas */; };
+		C97D312619E76D2D00D0816E /* LeBlobBlueAnimationSpin.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311719E76D2D00D0816E /* LeBlobBlueAnimationSpin.atlas */; };
+		C97D312719E76D2D00D0816E /* LeBlobBlueAnimationTwist.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311819E76D2D00D0816E /* LeBlobBlueAnimationTwist.atlas */; };
+		C97D312819E76D2D00D0816E /* LeBlobBlueAnimationWave.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311919E76D2D00D0816E /* LeBlobBlueAnimationWave.atlas */; };
+		C97D312A19E76F5100D0816E /* CelebrationConfetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = C97D312919E76F5100D0816E /* CelebrationConfetti.sks */; };
+		C9D77B6C19E34306008D3907 /* DraggableShapeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D77B6B19E34306008D3907 /* DraggableShapeNode.m */; };
+		C9DD6E8419E5D6BE00B32C73 /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DD6E8319E5D6BE00B32C73 /* Monster.m */; };
+		C9DD6E8719E5DBCB00B32C73 /* UpdateableTile.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DD6E8619E5DBCB00B32C73 /* UpdateableTile.m */; };
+		C9E79DA919E47FD800A8847B /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E79DA819E47FD800A8847B /* Timeline.m */; };
+		C9E79DAC19E4B4C400A8847B /* DanceScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E79DAB19E4B4C400A8847B /* DanceScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,22 +106,108 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3619931719DF0B43002C2021 /* grunt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = grunt.mp3; sourceTree = "<group>"; };
 		3639672D19D3890E0044E6EE /* DanceStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanceStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3639673119D3890E0044E6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3639673219D3890E0044E6EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3639673419D3890E0044E6EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3639673519D3890E0044E6EE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3639673719D3890E0044E6EE /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		3639673819D3890E0044E6EE /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		3639673719D3890E0044E6EE /* TrainingStage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainingStage.h; sourceTree = "<group>"; };
+		3639673819D3890E0044E6EE /* TrainingStage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrainingStage.m; sourceTree = "<group>"; };
 		3639673A19D3890E0044E6EE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		3639673C19D3890E0044E6EE /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		3639673D19D3890E0044E6EE /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		3639674019D3890E0044E6EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3639674219D3890E0044E6EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3639674519D3890E0044E6EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3639674B19D3890E0044E6EE /* DanceStudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DanceStudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3639675019D3890E0044E6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3639675119D3890E0044E6EE /* DanceStudioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DanceStudioTests.m; sourceTree = "<group>"; };
+		36798BD819DDCD74007A8003 /* Stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stage.h; sourceTree = "<group>"; };
+		36798BD919DDCD74007A8003 /* Stage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stage.m; sourceTree = "<group>"; };
+		36798BDB19DDDB2D007A8003 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		36798BDD19DDEF9E007A8003 /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioPlayer.h; path = ../AudioPlayer.h; sourceTree = "<group>"; };
+		36798BDE19DDEF9E007A8003 /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioPlayer.m; path = ../AudioPlayer.m; sourceTree = "<group>"; };
+		3698EDAB19DE0DE4001FCD40 /* LeBlobAnimationBlink.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationBlink.atlas; sourceTree = "<group>"; };
+		3698EDAC19DE0DE4001FCD40 /* LeBlobAnimationBlow.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationBlow.atlas; sourceTree = "<group>"; };
+		3698EDAD19DE0DE4001FCD40 /* LeBlobAnimationBreathe.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationBreathe.atlas; sourceTree = "<group>"; };
+		3698EDAE19DE0DE4001FCD40 /* LeBlobAnimationEgyptian.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationEgyptian.atlas; sourceTree = "<group>"; };
+		3698EDAF19DE0DE4001FCD40 /* LeBlobAnimationJump.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationJump.atlas; sourceTree = "<group>"; };
+		3698EDB019DE0DE4001FCD40 /* LeBlobAnimationReactionA.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationReactionA.atlas; sourceTree = "<group>"; };
+		3698EDB119DE0DE4001FCD40 /* LeBlobAnimationReactionB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationReactionB.atlas; sourceTree = "<group>"; };
+		3698EDB219DE0DE4001FCD40 /* LeBlobAnimationReactionC.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationReactionC.atlas; sourceTree = "<group>"; };
+		3698EDB319DE0DE4001FCD40 /* LeBlobAnimationRock.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationRock.atlas; sourceTree = "<group>"; };
+		3698EDB419DE0DE4001FCD40 /* LeBlobAnimationRoof.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationRoof.atlas; sourceTree = "<group>"; };
+		3698EDB519DE0DE4001FCD40 /* LeBlobAnimationScrew.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationScrew.atlas; sourceTree = "<group>"; };
+		3698EDB619DE0DE4001FCD40 /* LeBlobAnimationSearch.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationSearch.atlas; sourceTree = "<group>"; };
+		3698EDB719DE0DE4001FCD40 /* LeBlobAnimationSpin.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationSpin.atlas; sourceTree = "<group>"; };
+		3698EDB819DE0DE4001FCD40 /* LeBlobAnimationTwist.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationTwist.atlas; sourceTree = "<group>"; };
+		3698EDB919DE0DE4001FCD40 /* LeBlobAnimationWave.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobAnimationWave.atlas; sourceTree = "<group>"; };
+		3698EDC919DE11E4001FCD40 /* BurningMan.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BurningMan.WAV; sourceTree = "<group>"; };
+		3698EDCA19DE11E4001FCD40 /* Celebration.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Celebration.mp3; sourceTree = "<group>"; };
+		3698EDCB19DE11E4001FCD40 /* Collision.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Collision.mp3; sourceTree = "<group>"; };
+		3698EDCC19DE11E9001FCD40 /* Party.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Party.m4a; sourceTree = "<group>"; };
+		3698EDCD19DE11E9001FCD40 /* slip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slip.mp3; sourceTree = "<group>"; };
+		3698EDCE19DE11E9001FCD40 /* Snap1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Snap1.WAV; sourceTree = "<group>"; };
+		3698EDCF19DE11E9001FCD40 /* Snap2.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Snap2.WAV; sourceTree = "<group>"; };
+		3698EDD019DE11E9001FCD40 /* Snap3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Snap3.mp3; sourceTree = "<group>"; };
+		3698EDD119DE11E9001FCD40 /* Snap4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Snap4.mp3; sourceTree = "<group>"; };
+		3698EDD219DE11E9001FCD40 /* Snap5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Snap5.caf; sourceTree = "<group>"; };
+		3698EDD319DE11E9001FCD40 /* Snap5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Snap5.mp3; sourceTree = "<group>"; };
+		3698EDD419DE11E9001FCD40 /* Space.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Space.m4a; sourceTree = "<group>"; };
+		3698EDD519DE11E9001FCD40 /* Tap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Tap1.wav; sourceTree = "<group>"; };
+		3698EDD619DE11E9001FCD40 /* Tap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Tap2.wav; sourceTree = "<group>"; };
+		3698EDD719DE11E9001FCD40 /* Tap3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Tap3.wav; sourceTree = "<group>"; };
+		3698EDD819DE11E9001FCD40 /* Tap4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Tap4.wav; sourceTree = "<group>"; };
+		3698EDD919DE11E9001FCD40 /* Tap5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Tap5.wav; sourceTree = "<group>"; };
+		3698EDED19DE1521001FCD40 /* Whale.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Whale.m4a; sourceTree = "<group>"; };
+		36BFF90E19DB3F770094E6D9 /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
+		36BFF90F19DB3F770094E6D9 /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
+		36BFF91319DC6C2C0094E6D9 /* MonsterSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterSpriteNode.h; sourceTree = "<group>"; };
+		36BFF91419DC6C2C0094E6D9 /* MonsterSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonsterSpriteNode.m; sourceTree = "<group>"; };
+		C927372E19E63AAF00F71BBC /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		C927372F19E63AAF00F71BBC /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		C927373219E6422200F71BBC /* Fireflies.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fireflies.sks; sourceTree = "<group>"; };
+		C97D30EC19E7635C00D0816E /* LeBlobOrangeAnimationBlink.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationBlink.atlas; sourceTree = "<group>"; };
+		C97D30ED19E7635C00D0816E /* LeBlobOrangeAnimationBlow.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationBlow.atlas; sourceTree = "<group>"; };
+		C97D30EE19E7635C00D0816E /* LeBlobOrangeAnimationBreathe.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationBreathe.atlas; sourceTree = "<group>"; };
+		C97D30EF19E7635C00D0816E /* LeBlobOrangeAnimationEgyptian.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationEgyptian.atlas; sourceTree = "<group>"; };
+		C97D30F019E7635C00D0816E /* LeBlobOrangeAnimationJump.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationJump.atlas; sourceTree = "<group>"; };
+		C97D30F119E7635C00D0816E /* LeBlobOrangeAnimationReactionA.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationReactionA.atlas; sourceTree = "<group>"; };
+		C97D30F219E7635C00D0816E /* LeBlobOrangeAnimationReactionB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationReactionB.atlas; sourceTree = "<group>"; };
+		C97D30F319E7635C00D0816E /* LeBlobOrangeAnimationReactionC.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationReactionC.atlas; sourceTree = "<group>"; };
+		C97D30F419E7635C00D0816E /* LeBlobOrangeAnimationRock.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationRock.atlas; sourceTree = "<group>"; };
+		C97D30F519E7635C00D0816E /* LeBlobOrangeAnimationRoof.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationRoof.atlas; sourceTree = "<group>"; };
+		C97D30F619E7635C00D0816E /* LeBlobOrangeAnimationScrew.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationScrew.atlas; sourceTree = "<group>"; };
+		C97D30F719E7635C00D0816E /* LeBlobOrangeAnimationSearch.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationSearch.atlas; sourceTree = "<group>"; };
+		C97D30F819E7635C00D0816E /* LeBlobOrangeAnimationSpin.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationSpin.atlas; sourceTree = "<group>"; };
+		C97D30F919E7635C00D0816E /* LeBlobOrangeAnimationTwist.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationTwist.atlas; sourceTree = "<group>"; };
+		C97D30FA19E7635C00D0816E /* LeBlobOrangeAnimationWave.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationWave.atlas; sourceTree = "<group>"; };
+		C97D310B19E76D2D00D0816E /* LeBlobBlueAnimationBlink.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationBlink.atlas; sourceTree = "<group>"; };
+		C97D310C19E76D2D00D0816E /* LeBlobBlueAnimationBlow.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationBlow.atlas; sourceTree = "<group>"; };
+		C97D310D19E76D2D00D0816E /* LeBlobBlueAnimationBreathe.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationBreathe.atlas; sourceTree = "<group>"; };
+		C97D310E19E76D2D00D0816E /* LeBlobBlueAnimationEgyptian.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationEgyptian.atlas; sourceTree = "<group>"; };
+		C97D310F19E76D2D00D0816E /* LeBlobBlueAnimationJump.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationJump.atlas; sourceTree = "<group>"; };
+		C97D311019E76D2D00D0816E /* LeBlobBlueAnimationReactionA.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationReactionA.atlas; sourceTree = "<group>"; };
+		C97D311119E76D2D00D0816E /* LeBlobBlueAnimationReactionB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationReactionB.atlas; sourceTree = "<group>"; };
+		C97D311219E76D2D00D0816E /* LeBlobBlueAnimationReactionC.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationReactionC.atlas; sourceTree = "<group>"; };
+		C97D311319E76D2D00D0816E /* LeBlobBlueAnimationRock.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationRock.atlas; sourceTree = "<group>"; };
+		C97D311419E76D2D00D0816E /* LeBlobBlueAnimationRoof.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationRoof.atlas; sourceTree = "<group>"; };
+		C97D311519E76D2D00D0816E /* LeBlobBlueAnimationScrew.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationScrew.atlas; sourceTree = "<group>"; };
+		C97D311619E76D2D00D0816E /* LeBlobBlueAnimationSearch.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationSearch.atlas; sourceTree = "<group>"; };
+		C97D311719E76D2D00D0816E /* LeBlobBlueAnimationSpin.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationSpin.atlas; sourceTree = "<group>"; };
+		C97D311819E76D2D00D0816E /* LeBlobBlueAnimationTwist.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationTwist.atlas; sourceTree = "<group>"; };
+		C97D311919E76D2D00D0816E /* LeBlobBlueAnimationWave.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationWave.atlas; sourceTree = "<group>"; };
+		C97D312919E76F5100D0816E /* CelebrationConfetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CelebrationConfetti.sks; sourceTree = "<group>"; };
+		C9D77B6A19E34306008D3907 /* DraggableShapeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableShapeNode.h; sourceTree = "<group>"; };
+		C9D77B6B19E34306008D3907 /* DraggableShapeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableShapeNode.m; sourceTree = "<group>"; };
+		C9DD6E8219E5D6BE00B32C73 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
+		C9DD6E8319E5D6BE00B32C73 /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
+		C9DD6E8519E5DBCB00B32C73 /* UpdateableTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateableTile.h; sourceTree = "<group>"; };
+		C9DD6E8619E5DBCB00B32C73 /* UpdateableTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateableTile.m; sourceTree = "<group>"; };
+		C9E79DA719E47FD800A8847B /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
+		C9E79DA819E47FD800A8847B /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
+		C9E79DAA19E4B4C400A8847B /* DanceScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceScene.h; sourceTree = "<group>"; };
+		C9E79DAB19E4B4C400A8847B /* DanceScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,15 +251,22 @@
 			children = (
 				3639673419D3890E0044E6EE /* AppDelegate.h */,
 				3639673519D3890E0044E6EE /* AppDelegate.m */,
-				3639673719D3890E0044E6EE /* GameScene.h */,
-				3639673819D3890E0044E6EE /* GameScene.m */,
-				3639673A19D3890E0044E6EE /* GameScene.sks */,
 				3639673C19D3890E0044E6EE /* GameViewController.h */,
 				3639673D19D3890E0044E6EE /* GameViewController.m */,
+				C940FD9C19E8462D0012DFF8 /* Scenes */,
+				3639673A19D3890E0044E6EE /* GameScene.sks */,
+				C940FD9B19E846190012DFF8 /* Domain */,
+				C940FD9D19E846720012DFF8 /* Sprites */,
+				36798BDD19DDEF9E007A8003 /* AudioPlayer.h */,
+				36798BDE19DDEF9E007A8003 /* AudioPlayer.m */,
 				3639673F19D3890E0044E6EE /* Main.storyboard */,
-				3639674219D3890E0044E6EE /* Images.xcassets */,
 				3639674419D3890E0044E6EE /* LaunchScreen.xib */,
+				C940FD9E19E846800012DFF8 /* Particle Systems */,
+				36798BDB19DDDB2D007A8003 /* Images.xcassets */,
+				C97D310A19E76C8C00D0816E /* Texture Atlases */,
+				3639676019D4CE190044E6EE /* Sounds */,
 				3639673019D3890E0044E6EE /* Supporting Files */,
+				C927372F19E63AAF00F71BBC /* spark.png */,
 			);
 			path = DanceStudio;
 			sourceTree = "<group>";
@@ -125,6 +295,133 @@
 				3639675019D3890E0044E6EE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3639676019D4CE190044E6EE /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				3619931719DF0B43002C2021 /* grunt.mp3 */,
+				3698EDC919DE11E4001FCD40 /* BurningMan.WAV */,
+				3698EDCA19DE11E4001FCD40 /* Celebration.mp3 */,
+				3698EDCB19DE11E4001FCD40 /* Collision.mp3 */,
+				3698EDCC19DE11E9001FCD40 /* Party.m4a */,
+				3698EDCD19DE11E9001FCD40 /* slip.mp3 */,
+				3698EDCE19DE11E9001FCD40 /* Snap1.WAV */,
+				3698EDCF19DE11E9001FCD40 /* Snap2.WAV */,
+				3698EDD019DE11E9001FCD40 /* Snap3.mp3 */,
+				3698EDD119DE11E9001FCD40 /* Snap4.mp3 */,
+				3698EDD219DE11E9001FCD40 /* Snap5.caf */,
+				3698EDD319DE11E9001FCD40 /* Snap5.mp3 */,
+				3698EDD419DE11E9001FCD40 /* Space.m4a */,
+				3698EDD519DE11E9001FCD40 /* Tap1.wav */,
+				3698EDD619DE11E9001FCD40 /* Tap2.wav */,
+				3698EDD719DE11E9001FCD40 /* Tap3.wav */,
+				3698EDD819DE11E9001FCD40 /* Tap4.wav */,
+				3698EDD919DE11E9001FCD40 /* Tap5.wav */,
+				3698EDED19DE1521001FCD40 /* Whale.m4a */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		C940FD9B19E846190012DFF8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				36BFF90E19DB3F770094E6D9 /* Tile.h */,
+				36BFF90F19DB3F770094E6D9 /* Tile.m */,
+				C9DD6E8219E5D6BE00B32C73 /* Monster.h */,
+				C9DD6E8319E5D6BE00B32C73 /* Monster.m */,
+				36798BD819DDCD74007A8003 /* Stage.h */,
+				36798BD919DDCD74007A8003 /* Stage.m */,
+				C9E79DA719E47FD800A8847B /* Timeline.h */,
+				C9E79DA819E47FD800A8847B /* Timeline.m */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		C940FD9C19E8462D0012DFF8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C9E79DAA19E4B4C400A8847B /* DanceScene.h */,
+				C9E79DAB19E4B4C400A8847B /* DanceScene.m */,
+				3639673719D3890E0044E6EE /* TrainingStage.h */,
+				3639673819D3890E0044E6EE /* TrainingStage.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		C940FD9D19E846720012DFF8 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				C9D77B6A19E34306008D3907 /* DraggableShapeNode.h */,
+				C9D77B6B19E34306008D3907 /* DraggableShapeNode.m */,
+				36BFF91319DC6C2C0094E6D9 /* MonsterSpriteNode.h */,
+				36BFF91419DC6C2C0094E6D9 /* MonsterSpriteNode.m */,
+				C9DD6E8519E5DBCB00B32C73 /* UpdateableTile.h */,
+				C9DD6E8619E5DBCB00B32C73 /* UpdateableTile.m */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		C940FD9E19E846800012DFF8 /* Particle Systems */ = {
+			isa = PBXGroup;
+			children = (
+				C927373219E6422200F71BBC /* Fireflies.sks */,
+				C97D312919E76F5100D0816E /* CelebrationConfetti.sks */,
+				C927372E19E63AAF00F71BBC /* MyParticle.sks */,
+			);
+			name = "Particle Systems";
+			sourceTree = "<group>";
+		};
+		C97D310A19E76C8C00D0816E /* Texture Atlases */ = {
+			isa = PBXGroup;
+			children = (
+				C97D310B19E76D2D00D0816E /* LeBlobBlueAnimationBlink.atlas */,
+				C97D310C19E76D2D00D0816E /* LeBlobBlueAnimationBlow.atlas */,
+				C97D310D19E76D2D00D0816E /* LeBlobBlueAnimationBreathe.atlas */,
+				C97D310E19E76D2D00D0816E /* LeBlobBlueAnimationEgyptian.atlas */,
+				C97D310F19E76D2D00D0816E /* LeBlobBlueAnimationJump.atlas */,
+				C97D311019E76D2D00D0816E /* LeBlobBlueAnimationReactionA.atlas */,
+				C97D311119E76D2D00D0816E /* LeBlobBlueAnimationReactionB.atlas */,
+				C97D311219E76D2D00D0816E /* LeBlobBlueAnimationReactionC.atlas */,
+				C97D311319E76D2D00D0816E /* LeBlobBlueAnimationRock.atlas */,
+				C97D311419E76D2D00D0816E /* LeBlobBlueAnimationRoof.atlas */,
+				C97D311519E76D2D00D0816E /* LeBlobBlueAnimationScrew.atlas */,
+				C97D311619E76D2D00D0816E /* LeBlobBlueAnimationSearch.atlas */,
+				C97D311719E76D2D00D0816E /* LeBlobBlueAnimationSpin.atlas */,
+				C97D311819E76D2D00D0816E /* LeBlobBlueAnimationTwist.atlas */,
+				C97D311919E76D2D00D0816E /* LeBlobBlueAnimationWave.atlas */,
+				C97D30EC19E7635C00D0816E /* LeBlobOrangeAnimationBlink.atlas */,
+				C97D30ED19E7635C00D0816E /* LeBlobOrangeAnimationBlow.atlas */,
+				C97D30EE19E7635C00D0816E /* LeBlobOrangeAnimationBreathe.atlas */,
+				C97D30EF19E7635C00D0816E /* LeBlobOrangeAnimationEgyptian.atlas */,
+				C97D30F019E7635C00D0816E /* LeBlobOrangeAnimationJump.atlas */,
+				C97D30F119E7635C00D0816E /* LeBlobOrangeAnimationReactionA.atlas */,
+				C97D30F219E7635C00D0816E /* LeBlobOrangeAnimationReactionB.atlas */,
+				C97D30F319E7635C00D0816E /* LeBlobOrangeAnimationReactionC.atlas */,
+				C97D30F419E7635C00D0816E /* LeBlobOrangeAnimationRock.atlas */,
+				C97D30F519E7635C00D0816E /* LeBlobOrangeAnimationRoof.atlas */,
+				C97D30F619E7635C00D0816E /* LeBlobOrangeAnimationScrew.atlas */,
+				C97D30F719E7635C00D0816E /* LeBlobOrangeAnimationSearch.atlas */,
+				C97D30F819E7635C00D0816E /* LeBlobOrangeAnimationSpin.atlas */,
+				C97D30F919E7635C00D0816E /* LeBlobOrangeAnimationTwist.atlas */,
+				C97D30FA19E7635C00D0816E /* LeBlobOrangeAnimationWave.atlas */,
+				3698EDAB19DE0DE4001FCD40 /* LeBlobAnimationBlink.atlas */,
+				3698EDAC19DE0DE4001FCD40 /* LeBlobAnimationBlow.atlas */,
+				3698EDAD19DE0DE4001FCD40 /* LeBlobAnimationBreathe.atlas */,
+				3698EDAE19DE0DE4001FCD40 /* LeBlobAnimationEgyptian.atlas */,
+				3698EDAF19DE0DE4001FCD40 /* LeBlobAnimationJump.atlas */,
+				3698EDB019DE0DE4001FCD40 /* LeBlobAnimationReactionA.atlas */,
+				3698EDB119DE0DE4001FCD40 /* LeBlobAnimationReactionB.atlas */,
+				3698EDB219DE0DE4001FCD40 /* LeBlobAnimationReactionC.atlas */,
+				3698EDB319DE0DE4001FCD40 /* LeBlobAnimationRock.atlas */,
+				3698EDB419DE0DE4001FCD40 /* LeBlobAnimationRoof.atlas */,
+				3698EDB519DE0DE4001FCD40 /* LeBlobAnimationScrew.atlas */,
+				3698EDB619DE0DE4001FCD40 /* LeBlobAnimationSearch.atlas */,
+				3698EDB719DE0DE4001FCD40 /* LeBlobAnimationSpin.atlas */,
+				3698EDB819DE0DE4001FCD40 /* LeBlobAnimationTwist.atlas */,
+				3698EDB919DE0DE4001FCD40 /* LeBlobAnimationWave.atlas */,
+			);
+			name = "Texture Atlases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +473,7 @@
 				TargetAttributes = {
 					3639672C19D3890E0044E6EE = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = K3T6UAC5U4;
 					};
 					3639674A19D3890E0044E6EE = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -207,10 +505,78 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97D310619E7635C00D0816E /* LeBlobOrangeAnimationSearch.atlas in Resources */,
+				C97D30FB19E7635C00D0816E /* LeBlobOrangeAnimationBlink.atlas in Resources */,
+				3698EDC419DE0DE4001FCD40 /* LeBlobAnimationScrew.atlas in Resources */,
+				3698EDBE19DE0DE4001FCD40 /* LeBlobAnimationJump.atlas in Resources */,
 				3639674619D3890E0044E6EE /* LaunchScreen.xib in Resources */,
-				3639674319D3890E0044E6EE /* Images.xcassets in Resources */,
+				C97D30FD19E7635C00D0816E /* LeBlobOrangeAnimationBreathe.atlas in Resources */,
+				C97D310719E7635C00D0816E /* LeBlobOrangeAnimationSpin.atlas in Resources */,
+				C97D311A19E76D2D00D0816E /* LeBlobBlueAnimationBlink.atlas in Resources */,
+				C97D312619E76D2D00D0816E /* LeBlobBlueAnimationSpin.atlas in Resources */,
+				3698EDE119DE11E9001FCD40 /* Snap2.WAV in Resources */,
+				C97D312119E76D2D00D0816E /* LeBlobBlueAnimationReactionC.atlas in Resources */,
+				C97D310519E7635C00D0816E /* LeBlobOrangeAnimationScrew.atlas in Resources */,
+				C97D312719E76D2D00D0816E /* LeBlobBlueAnimationTwist.atlas in Resources */,
+				3698EDC619DE0DE4001FCD40 /* LeBlobAnimationSpin.atlas in Resources */,
+				C97D312519E76D2D00D0816E /* LeBlobBlueAnimationSearch.atlas in Resources */,
+				C97D311F19E76D2D00D0816E /* LeBlobBlueAnimationReactionA.atlas in Resources */,
+				C927373119E63AAF00F71BBC /* spark.png in Resources */,
+				3698EDBD19DE0DE4001FCD40 /* LeBlobAnimationEgyptian.atlas in Resources */,
+				C97D310319E7635C00D0816E /* LeBlobOrangeAnimationRock.atlas in Resources */,
+				3698EDEA19DE11E9001FCD40 /* Tap4.wav in Resources */,
+				C97D310119E7635C00D0816E /* LeBlobOrangeAnimationReactionB.atlas in Resources */,
+				C927373019E63AAF00F71BBC /* MyParticle.sks in Resources */,
+				3698EDC519DE0DE4001FCD40 /* LeBlobAnimationSearch.atlas in Resources */,
+				3698EDEE19DE1753001FCD40 /* Whale.m4a in Resources */,
+				C97D312019E76D2D00D0816E /* LeBlobBlueAnimationReactionB.atlas in Resources */,
+				3619931819DF0B43002C2021 /* grunt.mp3 in Resources */,
+				C97D312A19E76F5100D0816E /* CelebrationConfetti.sks in Resources */,
+				C97D30FF19E7635C00D0816E /* LeBlobOrangeAnimationJump.atlas in Resources */,
+				C97D312319E76D2D00D0816E /* LeBlobBlueAnimationRoof.atlas in Resources */,
+				3698EDDC19DE11E9001FCD40 /* Celebration.mp3 in Resources */,
+				C97D311B19E76D2D00D0816E /* LeBlobBlueAnimationBlow.atlas in Resources */,
+				3698EDE219DE11E9001FCD40 /* Snap3.mp3 in Resources */,
+				C97D312219E76D2D00D0816E /* LeBlobBlueAnimationRock.atlas in Resources */,
+				C97D30FE19E7635C00D0816E /* LeBlobOrangeAnimationEgyptian.atlas in Resources */,
+				3698EDC019DE0DE4001FCD40 /* LeBlobAnimationReactionB.atlas in Resources */,
+				3698EDE919DE11E9001FCD40 /* Tap3.wav in Resources */,
+				3698EDBF19DE0DE4001FCD40 /* LeBlobAnimationReactionA.atlas in Resources */,
+				3698EDE419DE11E9001FCD40 /* Snap5.caf in Resources */,
+				3698EDBC19DE0DE4001FCD40 /* LeBlobAnimationBreathe.atlas in Resources */,
+				C97D310219E7635C00D0816E /* LeBlobOrangeAnimationReactionC.atlas in Resources */,
+				3698EDDE19DE11E9001FCD40 /* Party.m4a in Resources */,
+				3698EDC319DE0DE4001FCD40 /* LeBlobAnimationRoof.atlas in Resources */,
+				3698EDE019DE11E9001FCD40 /* Snap1.WAV in Resources */,
+				3698EDDD19DE11E9001FCD40 /* Collision.mp3 in Resources */,
+				C97D311D19E76D2D00D0816E /* LeBlobBlueAnimationEgyptian.atlas in Resources */,
 				3639673B19D3890E0044E6EE /* GameScene.sks in Resources */,
+				C97D310819E7635C00D0816E /* LeBlobOrangeAnimationTwist.atlas in Resources */,
+				3698EDDF19DE11E9001FCD40 /* slip.mp3 in Resources */,
+				C97D30FC19E7635C00D0816E /* LeBlobOrangeAnimationBlow.atlas in Resources */,
+				C97D311E19E76D2D00D0816E /* LeBlobBlueAnimationJump.atlas in Resources */,
+				3698EDBA19DE0DE4001FCD40 /* LeBlobAnimationBlink.atlas in Resources */,
+				C97D311C19E76D2D00D0816E /* LeBlobBlueAnimationBreathe.atlas in Resources */,
+				3698EDEB19DE11E9001FCD40 /* Tap5.wav in Resources */,
+				3698EDE519DE11E9001FCD40 /* Snap5.mp3 in Resources */,
+				C927373319E6422200F71BBC /* Fireflies.sks in Resources */,
+				C97D310919E7635C00D0816E /* LeBlobOrangeAnimationWave.atlas in Resources */,
+				3698EDE619DE11E9001FCD40 /* Space.m4a in Resources */,
+				3698EDE819DE11E9001FCD40 /* Tap2.wav in Resources */,
+				36798BDC19DDDB2D007A8003 /* Images.xcassets in Resources */,
+				C97D312419E76D2D00D0816E /* LeBlobBlueAnimationScrew.atlas in Resources */,
+				3698EDC119DE0DE4001FCD40 /* LeBlobAnimationReactionC.atlas in Resources */,
+				3698EDC819DE0DE4001FCD40 /* LeBlobAnimationWave.atlas in Resources */,
+				3698EDBB19DE0DE4001FCD40 /* LeBlobAnimationBlow.atlas in Resources */,
+				3698EDE719DE11E9001FCD40 /* Tap1.wav in Resources */,
+				3698EDC219DE0DE4001FCD40 /* LeBlobAnimationRock.atlas in Resources */,
+				C97D310419E7635C00D0816E /* LeBlobOrangeAnimationRoof.atlas in Resources */,
+				3698EDC719DE0DE4001FCD40 /* LeBlobAnimationTwist.atlas in Resources */,
+				C97D312819E76D2D00D0816E /* LeBlobBlueAnimationWave.atlas in Resources */,
+				3698EDE319DE11E9001FCD40 /* Snap4.mp3 in Resources */,
+				C97D310019E7635C00D0816E /* LeBlobOrangeAnimationReactionA.atlas in Resources */,
 				3639674119D3890E0044E6EE /* Main.storyboard in Resources */,
+				3698EDDB19DE11E9001FCD40 /* BurningMan.WAV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,9 +595,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3639673E19D3890E0044E6EE /* GameViewController.m in Sources */,
+				C9D77B6C19E34306008D3907 /* DraggableShapeNode.m in Sources */,
+				C9DD6E8419E5D6BE00B32C73 /* Monster.m in Sources */,
+				36798BDA19DDCD74007A8003 /* Stage.m in Sources */,
+				C9DD6E8719E5DBCB00B32C73 /* UpdateableTile.m in Sources */,
+				36BFF91019DB3F770094E6D9 /* Tile.m in Sources */,
+				C9E79DAC19E4B4C400A8847B /* DanceScene.m in Sources */,
 				3639673619D3890E0044E6EE /* AppDelegate.m in Sources */,
-				3639673919D3890E0044E6EE /* GameScene.m in Sources */,
+				36BFF91519DC6C2C0094E6D9 /* MonsterSpriteNode.m in Sources */,
+				3639673919D3890E0044E6EE /* TrainingStage.m in Sources */,
+				C9E79DA919E47FD800A8847B /* Timeline.m in Sources */,
 				3639673319D3890E0044E6EE /* main.m in Sources */,
+				36798BDF19DDEF9E007A8003 /* AudioPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,9 +730,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DanceStudio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SPRITEKIT_TEXTURE_ATLAS_FORMAT = RGBA4444_COMPRESSED;
 			};
 			name = Debug;
 		};
@@ -365,9 +745,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DanceStudio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SPRITEKIT_TEXTURE_ATLAS_FORMAT = RGBA4444_COMPRESSED;
 			};
 			name = Release;
 		};
@@ -424,6 +809,7 @@
 				3639675719D3890E0044E6EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3639675819D3890E0044E6EE /* Build configuration list for PBXNativeTarget "DanceStudioTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +818,7 @@
 				3639675A19D3890E0044E6EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
