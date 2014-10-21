@@ -24,7 +24,10 @@ typedef enum AudioType {
     AudioTypeMusicCelebration,
     AudioTypeMusicBeach,
     AudioTypeMusicParty,
-    AudioTypeMusicWhale
+    AudioTypeMusicWhale,
+    AudioTypeEggTapped,
+    AudioTypeYeah,
+    AudioTypeDrumLoop
 } AudioType;
 
 - (SKAction*)actionToPlaySoundWithType:(AudioType)type;

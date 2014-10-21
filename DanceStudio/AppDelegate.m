@@ -20,6 +20,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:@"monsters"];
     [defaults removeObjectForKey:@"lastMonster"];
+    [defaults removeObjectForKey:@"scenery"];
     [defaults synchronize];
     
     return YES;

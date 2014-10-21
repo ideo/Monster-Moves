@@ -24,17 +24,17 @@
 }
 
 - (BOOL)isFull {
-    return self.timelineDictionary.count >= 3;
+    return self.timelineDictionary.count >= 4;
 }
 
 - (NSNumber*)nextAvailableSlot {
     if (self.isFull) return nil;
-    return [NSNumber numberWithInt:self.timelineDictionary.count];
+    return [NSNumber numberWithInt:(int)self.timelineDictionary.count];
 }
 
 - (CGPoint)positionForSlot:(int)slot {
-    int defaultOffsetX = 351;
-    int defaultOffsetY = 600;
+    int defaultOffsetX = 281;
+    int defaultOffsetY = 90;
     
     int calculatedOffsetX = defaultOffsetX + (161*slot);
     
@@ -57,6 +57,9 @@
     return [self.timelineDictionary objectForKey:[NSString stringWithFormat:@"Slot%@", @(slot).stringValue]];
 }
 
+- (BOOL)contains:(Tile *)tile {
+    return [self.timelineDictionary.allValues containsObject:tile];
+}
 
 #pragma mark - NSCoding
 

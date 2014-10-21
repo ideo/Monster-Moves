@@ -11,11 +11,10 @@
 
 @implementation Monster
 
-- (instancetype)initWithType:(MonsterType)type number:(NSUInteger)number {
+- (instancetype)initWithNumber:(NSUInteger)number {
     
     self = [super init];
     if (self) {
-        _type = type;
         _evolutionStage = MonsterEvolutionEgg;
         _sprite = [[MonsterSpriteNode alloc] initWithMonster:self];
         _timeline = [[Timeline alloc] init];
@@ -41,34 +40,11 @@
 }
 
 - (NSString *)name {
-    switch (self.type) {
-        case MonsterTypeLeBlob:
-            return @"LeBlob";
-            
-        case MonsterTypeLeBlobBlue:
-            return @"LeBlobBlue";
-            
-        case MonsterTypeLeBlobOrange:
-            return @"LeBlobOrange";
-            
-        default:
-            return @"Anonymous";
-    }}
+    @throw [NSError errorWithDomain:@"Not implemented" code:100 userInfo:nil];
+}
 
 - (NSArray*)moves {
-    switch (self.type) {
-        case MonsterTypeLeBlob:
-            return @[@"Egyptian", @"Spin", @"Twist", @"Rockstar", @"Wave", @"Buldge", @"Jump", @"Roof"];
-            
-        case MonsterTypeLeBlobBlue:
-            return @[@"Egyptian", @"Spin", @"Twist", @"Rockstar", @"Wave", @"Buldge", @"Jump", @"Roof"];
-            
-        case MonsterTypeLeBlobOrange:
-            return @[@"Egyptian", @"Spin", @"Twist", @"Rockstar", @"Wave", @"Buldge", @"Jump", @"Roof"];
-            
-        default:
-            return @[];
-    }
+    @throw [NSError errorWithDomain:@"Not implemented" code:100 userInfo:nil];
 }
 
 #pragma mark - NSCoding
@@ -79,7 +55,6 @@
         return nil;
     }
     
-    _type = [decoder decodeIntForKey:@"type"];
     _evolutionStage = [decoder decodeIntForKey:@"evolutionStage"];
     _sprite = [[MonsterSpriteNode alloc] initWithMonster:self]; // recreate the sprite
     _timeline = [decoder decodeObjectForKey:@"timeline"];
@@ -89,7 +64,6 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeInt:_type forKey:@"type"];
     [encoder encodeInt:_evolutionStage forKey:@"evolutionStage"];
     [encoder encodeObject:_timeline forKey:@"timeline"];
     [encoder encodeInt:_number forKey:@"number"];

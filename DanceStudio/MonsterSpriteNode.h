@@ -13,7 +13,8 @@
 #import "Monster.h"
 
 static NSString * const kMonsterNodeName = @"monster";
-static double const kMonsterScaleFactor = 0.7;
+static double const kMonsterScaleFactor = 0.9;
+static double const kMonsterScaleFactorEgg = 0.7;
 static double const kMonsterYOffset = -140;
 static double const kMonsterXOffset = 90;
 
@@ -21,14 +22,19 @@ static double const kMonsterXOffset = 90;
 
 @property (nonatomic,readonly) Monster* monster;
 @property (nonatomic,readonly) NSString* currentAnimationKey;
+@property (nonatomic,readonly) NSString* name;
+@property (nonatomic,readonly) SKTexture* defaultTexture;
 
 - (instancetype)initWithMonster:(Monster*)monster;
 
 - (void)tapped;
 
-- (SKAction*)animateMonsterWithTileType:(TileType)tileType repeatForever:(BOOL)repeat;
+- (SKAction*)animateMonsterWithTile:(Tile*)tile repeatForever:(BOOL)repeat;
 - (SKAction*)idleAnimation;
 - (SKAction*)randomReaction;
-- (SKAction*)danceWithTile1:(TileType)t1 tile2:(TileType)t2 tile3:(TileType)t3 repeatForever:(BOOL)repeat;
+- (SKAction*)danceWithTile1:(Tile*)t1 tile2:(Tile*)t2 tile3:(Tile*)t3 tile4:(Tile*)t4 repeatForever:(BOOL)repeat;
+
++ (SKAction *)actionForMonsterAppearing;
++ (SKAction *)actionForMonsterDisappearing;
 
 @end

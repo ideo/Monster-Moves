@@ -13,37 +13,25 @@ static NSString * const kTileNodeName = @"movable";
 static const uint32_t tileCategory =  0x1 << 0;
 static double const kTileScaleFactor = 0.5;
 
-typedef enum TileType {
-    TileTypeEgyptian = 0,
-    TileTypeRockstar = 1,
-    TileTypeSpin = 2,
-    TileTypeTwist = 3,
-    TileTypeWave = 4,
-    TileTypeBlow = 5,
-    TileTypeJump = 6,
-    TileTypeRoof = 7,
-    TileTypeSearch = 8,
-    TileTypeBlink = 9,
-    TileTypeBreathe = 10,
-    TileTypeReactionA = 11,
-    TileTypeReactionB = 12,
-    TileTypeReactionC = 13,
-    TileTypeIdle = 14,
-} TileType;
-
 @interface Tile : NSObject<NSCoding>
 
-@property (nonatomic,readonly) TileType type;
+@property (nonatomic,readonly) NSString* move;
+@property (nonatomic,readonly) NSString* monsterName;
+@property (nonatomic,readonly) NSString* monsterShortName;
+@property (nonatomic,readonly) NSString* textureName;
+@property (nonatomic,readonly) NSString* textureAtlasName;
+@property (nonatomic,readonly) NSString* textureAtlasNameSpriteFormat;
 @property (nonatomic,readonly) SKColor* color;
 @property (nonatomic,readonly) SKSpriteNode* sprite;
+@property (nonatomic,readonly) NSString* soundEffectName;
 
-- (instancetype)initWithType:(TileType)type;
-- (SKAction*)actionOnTouchDown;
-- (SKAction*)actionOnTouchUp;
+- (instancetype)initWithMove:(NSString*)move monsterName:(NSString*)monsterName monsterShortName:(NSString*)monsterShortName;
 
++ (SKAction*)actionOnTouchDown;
++ (SKAction*)actionOnTouchUp;
 + (SKAction*)actionForHighlight;
 + (SKAction*)actionForResting;
-+ (TileType)tileTypeAtRandom;
-+ (TileType)reactionTileTypeAtRandom;
++ (SKAction*)actionForPlay;
++ (SKAction*)actionForSound:(NSString*)soundFile;
 
 @end

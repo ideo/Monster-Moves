@@ -19,6 +19,8 @@
 @property (nonatomic) SKAction* actionSoundTickleMonster;
 @property (nonatomic) SKAction* actionSoundPlayButton;
 @property (nonatomic) SKAction* actionSoundCloseButton;
+@property (nonatomic) SKAction* actionSoundYeah;
+@property (nonatomic) SKAction* actionSoundEgg;
 
 @end
 
@@ -35,6 +37,8 @@
         self.actionSoundTickleMonster = [SKAction playSoundFileNamed:[self fileNameForType:AudioTypeTickleMonster] waitForCompletion:NO];
         self.actionSoundPlayButton = [SKAction playSoundFileNamed:[self fileNameForType:AudioTypePlayButtonTapped] waitForCompletion:NO];
         self.actionSoundCloseButton = [SKAction playSoundFileNamed:[self fileNameForType:AudioTypeCloseButtonTapped] waitForCompletion:NO];
+        self.actionSoundYeah = [SKAction playSoundFileNamed:[self fileNameForType:AudioTypeYeah] waitForCompletion:NO];
+        self.actionSoundEgg = [SKAction playSoundFileNamed:[self fileNameForType:AudioTypeEggTapped] waitForCompletion:NO];
     }
     return self;
 }
@@ -63,6 +67,12 @@
         case AudioTypeCloseButtonTapped:
             return @"Tap3.wav";
             
+        case AudioTypeEggTapped:
+            return @"eggshell-crack.wav";
+            
+        case AudioTypeYeah:
+            return @"yeah.wav";
+            
         default:
             return [self fileNameForType:AudioTypeTileTapped];
     }
@@ -85,6 +95,9 @@
             
         case AudioTypeMusicWhale:
             return [[NSBundle mainBundle] URLForResource:@"Whale" withExtension:@"m4a"];
+            
+        case AudioTypeDrumLoop:
+            return [[NSBundle mainBundle] URLForResource:@"drumloop" withExtension:@"mp3"];
         
         default:
             return [[NSBundle mainBundle] URLForResource:@"Whale" withExtension:@"m4a"];
@@ -119,6 +132,12 @@
         case AudioTypeCloseButtonTapped:
             return self.actionSoundCloseButton;
             
+        case AudioTypeYeah:
+            return self.actionSoundYeah;
+            
+        case AudioTypeEggTapped:
+            return self.actionSoundEgg;
+            
         default:
             return self.actionSoundTapped;
     }
@@ -143,11 +162,15 @@
 }
 
 - (void)playMusicForType:(AudioType)type {
+    if (self.backgroundMusicPlayer.playing) {
+        [self.backgroundMusicPlayer stop];
+    }
+    
     NSError *error;
     self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[self urlForMusicType:type] error:&error];
     self.backgroundMusicPlayer.numberOfLoops = -1;
     [self.backgroundMusicPlayer prepareToPlay];
-    [self.backgroundMusicPlayer play];
+    //[self.backgroundMusicPlayer play];
 }
 
 - (void)stopMusic {

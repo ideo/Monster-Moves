@@ -16,7 +16,7 @@
 		3639674119D3890E0044E6EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3639673F19D3890E0044E6EE /* Main.storyboard */; };
 		3639674619D3890E0044E6EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3639674419D3890E0044E6EE /* LaunchScreen.xib */; };
 		3639675219D3890E0044E6EE /* DanceStudioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3639675119D3890E0044E6EE /* DanceStudioTests.m */; };
-		36798BDA19DDCD74007A8003 /* Stage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36798BD919DDCD74007A8003 /* Stage.m */; };
+		36798BDA19DDCD74007A8003 /* Scenery.m in Sources */ = {isa = PBXBuildFile; fileRef = 36798BD919DDCD74007A8003 /* Scenery.m */; };
 		36798BDC19DDDB2D007A8003 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36798BDB19DDDB2D007A8003 /* Images.xcassets */; };
 		36798BDF19DDEF9E007A8003 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36798BDE19DDEF9E007A8003 /* AudioPlayer.m */; };
 		3698EDBA19DE0DE4001FCD40 /* LeBlobAnimationBlink.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDAB19DE0DE4001FCD40 /* LeBlobAnimationBlink.atlas */; };
@@ -54,9 +54,61 @@
 		3698EDEE19DE1753001FCD40 /* Whale.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3698EDED19DE1521001FCD40 /* Whale.m4a */; };
 		36BFF91019DB3F770094E6D9 /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BFF90F19DB3F770094E6D9 /* Tile.m */; };
 		36BFF91519DC6C2C0094E6D9 /* MonsterSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BFF91419DC6C2C0094E6D9 /* MonsterSpriteNode.m */; };
+		C919CCC419EEF79B00BEF53A /* LeBlobBlow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCBA19EEF79B00BEF53A /* LeBlobBlow.mp3 */; };
+		C919CCC519EEF79B00BEF53A /* LeBlobEgyptian.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCBB19EEF79B00BEF53A /* LeBlobEgyptian.mp3 */; };
+		C919CCC619EEF79B00BEF53A /* LeBlobJump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCBC19EEF79B00BEF53A /* LeBlobJump.mp3 */; };
+		C919CCC719EEF79B00BEF53A /* LeBlobRock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCBD19EEF79B00BEF53A /* LeBlobRock.mp3 */; };
+		C919CCC819EEF79B00BEF53A /* LeBlobRoof.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCBE19EEF79B00BEF53A /* LeBlobRoof.mp3 */; };
+		C919CCC919EEF79B00BEF53A /* LeBlobScrew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCBF19EEF79B00BEF53A /* LeBlobScrew.mp3 */; };
+		C919CCCA19EEF79B00BEF53A /* LeBlobSearch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCC019EEF79B00BEF53A /* LeBlobSearch.mp3 */; };
+		C919CCCB19EEF79B00BEF53A /* LeBlobSpin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCC119EEF79B00BEF53A /* LeBlobSpin.mp3 */; };
+		C919CCCC19EEF79B00BEF53A /* LeBlobTwist.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCC219EEF79B00BEF53A /* LeBlobTwist.mp3 */; };
+		C919CCCD19EEF79B00BEF53A /* LeBlobWave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCC319EEF79B00BEF53A /* LeBlobWave.mp3 */; };
+		C919CCD819EF1AC900BEF53A /* LeBlobBlueBlow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCCE19EF1AC900BEF53A /* LeBlobBlueBlow.mp3 */; };
+		C919CCD919EF1AC900BEF53A /* LeBlobBlueEgyptian.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCCF19EF1AC900BEF53A /* LeBlobBlueEgyptian.mp3 */; };
+		C919CCDA19EF1AC900BEF53A /* LeBlobBlueJump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCD019EF1AC900BEF53A /* LeBlobBlueJump.mp3 */; };
+		C919CCDB19EF1AC900BEF53A /* LeBlobBlueRock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCD119EF1AC900BEF53A /* LeBlobBlueRock.mp3 */; };
+		C919CCDC19EF1AC900BEF53A /* LeBlobBlueRoof.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCD219EF1AC900BEF53A /* LeBlobBlueRoof.mp3 */; };
+		C919CCDD19EF1AC900BEF53A /* LeBlobBlueScrew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCD319EF1AC900BEF53A /* LeBlobBlueScrew.mp3 */; };
+		C919CCDE19EF1AC900BEF53A /* LeBlobBlueSearch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCD419EF1AC900BEF53A /* LeBlobBlueSearch.mp3 */; };
+		C919CCDF19EF1AC900BEF53A /* LeBlobBlueSpin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCD519EF1AC900BEF53A /* LeBlobBlueSpin.mp3 */; };
+		C919CCE019EF1AC900BEF53A /* LeBlobBlueTwist.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCD619EF1AC900BEF53A /* LeBlobBlueTwist.mp3 */; };
+		C919CCE119EF1AC900BEF53A /* LeBlobBlueWave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCD719EF1AC900BEF53A /* LeBlobBlueWave.mp3 */; };
+		C919CCE819EF1F8500BEF53A /* SausalitoEye.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCE219EF1F8500BEF53A /* SausalitoEye.mp3 */; };
+		C919CCE919EF1F8500BEF53A /* SausalitoFlip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCE319EF1F8500BEF53A /* SausalitoFlip.mp3 */; };
+		C919CCEA19EF1F8500BEF53A /* SausalitoPuffer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCE419EF1F8500BEF53A /* SausalitoPuffer.mp3 */; };
+		C919CCEB19EF1F8500BEF53A /* SausalitoSpin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCE519EF1F8500BEF53A /* SausalitoSpin.mp3 */; };
+		C919CCEC19EF1F8500BEF53A /* SausalitoWave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCE619EF1F8500BEF53A /* SausalitoWave.mp3 */; };
+		C919CCED19EF1F8500BEF53A /* SausalitoStretch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C919CCE719EF1F8500BEF53A /* SausalitoStretch.mp3 */; };
+		C919CCEF19EF493300BEF53A /* Whale_BlueBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = C919CCEE19EF493300BEF53A /* Whale_BlueBubble.png */; };
+		C919CCF119EF493800BEF53A /* Space_Star.png in Resources */ = {isa = PBXBuildFile; fileRef = C919CCF019EF493800BEF53A /* Space_Star.png */; };
+		C919CCF319EF493E00BEF53A /* Lemon.png in Resources */ = {isa = PBXBuildFile; fileRef = C919CCF219EF493E00BEF53A /* Lemon.png */; };
+		C919CCF519EF494400BEF53A /* Confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = C919CCF419EF494400BEF53A /* Confetti.png */; };
+		C919CCF719EF5AF500BEF53A /* LimeParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = C919CCF619EF5AF500BEF53A /* LimeParticles.sks */; };
+		C919CCF919EF5C9D00BEF53A /* Confetti_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C919CCF819EF5C9D00BEF53A /* Confetti_3.png */; };
+		C919CCFB19EF5D1E00BEF53A /* Confetti_4.png in Resources */ = {isa = PBXBuildFile; fileRef = C919CCFA19EF5D1E00BEF53A /* Confetti_4.png */; };
+		C919CCFD19EF5E5500BEF53A /* SpaceParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = C919CCFC19EF5E5500BEF53A /* SpaceParticles.sks */; };
+		C919CCFF19EF60B900BEF53A /* Space_Star_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C919CCFE19EF60B900BEF53A /* Space_Star_2.png */; };
+		C919CD0119EF613800BEF53A /* WhaleParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = C919CD0019EF613800BEF53A /* WhaleParticles.sks */; };
 		C927373019E63AAF00F71BBC /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = C927372E19E63AAF00F71BBC /* MyParticle.sks */; };
 		C927373119E63AAF00F71BBC /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = C927372F19E63AAF00F71BBC /* spark.png */; };
 		C927373319E6422200F71BBC /* Fireflies.sks in Resources */ = {isa = PBXBuildFile; fileRef = C927373219E6422200F71BBC /* Fireflies.sks */; };
+		C940FDA119E85C940012DFF8 /* LeBlobMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = C940FDA019E85C940012DFF8 /* LeBlobMonster.m */; };
+		C940FDA419E85CEE0012DFF8 /* LeBlobOrange.m in Sources */ = {isa = PBXBuildFile; fileRef = C940FDA319E85CEE0012DFF8 /* LeBlobOrange.m */; };
+		C940FDA719E85D200012DFF8 /* LeBlobBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = C940FDA619E85D200012DFF8 /* LeBlobBlue.m */; };
+		C940FDB019E8B0910012DFF8 /* SausalitoAnimationBreathe.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C940FDA919E8B0910012DFF8 /* SausalitoAnimationBreathe.atlas */; };
+		C940FDB119E8B0910012DFF8 /* SausalitoAnimationEye.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C940FDAA19E8B0910012DFF8 /* SausalitoAnimationEye.atlas */; };
+		C940FDB219E8B0910012DFF8 /* SausalitoAnimationFlip.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C940FDAB19E8B0910012DFF8 /* SausalitoAnimationFlip.atlas */; };
+		C940FDB319E8B0910012DFF8 /* SausalitoAnimationPuffer.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C940FDAC19E8B0910012DFF8 /* SausalitoAnimationPuffer.atlas */; };
+		C940FDB419E8B0910012DFF8 /* SausalitoAnimationSpin.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C940FDAD19E8B0910012DFF8 /* SausalitoAnimationSpin.atlas */; };
+		C940FDB519E8B0910012DFF8 /* SausalitoAnimationStretch.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C940FDAE19E8B0910012DFF8 /* SausalitoAnimationStretch.atlas */; };
+		C940FDB619E8B0910012DFF8 /* SausalitoAnimationWave.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C940FDAF19E8B0910012DFF8 /* SausalitoAnimationWave.atlas */; };
+		C940FDB919E8B0E40012DFF8 /* SausalitoMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = C940FDB819E8B0E40012DFF8 /* SausalitoMonster.m */; };
+		C944EF5819EAFC12001DD04E /* drumloop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C944EF5719EAFC12001DD04E /* drumloop.mp3 */; };
+		C944EF5A19EB189B001DD04E /* yeah.wav in Resources */ = {isa = PBXBuildFile; fileRef = C944EF5919EB189B001DD04E /* yeah.wav */; };
+		C94C6D6919F1E8280083B4AC /* LeBlobBlueBreathe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C94C6D6619F1E8280083B4AC /* LeBlobBlueBreathe.mp3 */; };
+		C94C6D6A19F1E8280083B4AC /* LeBlobBreathe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C94C6D6719F1E8280083B4AC /* LeBlobBreathe.mp3 */; };
+		C94C6D6B19F1E8280083B4AC /* SausalitoBreathe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C94C6D6819F1E8280083B4AC /* SausalitoBreathe.mp3 */; };
 		C97D30FB19E7635C00D0816E /* LeBlobOrangeAnimationBlink.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30EC19E7635C00D0816E /* LeBlobOrangeAnimationBlink.atlas */; };
 		C97D30FC19E7635C00D0816E /* LeBlobOrangeAnimationBlow.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30ED19E7635C00D0816E /* LeBlobOrangeAnimationBlow.atlas */; };
 		C97D30FD19E7635C00D0816E /* LeBlobOrangeAnimationBreathe.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D30EE19E7635C00D0816E /* LeBlobOrangeAnimationBreathe.atlas */; };
@@ -87,12 +139,15 @@
 		C97D312619E76D2D00D0816E /* LeBlobBlueAnimationSpin.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311719E76D2D00D0816E /* LeBlobBlueAnimationSpin.atlas */; };
 		C97D312719E76D2D00D0816E /* LeBlobBlueAnimationTwist.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311819E76D2D00D0816E /* LeBlobBlueAnimationTwist.atlas */; };
 		C97D312819E76D2D00D0816E /* LeBlobBlueAnimationWave.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C97D311919E76D2D00D0816E /* LeBlobBlueAnimationWave.atlas */; };
-		C97D312A19E76F5100D0816E /* CelebrationConfetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = C97D312919E76F5100D0816E /* CelebrationConfetti.sks */; };
+		C97D312A19E76F5100D0816E /* PartyParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = C97D312919E76F5100D0816E /* PartyParticles.sks */; };
+		C9895A7A19F021790027D845 /* CandyParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = C9895A7919F021790027D845 /* CandyParticles.sks */; };
 		C9D77B6C19E34306008D3907 /* DraggableShapeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D77B6B19E34306008D3907 /* DraggableShapeNode.m */; };
 		C9DD6E8419E5D6BE00B32C73 /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DD6E8319E5D6BE00B32C73 /* Monster.m */; };
 		C9DD6E8719E5DBCB00B32C73 /* UpdateableTile.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DD6E8619E5DBCB00B32C73 /* UpdateableTile.m */; };
 		C9E79DA919E47FD800A8847B /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E79DA819E47FD800A8847B /* Timeline.m */; };
 		C9E79DAC19E4B4C400A8847B /* DanceScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E79DAB19E4B4C400A8847B /* DanceScene.m */; };
+		C9F9998419F02D810000B5A4 /* Sprinkles.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F9998319F02D810000B5A4 /* Sprinkles.png */; };
+		C9FB56B919EC88CB00272055 /* eggshell-crack.wav in Resources */ = {isa = PBXBuildFile; fileRef = C9FB56B819EC88CB00272055 /* eggshell-crack.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,8 +177,8 @@
 		3639674B19D3890E0044E6EE /* DanceStudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DanceStudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3639675019D3890E0044E6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3639675119D3890E0044E6EE /* DanceStudioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DanceStudioTests.m; sourceTree = "<group>"; };
-		36798BD819DDCD74007A8003 /* Stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stage.h; sourceTree = "<group>"; };
-		36798BD919DDCD74007A8003 /* Stage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stage.m; sourceTree = "<group>"; };
+		36798BD819DDCD74007A8003 /* Scenery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scenery.h; sourceTree = "<group>"; };
+		36798BD919DDCD74007A8003 /* Scenery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scenery.m; sourceTree = "<group>"; };
 		36798BDB19DDDB2D007A8003 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		36798BDD19DDEF9E007A8003 /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioPlayer.h; path = ../AudioPlayer.h; sourceTree = "<group>"; };
 		36798BDE19DDEF9E007A8003 /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioPlayer.m; path = ../AudioPlayer.m; sourceTree = "<group>"; };
@@ -164,9 +219,65 @@
 		36BFF90F19DB3F770094E6D9 /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
 		36BFF91319DC6C2C0094E6D9 /* MonsterSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterSpriteNode.h; sourceTree = "<group>"; };
 		36BFF91419DC6C2C0094E6D9 /* MonsterSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonsterSpriteNode.m; sourceTree = "<group>"; };
+		C919CCBA19EEF79B00BEF53A /* LeBlobBlow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlow.mp3; sourceTree = "<group>"; };
+		C919CCBB19EEF79B00BEF53A /* LeBlobEgyptian.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobEgyptian.mp3; sourceTree = "<group>"; };
+		C919CCBC19EEF79B00BEF53A /* LeBlobJump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobJump.mp3; sourceTree = "<group>"; };
+		C919CCBD19EEF79B00BEF53A /* LeBlobRock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobRock.mp3; sourceTree = "<group>"; };
+		C919CCBE19EEF79B00BEF53A /* LeBlobRoof.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobRoof.mp3; sourceTree = "<group>"; };
+		C919CCBF19EEF79B00BEF53A /* LeBlobScrew.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobScrew.mp3; sourceTree = "<group>"; };
+		C919CCC019EEF79B00BEF53A /* LeBlobSearch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobSearch.mp3; sourceTree = "<group>"; };
+		C919CCC119EEF79B00BEF53A /* LeBlobSpin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobSpin.mp3; sourceTree = "<group>"; };
+		C919CCC219EEF79B00BEF53A /* LeBlobTwist.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobTwist.mp3; sourceTree = "<group>"; };
+		C919CCC319EEF79B00BEF53A /* LeBlobWave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobWave.mp3; sourceTree = "<group>"; };
+		C919CCCE19EF1AC900BEF53A /* LeBlobBlueBlow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueBlow.mp3; sourceTree = "<group>"; };
+		C919CCCF19EF1AC900BEF53A /* LeBlobBlueEgyptian.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueEgyptian.mp3; sourceTree = "<group>"; };
+		C919CCD019EF1AC900BEF53A /* LeBlobBlueJump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueJump.mp3; sourceTree = "<group>"; };
+		C919CCD119EF1AC900BEF53A /* LeBlobBlueRock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueRock.mp3; sourceTree = "<group>"; };
+		C919CCD219EF1AC900BEF53A /* LeBlobBlueRoof.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueRoof.mp3; sourceTree = "<group>"; };
+		C919CCD319EF1AC900BEF53A /* LeBlobBlueScrew.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueScrew.mp3; sourceTree = "<group>"; };
+		C919CCD419EF1AC900BEF53A /* LeBlobBlueSearch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueSearch.mp3; sourceTree = "<group>"; };
+		C919CCD519EF1AC900BEF53A /* LeBlobBlueSpin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueSpin.mp3; sourceTree = "<group>"; };
+		C919CCD619EF1AC900BEF53A /* LeBlobBlueTwist.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueTwist.mp3; sourceTree = "<group>"; };
+		C919CCD719EF1AC900BEF53A /* LeBlobBlueWave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueWave.mp3; sourceTree = "<group>"; };
+		C919CCE219EF1F8500BEF53A /* SausalitoEye.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SausalitoEye.mp3; sourceTree = "<group>"; };
+		C919CCE319EF1F8500BEF53A /* SausalitoFlip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SausalitoFlip.mp3; sourceTree = "<group>"; };
+		C919CCE419EF1F8500BEF53A /* SausalitoPuffer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SausalitoPuffer.mp3; sourceTree = "<group>"; };
+		C919CCE519EF1F8500BEF53A /* SausalitoSpin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SausalitoSpin.mp3; sourceTree = "<group>"; };
+		C919CCE619EF1F8500BEF53A /* SausalitoWave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SausalitoWave.mp3; sourceTree = "<group>"; };
+		C919CCE719EF1F8500BEF53A /* SausalitoStretch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SausalitoStretch.mp3; sourceTree = "<group>"; };
+		C919CCEE19EF493300BEF53A /* Whale_BlueBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whale_BlueBubble.png; sourceTree = "<group>"; };
+		C919CCF019EF493800BEF53A /* Space_Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Space_Star.png; sourceTree = "<group>"; };
+		C919CCF219EF493E00BEF53A /* Lemon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lemon.png; sourceTree = "<group>"; };
+		C919CCF419EF494400BEF53A /* Confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Confetti.png; sourceTree = "<group>"; };
+		C919CCF619EF5AF500BEF53A /* LimeParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LimeParticles.sks; sourceTree = "<group>"; };
+		C919CCF819EF5C9D00BEF53A /* Confetti_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Confetti_3.png; sourceTree = "<group>"; };
+		C919CCFA19EF5D1E00BEF53A /* Confetti_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Confetti_4.png; sourceTree = "<group>"; };
+		C919CCFC19EF5E5500BEF53A /* SpaceParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceParticles.sks; sourceTree = "<group>"; };
+		C919CCFE19EF60B900BEF53A /* Space_Star_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Space_Star_2.png; sourceTree = "<group>"; };
+		C919CD0019EF613800BEF53A /* WhaleParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WhaleParticles.sks; sourceTree = "<group>"; };
 		C927372E19E63AAF00F71BBC /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		C927372F19E63AAF00F71BBC /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		C927373219E6422200F71BBC /* Fireflies.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fireflies.sks; sourceTree = "<group>"; };
+		C940FD9F19E85C940012DFF8 /* LeBlobMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeBlobMonster.h; sourceTree = "<group>"; };
+		C940FDA019E85C940012DFF8 /* LeBlobMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeBlobMonster.m; sourceTree = "<group>"; };
+		C940FDA219E85CEE0012DFF8 /* LeBlobOrange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeBlobOrange.h; sourceTree = "<group>"; };
+		C940FDA319E85CEE0012DFF8 /* LeBlobOrange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeBlobOrange.m; sourceTree = "<group>"; };
+		C940FDA519E85D200012DFF8 /* LeBlobBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeBlobBlue.h; sourceTree = "<group>"; };
+		C940FDA619E85D200012DFF8 /* LeBlobBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeBlobBlue.m; sourceTree = "<group>"; };
+		C940FDA919E8B0910012DFF8 /* SausalitoAnimationBreathe.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SausalitoAnimationBreathe.atlas; sourceTree = "<group>"; };
+		C940FDAA19E8B0910012DFF8 /* SausalitoAnimationEye.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SausalitoAnimationEye.atlas; sourceTree = "<group>"; };
+		C940FDAB19E8B0910012DFF8 /* SausalitoAnimationFlip.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SausalitoAnimationFlip.atlas; sourceTree = "<group>"; };
+		C940FDAC19E8B0910012DFF8 /* SausalitoAnimationPuffer.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SausalitoAnimationPuffer.atlas; sourceTree = "<group>"; };
+		C940FDAD19E8B0910012DFF8 /* SausalitoAnimationSpin.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SausalitoAnimationSpin.atlas; sourceTree = "<group>"; };
+		C940FDAE19E8B0910012DFF8 /* SausalitoAnimationStretch.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SausalitoAnimationStretch.atlas; sourceTree = "<group>"; };
+		C940FDAF19E8B0910012DFF8 /* SausalitoAnimationWave.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SausalitoAnimationWave.atlas; sourceTree = "<group>"; };
+		C940FDB719E8B0E40012DFF8 /* SausalitoMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SausalitoMonster.h; sourceTree = "<group>"; };
+		C940FDB819E8B0E40012DFF8 /* SausalitoMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SausalitoMonster.m; sourceTree = "<group>"; };
+		C944EF5719EAFC12001DD04E /* drumloop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drumloop.mp3; sourceTree = "<group>"; };
+		C944EF5919EB189B001DD04E /* yeah.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yeah.wav; sourceTree = "<group>"; };
+		C94C6D6619F1E8280083B4AC /* LeBlobBlueBreathe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBlueBreathe.mp3; sourceTree = "<group>"; };
+		C94C6D6719F1E8280083B4AC /* LeBlobBreathe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LeBlobBreathe.mp3; sourceTree = "<group>"; };
+		C94C6D6819F1E8280083B4AC /* SausalitoBreathe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SausalitoBreathe.mp3; sourceTree = "<group>"; };
 		C97D30EC19E7635C00D0816E /* LeBlobOrangeAnimationBlink.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationBlink.atlas; sourceTree = "<group>"; };
 		C97D30ED19E7635C00D0816E /* LeBlobOrangeAnimationBlow.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationBlow.atlas; sourceTree = "<group>"; };
 		C97D30EE19E7635C00D0816E /* LeBlobOrangeAnimationBreathe.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobOrangeAnimationBreathe.atlas; sourceTree = "<group>"; };
@@ -197,7 +308,8 @@
 		C97D311719E76D2D00D0816E /* LeBlobBlueAnimationSpin.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationSpin.atlas; sourceTree = "<group>"; };
 		C97D311819E76D2D00D0816E /* LeBlobBlueAnimationTwist.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationTwist.atlas; sourceTree = "<group>"; };
 		C97D311919E76D2D00D0816E /* LeBlobBlueAnimationWave.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = LeBlobBlueAnimationWave.atlas; sourceTree = "<group>"; };
-		C97D312919E76F5100D0816E /* CelebrationConfetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CelebrationConfetti.sks; sourceTree = "<group>"; };
+		C97D312919E76F5100D0816E /* PartyParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PartyParticles.sks; sourceTree = "<group>"; };
+		C9895A7919F021790027D845 /* CandyParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CandyParticles.sks; sourceTree = "<group>"; };
 		C9D77B6A19E34306008D3907 /* DraggableShapeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableShapeNode.h; sourceTree = "<group>"; };
 		C9D77B6B19E34306008D3907 /* DraggableShapeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableShapeNode.m; sourceTree = "<group>"; };
 		C9DD6E8219E5D6BE00B32C73 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
@@ -208,6 +320,8 @@
 		C9E79DA819E47FD800A8847B /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
 		C9E79DAA19E4B4C400A8847B /* DanceScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanceScene.h; sourceTree = "<group>"; };
 		C9E79DAB19E4B4C400A8847B /* DanceScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanceScene.m; sourceTree = "<group>"; };
+		C9F9998319F02D810000B5A4 /* Sprinkles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sprinkles.png; sourceTree = "<group>"; };
+		C9FB56B819EC88CB00272055 /* eggshell-crack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "eggshell-crack.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,7 +380,6 @@
 				C97D310A19E76C8C00D0816E /* Texture Atlases */,
 				3639676019D4CE190044E6EE /* Sounds */,
 				3639673019D3890E0044E6EE /* Supporting Files */,
-				C927372F19E63AAF00F71BBC /* spark.png */,
 			);
 			path = DanceStudio;
 			sourceTree = "<group>";
@@ -300,11 +413,33 @@
 		3639676019D4CE190044E6EE /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				3619931719DF0B43002C2021 /* grunt.mp3 */,
+				C919CC8119EEE06300BEF53A /* Tiles */,
+				C919CC8019EEE02300BEF53A /* Sound Effects */,
+				C919CC7F19EEDFE100BEF53A /* Music */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		C919CC7F19EEDFE100BEF53A /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				C944EF5719EAFC12001DD04E /* drumloop.mp3 */,
 				3698EDC919DE11E4001FCD40 /* BurningMan.WAV */,
 				3698EDCA19DE11E4001FCD40 /* Celebration.mp3 */,
-				3698EDCB19DE11E4001FCD40 /* Collision.mp3 */,
 				3698EDCC19DE11E9001FCD40 /* Party.m4a */,
+				3698EDD419DE11E9001FCD40 /* Space.m4a */,
+				3698EDED19DE1521001FCD40 /* Whale.m4a */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
+		C919CC8019EEE02300BEF53A /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				C9FB56B819EC88CB00272055 /* eggshell-crack.wav */,
+				C944EF5919EB189B001DD04E /* yeah.wav */,
+				3619931719DF0B43002C2021 /* grunt.mp3 */,
+				3698EDCB19DE11E4001FCD40 /* Collision.mp3 */,
 				3698EDCD19DE11E9001FCD40 /* slip.mp3 */,
 				3698EDCE19DE11E9001FCD40 /* Snap1.WAV */,
 				3698EDCF19DE11E9001FCD40 /* Snap2.WAV */,
@@ -312,15 +447,73 @@
 				3698EDD119DE11E9001FCD40 /* Snap4.mp3 */,
 				3698EDD219DE11E9001FCD40 /* Snap5.caf */,
 				3698EDD319DE11E9001FCD40 /* Snap5.mp3 */,
-				3698EDD419DE11E9001FCD40 /* Space.m4a */,
 				3698EDD519DE11E9001FCD40 /* Tap1.wav */,
 				3698EDD619DE11E9001FCD40 /* Tap2.wav */,
 				3698EDD719DE11E9001FCD40 /* Tap3.wav */,
 				3698EDD819DE11E9001FCD40 /* Tap4.wav */,
 				3698EDD919DE11E9001FCD40 /* Tap5.wav */,
-				3698EDED19DE1521001FCD40 /* Whale.m4a */,
 			);
-			name = Sounds;
+			name = "Sound Effects";
+			sourceTree = "<group>";
+		};
+		C919CC8119EEE06300BEF53A /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				C919CCAD19EEE41900BEF53A /* Sausalito */,
+				C919CC9819EEE32800BEF53A /* LeBlobBlue */,
+				C919CC8319EEE27800BEF53A /* LeBlob */,
+			);
+			name = Tiles;
+			sourceTree = "<group>";
+		};
+		C919CC8319EEE27800BEF53A /* LeBlob */ = {
+			isa = PBXGroup;
+			children = (
+				C94C6D6719F1E8280083B4AC /* LeBlobBreathe.mp3 */,
+				C919CCBA19EEF79B00BEF53A /* LeBlobBlow.mp3 */,
+				C919CCBB19EEF79B00BEF53A /* LeBlobEgyptian.mp3 */,
+				C919CCBC19EEF79B00BEF53A /* LeBlobJump.mp3 */,
+				C919CCBD19EEF79B00BEF53A /* LeBlobRock.mp3 */,
+				C919CCBE19EEF79B00BEF53A /* LeBlobRoof.mp3 */,
+				C919CCBF19EEF79B00BEF53A /* LeBlobScrew.mp3 */,
+				C919CCC019EEF79B00BEF53A /* LeBlobSearch.mp3 */,
+				C919CCC119EEF79B00BEF53A /* LeBlobSpin.mp3 */,
+				C919CCC219EEF79B00BEF53A /* LeBlobTwist.mp3 */,
+				C919CCC319EEF79B00BEF53A /* LeBlobWave.mp3 */,
+			);
+			name = LeBlob;
+			sourceTree = "<group>";
+		};
+		C919CC9819EEE32800BEF53A /* LeBlobBlue */ = {
+			isa = PBXGroup;
+			children = (
+				C919CCCE19EF1AC900BEF53A /* LeBlobBlueBlow.mp3 */,
+				C919CCCF19EF1AC900BEF53A /* LeBlobBlueEgyptian.mp3 */,
+				C919CCD019EF1AC900BEF53A /* LeBlobBlueJump.mp3 */,
+				C94C6D6619F1E8280083B4AC /* LeBlobBlueBreathe.mp3 */,
+				C919CCD119EF1AC900BEF53A /* LeBlobBlueRock.mp3 */,
+				C919CCD219EF1AC900BEF53A /* LeBlobBlueRoof.mp3 */,
+				C919CCD319EF1AC900BEF53A /* LeBlobBlueScrew.mp3 */,
+				C919CCD419EF1AC900BEF53A /* LeBlobBlueSearch.mp3 */,
+				C919CCD519EF1AC900BEF53A /* LeBlobBlueSpin.mp3 */,
+				C919CCD619EF1AC900BEF53A /* LeBlobBlueTwist.mp3 */,
+				C919CCD719EF1AC900BEF53A /* LeBlobBlueWave.mp3 */,
+			);
+			name = LeBlobBlue;
+			sourceTree = "<group>";
+		};
+		C919CCAD19EEE41900BEF53A /* Sausalito */ = {
+			isa = PBXGroup;
+			children = (
+				C919CCE219EF1F8500BEF53A /* SausalitoEye.mp3 */,
+				C94C6D6819F1E8280083B4AC /* SausalitoBreathe.mp3 */,
+				C919CCE319EF1F8500BEF53A /* SausalitoFlip.mp3 */,
+				C919CCE419EF1F8500BEF53A /* SausalitoPuffer.mp3 */,
+				C919CCE519EF1F8500BEF53A /* SausalitoSpin.mp3 */,
+				C919CCE619EF1F8500BEF53A /* SausalitoWave.mp3 */,
+				C919CCE719EF1F8500BEF53A /* SausalitoStretch.mp3 */,
+			);
+			name = Sausalito;
 			sourceTree = "<group>";
 		};
 		C940FD9B19E846190012DFF8 /* Domain */ = {
@@ -328,12 +521,11 @@
 			children = (
 				36BFF90E19DB3F770094E6D9 /* Tile.h */,
 				36BFF90F19DB3F770094E6D9 /* Tile.m */,
-				C9DD6E8219E5D6BE00B32C73 /* Monster.h */,
-				C9DD6E8319E5D6BE00B32C73 /* Monster.m */,
-				36798BD819DDCD74007A8003 /* Stage.h */,
-				36798BD919DDCD74007A8003 /* Stage.m */,
+				36798BD819DDCD74007A8003 /* Scenery.h */,
+				36798BD919DDCD74007A8003 /* Scenery.m */,
 				C9E79DA719E47FD800A8847B /* Timeline.h */,
 				C9E79DA819E47FD800A8847B /* Timeline.m */,
+				C940FDA819E85D370012DFF8 /* Monsters */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -365,16 +557,45 @@
 		C940FD9E19E846800012DFF8 /* Particle Systems */ = {
 			isa = PBXGroup;
 			children = (
+				C9F9998519F02D8F0000B5A4 /* Particle Sprites */,
 				C927373219E6422200F71BBC /* Fireflies.sks */,
-				C97D312919E76F5100D0816E /* CelebrationConfetti.sks */,
+				C919CCFC19EF5E5500BEF53A /* SpaceParticles.sks */,
+				C97D312919E76F5100D0816E /* PartyParticles.sks */,
+				C919CCF619EF5AF500BEF53A /* LimeParticles.sks */,
+				C9895A7919F021790027D845 /* CandyParticles.sks */,
+				C919CD0019EF613800BEF53A /* WhaleParticles.sks */,
 				C927372E19E63AAF00F71BBC /* MyParticle.sks */,
 			);
 			name = "Particle Systems";
 			sourceTree = "<group>";
 		};
+		C940FDA819E85D370012DFF8 /* Monsters */ = {
+			isa = PBXGroup;
+			children = (
+				C9DD6E8219E5D6BE00B32C73 /* Monster.h */,
+				C9DD6E8319E5D6BE00B32C73 /* Monster.m */,
+				C940FD9F19E85C940012DFF8 /* LeBlobMonster.h */,
+				C940FDA019E85C940012DFF8 /* LeBlobMonster.m */,
+				C940FDA219E85CEE0012DFF8 /* LeBlobOrange.h */,
+				C940FDA319E85CEE0012DFF8 /* LeBlobOrange.m */,
+				C940FDA519E85D200012DFF8 /* LeBlobBlue.h */,
+				C940FDA619E85D200012DFF8 /* LeBlobBlue.m */,
+				C940FDB719E8B0E40012DFF8 /* SausalitoMonster.h */,
+				C940FDB819E8B0E40012DFF8 /* SausalitoMonster.m */,
+			);
+			name = Monsters;
+			sourceTree = "<group>";
+		};
 		C97D310A19E76C8C00D0816E /* Texture Atlases */ = {
 			isa = PBXGroup;
 			children = (
+				C940FDA919E8B0910012DFF8 /* SausalitoAnimationBreathe.atlas */,
+				C940FDAA19E8B0910012DFF8 /* SausalitoAnimationEye.atlas */,
+				C940FDAB19E8B0910012DFF8 /* SausalitoAnimationFlip.atlas */,
+				C940FDAC19E8B0910012DFF8 /* SausalitoAnimationPuffer.atlas */,
+				C940FDAD19E8B0910012DFF8 /* SausalitoAnimationSpin.atlas */,
+				C940FDAE19E8B0910012DFF8 /* SausalitoAnimationStretch.atlas */,
+				C940FDAF19E8B0910012DFF8 /* SausalitoAnimationWave.atlas */,
 				C97D310B19E76D2D00D0816E /* LeBlobBlueAnimationBlink.atlas */,
 				C97D310C19E76D2D00D0816E /* LeBlobBlueAnimationBlow.atlas */,
 				C97D310D19E76D2D00D0816E /* LeBlobBlueAnimationBreathe.atlas */,
@@ -422,6 +643,22 @@
 				3698EDB919DE0DE4001FCD40 /* LeBlobAnimationWave.atlas */,
 			);
 			name = "Texture Atlases";
+			sourceTree = "<group>";
+		};
+		C9F9998519F02D8F0000B5A4 /* Particle Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				C919CCF019EF493800BEF53A /* Space_Star.png */,
+				C919CCF819EF5C9D00BEF53A /* Confetti_3.png */,
+				C919CCF419EF494400BEF53A /* Confetti.png */,
+				C919CCF219EF493E00BEF53A /* Lemon.png */,
+				C919CCEE19EF493300BEF53A /* Whale_BlueBubble.png */,
+				C919CCFA19EF5D1E00BEF53A /* Confetti_4.png */,
+				C927372F19E63AAF00F71BBC /* spark.png */,
+				C9F9998319F02D810000B5A4 /* Sprinkles.png */,
+				C919CCFE19EF60B900BEF53A /* Space_Star_2.png */,
+			);
+			name = "Particle Sprites";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,37 +743,59 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97D310619E7635C00D0816E /* LeBlobOrangeAnimationSearch.atlas in Resources */,
+				C919CCDC19EF1AC900BEF53A /* LeBlobBlueRoof.mp3 in Resources */,
+				C919CCE819EF1F8500BEF53A /* SausalitoEye.mp3 in Resources */,
 				C97D30FB19E7635C00D0816E /* LeBlobOrangeAnimationBlink.atlas in Resources */,
+				C919CCF719EF5AF500BEF53A /* LimeParticles.sks in Resources */,
 				3698EDC419DE0DE4001FCD40 /* LeBlobAnimationScrew.atlas in Resources */,
 				3698EDBE19DE0DE4001FCD40 /* LeBlobAnimationJump.atlas in Resources */,
+				C919CCEA19EF1F8500BEF53A /* SausalitoPuffer.mp3 in Resources */,
 				3639674619D3890E0044E6EE /* LaunchScreen.xib in Resources */,
 				C97D30FD19E7635C00D0816E /* LeBlobOrangeAnimationBreathe.atlas in Resources */,
 				C97D310719E7635C00D0816E /* LeBlobOrangeAnimationSpin.atlas in Resources */,
 				C97D311A19E76D2D00D0816E /* LeBlobBlueAnimationBlink.atlas in Resources */,
 				C97D312619E76D2D00D0816E /* LeBlobBlueAnimationSpin.atlas in Resources */,
+				C919CCF919EF5C9D00BEF53A /* Confetti_3.png in Resources */,
 				3698EDE119DE11E9001FCD40 /* Snap2.WAV in Resources */,
 				C97D312119E76D2D00D0816E /* LeBlobBlueAnimationReactionC.atlas in Resources */,
 				C97D310519E7635C00D0816E /* LeBlobOrangeAnimationScrew.atlas in Resources */,
+				C919CCDD19EF1AC900BEF53A /* LeBlobBlueScrew.mp3 in Resources */,
+				C919CCFF19EF60B900BEF53A /* Space_Star_2.png in Resources */,
+				C9F9998419F02D810000B5A4 /* Sprinkles.png in Resources */,
 				C97D312719E76D2D00D0816E /* LeBlobBlueAnimationTwist.atlas in Resources */,
 				3698EDC619DE0DE4001FCD40 /* LeBlobAnimationSpin.atlas in Resources */,
+				C94C6D6919F1E8280083B4AC /* LeBlobBlueBreathe.mp3 in Resources */,
+				C919CCEB19EF1F8500BEF53A /* SausalitoSpin.mp3 in Resources */,
+				C919CCCD19EEF79B00BEF53A /* LeBlobWave.mp3 in Resources */,
 				C97D312519E76D2D00D0816E /* LeBlobBlueAnimationSearch.atlas in Resources */,
 				C97D311F19E76D2D00D0816E /* LeBlobBlueAnimationReactionA.atlas in Resources */,
 				C927373119E63AAF00F71BBC /* spark.png in Resources */,
 				3698EDBD19DE0DE4001FCD40 /* LeBlobAnimationEgyptian.atlas in Resources */,
+				C919CCC719EEF79B00BEF53A /* LeBlobRock.mp3 in Resources */,
 				C97D310319E7635C00D0816E /* LeBlobOrangeAnimationRock.atlas in Resources */,
+				C919CCCC19EEF79B00BEF53A /* LeBlobTwist.mp3 in Resources */,
+				C919CCFB19EF5D1E00BEF53A /* Confetti_4.png in Resources */,
 				3698EDEA19DE11E9001FCD40 /* Tap4.wav in Resources */,
+				C919CCED19EF1F8500BEF53A /* SausalitoStretch.mp3 in Resources */,
 				C97D310119E7635C00D0816E /* LeBlobOrangeAnimationReactionB.atlas in Resources */,
 				C927373019E63AAF00F71BBC /* MyParticle.sks in Resources */,
 				3698EDC519DE0DE4001FCD40 /* LeBlobAnimationSearch.atlas in Resources */,
+				C919CD0119EF613800BEF53A /* WhaleParticles.sks in Resources */,
 				3698EDEE19DE1753001FCD40 /* Whale.m4a in Resources */,
+				C944EF5A19EB189B001DD04E /* yeah.wav in Resources */,
 				C97D312019E76D2D00D0816E /* LeBlobBlueAnimationReactionB.atlas in Resources */,
 				3619931819DF0B43002C2021 /* grunt.mp3 in Resources */,
-				C97D312A19E76F5100D0816E /* CelebrationConfetti.sks in Resources */,
+				C919CCF319EF493E00BEF53A /* Lemon.png in Resources */,
+				C97D312A19E76F5100D0816E /* PartyParticles.sks in Resources */,
+				C94C6D6B19F1E8280083B4AC /* SausalitoBreathe.mp3 in Resources */,
+				C919CCDE19EF1AC900BEF53A /* LeBlobBlueSearch.mp3 in Resources */,
 				C97D30FF19E7635C00D0816E /* LeBlobOrangeAnimationJump.atlas in Resources */,
 				C97D312319E76D2D00D0816E /* LeBlobBlueAnimationRoof.atlas in Resources */,
 				3698EDDC19DE11E9001FCD40 /* Celebration.mp3 in Resources */,
+				C919CCE119EF1AC900BEF53A /* LeBlobBlueWave.mp3 in Resources */,
 				C97D311B19E76D2D00D0816E /* LeBlobBlueAnimationBlow.atlas in Resources */,
 				3698EDE219DE11E9001FCD40 /* Snap3.mp3 in Resources */,
+				C919CCDA19EF1AC900BEF53A /* LeBlobBlueJump.mp3 in Resources */,
 				C97D312219E76D2D00D0816E /* LeBlobBlueAnimationRock.atlas in Resources */,
 				C97D30FE19E7635C00D0816E /* LeBlobOrangeAnimationEgyptian.atlas in Resources */,
 				3698EDC019DE0DE4001FCD40 /* LeBlobAnimationReactionB.atlas in Resources */,
@@ -544,39 +803,68 @@
 				3698EDBF19DE0DE4001FCD40 /* LeBlobAnimationReactionA.atlas in Resources */,
 				3698EDE419DE11E9001FCD40 /* Snap5.caf in Resources */,
 				3698EDBC19DE0DE4001FCD40 /* LeBlobAnimationBreathe.atlas in Resources */,
+				C9FB56B919EC88CB00272055 /* eggshell-crack.wav in Resources */,
 				C97D310219E7635C00D0816E /* LeBlobOrangeAnimationReactionC.atlas in Resources */,
 				3698EDDE19DE11E9001FCD40 /* Party.m4a in Resources */,
+				C919CCC519EEF79B00BEF53A /* LeBlobEgyptian.mp3 in Resources */,
+				C919CCE019EF1AC900BEF53A /* LeBlobBlueTwist.mp3 in Resources */,
 				3698EDC319DE0DE4001FCD40 /* LeBlobAnimationRoof.atlas in Resources */,
 				3698EDE019DE11E9001FCD40 /* Snap1.WAV in Resources */,
 				3698EDDD19DE11E9001FCD40 /* Collision.mp3 in Resources */,
+				C919CCD819EF1AC900BEF53A /* LeBlobBlueBlow.mp3 in Resources */,
+				C919CCD919EF1AC900BEF53A /* LeBlobBlueEgyptian.mp3 in Resources */,
+				C919CCC419EEF79B00BEF53A /* LeBlobBlow.mp3 in Resources */,
+				C940FDB519E8B0910012DFF8 /* SausalitoAnimationStretch.atlas in Resources */,
+				C919CCC819EEF79B00BEF53A /* LeBlobRoof.mp3 in Resources */,
 				C97D311D19E76D2D00D0816E /* LeBlobBlueAnimationEgyptian.atlas in Resources */,
+				C919CCF119EF493800BEF53A /* Space_Star.png in Resources */,
 				3639673B19D3890E0044E6EE /* GameScene.sks in Resources */,
+				C9895A7A19F021790027D845 /* CandyParticles.sks in Resources */,
 				C97D310819E7635C00D0816E /* LeBlobOrangeAnimationTwist.atlas in Resources */,
 				3698EDDF19DE11E9001FCD40 /* slip.mp3 in Resources */,
+				C919CCC919EEF79B00BEF53A /* LeBlobScrew.mp3 in Resources */,
 				C97D30FC19E7635C00D0816E /* LeBlobOrangeAnimationBlow.atlas in Resources */,
 				C97D311E19E76D2D00D0816E /* LeBlobBlueAnimationJump.atlas in Resources */,
+				C919CCC619EEF79B00BEF53A /* LeBlobJump.mp3 in Resources */,
 				3698EDBA19DE0DE4001FCD40 /* LeBlobAnimationBlink.atlas in Resources */,
 				C97D311C19E76D2D00D0816E /* LeBlobBlueAnimationBreathe.atlas in Resources */,
 				3698EDEB19DE11E9001FCD40 /* Tap5.wav in Resources */,
 				3698EDE519DE11E9001FCD40 /* Snap5.mp3 in Resources */,
 				C927373319E6422200F71BBC /* Fireflies.sks in Resources */,
 				C97D310919E7635C00D0816E /* LeBlobOrangeAnimationWave.atlas in Resources */,
+				C919CCEC19EF1F8500BEF53A /* SausalitoWave.mp3 in Resources */,
 				3698EDE619DE11E9001FCD40 /* Space.m4a in Resources */,
 				3698EDE819DE11E9001FCD40 /* Tap2.wav in Resources */,
 				36798BDC19DDDB2D007A8003 /* Images.xcassets in Resources */,
+				C940FDB619E8B0910012DFF8 /* SausalitoAnimationWave.atlas in Resources */,
+				C94C6D6A19F1E8280083B4AC /* LeBlobBreathe.mp3 in Resources */,
+				C919CCCA19EEF79B00BEF53A /* LeBlobSearch.mp3 in Resources */,
+				C940FDB419E8B0910012DFF8 /* SausalitoAnimationSpin.atlas in Resources */,
 				C97D312419E76D2D00D0816E /* LeBlobBlueAnimationScrew.atlas in Resources */,
 				3698EDC119DE0DE4001FCD40 /* LeBlobAnimationReactionC.atlas in Resources */,
 				3698EDC819DE0DE4001FCD40 /* LeBlobAnimationWave.atlas in Resources */,
+				C919CCF519EF494400BEF53A /* Confetti.png in Resources */,
+				C940FDB319E8B0910012DFF8 /* SausalitoAnimationPuffer.atlas in Resources */,
 				3698EDBB19DE0DE4001FCD40 /* LeBlobAnimationBlow.atlas in Resources */,
 				3698EDE719DE11E9001FCD40 /* Tap1.wav in Resources */,
 				3698EDC219DE0DE4001FCD40 /* LeBlobAnimationRock.atlas in Resources */,
+				C940FDB219E8B0910012DFF8 /* SausalitoAnimationFlip.atlas in Resources */,
 				C97D310419E7635C00D0816E /* LeBlobOrangeAnimationRoof.atlas in Resources */,
 				3698EDC719DE0DE4001FCD40 /* LeBlobAnimationTwist.atlas in Resources */,
+				C940FDB019E8B0910012DFF8 /* SausalitoAnimationBreathe.atlas in Resources */,
+				C919CCDF19EF1AC900BEF53A /* LeBlobBlueSpin.mp3 in Resources */,
+				C919CCDB19EF1AC900BEF53A /* LeBlobBlueRock.mp3 in Resources */,
+				C940FDB119E8B0910012DFF8 /* SausalitoAnimationEye.atlas in Resources */,
 				C97D312819E76D2D00D0816E /* LeBlobBlueAnimationWave.atlas in Resources */,
 				3698EDE319DE11E9001FCD40 /* Snap4.mp3 in Resources */,
+				C919CCFD19EF5E5500BEF53A /* SpaceParticles.sks in Resources */,
+				C944EF5819EAFC12001DD04E /* drumloop.mp3 in Resources */,
+				C919CCCB19EEF79B00BEF53A /* LeBlobSpin.mp3 in Resources */,
 				C97D310019E7635C00D0816E /* LeBlobOrangeAnimationReactionA.atlas in Resources */,
 				3639674119D3890E0044E6EE /* Main.storyboard in Resources */,
 				3698EDDB19DE11E9001FCD40 /* BurningMan.WAV in Resources */,
+				C919CCEF19EF493300BEF53A /* Whale_BlueBubble.png in Resources */,
+				C919CCE919EF1F8500BEF53A /* SausalitoFlip.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,19 +882,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C940FDA419E85CEE0012DFF8 /* LeBlobOrange.m in Sources */,
 				3639673E19D3890E0044E6EE /* GameViewController.m in Sources */,
 				C9D77B6C19E34306008D3907 /* DraggableShapeNode.m in Sources */,
 				C9DD6E8419E5D6BE00B32C73 /* Monster.m in Sources */,
-				36798BDA19DDCD74007A8003 /* Stage.m in Sources */,
+				36798BDA19DDCD74007A8003 /* Scenery.m in Sources */,
+				C940FDA119E85C940012DFF8 /* LeBlobMonster.m in Sources */,
 				C9DD6E8719E5DBCB00B32C73 /* UpdateableTile.m in Sources */,
 				36BFF91019DB3F770094E6D9 /* Tile.m in Sources */,
 				C9E79DAC19E4B4C400A8847B /* DanceScene.m in Sources */,
 				3639673619D3890E0044E6EE /* AppDelegate.m in Sources */,
 				36BFF91519DC6C2C0094E6D9 /* MonsterSpriteNode.m in Sources */,
 				3639673919D3890E0044E6EE /* TrainingStage.m in Sources */,
+				C940FDB919E8B0E40012DFF8 /* SausalitoMonster.m in Sources */,
 				C9E79DA919E47FD800A8847B /* Timeline.m in Sources */,
 				3639673319D3890E0044E6EE /* main.m in Sources */,
 				36798BDF19DDEF9E007A8003 /* AudioPlayer.m in Sources */,
+				C940FDA719E85D200012DFF8 /* LeBlobBlue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,5 +18,6 @@
 -(NSNumber*)addTile:(Tile*)tile;
 -(void)removeTile:(Tile*)tile;
 -(Tile*)tileAtSlot:(int)slot;
+-(BOOL)contains:(Tile*)tile;
 
 @end

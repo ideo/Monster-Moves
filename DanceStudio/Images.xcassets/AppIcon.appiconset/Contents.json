@@ -23,12 +23,13 @@
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "icon.png",
+      "filename" : "152 - iPad App Icon - v3-1.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "152 - iPad App Icon - v3.png",
       "scale" : "2x"
     }
   ],
