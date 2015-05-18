@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="IDEOAdEntity" representedClassName="IDEOAdEntity" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="class_Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="featured" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="featureEndDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="featureStartDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="featureText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPadFeatureImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPadLandscapeH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPadPortraitH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPadRetinaFeatureImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPhoneFeatureImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPhoneLandscapeH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPhoneLandscapeWH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPhonePortraitH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPhonePortraitWH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linkType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediaType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="outlink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="connectedIAP" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IDEOIAPEntity" inverseName="connectedAd" inverseEntity="IDEOIAPEntity" syncable="YES"/>
+        <relationship name="parentApp" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IDEOAppEntity" inverseName="childrenAds" inverseEntity="IDEOAppEntity" syncable="YES"/>
+        <relationship name="parentCompany" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IDEOCompanyEntity" inverseName="childrenAds" inverseEntity="IDEOCompanyEntity" syncable="YES"/>
+    </entity>
+    <entity name="IDEOAppEntity" representedClassName="IDEOAppEntity" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediaType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storeIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="childrenAds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IDEOAdEntity" inverseName="parentApp" inverseEntity="IDEOAdEntity" syncable="YES"/>
+        <relationship name="childrenIAPList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IDEOIAPEntity" inverseName="parentApp" inverseEntity="IDEOIAPEntity" syncable="YES"/>
+        <relationship name="childrenMoreApps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IDEOMoreAppsEntity" inverseName="parentApp" inverseEntity="IDEOMoreAppsEntity" syncable="YES"/>
+        <relationship name="parentCompany" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IDEOCompanyEntity" inverseName="childrenApps" inverseEntity="IDEOCompanyEntity" syncable="YES"/>
+    </entity>
+    <entity name="IDEOCompanyEntity" representedClassName="IDEOCompanyEntity" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="class_Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="childrenAds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IDEOAdEntity" inverseName="parentCompany" inverseEntity="IDEOAdEntity" syncable="YES"/>
+        <relationship name="childrenApps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IDEOAppEntity" inverseName="parentCompany" inverseEntity="IDEOAppEntity" syncable="YES"/>
+        <relationship name="childrenMoreApps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IDEOMoreAppsEntity" inverseName="parentCompany" inverseEntity="IDEOMoreAppsEntity" syncable="YES"/>
+    </entity>
+    <entity name="IDEOIAPEntity" representedClassName="IDEOIAPEntity" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPadLandscapeH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPadPortraitH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPhoneLandscapeH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPhoneLandscapeWH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPhonePortraitH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iPhonePortraitWH" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isShowInAdPage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediaType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="openNotificationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priceSymbol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priceType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchased" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="connectedAd" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IDEOAdEntity" inverseName="connectedIAP" inverseEntity="IDEOAdEntity" syncable="YES"/>
+        <relationship name="parentApp" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IDEOAppEntity" inverseName="childrenIAPList" inverseEntity="IDEOAppEntity" syncable="YES"/>
+    </entity>
+    <entity name="IDEOMoreAppsEntity" representedClassName="IDEOMoreAppsEntity" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="appStoreLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artwork100URL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="class_Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ioas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="outlink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="platForm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shortcut" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parentApp" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IDEOAppEntity" inverseName="childrenMoreApps" inverseEntity="IDEOAppEntity" syncable="YES"/>
+        <relationship name="parentCompany" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IDEOCompanyEntity" inverseName="childrenMoreApps" inverseEntity="IDEOCompanyEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="IDEOAdEntity" positionX="-36" positionY="99" width="128" height="463"/>
+        <element name="IDEOAppEntity" positionX="-54" positionY="54" width="128" height="223"/>
+        <element name="IDEOCompanyEntity" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="IDEOIAPEntity" positionX="-18" positionY="162" width="128" height="403"/>
+        <element name="IDEOMoreAppsEntity" positionX="0" positionY="171" width="128" height="268"/>
+    </elements>
+</model>

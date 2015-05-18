@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FlurryKey</key>
+	<string>ZDNMVQGN29SZH65K8HM9</string>
+	<key>GAID</key>
+	<string></string>
+	<key>DebugMode</key>
+	<false/>
+	<key>Server</key>
+	<dict>
+		<key>APIPath</key>
+		<string>classes</string>
+		<key>Host</key>
+		<string>64zHWBGVnVYov54B84mpoI87IT1Ta1YZ9UQxy90p:javascript-key=bhpIEX9qTYElBlgv0ogUQ87utcLjHhDEfbh04KMo@api.parse.com</string>
+		<key>PathExtension</key>
+		<string>1</string>
+		<key>Scheme</key>
+		<string>https</string>
+		<key>AppObjectID</key>
+		<string>wTKBfmgfCz</string>
+	</dict>
+	<key>Menu</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>In-App Purchases</string>
+			<key>id</key>
+			<string>iap</string>
+			<key>icon</key>
+			<string>Assets.bundle/icon-app-purchase.png</string>
+			<key>icon-color</key>
+			<string>1dc264</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Share</string>
+			<key>id</key>
+			<string>share</string>
+			<key>icon</key>
+			<string>Assets.bundle/icon-share.png</string>
+			<key>icon-color</key>
+			<string>2eb3be</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Rate</string>
+			<key>id</key>
+			<string>rate</string>
+			<key>icon</key>
+			<string>Assets.bundle/icon-rate.png</string>
+			<key>icon-color</key>
+			<string>fa6d0e</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Submit Feedback</string>
+			<key>id</key>
+			<string>feedback</string>
+			<key>icon</key>
+			<string>Assets.bundle/icon-app-feedback.png</string>
+			<key>icon-color</key>
+			<string>fc0018</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Privacy Policy</string>
+			<key>id</key>
+			<string>info</string>
+			<key>icon</key>
+			<string>Assets.bundle/icon-app-information.png</string>
+			<key>icon-color</key>
+			<string>edde41</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>See More Apps</string>
+			<key>id</key>
+			<string>moreapps</string>
+			<key>icon</key>
+			<string>Assets.bundle/icon-app-more.png</string>
+			<key>icon-color</key>
+			<string>676767</string>
+		</dict>
+	</array>
+	<key>Share</key>
+	<dict>
+		<key>iPhone</key>
+		<dict>
+			<key>Email</key>
+			<dict>
+				<key>Subject</key>
+				<string>Monster Moves</string>
+				<key>Body</key>
+				<string>Looking for a fun new app the kids will love? Check out Monster Moves – bit.ly/monstermoves</string>
+				<key>link</key>
+				<string></string>
+			</dict>
+			<key>Facebook</key>
+			<dict>
+				<key>Body</key>
+				<string>Looking for a fun new app the kids will love? Check out Monster Moves – bit.ly/monstermoves</string>
+				<key>link</key>
+				<string></string>
+			</dict>
+			<key>Twitter</key>
+			<dict>
+				<key>Body</key>
+				<string>Looking for a fun new app the kids will love? Check out Monster Moves – bit.ly/monstermoves</string>
+				<key>link</key>
+				<string></string>
+			</dict>
+			<key>Gift</key>
+			<dict>
+				<key>link</key>
+				<string>http://bit.ly/monstermoves</string>
+			</dict>
+		</dict>
+		<key>iPad</key>
+		<dict>
+			<key>Email</key>
+			<dict>
+				<key>Subject</key>
+				<string>Monster Moves</string>
+				<key>Body</key>
+				<string>Looking for a fun new app the kids will love? Check out Monster Moves – bit.ly/monstermoves</string>
+				<key>link</key>
+				<string></string>
+			</dict>
+			<key>Facebook</key>
+			<dict>
+				<key>Body</key>
+				<string>Looking for a fun new app the kids will love? Check out Monster Moves – bit.ly/monstermoves</string>
+				<key>link</key>
+				<string></string>
+			</dict>
+			<key>Twitter</key>
+			<dict>
+				<key>Body</key>
+				<string>Looking for a fun new app the kids will love? Check out Monster Moves – bit.ly/monstermoves</string>
+				<key>link</key>
+				<string></string>
+			</dict>
+			<key>Gift</key>
+			<dict>
+				<key>link</key>
+				<string>http://bit.ly/monstermoves</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>Rate</key>
+	<string>http://bit.ly/monstermoves</string>
+	<key>Feedback</key>
+	<dict>
+		<key>Subject</key>
+		<string>Monster Moves Feedback</string>
+		<key>To</key>
+		<array>
+			<string>MonsterMoves@ideo.com</string>
+		</array>
+	</dict>
+	<key>move to Menu if need iap</key>
+	<dict>
+		<key>title</key>
+		<string>In-App Purchases</string>
+		<key>id</key>
+		<string>iap</string>
+		<key>icon</key>
+		<string>Assets.bundle/icon-app-purchase.png</string>
+		<key>icon-color</key>
+		<string>1dc264</string>
+	</dict>
+</dict>
+</plist>

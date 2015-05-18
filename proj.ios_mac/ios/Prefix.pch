@@ -1,0 +1,18 @@
+//
+// Prefix header for all source files of the 'iphone' target in the 'iphone' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+
+#define SHORT_SIDE fmin([[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)
+#define LONG_SIDE fmax([[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)
+#define IS_IOS_8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0f)
+#define IS_IOS_7_BELOW ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0f)
+
+#endif
+
+#ifdef __cplusplus
+	#include "cocos2d.h"
+#endif
