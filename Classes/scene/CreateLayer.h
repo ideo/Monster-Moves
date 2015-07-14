@@ -46,6 +46,8 @@ public:
 
     void addColorChangeTile(float dt);
     
+    void fastCleanUp();
+    
 protected:
     
     Sprite *m_circle;

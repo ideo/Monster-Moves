@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>Sausalito0700.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,0},{222,274}}</string>
+                <key>offset</key>
+                <string>{5,-43}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{144,156},{222,274}}</string>
+                <key>sourceSize</key>
+                <string>{500,500}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>idle0.png</string>
+            <key>size</key>
+            <string>{256,512}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:d22e8676c6920bea213f822ef7be4c63:3089fd11dbad7a68f0769facbe568ce9:b15dd385a0c6ffbe6298fc7c1bf21299$</string>
+            <key>textureFileName</key>
+            <string>idle0.png</string>
+        </dict>
+    </dict>
+</plist>

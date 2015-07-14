@@ -34,7 +34,7 @@
 - (void)showParentsSecionWithController:(UIViewController *)controller;
 - (void)dismissParentsSecionWithController:(UIViewController *)controller;
 - (BOOL)isPurchasedItem:(NSString *)productId;
-- (void)trackCategory:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value;
+//- (void)trackCategory:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value;
 
 //Flurry
 - (void)logFlurryEvent:(NSString*)eventName;

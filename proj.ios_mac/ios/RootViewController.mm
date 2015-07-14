@@ -78,6 +78,10 @@
     [_popup showInView:self.view];
 }
 
+- (void)dismissParentSection {
+    [[IDEOParentsSectionLib sharedInstance] dismissParentsSecionWithController:self];
+}
+
 - (void)popupGateDidEnterCorrectAnswer
 {
     [[IDEOParentsSectionLib sharedInstance] showParentsSecionWithController:self];

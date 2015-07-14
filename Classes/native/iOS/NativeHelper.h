@@ -62,6 +62,8 @@ public:
     
     void showParentSection();
     
+    void dismissParentSection();
+    
     void removeFlickCover();
     
     void prepareIntroVideo(int listenerId);
@@ -91,6 +93,8 @@ public:
     void logFlurryEvent(std::string eventName,  std::unordered_map<std::string, FlurryParemeter> parameters);
 
     void logFlurryEvent(std::string eventName,  std::string parameterName, std::string parameterValue);
+    
+    std::string getLanguage();
   
 private:
     

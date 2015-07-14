@@ -37,6 +37,9 @@
 @property (nonatomic, readwrite) int listenerId;
 
 - (void)showParentSection;
+
+- (void)dismissParentSection;
+
 - (BOOL) prefersStatusBarHidden;
 
 - (void)prepareVideo;

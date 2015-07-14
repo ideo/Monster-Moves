@@ -125,7 +125,11 @@ void IntroLayer::videoReady(NativeEvent e)
 
 void IntroLayer::videoFinished(NativeEvent e)
 {
-    auto parentItem = MenuItemImage::create("common/grownup0.png", "common/grownup1.png", CC_CALLBACK_1(IntroLayer::menuParentCallback, this));
+    
+    std::string normal = "common/grownup0_" + NativeHelper::getInstance()->getLanguage() + ".png";
+    std::string selected = "common/grownup1_" + NativeHelper::getInstance()->getLanguage() + ".png";
+    
+    auto parentItem = MenuItemImage::create(normal, selected, CC_CALLBACK_1(IntroLayer::menuParentCallback, this));
     parentItem->setAnchorPoint(Point(0.0, 1.0));
     
     float dx = 57;

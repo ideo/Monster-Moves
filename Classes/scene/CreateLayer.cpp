@@ -27,7 +27,7 @@ Scene* CreateLayer::scene()
     auto scene = Scene::createWithPhysics();
     
     auto layer = CreateLayer::create();
-    
+    layer->setTag(CREATE_LAYER_TAG);
     scene->addChild(layer);
     
     return scene;
@@ -82,7 +82,8 @@ bool CreateLayer::init()
 
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("sound/common/beat_loop.mp3");
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("sound/common/TileTap1.mp3");
-    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("sound/common/Vegas_3_DJ_Scratch.mp3");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("sound/common/SimpleShimmer.mp3");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("sound/common/Sparkle_01_Subtle.mp3");
     
     m_world = new b2World(b2Vec2(0, 0));
     
@@ -91,8 +92,8 @@ bool CreateLayer::init()
 //    uint32  flags  =  0 ;
 //    flags +=  b2Draw::e_shapeBit ;
 //    flags += b2Draw::e_jointBit;
-//    // flags + = b2Draw :: e_aabbBit;
-//    // flags + = b2Draw :: e_pairBit;
+//    flags += b2Draw::e_aabbBit;
+//    flags += b2Draw::e_pairBit;
 //    flags += b2Draw::e_centerOfMassBit;
 //    m_debugDraw->SetFlags (flags);
 
@@ -530,6 +531,35 @@ void CreateLayer::setupDropzones()
         m_dropzoneBodies[i]->CreateFixture(&fixtureDef);
         m_dropzoneBodies[i]->SetFixedRotation(true);
     }
+    
+//    auto underLayer = LayerColor::create(Color4B(255, 255, 0, 100), dropzoneTotalWidth, DROPZONE_Y + m_dropzoneYC);
+//    underLayer->setPosition(origin.x + visibleSize.width / 2 - dropzoneTotalWidth / 2, origin.y);
+//    addChild(underLayer);
+//    
+//    b2Body *underBoxBody;
+//    
+//    b2BodyDef underBoxBodyDef;
+//    
+//    underBoxBodyDef.type = b2_staticBody;
+//    underBoxBodyDef.position.Set((origin.x + visibleSize.width / 2)/PTM_RATIO,
+//                                 (origin.y)/PTM_RATIO);
+//    
+//    underBoxBody = m_world->CreateBody(&underBoxBodyDef);
+//    
+//    b2PolygonShape underBox;
+//    underBox.SetAsBox((dropzoneTotalWidth / 2) / PTM_RATIO, ((DROPZONE_Y + m_dropzoneYC) * 1.5) / PTM_RATIO);
+//    
+//    b2FixtureDef underBoxfixtureDef;
+//    underBoxfixtureDef.shape = &underBox;
+//    underBoxfixtureDef.density = 1.0f;
+//    underBoxfixtureDef.friction = 0.2f;
+//    underBoxfixtureDef.restitution = 0.8f;
+//    underBoxfixtureDef.filter.categoryBits = FixtureTile;
+//    underBoxfixtureDef.filter.maskBits = FixtureTile;
+//    
+//    underBoxBody->CreateFixture(&underBoxfixtureDef);
+//    underBoxBody->SetFixedRotation(true);
+    
 }
 
 void CreateLayer::setupTiles()
@@ -742,6 +772,72 @@ void CreateLayer::addTile(std::string actionName, TileType type)
     
 }
 
+void CreateLayer::fastCleanUp()
+{
+    unschedule(CC_SCHEDULE_SELECTOR(CreateLayer::playNextDance));
+    unschedule(CC_SCHEDULE_SELECTOR(CreateLayer::addColorChangeTile));
+    
+    m_isGoingBack = true;
+    
+    CocosDenshion::SimpleAudioEngine::getInstance()->stopAllEffects();
+    CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+
+    m_actor->stopAllActions();
+    m_actor->m_cancelLoading = true;
+    
+    m_actor->stopPerform();
+    m_actor->clearAssets(true);
+
+    removeAllFloatingTiles();
+    
+    endColorChangeShow();
+    
+    if (m_backButtonBody) {
+        m_backButtonBody->SetUserData(NULL);
+        m_world->DestroyBody(m_backButtonBody);
+        m_backButtonBody = NULL;
+    }
+    
+    Node* backButton = getChildByTag(BACK_BUTTON_TAG);
+    if (backButton) {
+        backButton->removeFromParent();
+    }
+    Node* forwardButton = getChildByTag(FORWARD_BUTTON_TAG);
+    if (forwardButton) {
+        forwardButton->removeFromParent();
+    }
+    
+    if (m_forwardButtonBody) {
+        m_forwardButtonBody->SetUserData(NULL);
+        m_world->DestroyBody(m_forwardButtonBody);
+        m_forwardButtonBody = NULL;
+    }
+    
+    if (m_centralCircleBody) {
+        m_centralCircleBody->SetUserData(NULL);
+        m_world->DestroyBody(m_centralCircleBody);
+        m_centralCircleBody = NULL;
+    }
+    
+    for(int i = 0; i < 4; i++)
+    {
+        if (m_dropzoneBodies[i]) {
+            DropzoneSprite *zone = (DropzoneSprite*)m_dropzoneBodies[i]->GetUserData();
+            if (zone) {
+                TileSprite *tile = zone->m_tile;
+                if (tile) {
+                    tile->removeFromParent();
+                }
+                zone->removeFromParent();
+            }
+        }
+    }
+    
+    GameManager *gm = GameManager::getInstance();
+    SceneData scene = gm->m_scenes[gm->m_currentSceneIndex];
+    
+}
+
 void CreateLayer::onExit()
 {
     NativeHelper::getInstance()->endFlurryTimedEvent("Time on " + m_actor->m_name + " Play Screen");
@@ -925,7 +1021,8 @@ bool CreateLayer::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)
         }
 //        float v = CocosDenshion::SimpleAudioEngine::getInstance()->getEffectsVolume();
 //        CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(v * 0.2);
-        playSparkleSound();
+//        playSparkleSound();
+        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/common/Sparkle_01_Subtle.mp3");
 //        CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(v);
     } else {
         addStars(point);
@@ -1178,6 +1275,12 @@ void CreateLayer::tryDropNewTile(TileSprite *tile)
                     }
                 }
             } else {
+                if (tile->getPosition().x > origin.x + visibleSize.width / 2 - DROPZONE_TOTAL_WIDTH / 2 &&
+                    tile->getPosition().x < origin.x + visibleSize.width / 2 + DROPZONE_TOTAL_WIDTH / 2 &&
+                    tile->getPosition().y >= origin.y &&
+                    tile->getPosition().y < origin.y + DROPZONE_Y + m_dropzoneYC) {
+                    tile->setPosition(tile->getPosition().x, tile->getPosition().y + 252);
+                }
                 tile->attachPhysicsInReenterMode(m_world);
                 CCLOG("lastDrag : %f, %f", m_lastDragSpeed.x, m_lastDragSpeed.y);
                 tile->m_body->ApplyForceToCenter(b2Vec2(m_lastDragSpeed.x * tile->m_body->GetFixtureList()->GetDensity(), m_lastDragSpeed.y * tile->m_body->GetFixtureList()->GetDensity()), true);
@@ -1676,17 +1779,17 @@ void CreateLayer::prepareToGoBack(Ref *sender)
         if (m_dropzoneBodies[i]) {
             DropzoneSprite *zone = (DropzoneSprite*)m_dropzoneBodies[i]->GetUserData();
             if (zone) {
-            TileSprite *tile = zone->m_tile;
-            zone->runAction(Sequence::create(
-                                             ScaleTo::create(0.2, 0),
-                                             CallFunc::create(std::bind(&Node::removeFromParent, zone)),
-                                             NULL));
-            if (tile) {
-                tile->runAction(Sequence::create(
+                TileSprite *tile = zone->m_tile;
+                if (tile) {
+                    tile->runAction(Sequence::create(
+                                                     ScaleTo::create(0.2, 0),
+                                                     CallFunc::create(std::bind(&Node::removeFromParent, tile)),
+                                                     NULL));
+                }
+                zone->runAction(Sequence::create(
                                                  ScaleTo::create(0.2, 0),
-                                                 CallFunc::create(std::bind(&Node::removeFromParent, tile)),
+                                                 CallFunc::create(std::bind(&Node::removeFromParent, zone)),
                                                  NULL));
-            }
             }
         }
     }
@@ -1818,7 +1921,7 @@ void CreateLayer::startColorChangeShow()
     
     unschedule(CC_SCHEDULE_SELECTOR(CreateLayer::showFirworks));
     
-    CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/common/Vegas_3_DJ_Scratch.mp3");
+    CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/common/SimpleShimmer.mp3");
     auto bgOverLay = LayerColor::create(Color4B(30, 30, 30, 255), visibleSize.width, visibleSize.height);
     bgOverLay->setPosition(origin);
     bgOverLay->setTag(BG_OVERLAY_TAG);

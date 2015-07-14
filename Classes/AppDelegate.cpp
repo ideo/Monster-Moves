@@ -1,10 +1,12 @@
 #include "AppDelegate.h"
 #include "Constants.h"
 #include "WelcomeLayer.h"
+#include "CreateLayer.h"
 #include "GameManager.h"
 #include "IntroLayer.h"
 #include "Utils.h"
 #include "SimpleAudioEngine.h"
+#include "native.h"
 
 USING_NS_CC;
 
@@ -96,14 +98,34 @@ bool AppDelegate::applicationDidFinishLaunching() {
 void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 
+    NativeHelper::getInstance()->dismissParentSection();
+    
     // if you use SimpleAudioEngine, it must be pause
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
+
+    auto runningScene = Director::getInstance()->getRunningScene();
+    
+    auto layer = runningScene->getChildByTag(CREATE_LAYER_TAG);
+    
+    if (layer) {
+        CreateLayer *createLayer = (CreateLayer *)layer;
+        createLayer->fastCleanUp();
+    }
+
+    GameManager::getInstance()->m_firstStart = true;
+    
     Director::getInstance()->startAnimation();
 
+    auto scene = IntroLayer::scene();
+    
+    CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(0.4);
+    
+    Director::getInstance()->replaceScene(scene);
+    
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }

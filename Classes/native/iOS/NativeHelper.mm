@@ -118,7 +118,7 @@ void NativeHelper::dispatchNativeEvent(NativeEvent e)
 void NativeHelper::track(std::string category, std::string action, std::string label)
 {
     
-    [[IDEOParentsSectionLib sharedInstance] trackCategory:[NSString stringWithUTF8String:category.c_str()] action:[NSString stringWithUTF8String:action.c_str()] label:[NSString stringWithUTF8String:label.c_str()] value:nil];
+//    [[IDEOParentsSectionLib sharedInstance] trackCategory:[NSString stringWithUTF8String:category.c_str()] action:[NSString stringWithUTF8String:action.c_str()] label:[NSString stringWithUTF8String:label.c_str()] value:nil];
 }
 
 void NativeHelper::enableDeviceSleep()
@@ -145,6 +145,14 @@ void NativeHelper::showParentSection()
     AppController *appController = [UIApplication sharedApplication].delegate;
     
     [(RootViewController*)appController.viewController showParentSection];
+    
+}
+
+void NativeHelper::dismissParentSection()
+{
+    AppController *appController = [UIApplication sharedApplication].delegate;
+    
+    [(RootViewController*)appController.viewController dismissParentSection];
     
 }
 
@@ -256,6 +264,55 @@ FlurryParemeter NativeHelper::getFlurryStringParameter(std::string value)
     fp.type = 0;
     fp.s = value;
     return fp;
+}
+
+std::string NativeHelper::getLanguage()
+{
+    LanguageType curLanguage = Application::getInstance()->getCurrentLanguage();
+    
+    std::string language;
+    switch (curLanguage) {
+        case LanguageType::ENGLISH:
+            language = "en";
+            break;
+        case LanguageType::CHINESE:
+            language = "zh-Hans";
+            break;
+        case LanguageType::TCHINESE:
+            language = "zh-Hant";
+            break;
+        case LanguageType::FRENCH:
+            language = "fr";
+            break;
+        case LanguageType::ITALIAN:
+            language = "it";
+            break;
+        case LanguageType::GERMAN:
+            language = "de";
+            break;
+        case LanguageType::SPANISH:
+            language = "es";
+            break;
+        case LanguageType::RUSSIAN:
+            language = "ru";
+            break;
+        case LanguageType::KOREAN:
+            language = "ko";
+            break;
+        case LanguageType::JAPANESE:
+            language = "ja";
+            break;
+        case LanguageType::HUNGARIAN:
+            language = "hu";
+            break;
+            /**
+             case for more localize
+             */
+        default:
+            language = "en";
+            break;
+    }
+    return language;
 }
 
 
