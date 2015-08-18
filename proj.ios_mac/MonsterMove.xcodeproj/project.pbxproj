@@ -36,6 +36,7 @@
 		1990FA9F1A6CEA89002F0AA9 /* JsonSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1990FA9D1A6CEA89002F0AA9 /* JsonSprite.cpp */; };
 		199A60F11A7A159C00B0C025 /* DropzoneSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 199A60EF1A7A159C00B0C025 /* DropzoneSprite.cpp */; };
 		199A78BA1B82098000A36253 /* AboutThisApp.html in Resources */ = {isa = PBXBuildFile; fileRef = 199A78BC1B82098000A36253 /* AboutThisApp.html */; };
+		199A78CA1B82169E00A36253 /* IDEOCacheData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 199A78C71B82169E00A36253 /* IDEOCacheData.xcdatamodeld */; };
 		19B65BA01AE78B87008E3D6D /* LightSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B65B9E1AE78B87008E3D6D /* LightSprite.cpp */; };
 		19BFA50B1B4265B300437AE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19BFA50A1B4265B300437AE0 /* Images.xcassets */; };
 		19D07CA01AB2B531003BE41D /* colorAdjust.frag in Resources */ = {isa = PBXBuildFile; fileRef = 19D07C9F1AB2B531003BE41D /* colorAdjust.frag */; };
@@ -64,7 +65,6 @@
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		A0C428671ABBC47900803D3C /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0C4285A1ABBC47900803D3C /* Assets.bundle */; };
 		A0C428681ABBC47900803D3C /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0C4285B1ABBC47900803D3C /* Config.plist */; };
-		A0C428691ABBC47900803D3C /* IDEOCacheData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0C4285C1ABBC47900803D3C /* IDEOCacheData.xcdatamodeld */; };
 		A0C4286B1ABBC47900803D3C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0C4285F1ABBC47900803D3C /* SVProgressHUD.bundle */; };
 		A0C4286C1ABBC47900803D3C /* libIDEOParentsSectionLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428601ABBC47900803D3C /* libIDEOParentsSectionLib.a */; };
 		A0C4286F1ABBCCFF00803D3C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4286E1ABBCCFF00803D3C /* CoreData.framework */; };
@@ -171,6 +171,9 @@
 		199A78C11B82098500A36253 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ko; path = ko.lproj/AboutThisApp.html; sourceTree = "<group>"; };
 		199A78C21B82098500A36253 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = it; path = it.lproj/AboutThisApp.html; sourceTree = "<group>"; };
 		199A78C31B82098600A36253 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/AboutThisApp.html; sourceTree = "<group>"; };
+		199A78C51B82137B00A36253 /* IDEOMoreFunAppView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEOMoreFunAppView.h; sourceTree = "<group>"; };
+		199A78C81B82169E00A36253 /* IDEOCacheData 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "IDEOCacheData 2.xcdatamodel"; sourceTree = "<group>"; };
+		199A78C91B82169E00A36253 /* IDEOCacheData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IDEOCacheData.xcdatamodel; sourceTree = "<group>"; };
 		19B65B9E1AE78B87008E3D6D /* LightSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LightSprite.cpp; path = sprite/LightSprite.cpp; sourceTree = "<group>"; };
 		19B65B9F1AE78B87008E3D6D /* LightSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightSprite.h; path = sprite/LightSprite.h; sourceTree = "<group>"; };
 		19BFA50A1B4265B300437AE0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MonsterMove/Images.xcassets; sourceTree = SOURCE_ROOT; };
@@ -224,7 +227,6 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		A0C4285A1ABBC47900803D3C /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		A0C4285B1ABBC47900803D3C /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
-		A0C4285D1ABBC47900803D3C /* IDEOCacheData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IDEOCacheData.xcdatamodel; sourceTree = "<group>"; };
 		A0C4285F1ABBC47900803D3C /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		A0C428601ABBC47900803D3C /* libIDEOParentsSectionLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libIDEOParentsSectionLib.a; sourceTree = "<group>"; };
 		A0C428641ABBC47900803D3C /* IDEOLockBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEOLockBar.h; sourceTree = "<group>"; };
@@ -606,9 +608,9 @@
 		A0C428591ABBC47900803D3C /* IDEOParentsSectionLib */ = {
 			isa = PBXGroup;
 			children = (
+				199A78C71B82169E00A36253 /* IDEOCacheData.xcdatamodeld */,
 				A0C4285A1ABBC47900803D3C /* Assets.bundle */,
 				A0C4285B1ABBC47900803D3C /* Config.plist */,
-				A0C4285C1ABBC47900803D3C /* IDEOCacheData.xcdatamodeld */,
 				19DF3A9E1B18336700E3E5CF /* privacy_certified.png */,
 				19DF3A9F1B18336700E3E5CF /* privacy_policy_v2.html */,
 				A0C4285F1ABBC47900803D3C /* SVProgressHUD.bundle */,
@@ -635,6 +637,7 @@
 		A0C428631ABBC47900803D3C /* include */ = {
 			isa = PBXGroup;
 			children = (
+				199A78C51B82137B00A36253 /* IDEOMoreFunAppView.h */,
 				A0C428641ABBC47900803D3C /* IDEOLockBar.h */,
 				A0C428651ABBC47900803D3C /* IDEOParentsSectionLib.h */,
 				A0C428661ABBC47900803D3C /* IDEOPopUpGate.h */,
@@ -783,6 +786,7 @@
 				191A64611AF1D9FB00589AA2 /* GLES-Render.cpp in Sources */,
 				191A645B1AF1D44900589AA2 /* GB2ShapeCacheX.cpp in Sources */,
 				194782271A6FD536007B2696 /* TileSprite.cpp in Sources */,
+				199A78CA1B82169E00A36253 /* IDEOCacheData.xcdatamodeld in Sources */,
 				199A60F11A7A159C00B0C025 /* DropzoneSprite.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				1990FA7A1A6CAC8B002F0AA9 /* NativeHelper.mm in Sources */,
@@ -790,7 +794,6 @@
 				192E9B2B1ACD2E5D0030CAB5 /* IntroLayer.cpp in Sources */,
 				1906BE1D1A67A3730082CDE3 /* HueSprite.cpp in Sources */,
 				197F98111A6E423500C6095F /* WelcomeLayer.cpp in Sources */,
-				A0C428691ABBC47900803D3C /* IDEOCacheData.xcdatamodeld in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				194782131A6E9B3F007B2696 /* CreateLayer.cpp in Sources */,
@@ -911,7 +914,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/ios/libs/ParentSectionLib";
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "4b83e9db-0df7-49ac-a0e7-e97756763c61";
+				PROVISIONING_PROFILE = "ef97ec31-7d52-4090-9bce-2333cff98068";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1006,12 +1009,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A0C4285C1ABBC47900803D3C /* IDEOCacheData.xcdatamodeld */ = {
+		199A78C71B82169E00A36253 /* IDEOCacheData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A0C4285D1ABBC47900803D3C /* IDEOCacheData.xcdatamodel */,
+				199A78C81B82169E00A36253 /* IDEOCacheData 2.xcdatamodel */,
+				199A78C91B82169E00A36253 /* IDEOCacheData.xcdatamodel */,
 			);
-			currentVersion = A0C4285D1ABBC47900803D3C /* IDEOCacheData.xcdatamodel */;
+			currentVersion = 199A78C81B82169E00A36253 /* IDEOCacheData 2.xcdatamodel */;
 			path = IDEOCacheData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

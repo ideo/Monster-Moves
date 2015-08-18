@@ -26,17 +26,24 @@
 #import <UIKit/UIKit.h>
 #import "IDEOParentsSectionLib.h"
 #import "IDEOPopUpGate.h"
+#import "IDEOMoreFunAppView.h"
+
 #import <AVFoundation/AVFoundation.h>
 
-@interface RootViewController : UIViewController<IDEOPopUpGateDelegate> {
+@interface RootViewController : UIViewController<IDEOPopUpGateDelegate, IDEOMoreFunAppViewDelegate> {
     IDEOPopUpGate *_popup;
     AVPlayer *_player;
     AVPlayerLayer *playerLayer;
+    IDEOMoreFunAppView *moreFunAppButton;
 }
 
 @property (nonatomic, readwrite) int listenerId;
 
 - (void)showParentSection;
+
+- (void)showMoreFunAppsButton;
+
+- (void)hideMoreFunAppsButton;
 
 - (void)dismissParentSection;
 

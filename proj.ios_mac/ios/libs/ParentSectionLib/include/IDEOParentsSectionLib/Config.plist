@@ -65,7 +65,7 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Information</string>
+			<string>Privacy Policy</string>
 			<key>id</key>
 			<string>info</string>
 			<key>icon</key>
@@ -75,9 +75,9 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>See More Apps</string>
+			<string>About this App</string>
 			<key>id</key>
-			<string>moreapps</string>
+			<string>About this App</string>
 			<key>icon</key>
 			<string>Assets.bundle/icon-app-more.png</string>
 			<key>icon-color</key>

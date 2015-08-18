@@ -28,11 +28,14 @@
 @property(nonatomic, strong, readonly)NSMutableArray *adList;
 @property(nonatomic, strong, readonly)NSMutableArray *featureList;
 
+
 + (id)sharedInstance;
 // setup with default app id in config.plist
 - (void)registerApplication;
 - (void)showParentsSecionWithController:(UIViewController *)controller;
+- (void)showMoreFunAppsWithController:(UIViewController *)controller;
 - (void)dismissParentsSecionWithController:(UIViewController *)controller;
+- (void)dismissMoreFunAppsWithController:(UIViewController *)controller;
 - (BOOL)isPurchasedItem:(NSString *)productId;
 //- (void)trackCategory:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value;
 

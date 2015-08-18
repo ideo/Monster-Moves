@@ -62,6 +62,10 @@ public:
     
     void showParentSection();
     
+    void showMoreFunAppsButton();
+    
+    void hideMoreFunAppsButton();
+    
     void dismissParentSection();
     
     void removeFlickCover();

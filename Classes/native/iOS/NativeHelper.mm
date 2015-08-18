@@ -148,6 +148,22 @@ void NativeHelper::showParentSection()
     
 }
 
+void NativeHelper::showMoreFunAppsButton()
+{
+    AppController *appController = [UIApplication sharedApplication].delegate;
+    
+    [(RootViewController*)appController.viewController showMoreFunAppsButton];
+    
+}
+
+void NativeHelper::hideMoreFunAppsButton()
+{
+    AppController *appController = [UIApplication sharedApplication].delegate;
+    
+    [(RootViewController*)appController.viewController hideMoreFunAppsButton];
+    
+}
+
 void NativeHelper::dismissParentSection()
 {
     AppController *appController = [UIApplication sharedApplication].delegate;

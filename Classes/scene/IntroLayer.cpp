@@ -89,6 +89,8 @@ void IntroLayer::menuParentCallback(cocos2d::Ref *sender)
     NativeHelper::getInstance()->showParentSection();
 }
 
+
+
 void IntroLayer::onExit()
 {
     NativeHelper::getInstance()->endFlurryTimedEvent("Time on Intro Video screen");
@@ -99,6 +101,7 @@ void IntroLayer::onExit()
 void IntroLayer::menuPlayCallback(cocos2d::Ref *sender)
 {
     NativeHelper::getInstance()->logFlurryEvent("Taps Play button");
+    NativeHelper::getInstance()->hideMoreFunAppsButton();
     auto scene = WelcomeLayer::scene();
     Director::getInstance()->replaceScene(TransitionCrossFade::create(0.5, scene));
 }
@@ -191,4 +194,7 @@ void IntroLayer::videoFinished(NativeEvent e)
                                          //                                         ScaleTo::create(0.2, 1.2 * m_playButtonScale),
                                          CallFuncN::create(std::bind(&IntroLayer::playButtonBlowing, this, playItem)),
                                          NULL));
+    
+    NativeHelper::getInstance()->showMoreFunAppsButton();
+
 }

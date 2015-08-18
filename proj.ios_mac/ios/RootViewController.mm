@@ -26,7 +26,6 @@
 #import "RootViewController.h"
 #import "cocos2d.h"
 #import "platform/ios/CCEAGLView-ios.h"
-
 #import "NativeHelper.h"
 
 
@@ -76,6 +75,26 @@
     }
 
     [_popup showInView:self.view];
+}
+
+- (void)showMoreFunAppsButton {
+    if (moreFunAppButton) {
+        [moreFunAppButton appear];
+        return;
+    }
+    moreFunAppButton = [[IDEOMoreFunAppView alloc] init];
+    moreFunAppButton.delegate            = self;
+    moreFunAppButton.appearCorner        = kIDEOMoreFunAppViewAnimateLowerRightCorner;
+    moreFunAppButton.animateDirection    = kIDEOMoreFunAppViewAnimateDirectionUp;
+    
+    [self.view addSubview:moreFunAppButton];
+
+}
+
+- (void)hideMoreFunAppsButton {
+//    [moreFunAppButton disappear];
+    [moreFunAppButton removeFromSuperview];
+    moreFunAppButton = nil;
 }
 
 - (void)dismissParentSection {
@@ -188,6 +207,11 @@
 
 - (void)avplayerItemPlayFinish:(NSNotification*)noti{
     [self dismissVideo];
+}
+
+- (void)moreFunAppViewDidClick:(IDEOMoreFunAppView *)moreFunAppView
+{
+    [[IDEOParentsSectionLib sharedInstance] showMoreFunAppsWithController:self];
 }
 
 - (void)dismissVideo
