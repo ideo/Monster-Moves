@@ -32,6 +32,12 @@ typedef enum{
  *  @param moreFunAppView moreFunAppView
  */
 - (void)moreFunAppViewDidClick:(IDEOMoreFunAppView *) moreFunAppView;
+/**
+ *  did click moreFunAppView
+ *
+ *  @param moreFunAppView moreFunAppView
+ */
+- (void)moreFunAppViewDidClose:(IDEOMoreFunAppView *) moreFunAppView;
 
 @end
 

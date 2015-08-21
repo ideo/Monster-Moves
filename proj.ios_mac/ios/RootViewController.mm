@@ -27,7 +27,7 @@
 #import "cocos2d.h"
 #import "platform/ios/CCEAGLView-ios.h"
 #import "NativeHelper.h"
-
+#include "SimpleAudioEngine.h"
 
 @implementation RootViewController
 
@@ -212,6 +212,11 @@
 - (void)moreFunAppViewDidClick:(IDEOMoreFunAppView *)moreFunAppView
 {
     [[IDEOParentsSectionLib sharedInstance] showMoreFunAppsWithController:self];
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+}
+
+- (void)moreFunAppViewDidClose:(IDEOMoreFunAppView *)moreFunAppView {
+    CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
 
 - (void)dismissVideo
