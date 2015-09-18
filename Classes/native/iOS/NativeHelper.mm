@@ -174,14 +174,11 @@ void NativeHelper::dismissParentSection()
 
 void NativeHelper::logFlurryEvent(std::string eventName)
 {
-    return;
-    
     [[IDEOParentsSectionLib sharedInstance] logFlurryEvent:[NSString stringWithCString:eventName.c_str() encoding:[NSString defaultCStringEncoding]]];
 }
 
 void NativeHelper::logFlurryEvent(std::string eventName, bool timed)
 {
-    return;
     [[IDEOParentsSectionLib sharedInstance] logFlurryEvent:[NSString stringWithCString:eventName.c_str() encoding:[NSString defaultCStringEncoding]] timed:timed];
 }
 
