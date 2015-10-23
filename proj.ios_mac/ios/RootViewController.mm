@@ -99,11 +99,18 @@
 
 - (void)dismissParentSection {
     [[IDEOParentsSectionLib sharedInstance] dismissParentsSecionWithController:self];
+    CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
 
 - (void)popupGateDidEnterCorrectAnswer
 {
+    [[IDEOParentsSectionLib sharedInstance] setDelegate:self];
     [[IDEOParentsSectionLib sharedInstance] showParentsSecionWithController:self];
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+}
+
+- (void)parentsSectionDidDismiss {
+    CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
 
 - (BOOL) shouldAutorotate {

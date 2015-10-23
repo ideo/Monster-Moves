@@ -30,7 +30,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-@interface RootViewController : UIViewController<IDEOPopUpGateDelegate, IDEOMoreFunAppViewDelegate> {
+@interface RootViewController : UIViewController<IDEOPopUpGateDelegate, IDEOMoreFunAppViewDelegate, IDEOParentsSectionDelegate> {
     IDEOPopUpGate *_popup;
     AVPlayer *_player;
     AVPlayerLayer *playerLayer;
