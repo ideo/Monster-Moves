@@ -53,9 +53,6 @@ bool IntroLayer::init()
 
 bool IntroLayer::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)
 {
-    if (m_videoStopped) return true;
-    m_videoStopped = true;
-
     NativeHelper::getInstance()->dismissIntroVideo();
     
     NativeEvent e;
@@ -128,7 +125,9 @@ void IntroLayer::videoReady(NativeEvent e)
 
 void IntroLayer::videoFinished(NativeEvent e)
 {
-    
+    if (m_videoStopped) return;
+    m_videoStopped = true;
+
     std::string normal = "common/grownup0_" + NativeHelper::getInstance()->getLanguage() + ".png";
     std::string selected = "common/grownup1_" + NativeHelper::getInstance()->getLanguage() + ".png";
     
@@ -187,6 +186,7 @@ void IntroLayer::videoFinished(NativeEvent e)
     playItem->setPosition(Point(origin.x + visibleSize.width / 2 + dx, origin.y + visibleSize.height / 2 + dy));
     playItem->setScale(0.9);
     playItem->setTag(PLAY_BUTTON_TAG);
+    CCLOG(">>>>>>> Adding playItem");
     m_menu->addChild(playItem, 5);
     playItem->runAction(Sequence::create(
                                          ScaleTo::create(0.2, 1.2 * m_playButtonScale),
