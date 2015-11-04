@@ -186,7 +186,6 @@ void IntroLayer::videoFinished(NativeEvent e)
     playItem->setPosition(Point(origin.x + visibleSize.width / 2 + dx, origin.y + visibleSize.height / 2 + dy));
     playItem->setScale(0.9);
     playItem->setTag(PLAY_BUTTON_TAG);
-    CCLOG(">>>>>>> Adding playItem");
     m_menu->addChild(playItem, 5);
     playItem->runAction(Sequence::create(
                                          ScaleTo::create(0.2, 1.2 * m_playButtonScale),

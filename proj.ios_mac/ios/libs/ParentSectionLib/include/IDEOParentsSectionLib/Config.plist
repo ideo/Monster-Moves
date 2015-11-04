@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SesameApp</key>
+	<false/>
 	<key>FlurryKey</key>
 	<string>ZDNMVQGN29SZH65K8HM9</string>
 	<key>GAID</key>
@@ -29,9 +31,19 @@
 			<key>id</key>
 			<string>iap</string>
 			<key>icon</key>
-			<string>Assets.bundle/icon-app-purchase.png</string>
+			<string>icon-app-purchase.png</string>
 			<key>icon-color</key>
 			<string>1dc264</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>About this App</string>
+			<key>id</key>
+			<string>About this App</string>
+			<key>icon</key>
+			<string>icon-app-more.png</string>
+			<key>icon-color</key>
+			<string>676767</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -39,7 +51,7 @@
 			<key>id</key>
 			<string>share</string>
 			<key>icon</key>
-			<string>Assets.bundle/icon-share.png</string>
+			<string>icon-share.png</string>
 			<key>icon-color</key>
 			<string>2eb3be</string>
 		</dict>
@@ -49,7 +61,7 @@
 			<key>id</key>
 			<string>rate</string>
 			<key>icon</key>
-			<string>Assets.bundle/icon-rate.png</string>
+			<string>icon-rate.png</string>
 			<key>icon-color</key>
 			<string>fa6d0e</string>
 		</dict>
@@ -59,7 +71,7 @@
 			<key>id</key>
 			<string>feedback</string>
 			<key>icon</key>
-			<string>Assets.bundle/icon-app-feedback.png</string>
+			<string>icon-app-feedback.png</string>
 			<key>icon-color</key>
 			<string>fc0018</string>
 		</dict>
@@ -69,19 +81,9 @@
 			<key>id</key>
 			<string>info</string>
 			<key>icon</key>
-			<string>Assets.bundle/icon-app-information.png</string>
+			<string>icon-app-information.png</string>
 			<key>icon-color</key>
 			<string>edde41</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>About this App</string>
-			<key>id</key>
-			<string>About this App</string>
-			<key>icon</key>
-			<string>Assets.bundle/icon-app-more.png</string>
-			<key>icon-color</key>
-			<string>676767</string>
 		</dict>
 	</array>
 	<key>Share</key>

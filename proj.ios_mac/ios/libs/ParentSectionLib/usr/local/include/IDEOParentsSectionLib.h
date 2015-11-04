@@ -10,6 +10,8 @@
 
 #define IDEOPurchasedItemOpenedNotification @"IDEOPurchasedItemOpenedNotification"
 
+//#define GA_ENABLED
+
 @protocol IDEOParentsSectionDelegate <NSObject>
 
 - (void)parentsSectionDidDismiss;
@@ -27,7 +29,7 @@
 @property(nonatomic, strong, readonly)NSMutableArray *moreAppList;
 @property(nonatomic, strong, readonly)NSMutableArray *adList;
 @property(nonatomic, strong, readonly)NSMutableArray *featureList;
-
+@property BOOL isSesameApp;
 
 + (id)sharedInstance;
 // setup with default app id in config.plist
@@ -37,7 +39,12 @@
 - (void)dismissParentsSecionWithController:(UIViewController *)controller;
 - (void)dismissMoreFunAppsWithController:(UIViewController *)controller;
 - (BOOL)isPurchasedItem:(NSString *)productId;
-//- (void)trackCategory:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value;
+
+#ifdef GA_ENABLED
+
+- (void)trackCategory:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value;
+
+#endif
 
 //Flurry
 - (void)logFlurryEvent:(NSString*)eventName;

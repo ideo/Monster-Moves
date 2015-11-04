@@ -74,7 +74,7 @@
         _popup.delegate = self;
     }
 
-    [_popup showInView:self.view];
+    [_popup showInView:self.view withViewName:@"Test View"];
 }
 
 - (void)showMoreFunAppsButton {
