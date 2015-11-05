@@ -88,68 +88,79 @@
 	</array>
 	<key>Share</key>
 	<dict>
-		<key>iPhone</key>
-		<dict>
-			<key>Email</key>
-			<dict>
-				<key>Subject</key>
-				<string>Monster Moves</string>
-				<key>Body</key>
-				<string>Looking for something fun for the kids to do? Check out this app:</string>
-				<key>link</key>
-				<string>http://bit.ly/monstermoves</string>
-			</dict>
-			<key>Facebook</key>
-			<dict>
-				<key>Body</key>
-				<string>Looking for something fun for the kids to do? Check out this app:</string>
-				<key>link</key>
-				<string>http://bit.ly/monstermoves</string>
-			</dict>
-			<key>Twitter</key>
-			<dict>
-				<key>Body</key>
-				<string>Looking for something fun for the kids to do? Check out this app:</string>
-				<key>link</key>
-				<string>http://bit.ly/monstermoves</string>
-			</dict>
-			<key>Gift</key>
-			<dict>
-				<key>link</key>
-				<string>http://bit.ly/monstermoves</string>
-			</dict>
-		</dict>
-		<key>iPad</key>
-		<dict>
-			<key>Email</key>
-			<dict>
-				<key>Subject</key>
-				<string>Monster Moves</string>
-				<key>Body</key>
-				<string>Looking for something fun for the kids to do? Check out this app:</string>
-				<key>link</key>
-				<string>http://bit.ly/monstermoves</string>
-			</dict>
-			<key>Facebook</key>
-			<dict>
-				<key>Body</key>
-				<string>Looking for something fun for the kids to do? Check out this app:</string>
-				<key>link</key>
-				<string>http://bit.ly/monstermoves</string>
-			</dict>
-			<key>Twitter</key>
-			<dict>
-				<key>Body</key>
-				<string>Looking for something fun for the kids to do? Check out this app:</string>
-				<key>link</key>
-				<string>http://bit.ly/monstermoves</string>
-			</dict>
-			<key>Gift</key>
-			<dict>
-				<key>link</key>
-				<string>http://bit.ly/monstermoves</string>
-			</dict>
-		</dict>
+        <key>Main</key>
+        <dict>
+            <key>AppID</key>
+            <string>925496259</string>
+            <key>URL</key>
+            <string>http://bit.ly/monstermoves</string>
+            <key>Body</key>
+            <string>Looking for a fun new app the kids will love? Check out this app:</string>
+            <key>AppName</key>
+            <string>Monster Moves</string>
+        </dict>
+        <key>iPhone</key>
+        <dict>
+            <key>Email</key>
+            <dict>
+                <key>Subject</key>
+                <string>Monster Moves</string>
+                <key>Body</key>
+                <string>Looking for a fun new app the kids will love? Check out this app:</string>
+                <key>link</key>
+                <string>http://bit.ly/monstermoves</string>
+            </dict>
+            <key>Facebook</key>
+            <dict>
+                <key>Body</key>
+                <string>Looking for a fun new app the kids will love? Check out this app:</string>
+                <key>link</key>
+                <string>http://bit.ly/monstermoves</string>
+            </dict>
+            <key>Twitter</key>
+            <dict>
+                <key>Body</key>
+                <string>Looking for a fun new app the kids will love? Check out this app:</string>
+                <key>link</key>
+                <string>http://bit.ly/monstermoves</string>
+            </dict>
+            <key>Gift</key>
+            <dict>
+                <key>link</key>
+                <string>http://bit.ly/monstermoves</string>
+            </dict>
+        </dict>
+        <key>iPad</key>
+        <dict>
+            <key>Email</key>
+            <dict>
+                <key>Subject</key>
+                <string>Monster Moves</string>
+                <key>Body</key>
+                <string>Looking for a fun new app the kids will love? Check out this app:</string>
+                <key>link</key>
+                <string>http://bit.ly/monstermoves</string>
+            </dict>
+            <key>Facebook</key>
+            <dict>
+                <key>Body</key>
+                <string>Looking for a fun new app the kids will love? Check out this app:</string>
+                <key>link</key>
+                <string>http://bit.ly/monstermoves</string>
+            </dict>
+            <key>Twitter</key>
+            <dict>
+                <key>Body</key>
+                <string>Looking for a fun new app the kids will love? Check out this app:</string>
+                <key>link</key>
+                <string>http://bit.ly/monstermoves</string>
+            </dict>
+            <key>Gift</key>
+            <dict>
+                <key>link</key>
+                <string>http://bit.ly/monstermoves</string>
+            </dict>
+        </dict>
 	</dict>
 	<key>Rate</key>
 	<string>http://bit.ly/monstermoves</string>
