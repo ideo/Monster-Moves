@@ -40,6 +40,18 @@ bool IntroLayer::init()
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("sound/common/IntroFinalAssetwithextralooping.mp3");
 
     CCLOG("\nvisibleSize : %f, %f\nscreenSize : %f, %f", visibleSize.width, visibleSize.height, screenSize.width, screenSize.height);
+    
+    float introWidth = 2208;
+    if (screenSize.width < 1024) {
+        introWidth = 960;
+    } else if (screenSize.width < 1136) {
+        introWidth = 1024;
+    } else if (screenSize.width < 1334) {
+        introWidth = 1136;
+    } else if (screenSize.width < 2048) {
+        
+    }
+    
     std::string bgFile = "images/intro/Intro" + std::to_string((int)screenSize.width) + ".png";
     CCLOG("bg : %s", bgFile.c_str());
     auto sprite = Sprite::create(bgFile);
