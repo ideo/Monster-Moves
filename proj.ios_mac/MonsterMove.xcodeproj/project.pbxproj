@@ -684,7 +684,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = D7CW9UW35P;
+						DevelopmentTeam = K3T6UAC5U4;
 					};
 				};
 			};
@@ -896,7 +896,7 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/ios/libs/ParentSectionLib";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.satinno.ent.ideo.monstermoves;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideo.monstermoves;
 				PROVISIONING_PROFILE = "7d46dfc9-2871-4a37-8567-a3a919072fbd";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -933,8 +933,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/ios/libs/ParentSectionLib";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.satinno.ent.ideo.monstermoves;
-				PROVISIONING_PROFILE = "7afac44e-db78-4e94-b853-0b92e0706ade";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideo.monstermoves;
+				PROVISIONING_PROFILE = "52970efa-82af-4db5-914f-2a0f9fa96226";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
