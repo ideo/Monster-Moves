@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+		<key>ptm_ratio</key>
+		<real>32</real>
+	</dict>
+	<key>bodies</key>
+	<dict>
+		<key>starTile</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.5000,0.5000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>density</key>
+					<real>1</real>
+					<key>friction</key>
+					<real>0.2</real>
+					<key>restitution</key>
+					<real>0.95</real>
+					<key>filter_categoryBits</key>
+					<integer>2</integer>
+					<key>filter_groupIndex</key>
+					<integer>0</integer>
+					<key>filter_maskBits</key>
+					<integer>65535</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>id</key>
+					<string></string>
+					<key>fixture_type</key>
+					<string>POLYGON</string>
+					<key>polygons</key>
+					<array>
+						<array>
+							<string>{ -81.000,-117.500 }</string>
+							<string>{ 0.000,-80.500 }</string>
+							<string>{ 74.000,-26.500 }</string>
+							<string>{ 46.000,59.500 }</string>
+							<string>{ -71.000,-28.500 }</string>
+						</array>
+						<array>
+							<string>{ 84.000,-120.500 }</string>
+							<string>{ 74.000,-26.500 }</string>
+							<string>{ 0.000,-80.500 }</string>
+						</array>
+						<array>
+							<string>{ 133.000,38.500 }</string>
+							<string>{ 46.000,59.500 }</string>
+							<string>{ 74.000,-26.500 }</string>
+						</array>
+						<array>
+							<string>{ 1.000,134.500 }</string>
+							<string>{ -46.000,59.500 }</string>
+							<string>{ -71.000,-28.500 }</string>
+							<string>{ 46.000,59.500 }</string>
+						</array>
+						<array>
+							<string>{ -130.000,38.500 }</string>
+							<string>{ -71.000,-28.500 }</string>
+							<string>{ -46.000,59.500 }</string>
+						</array>
+					</array>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

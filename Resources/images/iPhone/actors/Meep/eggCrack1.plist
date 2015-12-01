@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>Meep0013.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,0},{176,216}}</string>
+                <key>offset</key>
+                <string>{7,-82}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{179,234},{176,216}}</string>
+                <key>sourceSize</key>
+                <string>{520,520}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>eggCrack1.png</string>
+            <key>size</key>
+            <string>{256,256}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:6b975d7f6ab415060262ca553383a59a:3f4c4beac302ea8a2b4b2ac0442ba55b:247589ac5f015b9eccf612e6cee399ad$</string>
+            <key>textureFileName</key>
+            <string>eggCrack1.png</string>
+        </dict>
+    </dict>
+</plist>

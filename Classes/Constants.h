@@ -1,0 +1,108 @@
+//
+//  Constants.h
+//  MonsterMove
+//
+//  Created by Zhou Yang on 15/1/15.
+//
+//
+
+#ifndef MonsterMove_Constants_h
+#define MonsterMove_Constants_h
+
+#define PTM_RATIO 32.0
+
+#define C4B2C4F(c) Color4F(c.r / 255.0, c.g / 255.0, c.b / 255.0, c.a / 255.0)
+
+#define CLEAR_COLOR4B Color4B(0.0, 255, 0.0, 255.0)
+
+//#define ACTOR_SCALE 1.666667
+//#define ACTOR_DANCE_SCALE 2.5
+
+//#define ACTOR_SCALE 1.5873015873
+//#define ACTOR_DANCE_SCALE 2.380952381
+
+//#define ACTOR_SCALE 1.4285714286
+//#define ACTOR_DANCE_SCALE 2.1428571429
+
+// 800
+//#define ACTOR_SCALE 1.20
+//#define ACTOR_DANCE_SCALE 1.825
+
+// 750
+#define ACTOR_SCALE 1.28
+#define ACTOR_DANCE_SCALE 1.9466666667
+
+#define EGG_LANDING_OFFX 560.0
+#define EGG_LANDING_INIT_Y 130.0
+#define EGG_LANDING_Y 440.0
+
+#define CIRCLE_MASK_RADIUS 0.185
+#define CIRCLE_MASK_LARGE_RADIUS 0.8
+#define CENTER_CIRCLE_RADIUS 380.0
+#define CENTER_LARGE_CIRCLE_RADIUS 1000.0
+
+#define DROPZONE_TOTAL_WIDTH 876.0
+#define DROPZONE_Y 178.0
+
+#define WALL_OFFSET_X 30.0
+#define WALL_OFFSET_Y 30.0
+
+#define DROPZONE_RADIUS 132.0
+#define BUTTON_BODY_RADIUS 68.0
+#define DROPZONE_DEFAULT_SCALE 1.0
+#define DRAG_GATE_DISTANCE 80.0
+
+#define BG_TAG 50
+#define ACTOR_TAG_BASE 100
+#define SPACESHIP_TAG 200
+#define AURORA_TAG 300
+#define FIREBUG_TAG 301
+#define SUN_TAG 302
+#define SUCCESS_PARTICLE_TAG 500
+#define COLOR_CHANGE_TILE_TAG 1000
+#define NOISE_TAG 2001
+#define LIGHT_TAG 3000
+#define PLAY_BUTTON_TAG 6000
+#define FORWARD_BUTTON_TAG 7000
+#define BACK_BUTTON_TAG 7001
+#define BG_OVERLAY_TAG 8000
+#define TILE_INNER_ACTOR_TAG 9527
+#define LOADING_TAG 9529
+#define LOADING_DOT_TAG 600
+
+#define WELCOME_LAYER_TAG 4000
+#define CREATE_LAYER_TAG 4001
+
+#define BACKGROUND_LAYER 0
+#define STAMP_LAYER 10
+#define PARTICLE_LAYER 20
+#define BG_OVERLAY_LAYER 27
+#define LIGHT_LAYER 28
+#define STAR_LAYER 29
+#define ACTOR_LAYER 30
+#define STAGE_ACTOR_LAYER 30
+#define TILE_LAYER 33
+#define DROPZONE_LAYER 35
+#define DROP_TILE_LAYER 36
+#define DRAG_TILE_LAYER 37
+#define FINGER_LAYER 38
+#define SUN_LAYER 40
+#define SPACESHIP_LAYER 50
+#define OVERLAY_LAYER 60
+#define LOADING_LAYER 10000
+
+#define ACTOR_ENTER_TIME 2.0
+
+#define PACE_TIME 2.509
+
+#define LOW_RES_SCALE_ADJUST 1.4423076923
+
+enum FixtureCategory {
+    FixtureBorder = 0x0001,
+    FixtureTile = 0x0002,
+    FixtureDropzone = 0x0004,
+    FixtureCentralCircle = 0x0008,
+    FixtureButton = 0x0010
+};
+
+#endif

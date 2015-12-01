@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "07AD2FF9865CD95B46FF58956E83600273CA9CE6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "07AD2FF9865CD95B46FF58956E83600273CA9CE6" : 0,
+    "E2F0C662FD45C8112ADC19CB207A4B3C052CC577" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F5F57AAF-A518-464A-8D7C-FBBEB6E2E46A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "07AD2FF9865CD95B46FF58956E83600273CA9CE6" : "TL-Dance-Studio",
+    "E2F0C662FD45C8112ADC19CB207A4B3C052CC577" : "parents_section\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MonsterMove",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "proj.ios_mac\/MonsterMove.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ideo\/TL-Dance-Studio.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "07AD2FF9865CD95B46FF58956E83600273CA9CE6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ideo\/parents_section.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E2F0C662FD45C8112ADC19CB207A4B3C052CC577"
+    }
+  ]
+}
