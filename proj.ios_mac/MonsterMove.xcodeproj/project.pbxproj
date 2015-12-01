@@ -70,6 +70,15 @@
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
 		503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
+		685E08491C0E452C00B5CCCF /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685E08481C0E452C00B5CCCF /* Game.xcassets */; };
+		685E084C1C0E452C00B5CCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685E084A1C0E452C00B5CCCF /* Main.storyboard */; };
+		685E084E1C0E452C00B5CCCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685E084D1C0E452C00B5CCCF /* Assets.xcassets */; };
+		685E08581C0E45A100B5CCCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E08541C0E45A100B5CCCF /* AppDelegate.swift */; };
+		685E08591C0E45A100B5CCCF /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E08551C0E45A100B5CCCF /* IntroScene.swift */; };
+		685E085A1C0E45A100B5CCCF /* SpaceshipScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E08561C0E45A100B5CCCF /* SpaceshipScene.swift */; };
+		685E085B1C0E45A100B5CCCF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E08571C0E45A100B5CCCF /* GameViewController.swift */; };
+		685E085C1C0E46EE00B5CCCF /* splash16x9.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1917ABAB1AF9CC3D00C08383 /* splash16x9.mp4 */; };
+		685E085D1C0E470B00B5CCCF /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 1947821F1A6F8825007B2696 /* sound */; };
 		A0C4286F1ABBCCFF00803D3C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4286E1ABBCCFF00803D3C /* CoreData.framework */; };
 		A0C428711ABBCD1000803D3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428701ABBCD1000803D3C /* SystemConfiguration.framework */; };
 		A0C428731ABBCD1D00803D3C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428721ABBCD1D00803D3C /* CoreGraphics.framework */; };
@@ -238,6 +247,15 @@
 		5087E78817EB974C00C73F5D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		5087E78A17EB975400C73F5D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		685E083E1C0E452C00B5CCCF /* MonsterMoves_tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterMoves_tvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		685E08481C0E452C00B5CCCF /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
+		685E084B1C0E452C00B5CCCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		685E084D1C0E452C00B5CCCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		685E084F1C0E452C00B5CCCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		685E08541C0E45A100B5CCCF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		685E08551C0E45A100B5CCCF /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
+		685E08561C0E45A100B5CCCF /* SpaceshipScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceshipScene.swift; sourceTree = "<group>"; };
+		685E08571C0E45A100B5CCCF /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A0C4286E1ABBCCFF00803D3C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		A0C428701ABBCD1000803D3C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		A0C428721ABBCD1D00803D3C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -289,6 +307,13 @@
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685E083B1C0E452C00B5CCCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +524,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* MonsterMove.app */,
+				685E083E1C0E452C00B5CCCF /* MonsterMoves_tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -531,6 +557,7 @@
 				080E96DDFE201D6D7F000001 /* ios */,
 				503AE10617EB990700D1A890 /* mac */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				685E083F1C0E452C00B5CCCF /* MonsterMoves_tvOS */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -654,6 +681,21 @@
 			path = ios;
 			sourceTree = SOURCE_ROOT;
 		};
+		685E083F1C0E452C00B5CCCF /* MonsterMoves_tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				685E08541C0E45A100B5CCCF /* AppDelegate.swift */,
+				685E08551C0E45A100B5CCCF /* IntroScene.swift */,
+				685E08561C0E45A100B5CCCF /* SpaceshipScene.swift */,
+				685E08571C0E45A100B5CCCF /* GameViewController.swift */,
+				685E08481C0E452C00B5CCCF /* Game.xcassets */,
+				685E084A1C0E452C00B5CCCF /* Main.storyboard */,
+				685E084D1C0E452C00B5CCCF /* Assets.xcassets */,
+				685E084F1C0E452C00B5CCCF /* Info.plist */,
+			);
+			path = MonsterMoves_tvOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -675,16 +717,37 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* MonsterMove.app */;
 			productType = "com.apple.product-type.application";
 		};
+		685E083D1C0E452C00B5CCCF /* MonsterMoves_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 685E08531C0E452C00B5CCCF /* Build configuration list for PBXNativeTarget "MonsterMoves_tvOS" */;
+			buildPhases = (
+				685E083A1C0E452C00B5CCCF /* Sources */,
+				685E083B1C0E452C00B5CCCF /* Frameworks */,
+				685E083C1C0E452C00B5CCCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonsterMoves_tvOS;
+			productName = MonsterMoves_tvOS;
+			productReference = 685E083E1C0E452C00B5CCCF /* MonsterMoves_tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = K3T6UAC5U4;
+					};
+					685E083D1C0E452C00B5CCCF = {
+						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
 			};
@@ -705,6 +768,7 @@
 				ko,
 				es,
 				it,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -717,6 +781,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* MonsterMove */,
+				685E083D1C0E452C00B5CCCF /* MonsterMoves_tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -782,6 +847,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		685E083C1C0E452C00B5CCCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685E085C1C0E46EE00B5CCCF /* splash16x9.mp4 in Resources */,
+				685E084C1C0E452C00B5CCCF /* Main.storyboard in Resources */,
+				685E084E1C0E452C00B5CCCF /* Assets.xcassets in Resources */,
+				685E085D1C0E470B00B5CCCF /* sound in Resources */,
+				685E08491C0E452C00B5CCCF /* Game.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -810,6 +887,17 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				194782131A6E9B3F007B2696 /* CreateLayer.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685E083A1C0E452C00B5CCCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685E085B1C0E45A100B5CCCF /* GameViewController.swift in Sources */,
+				685E085A1C0E45A100B5CCCF /* SpaceshipScene.swift in Sources */,
+				685E08581C0E45A100B5CCCF /* AppDelegate.swift in Sources */,
+				685E08591C0E45A100B5CCCF /* IntroScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,6 +949,14 @@
 				19F1DCE81A93160500EFE52D /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		685E084A1C0E452C00B5CCCF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				685E084B1C0E452C00B5CCCF /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -943,6 +1039,91 @@
 			};
 			name = Release;
 		};
+		685E08501C0E452C00B5CCCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = MonsterMoves_tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "IDEO.MonsterMoves-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		685E08511C0E452C00B5CCCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = MonsterMoves_tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "IDEO.MonsterMoves-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1017,6 +1198,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
+		};
+		685E08531C0E452C00B5CCCF /* Build configuration list for PBXNativeTarget "MonsterMoves_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685E08501C0E452C00B5CCCF /* Debug */,
+				685E08511C0E452C00B5CCCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MonsterMove" */ = {
 			isa = XCConfigurationList;
