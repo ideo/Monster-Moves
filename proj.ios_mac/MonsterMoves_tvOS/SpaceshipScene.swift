@@ -8,6 +8,18 @@
 
 import Foundation
 import SpriteKit
+
+struct ActorData {
+    var name:String
+    var pos:Int
+    var lastActionName:String
+    var sequence: [String]
+    var hue:Float
+    var isSequenceReady:Bool;
+    var currentSequenceIndex:Int;
+}
+
+
 class SpaceshipScene: SKScene {
     
     var backgroundArray : NSArray = []
@@ -17,15 +29,16 @@ class SpaceshipScene: SKScene {
         /* Setup your scene here */
         
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
-        characters = ["Le Blob","Sausalito","Meep","Pom"]
+        characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
         
-        let getRandom = randomSequenceGenerator(0, max: backgroundArray.count-1)
+        let getRandomBackground = randomSequenceGenerator(0, max: backgroundArray.count-1)
+        let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
             y: CGRectGetMidY(scene!.frame))
         
-        let background = SKSpriteNode(imageNamed: backgroundArray[getRandom()] as! String)
+        let background = SKSpriteNode(imageNamed: backgroundArray[getRandomBackground()] as! String)
         background.position = center
         background.zPosition = -1
         scene?.addChild(background)
@@ -121,6 +134,7 @@ class SpaceshipScene: SKScene {
     
     func dropEgg()
     {
+//        ActorData m_currentActor = self.characters[getran]
         
 //        let atlas = SKTextureAtlas.init(named: "eggIdle")
 //        print(atlas.textureNames.count)

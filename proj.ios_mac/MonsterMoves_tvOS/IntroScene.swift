@@ -52,18 +52,18 @@ class IntroScene: SKScene {
         playButton.hidden = true
         playButton.zPosition = 2
         scene?.addChild(playButton)
+        playButton.runAction(SKAction.repeatActionForever(SKAction.sequence([
+            SKAction.scaleTo(1.5, duration: 2.0),
+            SKAction.scaleTo(1.0, duration: 2.0)
+            
+            ])))
         
         
         let tapgesture = UITapGestureRecognizer(target: self, action: "nextButtonPressed")
         tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
         self.view?.addGestureRecognizer(tapgesture)
         
-        
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoEndedPlaying", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
-        
-        
-        
     }
     
     func videoEndedPlaying(){

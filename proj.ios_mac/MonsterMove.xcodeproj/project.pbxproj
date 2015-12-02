@@ -79,6 +79,7 @@
 		685E085B1C0E45A100B5CCCF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E08571C0E45A100B5CCCF /* GameViewController.swift */; };
 		685E085C1C0E46EE00B5CCCF /* splash16x9.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1917ABAB1AF9CC3D00C08383 /* splash16x9.mp4 */; };
 		685E085D1C0E470B00B5CCCF /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 1947821F1A6F8825007B2696 /* sound */; };
+		685E085F1C0E712100B5CCCF /* JSONSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E085E1C0E712100B5CCCF /* JSONSprite.swift */; };
 		A0C4286F1ABBCCFF00803D3C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4286E1ABBCCFF00803D3C /* CoreData.framework */; };
 		A0C428711ABBCD1000803D3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428701ABBCD1000803D3C /* SystemConfiguration.framework */; };
 		A0C428731ABBCD1D00803D3C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428721ABBCD1D00803D3C /* CoreGraphics.framework */; };
@@ -256,6 +257,7 @@
 		685E08551C0E45A100B5CCCF /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
 		685E08561C0E45A100B5CCCF /* SpaceshipScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceshipScene.swift; sourceTree = "<group>"; };
 		685E08571C0E45A100B5CCCF /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		685E085E1C0E712100B5CCCF /* JSONSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSprite.swift; sourceTree = "<group>"; };
 		A0C4286E1ABBCCFF00803D3C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		A0C428701ABBCD1000803D3C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		A0C428721ABBCD1D00803D3C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -684,6 +686,7 @@
 		685E083F1C0E452C00B5CCCF /* MonsterMoves_tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				685E085E1C0E712100B5CCCF /* JSONSprite.swift */,
 				685E08541C0E45A100B5CCCF /* AppDelegate.swift */,
 				685E08551C0E45A100B5CCCF /* IntroScene.swift */,
 				685E08561C0E45A100B5CCCF /* SpaceshipScene.swift */,
@@ -897,6 +900,7 @@
 				685E085B1C0E45A100B5CCCF /* GameViewController.swift in Sources */,
 				685E085A1C0E45A100B5CCCF /* SpaceshipScene.swift in Sources */,
 				685E08581C0E45A100B5CCCF /* AppDelegate.swift in Sources */,
+				685E085F1C0E712100B5CCCF /* JSONSprite.swift in Sources */,
 				685E08591C0E45A100B5CCCF /* IntroScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
