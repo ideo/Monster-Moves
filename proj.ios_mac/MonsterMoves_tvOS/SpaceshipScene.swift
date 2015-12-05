@@ -19,17 +19,21 @@ struct ActorData {
     var currentSequenceIndex:Int;
 }
 
-
-class SpaceshipScene: SKScene {
+class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     var backgroundArray : NSArray = []
     var characters : NSArray = []
+    private var m_eggReady : Bool = false
+    private var m_eggCrackSoundId : Int = -1
+    
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
-        characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
+       // characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
+         characters = ["LeBlob","Meep"]
         
         let getRandomBackground = randomSequenceGenerator(0, max: backgroundArray.count-1)
         let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)
@@ -43,11 +47,36 @@ class SpaceshipScene: SKScene {
         background.zPosition = -1
         scene?.addChild(background)
         
+
+        
         let wait = SKAction.waitForDuration(0.3)
         let run = SKAction.runBlock {
             self.spaceshipFlyInAndDropEggs()
         }
         self.runAction(SKAction.sequence([wait,run,wait,]))
+        
+        let tapgesture = UITapGestureRecognizer(target: self, action: "touchpadTapped")
+        tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
+        self.view?.addGestureRecognizer(tapgesture)
+        
+        
+    }
+    
+    func touchpadTapped()
+    {
+        if(m_eggReady)
+        {
+            var leblob : JSONSprite
+            leblob = self.childNodeWithName("leblob") as! JSONSprite
+            
+            
+//            var actor : JSONSprite = self.childNodeWithName("leblob") as! JSONSprite
+            if(leblob.m_currentActionName.isEmpty || leblob.m_currentActionName == "eggIdle")
+            {
+                playEggCrackSound()
+                leblob.playAction("eggCrack0")
+            }
+        }
     }
  
     
@@ -78,7 +107,7 @@ class SpaceshipScene: SKScene {
                ,
                 
 //                SKAction.rotateByAngle(20, duration: 0.0),
-                SKAction.runBlock({self.dropEgg()}),
+                SKAction.runBlock({self.dropEggs()}),
                 SKAction.group(
                     [
                         SKAction.moveToY(scene!.frame.size.height-260, duration: 2.0)
@@ -132,26 +161,68 @@ class SpaceshipScene: SKScene {
         }
     }
     
-    func dropEgg()
+    // MARK: - Egg Methods
+    
+    func dropEggs()
     {
+        let center = CGPoint(
+            x: CGRectGetMidX(scene!.frame),
+            y: CGRectGetMidY(scene!.frame))
+        
+        
+        let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)
+        let actor = JSONSprite.init(fileNamed: characters[getRandomCharacter()] as! String)
+        actor.m_delegate = self
+        actor.position = center
+        actor.name = "leblob"
+        
+        
+     //   actor.preloadActions(["eggCrack0", "eggCrack1", "crackEntrance", "idle"])
+        actor.preloadActions(["eggIdle"])
+        
+        addChild(actor)
+
 //        ActorData m_currentActor = self.characters[getran]
         
-//        let atlas = SKTextureAtlas.init(named: "eggIdle")
-//        print(atlas.textureNames.count)
-//        
-//        let egg = SKSpriteNode(texture: atlas.textureNamed("Freds0000.png"))
+//        let atlas = SKTextureAtlas.init(named: "LeBlobeggIdle")
+//        let egg = SKSpriteNode(texture: atlas.textureNamed("leblob0000"))
 //        
 //        egg.position = CGPoint(
 //            x: CGRectGetMidX(scene!.frame),
 //            y: CGRectGetMidY(scene!.frame))
-//        
+//        egg.name = "leblob"
 //        self.addChild(egg)
+        
+        self.eggsReady()
 
+    }
+    
+    func eggsReady()
+    {
+        let actor = self.childNodeWithName("leblob") as! JSONSprite
+        actor.playAction("eggIdle")
+        m_eggReady = true
     }
     
     func takeAwayEggs()
     {
         
+    }
+    
+    //Mark: - Sound Methods
+    
+    
+    func playEggCrackSound()
+    {
+        var i : Int = random()%3+1
+        while(i == m_eggCrackSoundId)
+        {
+            i = random()%3 + 1
+        }
+        m_eggCrackSoundId = i
+
+        let soundFile = String(format: "sound/common/EggCrack_%@.mp4", m_eggCrackSoundId)
+        SKAction.playSoundFileNamed(soundFile, waitForCompletion: false)
     }
     
     // MARK: - Other methods
@@ -168,6 +239,14 @@ class SpaceshipScene: SKScene {
         }
     }
     
+   
+    func actionPreloaded(actionName: String) {
+        
+    }
+    
+    func actionStopped(sprite: JSONSprite) {
+        
+    }
     
     
 }

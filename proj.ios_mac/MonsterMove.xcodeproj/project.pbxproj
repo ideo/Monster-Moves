@@ -77,9 +77,17 @@
 		685E08591C0E45A100B5CCCF /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E08551C0E45A100B5CCCF /* IntroScene.swift */; };
 		685E085A1C0E45A100B5CCCF /* SpaceshipScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E08561C0E45A100B5CCCF /* SpaceshipScene.swift */; };
 		685E085B1C0E45A100B5CCCF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E08571C0E45A100B5CCCF /* GameViewController.swift */; };
-		685E085C1C0E46EE00B5CCCF /* splash16x9.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1917ABAB1AF9CC3D00C08383 /* splash16x9.mp4 */; };
 		685E085D1C0E470B00B5CCCF /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 1947821F1A6F8825007B2696 /* sound */; };
 		685E085F1C0E712100B5CCCF /* JSONSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E085E1C0E712100B5CCCF /* JSONSprite.swift */; };
+		685E08641C0FAE5900B5CCCF /* config in Resources */ = {isa = PBXBuildFile; fileRef = 1947820F1A6E7A26007B2696 /* config */; };
+		68781D6B1C10D2370087457A /* IntroMovie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 68781D6A1C10D2370087457A /* IntroMovie.mp4 */; };
+		68781D781C115BFC0087457A /* Guac.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D721C115BFC0087457A /* Guac.json */; };
+		68781D791C115BFC0087457A /* LeBlob.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D731C115BFC0087457A /* LeBlob.json */; };
+		68781D7A1C115BFC0087457A /* Meep.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D741C115BFC0087457A /* Meep.json */; };
+		68781D7B1C115BFC0087457A /* Pom.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D751C115BFC0087457A /* Pom.json */; };
+		68781D7C1C115BFC0087457A /* Sausalito.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D761C115BFC0087457A /* Sausalito.json */; };
+		68781D7E1C115C6C0087457A /* Freds.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D7D1C115C6C0087457A /* Freds.json */; };
+		687822F91C1241800087457A /* eggIdle.png in Resources */ = {isa = PBXBuildFile; fileRef = 687822F81C1241800087457A /* eggIdle.png */; };
 		A0C4286F1ABBCCFF00803D3C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4286E1ABBCCFF00803D3C /* CoreData.framework */; };
 		A0C428711ABBCD1000803D3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428701ABBCD1000803D3C /* SystemConfiguration.framework */; };
 		A0C428731ABBCD1D00803D3C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428721ABBCD1D00803D3C /* CoreGraphics.framework */; };
@@ -258,6 +266,14 @@
 		685E08561C0E45A100B5CCCF /* SpaceshipScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceshipScene.swift; sourceTree = "<group>"; };
 		685E08571C0E45A100B5CCCF /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		685E085E1C0E712100B5CCCF /* JSONSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSprite.swift; sourceTree = "<group>"; };
+		68781D6A1C10D2370087457A /* IntroMovie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IntroMovie.mp4; sourceTree = "<group>"; };
+		68781D721C115BFC0087457A /* Guac.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Guac.json; sourceTree = "<group>"; };
+		68781D731C115BFC0087457A /* LeBlob.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LeBlob.json; sourceTree = "<group>"; };
+		68781D741C115BFC0087457A /* Meep.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Meep.json; sourceTree = "<group>"; };
+		68781D751C115BFC0087457A /* Pom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Pom.json; sourceTree = "<group>"; };
+		68781D761C115BFC0087457A /* Sausalito.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sausalito.json; sourceTree = "<group>"; };
+		68781D7D1C115C6C0087457A /* Freds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Freds.json; sourceTree = "<group>"; };
+		687822F81C1241800087457A /* eggIdle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eggIdle.png; sourceTree = "<group>"; };
 		A0C4286E1ABBCCFF00803D3C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		A0C428701ABBCD1000803D3C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		A0C428721ABBCD1D00803D3C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -686,6 +702,8 @@
 		685E083F1C0E452C00B5CCCF /* MonsterMoves_tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				68781D701C115BEF0087457A /* Config */,
+				685E08601C0F787200B5CCCF /* Resources */,
 				685E085E1C0E712100B5CCCF /* JSONSprite.swift */,
 				685E08541C0E45A100B5CCCF /* AppDelegate.swift */,
 				685E08551C0E45A100B5CCCF /* IntroScene.swift */,
@@ -697,6 +715,36 @@
 				685E084F1C0E452C00B5CCCF /* Info.plist */,
 			);
 			path = MonsterMoves_tvOS;
+			sourceTree = "<group>";
+		};
+		685E08601C0F787200B5CCCF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				687822F81C1241800087457A /* eggIdle.png */,
+				68781D6A1C10D2370087457A /* IntroMovie.mp4 */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		68781D6D1C111D3A0087457A /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				68781D7D1C115C6C0087457A /* Freds.json */,
+				68781D721C115BFC0087457A /* Guac.json */,
+				68781D731C115BFC0087457A /* LeBlob.json */,
+				68781D741C115BFC0087457A /* Meep.json */,
+				68781D751C115BFC0087457A /* Pom.json */,
+				68781D761C115BFC0087457A /* Sausalito.json */,
+			);
+			name = Select;
+			sourceTree = "<group>";
+		};
+		68781D701C115BEF0087457A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				68781D6D1C111D3A0087457A /* Select */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -854,11 +902,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				685E085C1C0E46EE00B5CCCF /* splash16x9.mp4 in Resources */,
+				68781D791C115BFC0087457A /* LeBlob.json in Resources */,
 				685E084C1C0E452C00B5CCCF /* Main.storyboard in Resources */,
 				685E084E1C0E452C00B5CCCF /* Assets.xcassets in Resources */,
+				68781D7A1C115BFC0087457A /* Meep.json in Resources */,
 				685E085D1C0E470B00B5CCCF /* sound in Resources */,
+				68781D781C115BFC0087457A /* Guac.json in Resources */,
+				68781D7C1C115BFC0087457A /* Sausalito.json in Resources */,
+				685E08641C0FAE5900B5CCCF /* config in Resources */,
+				68781D7B1C115BFC0087457A /* Pom.json in Resources */,
+				68781D7E1C115C6C0087457A /* Freds.json in Resources */,
 				685E08491C0E452C00B5CCCF /* Game.xcassets in Resources */,
+				687822F91C1241800087457A /* eggIdle.png in Resources */,
+				68781D6B1C10D2370087457A /* IntroMovie.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1210,6 +1266,7 @@
 				685E08511C0E452C00B5CCCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MonsterMove" */ = {
 			isa = XCConfigurationList;

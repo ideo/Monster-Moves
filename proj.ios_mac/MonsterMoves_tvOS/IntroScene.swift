@@ -27,7 +27,7 @@ class IntroScene: SKScene {
             y: CGRectGetMidY(scene!.frame))
         
         
-        let fileUrl = NSBundle.mainBundle().URLForResource("splash16x9",
+        let fileUrl = NSBundle.mainBundle().URLForResource("IntroMovie",
             withExtension: "mp4")!
         player = AVPlayer(URL: fileUrl)
         video = SKVideoNode(AVPlayer: player)

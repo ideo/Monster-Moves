@@ -1,13 +1,19 @@
 {
   "layers" : [
     {
-      "filename" : "Front.imagestacklayer"
+      "filename" : "Layer 4 - saus.imagestacklayer"
     },
     {
-      "filename" : "Middle.imagestacklayer"
+      "filename" : "Layer 3 - guac.imagestacklayer"
     },
     {
-      "filename" : "Back.imagestacklayer"
+      "filename" : "Layer 2 - logo.imagestacklayer"
+    },
+    {
+      "filename" : "Layer 1 - confetti.imagestacklayer"
+    },
+    {
+      "filename" : "Layer0 - background.imagestacklayer"
     }
   ],
   "info" : {
