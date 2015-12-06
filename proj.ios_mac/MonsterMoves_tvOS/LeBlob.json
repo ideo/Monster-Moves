@@ -1,5 +1,5 @@
 {
-    "name":"LeBlob",
+    "name":"leblob",
     "defaultAction":"eggIdle",
     "feetOffset":24.0,
     "selectedEffect":"sound/actors/LeBlob/LeBlob_select_name.mp3",

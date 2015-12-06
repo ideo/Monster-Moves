@@ -33,8 +33,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         
         
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
+        
        // characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-         characters = ["LeBlob","Meep"]
+         characters = ["LeBlob"]
         
         let getRandomBackground = randomSequenceGenerator(0, max: backgroundArray.count-1)
         let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)
@@ -77,6 +78,12 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
                 leblob.removeAllActions()
                 playEggCrackSound()
                 leblob.playAction("eggCrack0")
+            }
+            else if(leblob.m_currentActionName == "eggCrack0")
+            {
+                leblob.removeAllActions()
+                playEggCrackSound()
+                leblob.playAction("eggCrack1")
             }
         }
     }
@@ -169,7 +176,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     {
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
-            y: CGRectGetMidY(scene!.frame))
+            y: CGRectGetMidY(scene!.frame)-150)
         
         
         let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)

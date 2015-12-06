@@ -247,9 +247,8 @@ class JSONSprite: SKSpriteNode {
                         if(ad.actionaName == loadAction)
                         {
                             m_currentActorHolder = addBatchNode(m_name, actionName: loadAction, start: ad.frameStart, end: ad.frameEnd)
+                            m_actorHolders[loadAction]?.hidden = false
                         }
-                        
-                        
                     }
                 }
                 
@@ -286,8 +285,8 @@ class JSONSprite: SKSpriteNode {
         }
         else
         {
-            let textureFile = String(format: "images/iPhone/actors/%@/%@.png",m_name,actionName )
-            var texture : SKTexture = SKTexture(imageNamed: textureFile)
+//            let textureFile = String(format: "images/iPhone/actors/%@/%@.png",m_name,actionName )
+//            var texture : SKTexture = SKTexture(imageNamed: textureFile)
         }
         
         var currentInnerActor : SKSpriteNode
@@ -324,6 +323,7 @@ class JSONSprite: SKSpriteNode {
             m_nextActionHolder.zPosition = 1
             m_nextActionHolder.hidden = false
             m_currentActorHolder.hidden = true
+            m_currentActorHolder = m_nextActionHolder
             currentInnerActor.removeFromParent()
         }
         
@@ -348,10 +348,6 @@ class JSONSprite: SKSpriteNode {
             SKAction.playSoundFileNamed(action.soundEffect, waitForCompletion: false)
             m_soundId = 1
         }
-
-        
-        
-        
     }
     
     func preloadActions(actions : NSArray)
@@ -376,12 +372,9 @@ class JSONSprite: SKSpriteNode {
         for var i=0; i < m_preloadActions.count; i++
         {
             let actionName : String = m_preloadActions[i] as! String
-            
             var actorHolder : SKSpriteNode
             if(m_actorHolders[actionName] == nil)
             {
-                let n = String(format: "actors/%@/%@.png", m_name,actionName)
-                
                 let ad : ActionData = m_actions[actionName]!
                 self.addBatchNode(m_name, actionName: actionName, start: ad.frameStart, end: ad.frameEnd)
                 if(m_delegate != nil)
@@ -393,8 +386,6 @@ class JSONSprite: SKSpriteNode {
             {
                  actorHolder = m_actorHolders[actionName]!
             }
-            
-            
         }
         
     }
@@ -402,21 +393,19 @@ class JSONSprite: SKSpriteNode {
     func addBatchNode(actorName : String,actionName : String,start: Int, end: Int)-> SKSpriteNode
     {
         let fileName : String = String(format: "actors/%@/%@.png",actorName,actionName)
-
         let texture : SKTexture = SKTexture(imageNamed: fileName)
-        
-        
         let image : String = String(format: "%@%04d.png",actorName,start)
         
         var actorHolder : SKSpriteNode
-        actorHolder = SKSpriteNode(texture: texture)
-        
+      //  actorHolder = SKSpriteNode(texture: texture)
+        actorHolder = SKSpriteNode()
       
         let actor : SKSpriteNode = SKSpriteNode(imageNamed: image)
         actor.position = CGPoint(x: 0, y: 0)
         actor.name = TILE_INNER_ACTOR_TAG as String
         
         actorHolder.addChild(actor)
+        actorHolder.hidden=true
         actorHolder.position = CGPoint(x: 0, y: 0)
         
         addChild(actorHolder)
