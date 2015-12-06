@@ -77,6 +77,8 @@ class IntroScene: SKScene {
         self.view?.addGestureRecognizer(tapgesture)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoEndedPlaying", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
+        
+        nextButtonPressed()
     }
     
     func videoEndedPlaying(){

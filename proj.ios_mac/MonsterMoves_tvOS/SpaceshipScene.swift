@@ -74,8 +74,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
 //            var actor : JSONSprite = self.childNodeWithName("leblob") as! JSONSprite
             if(leblob.m_currentActionName.isEmpty || leblob.m_currentActionName == "eggIdle")
             {
+                leblob.removeAllActions()
                 playEggCrackSound()
-              //  leblob.playAction("eggCrack0")
+                leblob.playAction("eggCrack0")
             }
         }
     }
@@ -173,13 +174,13 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         
         let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)
         let actor = JSONSprite.init(fileNamed: characters[getRandomCharacter()] as! String)
-       // actor.m_delegate = self
+        // actor.m_delegate = self
         actor.position = center
         actor.name = "leblob"
         
         
-     //   actor.preloadActions(["eggCrack0", "eggCrack1", "crackEntrance", "idle"])
-        actor.preloadActions(["eggIdle"])
+        actor.preloadActions(["eggCrack0", "eggCrack1", "crackEntrance", "idle"])
+        
         
         addChild(actor)
         self.eggsReady()

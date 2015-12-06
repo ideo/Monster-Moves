@@ -87,8 +87,8 @@
 		68781D7C1C115BFC0087457A /* Sausalito.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D761C115BFC0087457A /* Sausalito.json */; };
 		68781D7E1C115C6C0087457A /* Freds.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D7D1C115C6C0087457A /* Freds.json */; };
 		687822F91C1241800087457A /* eggIdle.png in Resources */ = {isa = PBXBuildFile; fileRef = 687822F81C1241800087457A /* eggIdle.png */; };
-		687822FA1C13B1300087457A /* images in Resources */ = {isa = PBXBuildFile; fileRef = 1906BE1E1A67A7F90082CDE3 /* images */; };
 		687823DC1C13CBB70087457A /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 1947821F1A6F8825007B2696 /* sound */; };
+		68782FD91C13F2490087457A /* images in Resources */ = {isa = PBXBuildFile; fileRef = 1906BE1E1A67A7F90082CDE3 /* images */; };
 		A0C4286F1ABBCCFF00803D3C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4286E1ABBCCFF00803D3C /* CoreData.framework */; };
 		A0C428711ABBCD1000803D3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428701ABBCD1000803D3C /* SystemConfiguration.framework */; };
 		A0C428731ABBCD1D00803D3C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428721ABBCD1D00803D3C /* CoreGraphics.framework */; };
@@ -915,7 +915,7 @@
 				68781D7E1C115C6C0087457A /* Freds.json in Resources */,
 				685E08491C0E452C00B5CCCF /* Game.xcassets in Resources */,
 				687822F91C1241800087457A /* eggIdle.png in Resources */,
-				687822FA1C13B1300087457A /* images in Resources */,
+				68782FD91C13F2490087457A /* images in Resources */,
 				68781D6B1C10D2370087457A /* IntroMovie.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
