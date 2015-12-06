@@ -13,6 +13,7 @@ private var video: SKVideoNode!
 private var player: AVPlayer!
 private var introFrame: SKSpriteNode!
 private var playButton: SKSpriteNode!
+private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
 
 
 
@@ -43,8 +44,20 @@ class IntroScene: SKScene {
         scene?.addChild(introFrame)
         
         
-        let introsound = SKAction.playSoundFileNamed("sound/common/IntroFinalAssetwithextralooping.mp3", waitForCompletion: false);
-        self.runAction(introsound);
+        let coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sound/common/IntroFinalAssetwithextralooping", ofType: "mp3")!)
+        do{
+            backgroundAudioPlayer = try AVAudioPlayer(contentsOfURL:coinSound)
+            backgroundAudioPlayer.prepareToPlay()
+            backgroundAudioPlayer.play()
+        }catch {
+            print("Error getting the audio file")
+        }
+        
+        
+        
+        
+//        let introsound = SKAction.playSoundFileNamed(, waitForCompletion: false);
+//        self.runAction(introsound);
         
         playButton = SKSpriteNode(imageNamed: "YayButton")
         playButton.position = center
@@ -98,6 +111,9 @@ class IntroScene: SKScene {
     }
     
     func nextButtonPressed(){
+        
+        self.runAction(SKAction.stop())
+        backgroundAudioPlayer.stop()
         print("touched Button Pressed")
         let spaceShipScene = SpaceshipScene(size: size)
         spaceShipScene.scaleMode = scaleMode

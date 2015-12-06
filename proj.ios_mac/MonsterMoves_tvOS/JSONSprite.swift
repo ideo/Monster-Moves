@@ -10,6 +10,8 @@ import Foundation
 import SpriteKit
 
 
+
+
 struct ActionData
 {
     var actionaName: String
@@ -25,6 +27,8 @@ struct ActionData
 }
 
 class JSONSprite: SKSpriteNode {
+    
+    private var TILE_INNER_ACTOR_TAG : NSString = "9527"
     
     private var introFrame: SKSpriteNode!
     
@@ -51,18 +55,10 @@ class JSONSprite: SKSpriteNode {
     
     
     var m_actions = Dictionary<String,ActionData>()
-    var m_actorHolders = Dictionary<String,SKTextureAtlas>()
+    var m_actorHolders = Dictionary<String,SKSpriteNode>()
     
-    var m_currentActorHolder = SKTextureAtlas()
-    var m_nextActionHolder = SKTextureAtlas()
-    
-//    std::unordered_map<std::string, ActionData> m_actions;
-//    
-//    std::unordered_map<std::string, SpriteBatchNode*> m_actorHolders;
-//    
-//    SpriteBatchNode* m_currentActorHolder;
-//    
-//    SpriteBatchNode* m_nextActionHolder;
+    var m_currentActorHolder = SKSpriteNode()
+    var m_nextActionHolder = SKSpriteNode()
     
     var m_pixelFormat: SKTexture = SKTexture();
     
@@ -105,7 +101,7 @@ class JSONSprite: SKSpriteNode {
     }
     
     func initWithConfigFile(fileName: String,defaultAction: String) -> Bool{
-//       
+        
             m_lastPlayTime = 0
             m_hue = 0
             m_silenceMode = false
@@ -193,6 +189,58 @@ class JSONSprite: SKSpriteNode {
                         ad.actionaName = actionDoc["name"] as! String
                         
                         
+                        if(actionDoc["realName"] != nil)
+                        {
+                            ad.realName = actionDoc["realName"] as! String
+                        }
+                        else
+                        {
+                            ad.realName = ad.actionaName
+                        }
+                        
+                        if(actionDoc["filePrefix"] != nil)
+                        {
+                            ad.filePrefix = actionDoc["filePrefix"] as! String
+                        }
+                        else
+                        {
+                            ad.filePrefix = m_name
+                        }
+                        
+                        
+                        ad.frameStart = actionDoc["frameStart"] as! Int
+                        ad.frameEnd = actionDoc["frameEnd"] as! Int
+                        ad.repeatagain = actionDoc["repeat"] as! Int
+                        
+                        if(actionDoc["frameRate"] != nil)
+                        {
+                            ad.frameRate = actionDoc["framerate"] as! Float
+                        }
+                        else
+                        {
+                            ad.frameRate = 20
+                        }
+                        
+                        if(actionDoc["soundEffect"] != nil)
+                        {
+                            ad.soundEffect = actionDoc["soundEffect"] as! String
+                            SKAction.playSoundFileNamed(ad.soundEffect, waitForCompletion: false)
+                        }
+                        
+                        if(actionDoc["type"] != nil)
+                        {
+                            ad.type = actionDoc["type"] as! Int
+                        }
+                        else
+                        {
+                            ad.type = 0
+                        }
+                        
+                        if(actionDoc["followedAction"] != nil)
+                        {
+                            ad.followedAction = actionDoc["followedAction"] as! String
+                        }
+                    
                         
                         
                         m_actions[ad.actionaName] = ad
@@ -231,10 +279,78 @@ class JSONSprite: SKSpriteNode {
         var action: ActionData = m_actions[actionName]!
         m_nextActionHolder = m_actorHolders[actionName]!
         
+        if(m_actorHolders[actionName] == nil)
+        {
+            m_nextActionHolder = addBatchNode(m_name,actionName: actionName,start: action.frameStart,end: action.frameEnd)
+        }
+        else
+        {
+            let textureFile = String(format: "actors/%@/%@.png",m_name,actionName )
+            var texture : SKTexture = SKTexture(imageNamed: textureFile)
+        }
         
-//        m_nextActionHolder = addBatchNode(m_name, actionName, action.frameStart, action.frameEnd);
+        var currentInnerActor : SKSpriteNode
+        currentInnerActor = (m_currentActorHolder.childNodeWithName(TILE_INNER_ACTOR_TAG as String)) as! SKSpriteNode
+        
+        if((currentInnerActor.parent) != nil)
+        {
+            currentInnerActor.removeAllActions()
+        }
+        
+        
+        var innerActor : SKSpriteNode = m_nextActionHolder.childNodeWithName(TILE_INNER_ACTOR_TAG as String) as! SKSpriteNode
+        
+        var filename : String
+        
+      //  filename = String(format: "%s%04d.png",m_name,action.frameStart)
+        
+        
+        filename = "leblob0000.png"
+        
+        if((innerActor.parent) != nil)
+        {
+            innerActor.removeAllActions()
+            innerActor.texture = SKTexture(imageNamed: filename)
+        }
+        else
+        {
+            innerActor = SKSpriteNode(imageNamed: filename)
+            innerActor.blendMode = .Alpha
+            innerActor.position = CGPointZero
+            innerActor.name = TILE_INNER_ACTOR_TAG as String
+        }
+        
+        if(m_currentActorHolder != m_nextActionHolder)
+        {
+            m_currentActorHolder.zPosition = 0
+            m_nextActionHolder.zPosition = 1
+            m_nextActionHolder.hidden = false
+            m_currentActorHolder.hidden = true
+            currentInnerActor.removeFromParent()
+        }
+        
+        m_currentActionName = actionName
+        var spriteFrames : NSArray
+        if(reverse)
+        {
+            
+        }
+        else
+        {
+            
+        }
+        
+        
+        if(!m_silenceMode && !action.soundEffect.isEmpty)
+        {
+            if(m_soundId == 1)
+            {
+                SKAction.stop()
+            }
+            SKAction.playSoundFileNamed(action.soundEffect, waitForCompletion: false)
+            m_soundId = 1
+        }
 
-        
         
         
         
@@ -249,7 +365,8 @@ class JSONSprite: SKSpriteNode {
             var actionName = m_preloadActions[i] as! NSString
             let n = String(format: "actors/%@/%@.png", m_name,actionName)
            // self.imageLoaded(SKTexture(imageNamed: n))
-            SKTextureAtlas.preloadTextureAtlases([SKTextureAtlas(named: "LeBlobeggIdle")], withCompletionHandler: {})
+//            SKTextureAtlas.preloadTextureAtlases([SKTextureAtlas(named: "LeBlobeggIdle")], withCompletionHandler: {})
+            
         }
     }
     
@@ -264,7 +381,7 @@ class JSONSprite: SKSpriteNode {
         {
             let actionName : String = m_preloadActions[i] as! String
             
-            var actorHolder : SKTextureAtlas
+            var actorHolder : SKSpriteNode
             actorHolder = m_actorHolders[actionName]!
             let n = String(format: "actors/%@/%@.png", m_name,actionName)
             
@@ -279,7 +396,7 @@ class JSONSprite: SKSpriteNode {
         
     }
     
-    func addBatchNode(actorName : String,actionName : String,start: Int, end: Int)-> SKTextureAtlas
+    func addBatchNode(actorName : String,actionName : String,start: Int, end: Int)-> SKSpriteNode
     {
         var fileName : String = String(format: "actors/%@/%@.png",actorName,actionName)
 
@@ -290,15 +407,20 @@ class JSONSprite: SKSpriteNode {
         
         var image : String = String(format: "leblob0000",actorName,start)
         
-        var actorHolder = SKTextureAtlas(named: "LeBlobeggIdle")
+        var actorHolder : SKSpriteNode
+        actorHolder = SKSpriteNode(imageNamed: "leblob0000.png")
         
       
         var actor : SKSpriteNode = SKSpriteNode(imageNamed: image)
         actor.position = CGPoint(x: 0, y: 0)
-        actor.name = "tiletag"
+        actor.name = TILE_INNER_ACTOR_TAG as String
+        
+        actorHolder.addChild(actor)
+        actorHolder.position = CGPoint(x: 0, y: 0)
+        
+        addChild(actorHolder)
         
         m_actorHolders[actionName] = actorHolder
-        
         return actorHolder
     }
     

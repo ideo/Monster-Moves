@@ -31,6 +31,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
+        
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
        // characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
          characters = ["LeBlob","Meep"]
@@ -74,7 +75,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             if(leblob.m_currentActionName.isEmpty || leblob.m_currentActionName == "eggIdle")
             {
                 playEggCrackSound()
-                leblob.playAction("eggCrack0")
+              //  leblob.playAction("eggCrack0")
             }
         }
     }
@@ -172,7 +173,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         
         let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)
         let actor = JSONSprite.init(fileNamed: characters[getRandomCharacter()] as! String)
-        actor.m_delegate = self
+       // actor.m_delegate = self
         actor.position = center
         actor.name = "leblob"
         
@@ -181,18 +182,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         actor.preloadActions(["eggIdle"])
         
         addChild(actor)
-
-//        ActorData m_currentActor = self.characters[getran]
-        
-//        let atlas = SKTextureAtlas.init(named: "LeBlobeggIdle")
-//        let egg = SKSpriteNode(texture: atlas.textureNamed("leblob0000"))
-//        
-//        egg.position = CGPoint(
-//            x: CGRectGetMidX(scene!.frame),
-//            y: CGRectGetMidY(scene!.frame))
-//        egg.name = "leblob"
-//        self.addChild(egg)
-        
         self.eggsReady()
 
     }
@@ -221,7 +210,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         }
         m_eggCrackSoundId = i
 
-        let soundFile = String(format: "sound/common/EggCrack_%@.mp4", m_eggCrackSoundId)
+//        let soundFile = String(format: "sound/common/EggCrack_%@.mp3", m_eggCrackSoundId)
+        let soundFile = String(format: "sound/common/EggCrack_2.mp3", m_eggCrackSoundId)
+        
         SKAction.playSoundFileNamed(soundFile, waitForCompletion: false)
     }
     
