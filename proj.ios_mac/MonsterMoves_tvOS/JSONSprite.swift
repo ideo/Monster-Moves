@@ -302,10 +302,7 @@ class JSONSprite: SKSpriteNode {
         
         var filename : String
         
-      //  filename = String(format: "%s%04d.png",m_name,action.frameStart)
-        
-        
-        filename = "leblob0000.png"
+        filename = String(format: "%@%04d.png",m_name,action.frameStart)
         
         if((innerActor.parent) != nil)
         {
@@ -403,12 +400,12 @@ class JSONSprite: SKSpriteNode {
         var texture : SKTexture = SKTexture(imageNamed: fileName)
         
         
-      //  var image : String = String(format: "%s%04d.png",actorName,start)
+        var image : String = String(format: "%@%04d.png",actorName,start)
         
-        var image : String = String(format: "leblob0000",actorName,start)
+
         
         var actorHolder : SKSpriteNode
-        actorHolder = SKSpriteNode(imageNamed: "leblob0000.png")
+        actorHolder = SKSpriteNode(texture: texture)
         
       
         var actor : SKSpriteNode = SKSpriteNode(imageNamed: image)

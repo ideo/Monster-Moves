@@ -209,11 +209,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             i = random()%3 + 1
         }
         m_eggCrackSoundId = i
-
-//        let soundFile = String(format: "sound/common/EggCrack_%@.mp3", m_eggCrackSoundId)
-        let soundFile = String(format: "sound/common/EggCrack_2.mp3", m_eggCrackSoundId)
         
-        SKAction.playSoundFileNamed(soundFile, waitForCompletion: false)
+        let soundFile = String(format: "sound/common/EggCrack_%d.mp3", m_eggCrackSoundId)
+        self.runAction(SKAction.playSoundFileNamed(soundFile, waitForCompletion: false))
     }
     
     // MARK: - Other methods
