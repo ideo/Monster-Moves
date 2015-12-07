@@ -72,6 +72,7 @@ class JSONSprite: SKSpriteNode {
     
     var m_preloadActions: NSMutableArray = NSMutableArray()
     
+    var m_stopped : Bool = false;
     
     override init(texture: SKTexture!, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
@@ -328,15 +329,44 @@ class JSONSprite: SKSpriteNode {
         }
         
         m_currentActionName = actionName
-        var spriteFrames : NSArray
+        var spriteFrames : NSMutableArray = NSMutableArray()
         if(reverse)
         {
-            
+            for var i=action.frameEnd; i>=action.frameStart; i--
+            {
+                filename = String(format: "%@%04d",m_name,i)
+                let texture : SKTexture = SKTexture(imageNamed: filename)
+                spriteFrames.addObject(texture)
+            }
         }
         else
         {
-            
+            for var i=action.frameStart; i<=action.frameEnd; i++
+            {
+                filename = String(format: "%@%04d",m_name,i)
+                let texture : SKTexture = SKTexture(imageNamed: filename)
+                spriteFrames.addObject(texture)
+            }
         }
+        
+
+        
+        let animation = SKAction.animateWithTextures(spriteFrames as NSArray as! [SKTexture], timePerFrame: 1/15)
+        
+        
+        if(action.repeatagain <= 0)
+        {
+            innerActor.runAction(SKAction.repeatActionForever(animation))
+        }
+        else if(action.repeatagain == 1)
+        {
+            innerActor.runAction(SKAction.sequence([animation,SKAction.runBlock({self.actionStopped()})]))
+        }
+        else
+        {
+            innerActor.runAction(SKAction.repeatAction(animation, count: action.repeatagain))
+        }
+        
         
         
         if(!m_silenceMode && !action.soundEffect.isEmpty)
@@ -345,8 +375,26 @@ class JSONSprite: SKSpriteNode {
             {
                 SKAction.stop()
             }
-            SKAction.playSoundFileNamed(action.soundEffect, waitForCompletion: false)
+            self.runAction(SKAction.playSoundFileNamed(action.soundEffect, waitForCompletion: false))
             m_soundId = 1
+        }
+    }
+    
+    
+    func actionStopped()
+    {
+        let ad : ActionData = m_actions[m_currentActionName]!
+        if(!ad.followedAction.isEmpty)
+        {
+            self.playAction(ad.followedAction)
+        }
+        
+        if((m_delegate) != nil)
+        {
+            if(!m_stopped)
+            {
+                m_delegate?.actionStopped(self)
+            }
         }
     }
     

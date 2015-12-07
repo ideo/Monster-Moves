@@ -85,6 +85,15 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
                 playEggCrackSound()
                 leblob.playAction("eggCrack1")
             }
+            else if(leblob.m_currentActionName == "eggCrack1")
+            {
+                leblob.removeAllActions()
+                leblob.playAction("crackEntrance")
+            }
+            else
+            {
+                
+            }
         }
     }
  
@@ -176,18 +185,16 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     {
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
-            y: CGRectGetMidY(scene!.frame)-150)
+            y: CGRectGetMidY(scene!.frame)-200)
         
         
         let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)
         let actor = JSONSprite.init(fileNamed: characters[getRandomCharacter()] as! String)
-        // actor.m_delegate = self
+        actor.m_delegate = self
         actor.position = center
         actor.name = "leblob"
         
-        
         actor.preloadActions(["eggCrack0", "eggCrack1", "crackEntrance", "idle"])
-        
         
         addChild(actor)
         self.eggsReady()
