@@ -78,7 +78,7 @@ class IntroScene: SKScene {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoEndedPlaying", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
         
-        nextButtonPressed()
+       // nextButtonPressed()
     }
     
     func videoEndedPlaying(){
@@ -120,6 +120,7 @@ class IntroScene: SKScene {
         let spaceShipScene = SpaceshipScene(size: size)
         spaceShipScene.scaleMode = scaleMode
         // 2
+        
         let reveal = SKTransition.crossFadeWithDuration(0.5)       // 3
         view?.presentScene(spaceShipScene, transition: reveal)
     }

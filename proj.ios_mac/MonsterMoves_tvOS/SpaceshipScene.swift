@@ -19,13 +19,15 @@ struct ActorData {
     var currentSequenceIndex:Int;
 }
 
+
 class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     var backgroundArray : NSArray = []
     var characters : NSArray = []
     private var m_eggReady : Bool = false
     private var m_eggCrackSoundId : Int = -1
-    
+    private var m_circle : SKSpriteNode = SKSpriteNode()
+    private var m_actor : JSONSprite = JSONSprite()
     
     
     override func didMoveToView(view: SKView) {
@@ -38,7 +40,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
          characters = ["LeBlob"]
         
         let getRandomBackground = randomSequenceGenerator(0, max: backgroundArray.count-1)
-        let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -49,17 +50,11 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         background.zPosition = -1
         scene?.addChild(background)
         
-
-        
         let wait = SKAction.waitForDuration(0.3)
         let run = SKAction.runBlock {
             self.spaceshipFlyInAndDropEggs()
         }
         self.runAction(SKAction.sequence([wait,run,wait,]))
-        
-        let tapgesture = UITapGestureRecognizer(target: self, action: "touchpadTapped")
-        tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
-        self.view?.addGestureRecognizer(tapgesture)
         
         
     }
@@ -89,11 +84,16 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             {
                 leblob.removeAllActions()
                 leblob.playAction("crackEntrance")
+                
+
             }
-            else
+            else if(leblob.m_currentActionName == "crackEntrance")
             {
+                leblob.removeAllActions()
+                self.getReadyForDanceScene()
                 
             }
+           
         }
     }
  
@@ -206,11 +206,97 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         let actor = self.childNodeWithName("leblob") as! JSONSprite
         actor.playAction("eggIdle")
         m_eggReady = true
+        
+        let tapgesture = UITapGestureRecognizer(target: self, action: "touchpadTapped")
+        tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
+        self.view?.addGestureRecognizer(tapgesture)
+        
     }
     
     func takeAwayEggs()
     {
         
+    }
+    
+    // MARK: - Dance Scene Methods
+    
+    func getReadyForDanceScene()
+    {
+        
+        self.setupPhysics()
+        self.sizeAndGrow()
+    
+        self.startIdle()
+        
+        
+    }
+    
+    func setupPhysics()
+    {
+        
+    }
+    
+    func startIdle()
+    {
+        m_actor.playAction("idle")
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.setupDropZones()})]))
+        m_actor.preloadActions(["dance1","dance2","dance3","dance4","dance5","dance6","dance7","dance8"])
+    }
+    
+    func sizeAndGrow()
+    {
+        m_actor = self.childNodeWithName("leblob") as! JSONSprite
+        m_actor.runAction(SKAction.moveTo(CGPoint(
+            x: CGRectGetMidX(scene!.frame),
+            y: CGRectGetMidY(scene!.frame)), duration: 1.0))
+        m_actor.setScale(1.5)
+        
+    }
+    
+    func setupDropZones()
+    {
+        
+    }
+    
+    func setupTiles()
+    {
+        var i : Double = 0;
+        for var iter=0; iter <= m_actor.m_actions.count; iter++
+        {
+            let actionName : String = m_actor.m_actions.keys.first!
+            let ad : ActionData = m_actor.m_actions[actionName]!
+            if(ad.type == 1 )
+            {
+                self.runAction(SKAction.sequence([SKAction.waitForDuration(i * 0.3),SKAction.runBlock({self.addActionTile(ad.actionaName)})]))
+                i=i+1
+            }
+            
+        }
+    }
+    
+    
+    func addActionTile(actionName : String)
+    {
+        self.addTile(actionName,type : TileType.TileTypeNormal)
+    }
+    
+    func addTile(actionName : String, type : TileType)
+    {
+//        if(dropzoneisFull() && )
+    }
+    
+    
+    
+    func dropzoneIsFull() -> Bool
+    {
+//        var dropCount : Int = 4
+//        let zone : DropzoneSprite = m_dropzoneBodies[i].getUserData()
+//        if(zone.m_tile)
+//        {
+//            dropCount++ ;
+//        }
+//        return dropCount == 4
+        return false
     }
     
     //Mark: - Sound Methods
@@ -242,6 +328,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             return numbers.removeAtIndex(index)
         }
     }
+    
+    
     
    
     func actionPreloaded(actionName: String) {
