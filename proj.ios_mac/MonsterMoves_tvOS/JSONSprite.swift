@@ -47,7 +47,7 @@ class JSONSprite: SKSpriteNode {
 
     
     
-    var m_tileColor: CGColorRef = UIColor.blackColor().CGColor;
+    var m_tileColor: UIColor = UIColor.redColor();
     
     var m_starColor:CGColorRef = UIColor.blackColor().CGColor;
     

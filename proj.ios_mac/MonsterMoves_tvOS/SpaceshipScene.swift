@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 
+
 struct ActorData {
     var name:String
     var pos:Int
@@ -30,9 +31,13 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     private var m_actor : JSONSprite = JSONSprite()
     
     
+    //DanceScene
+    private var minTileGenY : Float = 0
+    private var m_dropzoneBodies : [SKSpriteNode] = []
+    private var m_dancePreloadedCount : Int = 0;
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        
         
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
         
@@ -233,14 +238,22 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     func setupPhysics()
     {
+        self.physicsWorld.gravity = CGVectorMake(0, 0)
+        let borderBody : SKPhysicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+        self.physicsBody = borderBody
+        self.physicsBody?.friction = 0
+        self.physicsBody?.categoryBitMask = 0x0001
+        self.physicsBody?.collisionBitMask = 0x0002
         
     }
     
     func startIdle()
     {
         m_actor.playAction("idle")
-        self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.setupDropZones()})]))
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(0.5),SKAction.runBlock({self.setupDropZones()})]))
         m_actor.preloadActions(["dance1","dance2","dance3","dance4","dance5","dance6","dance7","dance8"])
+        
+       
     }
     
     func sizeAndGrow()
@@ -249,19 +262,55 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         m_actor.runAction(SKAction.moveTo(CGPoint(
             x: CGRectGetMidX(scene!.frame),
             y: CGRectGetMidY(scene!.frame)), duration: 1.0))
-        m_actor.setScale(1.5)
+        m_actor.setScale(1.2)
         
     }
     
     func setupDropZones()
     {
+        var dropzoneTotalWidth : Float = 876
+        for var i = 0 ; i < 4; i++
+        {
+            var dropzone : DropzoneSprite = DropzoneSprite(imageNamed: "dropzone")
+            
+            
+            var f : Double = Double(i) * Double(dropzoneTotalWidth/3)
+            
+            var p = CGPoint(x: Double(-dropzoneTotalWidth/2) + f, y: Double(0))
+            
+            
+            dropzone.position = CGPoint(x: Double(CGRectGetMidX(scene!.frame)) + Double(p.x), y: 150)
+            dropzone.m_index = i
+            dropzone.m_tileColor = m_actor.m_tileColor
+            dropzone.setScale(0)
+            addChild(dropzone)
+            
+            dropzone.runAction(SKAction.scaleTo(1.0, duration: 1.0))
+            minTileGenY = Float(dropzone.position.y + dropzone.size.height/2)
+            
+            let dropBody : SKPhysicsBody = SKPhysicsBody(circleOfRadius: 132)
+            dropBody.density = 1.0
+            dropBody.dynamic = false
+            dropBody.friction = 0.2
+            dropBody.restitution = 0.8
+            dropBody.categoryBitMask = 0x0004
+            dropBody.collisionBitMask = 0x0002
+            dropBody.allowsRotation = true
+            dropzone.physicsBody = dropBody
+            
+        //    m_dropzoneBodies[i] = dropzone
+            
+            
+        }
+        
+
         
     }
     
     func setupTiles()
     {
         var i : Double = 0;
-        for var iter=0; iter <= m_actor.m_actions.count; iter++
+        for var iter=0; iter < m_actor.m_actions.count; iter++
         {
             let actionName : String = m_actor.m_actions.keys.first!
             let ad : ActionData = m_actor.m_actions[actionName]!
@@ -282,21 +331,109 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     func addTile(actionName : String, type : TileType)
     {
-//        if(dropzoneisFull() && )
+        if(dropzoneIsFull() && type != TileType.TileTypeColorChange )
+        {
+            return
+        }
+        
+        if(type == TileType.TileTypeColorChange && (self.childNodeWithName("COLOR_CHANGE_TILE_TAG") != nil))
+        {
+            return
+        }else
+        {
+            
+        }
+        
+        
+        var filename : String = ""
+        
+        if(type == TileType.TileTypeColorChange)
+        {
+            
+        }
+        else
+        {
+            filename = String(format: "tiles-%@/%@",m_actor.m_name,actionName)
+        }
+        
+        let tile : TileSprite = TileSprite(imageNamed: filename)
+        tile.m_type = type
+        tile.m_actionName = actionName
+//        tile.m_delegate = self
+        if(type == TileType.TileTypeColorChange)
+        {
+            tile.name = "COLOR_CHANGE_TILE_TAG"
+        }
+        
+        var point : CGPoint
+        var leftCount : Int = 0
+        var rightCount : Int = 0
+        
+        let left : Bool
+        if (leftCount == rightCount) {
+            left = ((rand() % 10) <= 4);
+        } else {
+            left = (leftCount < rightCount);
+        }
+        
+        let subbend : Float =  Float(tile.size.width) + 400.0
+        let randomF : Int = random() % Int(Float((scene?.frame.size.height)!) - minTileGenY - subbend)
+        
+        let frameWidth : Int = Int((scene?.frame.size.height)!) / 2
+        let leftTile : Int = 380 + Int(tile.size.width) + 70
+        let leftpoint : Int = random() % Int(frameWidth - leftTile)
+        
+        let tileY : Float
+        tileY = minTileGenY + Float(tile.size.height / 2) + Float(randomF)
+        
+        let p : CGPoint
+        
+        if(left)
+        {
+            if (type == TileType.TileTypeColorChange || m_dancePreloadedCount < 8) {
+                p = CGPoint(x: Int(tile.size.width/2 + 70) + leftpoint, y: Int(tileY))
+            } else {
+                p = CGPoint(x: Int(-30 - tile.size.width/2),y: Int(tileY));
+            }
+        }
+        else
+        {
+            let p1 : Int = 1340 + random() % Int(510 - tile.size.width)
+            
+            if (type == TileType.TileTypeColorChange || m_dancePreloadedCount < 8) {
+                p = CGPoint(x: Int(Int(tile.size.width/2) + p1 ), y: Int(tileY))
+            } else {
+                p = CGPoint(x: Int(1950 + tile.size.width/2),y: Int(tileY));
+            }
+        }
+        
+        tile.position = p
+        tile.setScale(0)
+        self.addChild(tile)
+        tile.physicsBody = tile.attachPhysics()
+        
+        tile.physicsBody?.applyImpulse(CGVectorMake(40.0, -40.0))
+        tile.runAction(SKAction.scaleTo(1.0, duration: 1.0))
+        
+        
     }
     
     
     
     func dropzoneIsFull() -> Bool
     {
-//        var dropCount : Int = 4
-//        let zone : DropzoneSprite = m_dropzoneBodies[i].getUserData()
-//        if(zone.m_tile)
-//        {
-//            dropCount++ ;
-//        }
-//        return dropCount == 4
-        return false
+        var dropCount : Int = 0
+        
+        for sprite in m_dropzoneBodies
+        {
+            let zone: DropzoneSprite = sprite as! DropzoneSprite
+            if(zone.m_tile != nil)
+            {
+                dropCount++
+            }
+        }
+        
+        return dropCount == 4
     }
     
     //Mark: - Sound Methods
@@ -333,7 +470,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
    
     func actionPreloaded(actionName: String) {
-        
+         if(actionName.hasPrefix("dance"))
+         {
+            addActionTile(actionName);
+            }
     }
     
     func actionStopped(sprite: JSONSprite) {
