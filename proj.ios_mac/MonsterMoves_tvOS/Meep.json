@@ -1,5 +1,5 @@
 {
-    "name":"Meep",
+    "name":"meep",
     "defaultAction":"eggIdle",
     "feetOffset":16.0,
     "selectedEffect":"sound/actors/Meep/Meep_select_name.mp3",

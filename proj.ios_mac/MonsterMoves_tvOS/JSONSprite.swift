@@ -298,24 +298,24 @@ class JSONSprite: SKSpriteNode {
             currentInnerActor.removeAllActions()
         }
         
-        var innerActor : SKSpriteNode = m_nextActionHolder.childNodeWithName(TILE_INNER_ACTOR_TAG as String) as! SKSpriteNode
+        
+        var innerActor : SKSpriteNode? = m_nextActionHolder.childNodeWithName(TILE_INNER_ACTOR_TAG as String) as? SKSpriteNode
         
         var filename : String
         
         filename = String(format: "%@%04d.png",m_name,action.frameStart)
         
-        if((innerActor.parent) != nil)
+        if(innerActor != nil)
         {
-            innerActor.removeAllActions()
-            innerActor.texture = SKTexture(imageNamed: filename)
+            innerActor!.removeAllActions()
+            innerActor!.texture = SKTexture(imageNamed: filename)
         }
         else
         {
             innerActor = SKSpriteNode(imageNamed: filename)
-            innerActor.blendMode = .Alpha
-        
-            innerActor.position = CGPointZero
-            innerActor.name = TILE_INNER_ACTOR_TAG as String
+            innerActor!.blendMode = .Alpha
+            innerActor!.position = CGPointZero
+            innerActor!.name = TILE_INNER_ACTOR_TAG as String
         }
         
         if(m_currentActorHolder != m_nextActionHolder)
@@ -356,15 +356,15 @@ class JSONSprite: SKSpriteNode {
         
         if(action.repeatagain <= 0)
         {
-            innerActor.runAction(SKAction.repeatActionForever(animation))
+            innerActor!.runAction(SKAction.repeatActionForever(animation))
         }
         else if(action.repeatagain == 1)
         {
-            innerActor.runAction(SKAction.sequence([animation,SKAction.runBlock({self.actionStopped()})]))
+            innerActor!.runAction(SKAction.sequence([animation,SKAction.runBlock({self.actionStopped()})]))
         }
         else
         {
-            innerActor.runAction(SKAction.repeatAction(animation, count: action.repeatagain))
+            innerActor!.runAction(SKAction.repeatAction(animation, count: action.repeatagain))
         }
         
         
@@ -373,7 +373,7 @@ class JSONSprite: SKSpriteNode {
         {
             if(m_soundId == 1)
             {
-                SKAction.stop()
+               self.runAction(SKAction.stop())
             }
             self.runAction(SKAction.playSoundFileNamed(action.soundEffect, waitForCompletion: false))
             m_soundId = 1

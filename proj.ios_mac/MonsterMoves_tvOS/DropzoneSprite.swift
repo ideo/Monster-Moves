@@ -83,18 +83,18 @@ class DropzoneSprite: SKSpriteNode {
     
     func removeCurrentTile()
     {
-        if(m_tile == nil){ return }
-        let dx : Double = Double(200 - random() % 400)
-        let dy : Double = Double(300 - random() % 50)
-        m_tile?.runAction(SKAction.sequence(
-            [
-                SKAction.group([
-                    SKAction.moveBy(CGVector(dx: dx, dy: dy), duration: 0.5),
-                    SKAction.scaleTo(0.0, duration: 0.5)
-                    ]),
-                SKAction.runBlock({self.m_tile?.removeFromParent()})
-            ]))
-        m_tile = nil
+//        if(m_tile == nil){ return }
+//        let dx : Double = Double(200 - random() % 400)
+//        let dy : Double = Double(300 - random() % 50)
+//        m_tile?.runAction(SKAction.sequence(
+//            [
+//                SKAction.group([
+//                    SKAction.moveBy(CGVector(dx: dx, dy: dy), duration: 0.5),
+//                    SKAction.scaleTo(0.0, duration: 0.5)
+//                    ]),
+//                SKAction.runBlock({self.m_tile?.removeFromParent()})
+//            ]))
+//        m_tile = nil
     }
     
     

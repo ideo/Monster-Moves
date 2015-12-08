@@ -29,6 +29,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     private var m_eggCrackSoundId : Int = -1
     private var m_circle : SKSpriteNode = SKSpriteNode()
     private var m_actor : JSONSprite = JSONSprite()
+    private var m_currentBackground : SKTexture?
     
     
     //DanceScene
@@ -48,7 +49,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
         
         //characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        characters = ["LeBlob"]
+        characters = ["LeBlob","Meep"]
         
         let getRandomBackground = randomSequenceGenerator(0, max: backgroundArray.count-1)
         
@@ -56,7 +57,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             x: CGRectGetMidX(scene!.frame),
             y: CGRectGetMidY(scene!.frame))
         
-        let background = SKSpriteNode(imageNamed: backgroundArray[getRandomBackground()] as! String)
+        m_currentBackground = SKTexture(imageNamed: backgroundArray[getRandomBackground()] as! String)
+        
+        let background = SKSpriteNode(texture: m_currentBackground)
         background.position = center
         background.zPosition = -1
         scene?.addChild(background)
@@ -66,8 +69,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             self.spaceshipFlyInAndDropEggs()
         }
         self.runAction(SKAction.sequence([wait,run,wait,]))
-        
-        
     }
     
     func touchpadTapped()
@@ -209,7 +210,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         actor.m_delegate = self
         actor.position = center
         actor.name = "leblob"
-        
+        actor.setScale(1.0)
         actor.preloadActions(["eggCrack0", "eggCrack1", "crackEntrance", "idle"])
         
         addChild(actor)
@@ -250,7 +251,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     {
         for var i = 0; i<4; i++
         {
-            
             let tileSprite : TileSprite = m_tiles[i] as! TileSprite
             tileSprite.position = m_dropzoneBodies[i].position
             tileSprite.physicsBody = nil
@@ -260,10 +260,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         }
         
         self.checkDropzonesToPlay()
-//        for var i = 0; i<4; i++
-//        {
-//            tilePressed(m_tiles[i] as! TileSprite)
-//        }
     }
     
     func checkDropzonesToPlay()
@@ -274,13 +270,20 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
 //            removeFloatingTiles()
         }
         prepareToPlay()
-        self.runAction(SKAction.sequence([SKAction.waitForDuration(15),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(10),SKAction.runBlock({self.spaceshipFlyInAndTakeAwayEggs()}),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
         
     }
     
+    
+    func removeFloatingTiles()
+    {
+        
+    }
+    
+    
     func timeToTransitionToNextCharacter()
     {
-        self.spaceshipFlyInAndTakeAwayEggs()
+        self.removeAllActions()
         for sprites in m_dropzoneBodies
         {
             sprites.removeFromParent()
