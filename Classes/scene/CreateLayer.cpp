@@ -1560,6 +1560,8 @@ void CreateLayer::prepareToPlay(Ref *sender)
     zone->bounce();
     
     schedule(CC_SCHEDULE_SELECTOR(CreateLayer::playNextDance), PACE_TIME);
+    
+    
     m_colorChanged = false;
     
 //    m_actor->clearUnusedAssets();

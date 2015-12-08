@@ -298,7 +298,6 @@ class JSONSprite: SKSpriteNode {
             currentInnerActor.removeAllActions()
         }
         
-        
         var innerActor : SKSpriteNode = m_nextActionHolder.childNodeWithName(TILE_INNER_ACTOR_TAG as String) as! SKSpriteNode
         
         var filename : String
@@ -314,6 +313,7 @@ class JSONSprite: SKSpriteNode {
         {
             innerActor = SKSpriteNode(imageNamed: filename)
             innerActor.blendMode = .Alpha
+        
             innerActor.position = CGPointZero
             innerActor.name = TILE_INNER_ACTOR_TAG as String
         }

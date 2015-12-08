@@ -76,7 +76,7 @@ class DropzoneSprite: SKSpriteNode {
             SKAction.scaleTo(1.0, duration: Double(m_totalDanceTime)/6.0)
             
             ]))
-        m_tile?.runAction(SKAction.rotateByAngle(360, duration: m_totalDanceTime/2.0))
+      //  m_tile?.runAction(SKAction.rotateByAngle(360, duration: m_totalDanceTime/2.0))
     }
     
     

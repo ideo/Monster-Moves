@@ -37,6 +37,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     private var m_tiles : NSMutableArray = []
     private var m_dancePreloadedCount : Int = 0;
     private var m_readyToDance : Bool = false
+    private var m_pace : Int = 0
+    private var m_currentSequenceIndex : Int = 0
+    
     
     
     override func didMoveToView(view: SKView) {
@@ -300,13 +303,44 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     func prepareToPlay()
     {
-//        for var i = 0; i<4; i++
-//        {
-            let zone : DropzoneSprite = m_dropzoneBodies[0] as! DropzoneSprite
-            let tile : TileSprite = zone.m_tile!
-            m_actor.playAction(tile.m_actionName!)
-            zone.bounce()
-//        }
+        
+        m_currentSequenceIndex = 3;
+        
+        
+        self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.runBlock({self.playNextDance(0)}),SKAction.waitForDuration(2.509)])))
+
+        
+        self.runAction(SKAction.playSoundFileNamed("sound/common/Hooray_1.mp3", waitForCompletion: false))
+        
+        self.runAction(SKAction.playSoundFileNamed("sound/beats/03_Play/03_Funk.mp3", waitForCompletion: false))
+        
+        let zone : DropzoneSprite = m_dropzoneBodies[0] as! DropzoneSprite
+        let tile : TileSprite = zone.m_tile!
+        m_actor.playAction(tile.m_actionName!)
+        zone.bounce()
+        //        }
+        
+        m_pace = 0
+        
+    }
+    
+    
+    func playNextDance(dt : Float)
+    {
+        m_pace++;
+        if (m_pace > 3) {
+            m_pace = 0;
+        }
+        
+        m_currentSequenceIndex++;
+        if (m_currentSequenceIndex > 3) {
+            m_currentSequenceIndex = 0;
+        }
+        
+        let zone : DropzoneSprite = m_dropzoneBodies[m_currentSequenceIndex] as! DropzoneSprite
+        let tile : TileSprite = zone.m_tile!
+        m_actor.playAction(tile.m_actionName!)
+        zone.bounce()
     }
     
     
