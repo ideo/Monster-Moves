@@ -35,7 +35,7 @@ class DropzoneSprite: SKSpriteNode {
     var m_tileColor : UIColor?
     
     private var m_frameTime : Float = 1/15
-    private var m_totalDanceTime : Float = 1.9 // Derived from m_frameTime * 50 - 0.6
+    private var m_totalDanceTime : Double = 1.9 // Derived from m_frameTime * 50 - 0.6
     private var scaleAdjust : Float = 1.0
     
     internal func dropTile(tile : TileSprite)
@@ -66,6 +66,18 @@ class DropzoneSprite: SKSpriteNode {
             ]))
     }
     
+    
+    internal func bounce()
+    {
+        removeAllActions()
+        self.runAction(SKAction.sequence([
+            SKAction.scaleTo(1.3, duration:m_totalDanceTime/6.0),
+            SKAction.waitForDuration(m_totalDanceTime/6.0*7.0),
+            SKAction.scaleTo(1.0, duration: Double(m_totalDanceTime)/6.0)
+            
+            ]))
+        m_tile?.runAction(SKAction.rotateByAngle(360, duration: m_totalDanceTime/2.0))
+    }
     
     
     

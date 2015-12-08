@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "tv",
-      "filename" : "bgRing.png",
+      "filename" : "bgCircle.png",
       "scale" : "1x"
     }
   ],

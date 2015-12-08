@@ -252,6 +252,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             tileSprite.position = m_dropzoneBodies[i].position
             tileSprite.physicsBody = nil
             let dropZoneSprite : DropzoneSprite = m_dropzoneBodies[i] as! DropzoneSprite
+            dropZoneSprite.m_tile = tileSprite
             dropZoneSprite.showCircle()
         }
         
@@ -264,11 +265,13 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     func checkDropzonesToPlay()
     {
-        if(dropzoneIsFull())
+        if(self.dropzoneIsFull())
         {
+            
 //            removeFloatingTiles()
         }
-        self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
+        prepareToPlay()
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(15),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
         
     }
     
@@ -288,7 +291,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         m_tiles.removeAllObjects()
         m_circle.removeFromParent()
         m_actor.removeFromParent()
-
+        
         
         self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.spaceshipFlyInAndDropEggs()})]))
         
@@ -297,13 +300,18 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     func prepareToPlay()
     {
-        
+//        for var i = 0; i<4; i++
+//        {
+            let zone : DropzoneSprite = m_dropzoneBodies[0] as! DropzoneSprite
+            let tile : TileSprite = zone.m_tile!
+            m_actor.playAction(tile.m_actionName!)
+            zone.bounce()
+//        }
     }
     
     
     func tilePressed(tile : TileSprite)
     {
-        
         for var i = 0; i < 4; i++
         {
             let zone : DropzoneSprite = m_dropzoneBodies[i] as! DropzoneSprite;
@@ -330,10 +338,11 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     func setupCentralCircle()
     {
         m_circle = SKSpriteNode(imageNamed: "tiles-leblob/bgCircle")
+        m_circle.alpha = 0.2
         m_circle.position = CGPoint(
             x: CGRectGetMidX(scene!.frame),
             y: CGRectGetMidY(scene!.frame)+100)
-        m_circle.zPosition = 3
+        m_circle.zPosition = 0
         addChild(m_circle)
         
         m_circle.physicsBody = SKPhysicsBody(circleOfRadius: 370)
@@ -350,7 +359,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     {
         m_actor.playAction("idle")
         self.runAction(SKAction.sequence([SKAction.waitForDuration(0.5),SKAction.runBlock({self.setupDropZones()})]))
-        m_actor.preloadActions(["dance1","dance2","dance3","dance4","dance5","dance6","dance7","dance8"])
+        m_actor.preloadActions(["dance1","dance2","dance3","dance4","dance5","dance6","dance7"])
     }
     
     func sizeAndGrow()
@@ -518,8 +527,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         
         for sprite in m_dropzoneBodies
         {
-            let zone: DropzoneSprite = sprite as! DropzoneSprite
-            if(zone.m_tile != nil)
+            let dzone: DropzoneSprite = sprite as! DropzoneSprite
+            if(dzone.m_tile != nil)
             {
                 dropCount++
             }
