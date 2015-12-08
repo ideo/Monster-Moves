@@ -506,7 +506,6 @@ void CreateLayer::setupDropzones()
         
         addChild(dropzone, DROPZONE_LAYER);
         
-        
         float dropzoneScale = DROPZONE_DEFAULT_SCALE;
         
         if (screenSize.width == 960) {

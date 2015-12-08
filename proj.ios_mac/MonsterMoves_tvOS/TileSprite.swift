@@ -27,7 +27,6 @@ class TileSprite: SKSpriteNode {
     
     internal
         var m_actionName : String?
-        var m_delegate : TileSpriteDelegate?
         var m_dropzoneIndex : Int = -1
         var m_type : TileType?
         var m_dropping : Bool = false
@@ -59,7 +58,9 @@ class TileSprite: SKSpriteNode {
     {
         let physicsBody : SKPhysicsBody = SKPhysicsBody(circleOfRadius: (100))
         physicsBody.dynamic = true
-        physicsBody.density = 0.0
+       // physicsBody.density = 1.0
+        physicsBody.velocity = CGVectorMake(10, 10)
+        physicsBody.mass = 0
         physicsBody.friction = 0.0
         physicsBody.restitution = 1.0
         physicsBody.linearDamping = 0
@@ -72,11 +73,6 @@ class TileSprite: SKSpriteNode {
     }
     
     
-}
-
-protocol TileSpriteDelegate
-{
-    func tilePressed(tile : TileSprite)
 }
 
 

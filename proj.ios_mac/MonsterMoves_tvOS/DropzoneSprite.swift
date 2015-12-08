@@ -9,6 +9,23 @@
 import Foundation
 import SpriteKit
 
+extension CGPoint {
+    
+    /**
+     Calculates a distance to the given point.
+     
+     :param: point - the point to calculate a distance to
+     
+     :returns: distance between current and the given points
+     */
+    func distance(point: CGPoint) -> CGFloat {
+        let dx = self.x - point.x
+        let dy = self.y - point.y
+        return sqrt(dx * dx + dy * dy);
+    }
+}
+
+
 class DropzoneSprite: SKSpriteNode {
     
     internal
@@ -34,16 +51,23 @@ class DropzoneSprite: SKSpriteNode {
         m_tile = tile
         tile.m_dropzoneIndex = m_index!
         //warning : DropTime Error
-        var dropTime : Float = 0.1
+        var dropTime : Float = Float((m_tile?.position.distance(self.position))!)/2000.0
+        
+        if(dropTime < 0.1)
+        {
+            dropTime = 0.1
+        }
         
         m_tile?.m_dropping = true
         tile.runAction(SKAction.sequence(
             [
-            SKAction.moveTo(self.position, duration: 0.1),
-            SKAction.scaleTo(0.0, duration: 0.5),
-            SKAction.runBlock({self.m_tile?.removeFromParent()})
+            SKAction.moveTo(self.position, duration: 1.0),
+            SKAction.runBlock({self.showCircle()})
             ]))
     }
+    
+    
+    
     
     func removeCurrentTile()
     {
@@ -69,6 +93,20 @@ class DropzoneSprite: SKSpriteNode {
             m_circle?.removeAllActions()
             m_circle?.removeFromParent()
             m_circle = nil
+        }
+    }
+    
+    func showCircle()
+    {
+        if(m_circle == nil)
+        {
+            m_circle = SKSpriteNode(imageNamed: String(format: "tiles-leblob/tileCircle"))
+//            m_circle?.position = CGPoint(
+//                x: CGRectGetMidX(scene!.frame),
+//                y: CGRectGetMidY(scene!.frame))
+            m_circle?.alpha = 0
+            self.addChild(m_circle!)
+            m_circle?.runAction(SKAction.fadeInWithDuration(0.1))
         }
     }
     
