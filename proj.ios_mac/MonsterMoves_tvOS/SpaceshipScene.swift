@@ -44,8 +44,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
         
-       // characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-         characters = ["LeBlob"]
+        //characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
+        characters = ["LeBlob"]
         
         let getRandomBackground = randomSequenceGenerator(0, max: backgroundArray.count-1)
         
@@ -235,12 +235,11 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     func getReadyForDanceScene()
     {
-        
         self.setupPhysics()
         self.setupCentralCircle()
         self.sizeAndGrow()
         self.startIdle()
-        self.runAction(SKAction.sequence([SKAction.waitForDuration(2),SKAction.runBlock({self.putInDropZone()})]))
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.putInDropZone()})]))
     }
     
     
@@ -269,6 +268,36 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         {
 //            removeFloatingTiles()
         }
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
+        
+    }
+    
+    func timeToTransitionToNextCharacter()
+    {
+        self.spaceshipFlyInAndTakeAwayEggs()
+        for sprites in m_dropzoneBodies
+        {
+            sprites.removeFromParent()
+        }
+        m_dropzoneBodies.removeAllObjects()
+        
+        for tiles in m_tiles
+        {
+            tiles.removeFromParent()
+        }
+        m_tiles.removeAllObjects()
+        m_circle.removeFromParent()
+        m_actor.removeFromParent()
+
+        
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.spaceshipFlyInAndDropEggs()})]))
+        
+        
+    }
+    
+    func prepareToPlay()
+    {
+        
     }
     
     
@@ -321,7 +350,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     {
         m_actor.playAction("idle")
         self.runAction(SKAction.sequence([SKAction.waitForDuration(0.5),SKAction.runBlock({self.setupDropZones()})]))
-    m_actor.preloadActions(["dance1","dance2","dance3","dance4","dance5","dance6","dance7","dance8"])
+        m_actor.preloadActions(["dance1","dance2","dance3","dance4","dance5","dance6","dance7","dance8"])
     }
     
     func sizeAndGrow()
