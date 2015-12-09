@@ -78,7 +78,7 @@ class IntroScene: SKScene {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoEndedPlaying", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
         
-      //  nextButtonPressed()
+        nextButtonPressed()
     }
     
     func videoEndedPlaying(){

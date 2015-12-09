@@ -103,6 +103,8 @@
 		684367CC1C17FC95001AE5F4 /* Sausalito_act_Dance_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684367AB1C17FC95001AE5F4 /* Sausalito_act_Dance_4.mp3 */; };
 		684367CD1C17FC95001AE5F4 /* Sausalito_act_Dance_6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684367AC1C17FC95001AE5F4 /* Sausalito_act_Dance_6.mp3 */; };
 		684367CE1C17FC95001AE5F4 /* Sausalito_act_Dance_7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684367AD1C17FC95001AE5F4 /* Sausalito_act_Dance_7.mp3 */; };
+		684367D31C18AD85001AE5F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684367D11C18AD85001AE5F4 /* Fabric.framework */; };
+		684367D41C18AD85001AE5F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684367D21C18AD85001AE5F4 /* Crashlytics.framework */; };
 		685E08491C0E452C00B5CCCF /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685E08481C0E452C00B5CCCF /* Game.xcassets */; };
 		685E084C1C0E452C00B5CCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685E084A1C0E452C00B5CCCF /* Main.storyboard */; };
 		685E084E1C0E452C00B5CCCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685E084D1C0E452C00B5CCCF /* Assets.xcassets */; };
@@ -324,6 +326,8 @@
 		684367AB1C17FC95001AE5F4 /* Sausalito_act_Dance_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sausalito_act_Dance_4.mp3; sourceTree = "<group>"; };
 		684367AC1C17FC95001AE5F4 /* Sausalito_act_Dance_6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sausalito_act_Dance_6.mp3; sourceTree = "<group>"; };
 		684367AD1C17FC95001AE5F4 /* Sausalito_act_Dance_7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sausalito_act_Dance_7.mp3; sourceTree = "<group>"; };
+		684367D11C18AD85001AE5F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		684367D21C18AD85001AE5F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		685E083E1C0E452C00B5CCCF /* MonsterMoves_tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterMoves_tvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		685E08481C0E452C00B5CCCF /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
 		685E084B1C0E452C00B5CCCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -402,6 +406,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684367D41C18AD85001AE5F4 /* Crashlytics.framework in Frameworks */,
+				684367D31C18AD85001AE5F4 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +866,8 @@
 		685E083F1C0E452C00B5CCCF /* MonsterMoves_tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				684367D11C18AD85001AE5F4 /* Fabric.framework */,
+				684367D21C18AD85001AE5F4 /* Crashlytics.framework */,
 				68E59AEC1C15F6520087BF13 /* Sprites */,
 				68781D701C115BEF0087457A /* Config */,
 				685E08601C0F787200B5CCCF /* Resources */,
@@ -944,6 +952,7 @@
 				685E083A1C0E452C00B5CCCF /* Sources */,
 				685E083B1C0E452C00B5CCCF /* Frameworks */,
 				685E083C1C0E452C00B5CCCF /* Resources */,
+				684367D01C18AC3F001AE5F4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1122,6 +1131,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		684367D01C18AC3F001AE5F4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run e749ea3a342fc3d257fd2ab90c4955e3c65b017c ce041a27e56f2449bcdf52df854639335f58b58c928aa2fde061fc4c40a2bc74";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -1327,6 +1352,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1376,6 +1405,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 
 struct ActorData {
@@ -29,17 +30,19 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     private var m_eggCrackSoundId : Int = -1
     private var m_circle : SKSpriteNode = SKSpriteNode()
     private var m_actor : JSONSprite = JSONSprite()
-    private var m_currentBackground : SKTexture?
+//    private var m_currentBackground : SKTexture?
     
     
     //DanceScene
     private var minTileGenY : Float = 0
     private var m_dropzoneBodies : NSMutableArray = []
     private var m_tiles : NSMutableArray = []
-    private var m_dancePreloadedCount : Int = 0;
+    private var m_dancePreloadedCount : Int = 0
     private var m_readyToDance : Bool = false
     private var m_pace : Int = 0
     private var m_currentSequenceIndex : Int = 0
+    private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
+    private var m_danceLoopCount : Int = 0
     
     
     
@@ -49,17 +52,14 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
         
         //characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        characters = ["LeBlob"]
-        
-        let getRandomBackground = randomSequenceGenerator(0, max: backgroundArray.count-1)
+        characters = ["LeBlob","Meep"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
             y: CGRectGetMidY(scene!.frame))
         
-        m_currentBackground = SKTexture(imageNamed: backgroundArray[getRandomBackground()] as! String)
-        
-        let background = SKSpriteNode(texture: m_currentBackground)
+        let background = SKSpriteNode(texture: getRandomBackground())
+        background.name = "background"
         background.position = center
         background.zPosition = -1
         scene?.addChild(background)
@@ -114,6 +114,13 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         
     }
  
+    
+    func getRandomBackground() -> SKTexture
+    {
+         let randomBackgroundGenerator = randomSequenceGenerator(0, max: backgroundArray.count-1)
+        return SKTexture(imageNamed: backgroundArray[randomBackgroundGenerator()] as! String)
+    }
+    
     
     // MARK: - Spaceship Methods
     
@@ -275,7 +282,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             removeFloatingTiles()
         }
         prepareToPlay()
-//        self.runAction(SKAction.sequence([SKAction.waitForDuration(10),SKAction.runBlock({self.spaceshipFlyInAndTakeAwayEggs()}),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
+        
     }
     
     
@@ -316,6 +323,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         m_tiles.removeAllObjects()
         m_circle.removeFromParent()
         m_actor.removeFromParent()
+        m_dancePreloadedCount=0
+        
+        let background = self.childNodeWithName("background") as! SKSpriteNode
+        background.texture = getRandomBackground()
         
         
         self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.spaceshipFlyInAndDropEggs()})]))
@@ -327,22 +338,28 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     {
         
         m_currentSequenceIndex = 3;
-
-        self.runAction(SKAction.playSoundFileNamed("sound/common/Hooray_1.mp3", waitForCompletion: false))
         
         self.runAction(SKAction.playSoundFileNamed("sound/beats/03_Play/03_Funk.mp3", waitForCompletion: false))
         
+        
+        let coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sound/common/IntroFinalAssetwithextralooping", ofType: "mp3")!)
+        do{
+            backgroundAudioPlayer = try AVAudioPlayer(contentsOfURL:coinSound)
+            backgroundAudioPlayer.prepareToPlay()
+            backgroundAudioPlayer.play()
+            backgroundAudioPlayer.numberOfLoops = -1
+        }catch {
+            print("Error getting the audio file")
+        }
+        
         m_pace = 0
+        m_danceLoopCount = 0
         let zone : DropzoneSprite = m_dropzoneBodies[0] as! DropzoneSprite
         let tile : TileSprite = zone.m_tile!
         m_actor.playAction(tile.m_actionName!)
         zone.bounce()
-
-        //        }
         
-         self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.runBlock({self.playNextDance(0)}),SKAction.waitForDuration(2.509)])))
-        
-        
+        self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.runBlock({self.playNextDance(0)}),SKAction.waitForDuration(2.509)])))
     }
     
     
@@ -351,6 +368,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         m_pace++;
         if (m_pace > 3) {
             m_pace = 0;
+            m_danceLoopCount++
         }
         
         m_currentSequenceIndex++;
@@ -362,6 +380,14 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         let tile : TileSprite = zone.m_tile!
         m_actor.playAction(tile.m_actionName!)
         zone.bounce()
+        
+        if(m_danceLoopCount == 1)
+        {
+            self.runAction(SKAction.stop())
+            self.removeAllActions()
+            self.runAction(SKAction.sequence([SKAction.waitForDuration(10),SKAction.runBlock({self.spaceshipFlyInAndTakeAwayEggs()}),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
+        }
+        
     }
     
     
@@ -442,6 +468,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             dropzone.m_index = i
             dropzone.m_tileColor = m_actor.m_tileColor
             dropzone.setScale(0)
+            dropzone.zPosition = 1
             addChild(dropzone)
             
             dropzone.runAction(SKAction.scaleTo(1.0, duration: 1.0))
@@ -524,6 +551,20 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         var leftCount : Int = 0
         var rightCount : Int = 0
         
+        for temptile in m_tiles
+        {
+            if temptile.position.x < CGRectGetMidX(scene!.frame)
+            {
+                leftCount++
+            }
+            else
+            {
+                rightCount++
+            }
+        }
+        
+        
+        
         let left : Bool
         if (leftCount == rightCount) {
             left = ((rand() % 10) <= 4);
@@ -541,36 +582,54 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         let tileY : Float
         tileY = minTileGenY + Float(tile.size.height / 2) + Float(randomF)
         
-        let p : CGPoint
+        var p : CGPoint
         
         if(left)
         {
             if (type == TileType.TileTypeColorChange || m_dancePreloadedCount < 8) {
                 p = CGPoint(x: Int(tile.size.width/2 + 70) + leftpoint, y: Int(tileY))
+                print("left 1 %@",p)
             } else {
                 p = CGPoint(x: Int(-30 - tile.size.width/2),y: Int(tileY));
+                print("left 2 %@",p)
             }
+            
+//             p = CGPoint(x: 500,y:500)
         }
         else
         {
+            
+            
+           
             let p1 : Int = 1340 + random() % Int(510 - tile.size.width)
             
             if (type == TileType.TileTypeColorChange || m_dancePreloadedCount < 8) {
                 p = CGPoint(x: Int(Int(tile.size.width/2) + p1 ), y: Int(tileY))
+                print("right 1 %@",p)
             } else {
-                p = CGPoint(x: Int(1950 + tile.size.width/2),y: Int(tileY));
+                p = CGPoint(x: Int(0 + tile.size.width/2),y: Int(tileY));
+                print("right 2 %@",p)
             }
+            
+            
+//            p = CGPoint(x: 500,y:500)
         }
         
         tile.position = p
         tile.setScale(0)
         tile.zPosition = 2
-        self.addChild(tile)
         tile.physicsBody = tile.attachPhysics()
+        self.addChild(tile)
         
-        tile.physicsBody?.applyImpulse(CGVectorMake(100.0, -20.0))
+        
+        tile.physicsBody?.applyImpulse(CGVectorMake(150.0, -20.0))
         tile.runAction(SKAction.scaleTo(1.0, duration: 1.0))
         m_tiles.addObject(tile)
+        
+        
+        print("Added Tile %@",actionName)
+        
+        
         
     }
     
