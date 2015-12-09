@@ -329,7 +329,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         background.texture = getRandomBackground()
         
         
-        self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.spaceshipFlyInAndDropEggs()})]))
+        
+        self.runAction(SKAction.sequence([
+            SKAction.waitForDuration(5),
+            SKAction.runBlock({self.spaceshipFlyInAndDropEggs()})]))
         
         
     }
@@ -385,7 +388,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         {
             self.runAction(SKAction.stop())
             self.removeAllActions()
-            self.runAction(SKAction.sequence([SKAction.waitForDuration(10),SKAction.runBlock({self.spaceshipFlyInAndTakeAwayEggs()}),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
+            self.runAction(SKAction.sequence([SKAction.waitForDuration(2),SKAction.runBlock({self.spaceshipFlyInAndTakeAwayEggs()}),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
         }
         
     }
@@ -418,7 +421,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     func setupCentralCircle()
     {
-        m_circle = SKSpriteNode(imageNamed: "tiles-leblob/bgCircle")
+        m_circle = SKSpriteNode(imageNamed: String(format: "tiles-%@/bgCircle",m_actor.m_name))
         m_circle.alpha = 0.4
         m_circle.position = CGPoint(
             x: CGRectGetMidX(scene!.frame),
