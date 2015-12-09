@@ -316,6 +316,7 @@ class JSONSprite: SKSpriteNode {
             innerActor!.blendMode = .Alpha
             innerActor!.position = CGPointZero
             innerActor!.name = TILE_INNER_ACTOR_TAG as String
+            m_nextActionHolder.addChild(innerActor!)
         }
         
         if(m_currentActorHolder != m_nextActionHolder)
@@ -348,11 +349,8 @@ class JSONSprite: SKSpriteNode {
                 spriteFrames.addObject(texture)
             }
         }
-        
-
-        
+    
         let animation = SKAction.animateWithTextures(spriteFrames as NSArray as! [SKTexture], timePerFrame: 1/15)
-        
         
         if(action.repeatagain <= 0)
         {
@@ -366,8 +364,6 @@ class JSONSprite: SKSpriteNode {
         {
             innerActor!.runAction(SKAction.repeatAction(animation, count: action.repeatagain))
         }
-        
-        
         
         if(!m_silenceMode && !action.soundEffect.isEmpty)
         {

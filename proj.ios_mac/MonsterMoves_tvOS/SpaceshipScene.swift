@@ -49,7 +49,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
         
         //characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        characters = ["LeBlob","Meep"]
+        characters = ["LeBlob"]
         
         let getRandomBackground = randomSequenceGenerator(0, max: backgroundArray.count-1)
         
@@ -243,6 +243,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         self.setupCentralCircle()
         self.sizeAndGrow()
         self.startIdle()
+        
         self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.putInDropZone()})]))
     }
     
@@ -254,11 +255,16 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             let tileSprite : TileSprite = m_tiles[i] as! TileSprite
             tileSprite.position = m_dropzoneBodies[i].position
             tileSprite.physicsBody = nil
+            
+            
             let dropZoneSprite : DropzoneSprite = m_dropzoneBodies[i] as! DropzoneSprite
+            tileSprite.m_dropzoneIndex = i
             dropZoneSprite.m_tile = tileSprite
-            dropZoneSprite.showCircle()
+            dropZoneSprite.showCircle(m_actor.m_name)
+            
+            
+            
         }
-        
         self.checkDropzonesToPlay()
     }
     
@@ -266,18 +272,31 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     {
         if(self.dropzoneIsFull())
         {
-            
-//            removeFloatingTiles()
+            removeFloatingTiles()
         }
         prepareToPlay()
-        self.runAction(SKAction.sequence([SKAction.waitForDuration(10),SKAction.runBlock({self.spaceshipFlyInAndTakeAwayEggs()}),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
-        
+//        self.runAction(SKAction.sequence([SKAction.waitForDuration(10),SKAction.runBlock({self.spaceshipFlyInAndTakeAwayEggs()}),SKAction.runBlock({self.timeToTransitionToNextCharacter()})]))
     }
     
     
     func removeFloatingTiles()
     {
-        
+        for var i=0;i<m_tiles.count;i++
+        {
+            let tile : TileSprite = m_tiles[i] as! TileSprite
+            if(tile.m_dropzoneIndex<0)
+            {
+                tile.removeAllActions()
+                tile.physicsBody = nil
+                tile.runAction(SKAction.sequence([
+                    
+                    SKAction.waitForDuration(0.05*Double(i)),
+                    SKAction.scaleTo(0, duration: 0.1),
+                    SKAction.runBlock({tile.removeFromParent()})
+                    
+                    ]))
+            }
+        }
     }
     
     
@@ -308,22 +327,21 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     {
         
         m_currentSequenceIndex = 3;
-        
-        
-        self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.runBlock({self.playNextDance(0)}),SKAction.waitForDuration(2.509)])))
 
-        
         self.runAction(SKAction.playSoundFileNamed("sound/common/Hooray_1.mp3", waitForCompletion: false))
         
         self.runAction(SKAction.playSoundFileNamed("sound/beats/03_Play/03_Funk.mp3", waitForCompletion: false))
         
+        m_pace = 0
         let zone : DropzoneSprite = m_dropzoneBodies[0] as! DropzoneSprite
         let tile : TileSprite = zone.m_tile!
         m_actor.playAction(tile.m_actionName!)
         zone.bounce()
+
         //        }
         
-        m_pace = 0
+         self.runAction(SKAction.repeatActionForever(SKAction.sequence([SKAction.runBlock({self.playNextDance(0)}),SKAction.waitForDuration(2.509)])))
+        
         
     }
     
@@ -375,7 +393,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     func setupCentralCircle()
     {
         m_circle = SKSpriteNode(imageNamed: "tiles-leblob/bgCircle")
-        m_circle.alpha = 0.2
+        m_circle.alpha = 0.4
         m_circle.position = CGPoint(
             x: CGRectGetMidX(scene!.frame),
             y: CGRectGetMidY(scene!.frame)+100)

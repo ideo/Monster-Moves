@@ -1557,6 +1557,7 @@ void CreateLayer::prepareToPlay(Ref *sender)
     DropzoneSprite *zone = (DropzoneSprite*)m_dropzoneBodies[m_currentSequenceIndex]->GetUserData();
     TileSprite *tile = zone->m_tile;
     m_actor->playAction(tile->m_actionName);
+    
     zone->bounce();
     
     schedule(CC_SCHEDULE_SELECTOR(CreateLayer::playNextDance), PACE_TIME);

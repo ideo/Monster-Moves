@@ -66,7 +66,7 @@
                {
                "name":"dance1",
                "realName":"Spin1",
-               "soundEffect":"sound/actors/Meep/Meep_Dance_1.mp3",
+               "soundEffect":"Meep_act_Dance_1.mp3",
                "type":1,
                "repeat":1,
                "framerate":15.0,
@@ -76,7 +76,7 @@
                {
                "name":"dance2",
                "realName":"Funky",
-               "soundEffect":"sound/actors/Meep/Meep_Dance_2.mp3",
+               "soundEffect":"Meep_act_Dance_2.mp3",
                "type":1,
                "repeat":1,
                "framerate":15.0,
@@ -86,7 +86,7 @@
                {
                "name":"dance3",
                "realName":"Can Can",
-               "soundEffect":"sound/actors/Meep/Meep_Dance_3.mp3",
+               "soundEffect":"Meep_act_Dance_3.mp3",
                "type":1,
                "repeat":1,
                "framerate":15.0,
@@ -96,7 +96,7 @@
                {
                "name":"dance4",
                "realName":"Superman",
-               "soundEffect":"sound/actors/Meep/Meep_Dance_4.mp3",
+               "soundEffect":"Meep_act_Dance_4.mp3",
                "type":1,
                "repeat":1,
                "framerate":15.0,
@@ -106,7 +106,7 @@
                {
                "name":"dance5",
                "realName":"Hip Bounce",
-               "soundEffect":"sound/actors/Meep/Meep_Dance_5.mp3",
+               "soundEffect":"Meep_act_Dance_5.mp3",
                "type":1,
                "repeat":1,
                "framerate":15.0,
@@ -116,7 +116,7 @@
                {
                "name":"dance6",
                "realName":"Spin",
-               "soundEffect":"sound/actors/Meep/Meep_Dance_6.mp3",
+               "soundEffect":"Meep_act_Dance_6.mp3",
                "type":1,
                "repeat":1,
                "framerate":15.0,
@@ -126,7 +126,7 @@
                {
                "name":"dance7",
                "realName":"Fly",
-               "soundEffect":"sound/actors/Meep/Meep_Dance_7.mp3",
+               "soundEffect":"Meep_act_Dance_7.mp3",
                "type":1,
                "repeat":1,
                "framerate":15.0,
@@ -136,7 +136,7 @@
                {
                "name":"dance8",
                "realName":"Wave",
-               "soundEffect":"sound/actors/Meep/Meep_Dance_8.mp3",
+               "soundEffect":"Meep_act_Dance_8.mp3",
                "type":1,
                "repeat":1,
                "framerate":15.0,

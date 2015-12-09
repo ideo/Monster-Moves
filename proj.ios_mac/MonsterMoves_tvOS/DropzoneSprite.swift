@@ -47,7 +47,6 @@ class DropzoneSprite: SKSpriteNode {
                 self.removeCurrentTile()
             }
         }
-        
         m_tile = tile
         tile.m_dropzoneIndex = m_index!
         //warning : DropTime Error
@@ -61,8 +60,8 @@ class DropzoneSprite: SKSpriteNode {
         m_tile?.m_dropping = true
         tile.runAction(SKAction.sequence(
             [
-            SKAction.moveTo(self.position, duration: 1.0),
-            SKAction.runBlock({self.showCircle()})
+            SKAction.moveTo(self.position, duration: Double(dropTime)),
+            SKAction.runBlock({self.showCircle("leblob")})
             ]))
     }
     
@@ -71,12 +70,12 @@ class DropzoneSprite: SKSpriteNode {
     {
         removeAllActions()
         self.runAction(SKAction.sequence([
-            SKAction.scaleTo(1.3, duration:m_totalDanceTime/6.0),
+            SKAction.scaleTo(1.2, duration:m_totalDanceTime/6.0),
             SKAction.waitForDuration(m_totalDanceTime/6.0*7.0),
             SKAction.scaleTo(1.0, duration: Double(m_totalDanceTime)/6.0)
             
             ]))
-      //  m_tile?.runAction(SKAction.rotateByAngle(360, duration: m_totalDanceTime/2.0))
+        m_tile?.runAction(SKAction.rotateByAngle(360, duration: m_totalDanceTime/2.0))
     }
     
     
@@ -108,14 +107,11 @@ class DropzoneSprite: SKSpriteNode {
         }
     }
     
-    func showCircle()
+    func showCircle(actorName : String)
     {
         if(m_circle == nil)
         {
-            m_circle = SKSpriteNode(imageNamed: String(format: "tiles-leblob/tileCircle"))
-//            m_circle?.position = CGPoint(
-//                x: CGRectGetMidX(scene!.frame),
-//                y: CGRectGetMidY(scene!.frame))
+            m_circle = SKSpriteNode(imageNamed: String(format: "tiles-%@/tileCircle",actorName))
             m_circle?.alpha = 0
             self.addChild(m_circle!)
             m_circle?.runAction(SKAction.fadeInWithDuration(0.1))
