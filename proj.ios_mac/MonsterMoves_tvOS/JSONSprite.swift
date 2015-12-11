@@ -276,6 +276,7 @@ class JSONSprite: SKSpriteNode {
     
     func playActionWithDirection(actionName : String, reverse : Bool)
     {
+        print(m_name," plays action",actionName)
         var action: ActionData = m_actions[actionName]!
         m_nextActionHolder = m_actorHolders[actionName]!
         
