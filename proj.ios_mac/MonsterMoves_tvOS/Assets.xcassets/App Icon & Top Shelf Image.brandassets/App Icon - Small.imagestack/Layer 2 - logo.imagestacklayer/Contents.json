@@ -5,11 +5,11 @@
   },
   "properties" : {
     "frame-size" : {
-      "width" : 198,
+      "width" : 197,
       "height" : 124
     },
     "frame-center" : {
-      "x" : 203,
+      "x" : 202.5,
       "y" : 84
     }
   }

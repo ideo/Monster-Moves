@@ -4,7 +4,7 @@
       "filename" : "Layer 4 - saus.imagestacklayer"
     },
     {
-      "filename" : "Layer 3 - monsters.imagestacklayer"
+      "filename" : "Layer 3 - DANCE + monsters.imagestacklayer"
     },
     {
       "filename" : "Layer 2 - logo.imagestacklayer"
@@ -19,5 +19,11 @@
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "canvasSize" : {
+      "width" : 400,
+      "height" : 240
+    }
   }
 }

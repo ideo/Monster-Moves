@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 import AVFoundation
+import GameplayKit
 
 
 struct ActorData {
@@ -36,13 +37,21 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     //DanceScene
     private var minTileGenY : Float = 0
     private var m_dropzoneBodies : NSMutableArray = []
+    
+    /// All the tiles
     private var m_tiles : NSMutableArray = []
+    
+    ///Focused tile
+    private var m_focusedTileIndex : Int = 0
+    
     private var m_dancePreloadedCount : Int = 0
     private var m_readyToDance : Bool = false
     private var m_pace : Int = 0
     private var m_currentSequenceIndex : Int = 0
     private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
     private var m_danceLoopCount : Int = 0
+    
+    
     
     
     
@@ -64,15 +73,31 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         background.zPosition = -1
         scene?.addChild(background)
         
+        let tapgesture = UITapGestureRecognizer(target: self, action: "touchpadTapped")
+        tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
+        self.view?.addGestureRecognizer(tapgesture)
+
         let wait = SKAction.waitForDuration(0.3)
         let run = SKAction.runBlock {
             self.spaceshipFlyInAndDropEggs()
         }
         self.runAction(SKAction.sequence([wait,run,wait,]))
+        
     }
     
+     // MARK: - Interactions
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if(m_readyToDance)
+        {
+            pickRandomTile()
+        }
+    }
+    
+    
+    /// Logic to crack Eggs and randomly put in Tiles on Touch Pad : Top
     func touchpadTapped()
     {
+        
         if(m_eggReady)
         {
             var leblob : JSONSprite
@@ -104,15 +129,13 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
                 m_eggReady = false
                 leblob.removeAllActions()
                 self.getReadyForDanceScene()
-                m_readyToDance = true
                 
             }
         }
         else if(m_readyToDance)
         {
-             self.putRandomTilesInDropZone()
+             //self.putRandomTilesInDropZone()
         }
-
     }
  
     
@@ -233,10 +256,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         actor.playAction("eggIdle")
         //m_eggReady = true
         
-        let tapgesture = UITapGestureRecognizer(target: self, action: "touchpadTapped")
-        tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
-        self.view?.addGestureRecognizer(tapgesture)
-        
     }
     
     func takeAwayEggs()
@@ -260,13 +279,29 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     }
     
     
+    
+    func pickRandomTile()
+    {
+        let randomMoves = randomSequenceGenerator(0, max: m_tiles.count-1)
+        for var i = 0; i<m_tiles.count ; i++
+        {
+            let tileSprite : TileSprite = m_tiles[i] as! TileSprite
+             tileSprite.runAction(SKAction.scaleTo(1.0, duration: 0.1))
+        }
+        let tileSprite : TileSprite = m_tiles[randomMoves()] as! TileSprite
+        tileSprite.runAction(SKAction.scaleTo(1.3, duration: 0.1))
+        print("Tile highlighted should be ",randomMoves())
+        
+    }
+    
+    
     func putRandomTilesInDropZone()
     {
         m_readyToDance = false
         for var i = 0; i<4; i++
         {
-            let randomMoves = randomSequenceGenerator(0, max: m_tiles.count-1)
-            print("Putting tile in dropzone",randomMoves())
+           // let randomMoves = randomSequenceGenerator(0, max: m_tiles.count-1)
+           // print("Putting tile in dropzone",randomMoves())
             let tileSprite : TileSprite = m_tiles[i] as! TileSprite
             tileSprite.position = m_dropzoneBodies[i].position
             tileSprite.physicsBody = nil
@@ -672,8 +707,14 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         
         tile.physicsBody?.applyImpulse(CGVectorMake(150.0, -20.0))
         tile.runAction(SKAction.scaleTo(1.0, duration: 1.0))
-        m_tiles.addObject(tile)
+
+        if(m_tiles.count == 3)
+        {
+            self.pickRandomTile()
+        }
         
+        
+        m_tiles.addObject(tile)
         
         print("Added Tile %@",actionName)
         

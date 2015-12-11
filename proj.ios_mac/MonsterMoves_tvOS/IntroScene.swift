@@ -13,6 +13,7 @@ private var video: SKVideoNode!
 private var player: AVPlayer!
 private var introFrame: SKSpriteNode!
 private var playButton: SKSpriteNode!
+private var danceStamp: SKSpriteNode!
 private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
 
 
@@ -47,6 +48,7 @@ class IntroScene: SKScene {
         let coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sound/common/IntroFinalAssetwithextralooping", ofType: "mp3")!)
         do{
             backgroundAudioPlayer = try AVAudioPlayer(contentsOfURL:coinSound)
+            backgroundAudioPlayer.numberOfLoops = -1
             backgroundAudioPlayer.prepareToPlay()
             backgroundAudioPlayer.play()
         }catch {
@@ -60,16 +62,30 @@ class IntroScene: SKScene {
 //        self.runAction(introsound);
         
         playButton = SKSpriteNode(imageNamed: "YayButton")
-        playButton.position = center
+        playButton.position = CGPoint(
+            x: CGRectGetMidX(scene!.frame)+400,
+            y: CGRectGetMidY(scene!.frame))
         playButton.name = "playButtonNode"
         playButton.hidden = true
-        playButton.zPosition = 2
+        playButton.setScale(0.8)
+        playButton.zPosition = 3
         scene?.addChild(playButton)
         playButton.runAction(SKAction.repeatActionForever(SKAction.sequence([
-            SKAction.scaleTo(1.5, duration: 2.0),
-            SKAction.scaleTo(1.0, duration: 2.0)
+            SKAction.scaleTo(1.1, duration: 1.5),
+            SKAction.scaleTo(0.8, duration: 1.5)
             
             ])))
+        
+        danceStamp = SKSpriteNode(imageNamed: "DanceStamp")
+        danceStamp.position = center
+        danceStamp.name = "DanceStamp"
+        danceStamp.setScale(10)
+        danceStamp.hidden = true
+        danceStamp.zPosition = 2
+        scene?.addChild(danceStamp)
+        
+        
+        
         
         
         let tapgesture = UITapGestureRecognizer(target: self, action: "nextButtonPressed")
@@ -83,7 +99,15 @@ class IntroScene: SKScene {
     
     func videoEndedPlaying(){
         
+       backgroundAudioPlayer.pause()
+        
+     //   self.runAction(SKAction.playSoundFileNamed("stamp.mp3", waitForCompletion: false))
+        danceStamp.runAction(SKAction.group([SKAction.scaleTo(1.0, duration: 0.1),SKAction.unhide()]))
         playButton.hidden = false
+        
+        
+        
+        
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
