@@ -305,6 +305,11 @@ class JSONSprite: SKSpriteNode {
         var filename : String
         
         filename = String(format: "%@%04d.png",m_name,action.frameStart)
+        if(m_name == "guac")
+        {
+            filename = String(format: "%@%03d.png",m_name,action.frameStart)
+        }
+        
         
         if(innerActor != nil)
         {
@@ -337,6 +342,11 @@ class JSONSprite: SKSpriteNode {
             for var i=action.frameEnd; i>=action.frameStart; i--
             {
                 filename = String(format: "%@%04d",m_name,i)
+                if(m_name == "guac")
+                {
+                    filename = String(format: "%@%03d",m_name,i)
+                }
+                
                 let texture : SKTexture = SKTexture(imageNamed: filename)
                 spriteFrames.addObject(texture)
             }
@@ -346,6 +356,10 @@ class JSONSprite: SKSpriteNode {
             for var i=action.frameStart; i<=action.frameEnd; i++
             {
                 filename = String(format: "%@%04d",m_name,i)
+                if(m_name == "guac")
+                {
+                    filename = String(format: "%@%03d",m_name,i)
+                }
                 let texture : SKTexture = SKTexture(imageNamed: filename)
                 spriteFrames.addObject(texture)
             }
@@ -439,7 +453,12 @@ class JSONSprite: SKSpriteNode {
     {
         let fileName : String = String(format: "actors/%@/%@.png",actorName,actionName)
         let texture : SKTexture = SKTexture(imageNamed: fileName)
-        let image : String = String(format: "%@%04d.png",actorName,start)
+        var image : String = String(format: "%@%04d.png",actorName,start)
+        if(actorName == "guac")
+        {
+            image = String(format: "%@%03d.png",actorName,start)
+        }
+        
         
         var actorHolder : SKSpriteNode
       //  actorHolder = SKSpriteNode(texture: texture)

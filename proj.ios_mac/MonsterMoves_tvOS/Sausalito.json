@@ -1,5 +1,5 @@
 {
-    "name":"Sausalito",
+    "name":"sausalito",
     "defaultAction":"eggIdle",
     "feetOffset":60.0,
     "selectedEffect":"sound/actors/Sausalito/Poof_select_name.mp3",
@@ -18,6 +18,14 @@
         "height":200.0
     },
     "actions":[
+               {
+               "name":"moveForward",
+               "type":3,
+               "repeat":0,
+               "framerate":15.0,
+               "frameStart":113,
+               "frameEnd":149
+               },
                {
                "name":"eggIdle",
                "repeat":1,

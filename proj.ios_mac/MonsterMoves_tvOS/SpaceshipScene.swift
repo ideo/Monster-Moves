@@ -9,7 +9,6 @@
 import Foundation
 import SpriteKit
 import AVFoundation
-import GameplayKit
 
 
 struct ActorData {
@@ -34,7 +33,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
 //    private var m_currentBackground : SKTexture?
     
     
-    //DanceScene
+    // MARK: - DanceAct
     private var minTileGenY : Float = 0
     private var m_dropzoneBodies : NSMutableArray = []
     
@@ -61,7 +60,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
         backgroundArray = ["Candy","Desert","Jungle","Space","Ocean","Yay"]
         
         //characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        characters = ["Pom"]
+        characters = ["Guac"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -450,6 +449,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             
 //            self.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.runBlock({
 //                self.m_actor.playAction("exit")})]))
+         
+            
+            
+           
             
         }
         

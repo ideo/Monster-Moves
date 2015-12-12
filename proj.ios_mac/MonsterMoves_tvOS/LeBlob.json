@@ -19,6 +19,14 @@
     },
     "actions":[
                {
+               "name":"moveForward",
+               "type":3,
+               "repeat":0,
+               "framerate":15.0,
+               "frameStart":113,
+               "frameEnd":149
+               },
+               {
                "name":"eggIdle",
                "repeat":1,
                "framerate":15.0,
