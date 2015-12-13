@@ -32,6 +32,7 @@ class TileSprite: SKSpriteNode {
         var m_dropping : Bool = false
         var m_world : SKPhysicsWorld?
         var m_mode : TileMode?
+        var m_circle : SKSpriteNode?
     
     
     override init(texture: SKTexture!, color: UIColor, size: CGSize) {
@@ -70,6 +71,29 @@ class TileSprite: SKSpriteNode {
         
         
         return physicsBody
+    }
+    
+    
+    func removeCircle()
+    {
+        if(m_circle != nil)
+        {
+            m_circle?.removeAllActions()
+            m_circle?.removeFromParent()
+            m_circle = nil
+        }
+    }
+    
+    func showCircle(actorName : String)
+    {
+        if(m_circle == nil)
+        {
+            m_circle = SKSpriteNode(imageNamed: String(format: "tiles-%@/tileCircle",actorName))
+            m_circle?.alpha = 0
+            m_circle?.zPosition = -1
+            self.addChild(m_circle!)
+            m_circle?.runAction(SKAction.fadeInWithDuration(0.1))
+        }
     }
     
     

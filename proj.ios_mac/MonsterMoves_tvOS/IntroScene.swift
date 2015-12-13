@@ -13,6 +13,7 @@ private var video: SKVideoNode!
 private var player: AVPlayer!
 private var introFrame: SKSpriteNode!
 private var playButton: SKSpriteNode!
+private var grownsUpButton: SKSpriteNode!
 private var danceStamp: SKSpriteNode!
 private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
 
@@ -76,6 +77,13 @@ class IntroScene: SKScene {
             
             ])))
         
+        
+        grownsUpButton = SKSpriteNode(imageNamed: "grownup")
+        grownsUpButton.hidden = true
+        grownsUpButton.position = CGPoint(x: scene!.frame.size.width-250, y: scene!.frame.size.height-100)
+        self.addChild(grownsUpButton)
+        
+        
         danceStamp = SKSpriteNode(imageNamed: "DanceStamp")
         danceStamp.position = center
         danceStamp.name = "DanceStamp"
@@ -104,6 +112,7 @@ class IntroScene: SKScene {
      //   self.runAction(SKAction.playSoundFileNamed("stamp.mp3", waitForCompletion: false))
         danceStamp.runAction(SKAction.group([SKAction.scaleTo(1.0, duration: 0.1),SKAction.unhide()]))
         playButton.hidden = false
+        grownsUpButton.hidden = false
         
         
         
@@ -126,6 +135,29 @@ class IntroScene: SKScene {
         }
     }
     
+    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+        
+        
+        
+        for press in presses {
+            switch press.type {
+            case .UpArrow:
+                print("Up Arrow")
+            case .DownArrow:
+                print("Down arrow")
+            case .LeftArrow:
+                print("Left arrow")
+            case .RightArrow:
+                print("Right arrow")
+            case .Select:
+                print("Select")
+            case .Menu:
+                print("Menu")
+            case .PlayPause:
+                print("Play/Pause")
+            }
+        }
+    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
@@ -137,7 +169,6 @@ class IntroScene: SKScene {
     }
     
     func nextButtonPressed(){
-        
         self.runAction(SKAction.stop())
         backgroundAudioPlayer.stop()
         print("touched Button Pressed")
@@ -149,9 +180,23 @@ class IntroScene: SKScene {
         view?.presentScene(spaceShipScene, transition: reveal)
     }
     
+    
+    func grownUpButtonPressed()
+    {
+        let grownup :GrownsUpController = GrownsUpController()
+        
+        let rootVC : UIViewController = (UIApplication.sharedApplication().keyWindow?.rootViewController)!
+        rootVC.presentViewController(grownup, animated: true, completion: nil)
+    }
+    
+    
+    
     deinit {
             NSNotificationCenter.defaultCenter().removeObserver(self)
             player.removeObserver(self, forKeyPath: "status")
     }
+    
+    
+    
     
 }

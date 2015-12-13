@@ -11,10 +11,12 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    private var introscene : IntroScene?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let scene = IntroScene(size:CGSize(width: 1920, height: 1080))
+            introscene = IntroScene(size:CGSize(width: 1920, height: 1080))
             // Configure the view.
             let skView = self.view as! SKView
             
@@ -22,9 +24,9 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
+            introscene!.scaleMode = .AspectFill
         
-            skView.presentScene(scene)
+            skView.presentScene(introscene)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +34,9 @@ class GameViewController: UIViewController {
         // Release any cached data, images, etc that aren't in use.
     }
 
+    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+        introscene?.pressesEnded(presses, withEvent: event)
+    }
     
     
     

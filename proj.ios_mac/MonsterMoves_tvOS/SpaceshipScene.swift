@@ -278,19 +278,20 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     }
     
     
-    
+    /// Picks a random tile and focuses on it
     func pickRandomTile()
     {
         let randomMoves = randomSequenceGenerator(0, max: m_tiles.count-1)
         for var i = 0; i<m_tiles.count ; i++
         {
             let tileSprite : TileSprite = m_tiles[i] as! TileSprite
-             tileSprite.runAction(SKAction.scaleTo(1.0, duration: 0.1))
+            tileSprite.runAction(SKAction.scaleTo(1.0, duration: 0.1))
+            tileSprite.removeCircle()
         }
         let tileSprite : TileSprite = m_tiles[randomMoves()] as! TileSprite
-        tileSprite.runAction(SKAction.scaleTo(1.3, duration: 0.1))
-        print("Tile highlighted should be ",randomMoves())
-        
+        tileSprite.runAction(SKAction.scaleTo(1.2, duration: 0.1))
+        tileSprite.showCircle(m_actor.m_name)
+//        print("Tile highlighted should be ",randomMoves())
     }
     
     
@@ -304,7 +305,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
             let tileSprite : TileSprite = m_tiles[i] as! TileSprite
             tileSprite.position = m_dropzoneBodies[i].position
             tileSprite.physicsBody = nil
-            
             
             let dropZoneSprite : DropzoneSprite = m_dropzoneBodies[i] as! DropzoneSprite
             tileSprite.m_dropzoneIndex = i
@@ -505,7 +505,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     
     func startIdle()
     {
-        m_actor.playAction("idle")
+//        m_actor.removeAllActions()
+        
         self.runAction(SKAction.sequence([SKAction.waitForDuration(0.5),SKAction.runBlock({self.setupDropZones()})]))
         
         
@@ -542,10 +543,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate {
     func sizeAndGrow()
     {
         m_actor = self.childNodeWithName("leblob") as! JSONSprite
-        m_actor.runAction(SKAction.moveTo(CGPoint(
+        m_actor.runAction(SKAction.sequence([
+            SKAction.group([SKAction.runBlock({self.m_actor.playAction("moveForward")}),SKAction.moveTo(CGPoint(
             x: CGRectGetMidX(scene!.frame),
-            y: CGRectGetMidY(scene!.frame)+100), duration: 1.0))
-        m_actor.setScale(1.0)
+                y: CGRectGetMidY(scene!.frame)+100), duration: 1.0),SKAction.scaleTo(1.3, duration: 1.0)]),SKAction.runBlock({self.m_actor.removeAllActions(); self.m_actor.playAction("idle")})]))
         
     }
     

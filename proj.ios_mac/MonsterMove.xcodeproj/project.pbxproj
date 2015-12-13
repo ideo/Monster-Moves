@@ -123,6 +123,8 @@
 		684367F71C18E423001AE5F4 /* WootWoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684367EA1C18E423001AE5F4 /* WootWoot.mp3 */; };
 		684367F81C18E423001AE5F4 /* Yah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684367EB1C18E423001AE5F4 /* Yah.mp3 */; };
 		684367F91C18E423001AE5F4 /* YouDidIt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684367EC1C18E423001AE5F4 /* YouDidIt.mp3 */; };
+		6852BEED1C1BEB5400C112E6 /* GrownUpsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6852BEEC1C1BEB5400C112E6 /* GrownUpsView.xib */; };
+		6852BEF01C1BEB7E00C112E6 /* GrownsUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6852BEEF1C1BEB7E00C112E6 /* GrownsUpController.swift */; };
 		685E08491C0E452C00B5CCCF /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685E08481C0E452C00B5CCCF /* Game.xcassets */; };
 		685E084C1C0E452C00B5CCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685E084A1C0E452C00B5CCCF /* Main.storyboard */; };
 		685E084E1C0E452C00B5CCCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685E084D1C0E452C00B5CCCF /* Assets.xcassets */; };
@@ -364,6 +366,8 @@
 		684367EA1C18E423001AE5F4 /* WootWoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WootWoot.mp3; sourceTree = "<group>"; };
 		684367EB1C18E423001AE5F4 /* Yah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Yah.mp3; sourceTree = "<group>"; };
 		684367EC1C18E423001AE5F4 /* YouDidIt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = YouDidIt.mp3; sourceTree = "<group>"; };
+		6852BEEC1C1BEB5400C112E6 /* GrownUpsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrownUpsView.xib; sourceTree = "<group>"; };
+		6852BEEF1C1BEB7E00C112E6 /* GrownsUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrownsUpController.swift; sourceTree = "<group>"; };
 		685E083E1C0E452C00B5CCCF /* MonsterMoves_tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterMoves_tvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		685E08481C0E452C00B5CCCF /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
 		685E084B1C0E452C00B5CCCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -941,6 +945,8 @@
 				685E084A1C0E452C00B5CCCF /* Main.storyboard */,
 				685E084D1C0E452C00B5CCCF /* Assets.xcassets */,
 				685E084F1C0E452C00B5CCCF /* Info.plist */,
+				6852BEEC1C1BEB5400C112E6 /* GrownUpsView.xib */,
+				6852BEEF1C1BEB7E00C112E6 /* GrownsUpController.swift */,
 			);
 			path = MonsterMoves_tvOS;
 			sourceTree = "<group>";
@@ -1185,6 +1191,7 @@
 				684367B51C17FC95001AE5F4 /* leblob_act_dance3.mp3 in Resources */,
 				684367EF1C18E423001AE5F4 /* LetsMove.mp3 in Resources */,
 				684367F61C18E423001AE5F4 /* Woohoo.mp3 in Resources */,
+				6852BEED1C1BEB5400C112E6 /* GrownUpsView.xib in Resources */,
 				687823DC1C13CBB70087457A /* sound in Resources */,
 				684367F81C18E423001AE5F4 /* Yah.mp3 in Resources */,
 				68ED10551C1A55BA007282F7 /* stamp.mp3 in Resources */,
@@ -1265,6 +1272,7 @@
 				685E085B1C0E45A100B5CCCF /* GameViewController.swift in Sources */,
 				68E59AEE1C15F66B0087BF13 /* DropzoneSprite.swift in Sources */,
 				685E085A1C0E45A100B5CCCF /* SpaceshipScene.swift in Sources */,
+				6852BEF01C1BEB7E00C112E6 /* GrownsUpController.swift in Sources */,
 				685E08581C0E45A100B5CCCF /* AppDelegate.swift in Sources */,
 				685E085F1C0E712100B5CCCF /* JSONSprite.swift in Sources */,
 				685E08591C0E45A100B5CCCF /* IntroScene.swift in Sources */,
