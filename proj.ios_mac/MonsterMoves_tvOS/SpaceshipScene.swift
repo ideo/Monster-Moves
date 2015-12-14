@@ -69,7 +69,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
 
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        //characters = ["Guac"]
+        //characters = ["Freds"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -91,15 +91,14 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             print("Error getting the audio file")
         }
         
-        let fileUrl = NSBundle.mainBundle().URLForResource("click",
-            withExtension: "mov")!
+        let fileUrl = NSBundle.mainBundle().URLForResource("IntroMovie",
+            withExtension: "mp4")!
         let tutorialplayer : AVPlayer = AVPlayer(URL: fileUrl)
         tutorialvideo = SKVideoNode(AVPlayer: tutorialplayer)
-        tutorialvideo.size = scene!.size
-        tutorialvideo.position = CGPoint(x: (scene?.frame.size.width)!-800, y: 800)
-        tutorialvideo.zPosition = 100
-        tutorialvideo.hidden = false
+        tutorialvideo.size = CGSizeMake(100, 100)
+        tutorialvideo.position = CGPoint(x: 0, y: 100)
         scene!.addChild(tutorialvideo)
+        tutorialvideo.play()
       
         let tapgesture = UITapGestureRecognizer(target: self, action: "touchpadTapped")
         tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
@@ -149,10 +148,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             {
                 leblob.removeAllActions()
                 leblob.playAction("crackEntrance")
-                
-
             }
-            else if(leblob.m_currentActionName == "crackEntrance")
+            else if(leblob.m_currentActionName == "idle")
             {
                 m_eggReady = false
                 leblob.removeAllActions()
@@ -283,7 +280,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         actor.preloadActions(["eggCrack0", "eggCrack1", "crackEntrance","moveForward", "idle","exit"])
         addChild(actor)
         
-        actor.runAction(SKAction.moveToY(CGRectGetMidY(scene!.frame)-200, duration: 0.4))
+        actor.runAction(SKAction.moveToY(CGRectGetMidY(scene!.frame)-200, duration: 0.3))
         self.eggsReady()
         self.m_eggReady = true
 
@@ -316,14 +313,22 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         for var i = 0; i<m_tiles.count ; i++
         {
             let tileSprite : TileSprite = m_tiles[i] as! TileSprite
-            tileSprite.runAction(SKAction.scaleTo(1.0, duration: 0.1))
-            tileSprite.removeCircle()
+            if(tileSprite.xScale != 0)
+            {
+                tileSprite.runAction(SKAction.scaleTo(1.0, duration: 0.1))
+                tileSprite.removeCircle()
+            }
         }
+        
         m_focusedTileIndex = randomMoves()
         let tileSprite : TileSprite = m_tiles[m_focusedTileIndex] as! TileSprite
-        tileSprite.runAction(SKAction.scaleTo(1.2, duration: 0.1))
-        tileSprite.showCircle(m_actor.m_name)
-//        print("Tile highlighted should be ",randomMoves())
+        if(tileSprite.xScale != 0)
+        {
+            tileSprite.runAction(SKAction.scaleTo(1.2, duration: 0.1))
+            tileSprite.showCircle(m_actor.m_name)
+        }
+        
+        //        print("Tile highlighted should be ",randomMoves())
     }
     
     
@@ -353,6 +358,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         if(index != -1)
         {
+            m_actor.playAction(tile.m_actionName!)
             tile.setScale(1.0)
             tile.position = m_dropzoneBodies[index].position
             tile.physicsBody = nil
@@ -516,10 +522,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             let endSound : NSArray = NSArray(objects: "Nice.mp3","WayToGo.mp3","Yah.mp3","YouDidIt.mp3","sound/common/Hooray_1.mp3","sound/common/Hooray_2.mp3")
             let endStart = randomSequenceGenerator(0, max: endSound.count-1)
             
-            
             self.runAction(SKAction.sequence(
                 [
-                    SKAction.waitForDuration(2),
+                    SKAction.waitForDuration(1),
                     SKAction.runBlock({self.m_actor.playAction("exit")}),
                     
                     SKAction.playSoundFileNamed(endSound[endStart()] as! String, waitForCompletion: true),
@@ -795,10 +800,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         tile.runAction(SKAction.scaleTo(1.0, duration: 1.0))
         tile.physicsBody?.applyImpulse(CGVectorMake(150.0, -50.0))
         
-//        if(m_tiles.count == 3)
-//        {
-//            self.pickRandomTile()
-//        }
         m_tiles.addObject(tile)
     }
     
@@ -867,6 +868,12 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         {
             addActionTile(actionName);
             m_dancePreloadedCount++
+            
+            if(m_dancePreloadedCount==1)
+            {
+                 pickRandomTile()
+            }
+            
             if(m_dancePreloadedCount>=4)
             {
                 m_readyToDance = true
@@ -876,7 +883,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     func actionStopped(sprite: JSONSprite)
     {
-        
+        if(sprite.m_currentActionName == "crackEntrance")
+        {
+            sprite.playAction("idle")
+        }
     }
     
     /// React motion method. Updates on acceleration

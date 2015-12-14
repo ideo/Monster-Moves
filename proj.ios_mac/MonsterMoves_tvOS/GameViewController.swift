@@ -16,10 +16,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
         introscene = IntroScene(size:CGSize(width: 1920, height: 1080))
         // Configure the view.
         let skView = self.view as! SKView
@@ -31,6 +27,7 @@ class GameViewController: UIViewController {
         introscene!.scaleMode = .AspectFill
         
         skView.presentScene(introscene)
+        
     }
     
 
