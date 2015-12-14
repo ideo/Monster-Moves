@@ -132,6 +132,16 @@ class JSONSprite: SKSpriteNode {
                 }
                 
                 
+                if(parsedDoc["feetOffset"] != nil)
+                {
+                    m_feetOffset = parsedDoc["feetOffset"] as! Float
+                }
+                else
+                
+                {
+                    m_feetOffset = 0
+                }
+                
                 if(parsedDoc["actions"] != nil)
                 {
                     var actionDocArray : NSArray = parsedDoc["actions"] as! NSArray

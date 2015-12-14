@@ -9,17 +9,31 @@
 import UIKit
 import Fabric
 import Crashlytics
+import GameController
 
 @UIApplicationMain
+
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var motionDelegate: ReactToMotionEvents? = nil
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Start Crashlytics
         Fabric.with([Crashlytics.self])
-//        Fabric.with([Answers.self])
+        
+        
+        let center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "setupControllers:", name: GCControllerDidConnectNotification, object: nil)
+        center.addObserver(self, selector: "setupControllers:", name: GCControllerDidDisconnectNotification, object: nil)
+        GCController.startWirelessControllerDiscoveryWithCompletionHandler { () -> Void in
+            
+        }
+        
         return true
     }
 
@@ -45,6 +59,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func setupControllers(notif: NSNotification) {
+        print("controller connection")
+        let controllers = GCController.controllers()
+        for controller in controllers {
+            controller.motion?.valueChangedHandler = { (motion: GCMotion)->() in
+                if let delegate = self.motionDelegate {
+                    delegate.motionUpdate(motion)
+                }
+            }
+        }
+    }
+}
 
+protocol ReactToMotionEvents {
+    func motionUpdate(motion: GCMotion) -> Void
 }
 

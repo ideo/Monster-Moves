@@ -124,6 +124,7 @@
 		681164FD1C1E18BA007D4505 /* OnYourMark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164FB1C1E18BA007D4505 /* OnYourMark.mp3 */; };
 		681164FE1C1E18BA007D4505 /* ReadySet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164FC1C1E18BA007D4505 /* ReadySet.mp3 */; };
 		681165001C1E3C4C007D4505 /* click.mov in Resources */ = {isa = PBXBuildFile; fileRef = 681164FF1C1E3C4C007D4505 /* click.mov */; };
+		681165041C1E9A1A007D4505 /* ControllerShakeRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681165031C1E9A1A007D4505 /* ControllerShakeRecognizer.swift */; };
 		684367D31C18AD85001AE5F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684367D11C18AD85001AE5F4 /* Fabric.framework */; };
 		684367D41C18AD85001AE5F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684367D21C18AD85001AE5F4 /* Crashlytics.framework */; };
 		6852BEED1C1BEB5400C112E6 /* GrownUpsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6852BEEC1C1BEB5400C112E6 /* GrownUpsView.xib */; };
@@ -370,6 +371,7 @@
 		681164FB1C1E18BA007D4505 /* OnYourMark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OnYourMark.mp3; sourceTree = "<group>"; };
 		681164FC1C1E18BA007D4505 /* ReadySet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ReadySet.mp3; sourceTree = "<group>"; };
 		681164FF1C1E3C4C007D4505 /* click.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = click.mov; sourceTree = "<group>"; };
+		681165031C1E9A1A007D4505 /* ControllerShakeRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerShakeRecognizer.swift; sourceTree = "<group>"; };
 		684367D11C18AD85001AE5F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		684367D21C18AD85001AE5F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		6852BEEC1C1BEB5400C112E6 /* GrownUpsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrownUpsView.xib; sourceTree = "<group>"; };
@@ -980,6 +982,7 @@
 				685E084F1C0E452C00B5CCCF /* Info.plist */,
 				6852BEEC1C1BEB5400C112E6 /* GrownUpsView.xib */,
 				6852BEEF1C1BEB7E00C112E6 /* GrownsUpController.swift */,
+				681165031C1E9A1A007D4505 /* ControllerShakeRecognizer.swift */,
 			);
 			path = MonsterMoves_tvOS;
 			sourceTree = "<group>";
@@ -1312,6 +1315,7 @@
 				6852BEF01C1BEB7E00C112E6 /* GrownsUpController.swift in Sources */,
 				685E08581C0E45A100B5CCCF /* AppDelegate.swift in Sources */,
 				685E085F1C0E712100B5CCCF /* JSONSprite.swift in Sources */,
+				681165041C1E9A1A007D4505 /* ControllerShakeRecognizer.swift in Sources */,
 				685E08591C0E45A100B5CCCF /* IntroScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
