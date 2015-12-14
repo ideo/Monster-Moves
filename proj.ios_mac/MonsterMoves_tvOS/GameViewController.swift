@@ -16,18 +16,23 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-            introscene = IntroScene(size:CGSize(width: 1920, height: 1080))
-            // Configure the view.
-            let skView = self.view as! SKView
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            introscene!.scaleMode = .AspectFill
         
-            skView.presentScene(introscene)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        introscene = IntroScene(size:CGSize(width: 1920, height: 1080))
+        // Configure the view.
+        let skView = self.view as! SKView
+        
+        /* Sprite Kit applies additional optimizations to improve rendering performance */
+        skView.ignoresSiblingOrder = true
+        
+        /* Set the scale mode to scale to fit the window */
+        introscene!.scaleMode = .AspectFill
+        
+        skView.presentScene(introscene)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

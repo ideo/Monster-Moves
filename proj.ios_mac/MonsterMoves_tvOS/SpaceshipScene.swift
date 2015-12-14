@@ -25,7 +25,7 @@ struct ActorData {
 
 class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
-    var backgroundArray : NSArray = []
+    var backgroundArray : NSArray = ["Cowboy","Cumbia","Funk","Hiphop","Latin","Space"]
     var characters : NSArray = []
     private var m_eggReady : Bool = false
     private var m_eggCrackSoundId : Int = -1
@@ -58,13 +58,15 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     
     override func didMoveToView(view: SKView) {
+        
         /* Setup your scene here */
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWillResignActive", name: UIApplicationWillResignActiveNotification, object: nil)
+        
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.motionDelegate = self
-        
-        
-        backgroundArray = ["Cowboy","Cumbia","Funk","Hiphop","Latin","Space"]
+
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
         //characters = ["Guac"]
@@ -848,6 +850,14 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         }
     }
     
+    
+    func appWillResignActive()
+    {
+//        let introscene : IntroScene = IntroScene(size:CGSize(width: 1920, height: 1080))
+//        /* Set the scale mode to scale to fit the window */
+//        introscene.scaleMode = .AspectFill
+//        view?.presentScene(introscene)
+    }
     
     
     // MARK: - Delegate methods

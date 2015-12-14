@@ -21,6 +21,8 @@ private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
 
 
 class IntroScene: SKScene {
+    
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
@@ -93,11 +95,6 @@ class IntroScene: SKScene {
         let swipeDown = UISwipeGestureRecognizer(target: self, action: "userSwipedDown")
         swipeDown.direction = .Down
         self.view?.addGestureRecognizer(swipeDown)
-        
-        
-//        let tapgesture = UITapGestureRecognizer(target: self, action: "playButtonPressed")
-//        tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
-//        self.view?.addGestureRecognizer(tapgesture)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoEndedPlaying", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
     }
