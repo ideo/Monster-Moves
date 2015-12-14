@@ -131,54 +131,6 @@ class JSONSprite: SKSpriteNode {
                     m_selectedEffect = parsedDoc["selectedEffect"] as! String
                 }
                 
-//                if (parsedDoc["backgroundColor"] != nil)
-//                {
-//                    let backgroundColor = parsedDoc["backgroundColor"];
-//                    m_backgroundColor = UIColor(red: backgroundColor["r"], green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
-//                    
-//                    m_backgroundColor.r = backgroundColor["r"].GetInt();
-//                    m_backgroundColor.g = backgroundColor["g"].GetInt();
-//                    m_backgroundColor.b = backgroundColor["b"].GetInt();
-//                    m_backgroundColor.a = backgroundColor["a"].GetInt();
-//                }
-                
-//                if (doc.HasMember("circleColor"))
-//                {
-//                    rapidjson::Value &color = doc["circleColor"];
-//                    m_circleColor.r = color["r"].GetInt();
-//                    m_circleColor.g = color["g"].GetInt();
-//                    m_circleColor.b = color["b"].GetInt();
-//                    m_circleColor.a = color["a"].GetInt();
-//                }
-//                
-//                if (doc.HasMember("tileColor"))
-//                {
-//                    rapidjson::Value &color = doc["tileColor"];
-//                    m_tileColor.r = color["r"].GetInt();
-//                    m_tileColor.g = color["g"].GetInt();
-//                    m_tileColor.b = color["b"].GetInt();
-//                    m_tileColor.a = color["a"].GetInt();
-//                }
-//                
-//                if (doc.HasMember("starColor"))
-//                {
-//                    rapidjson::Value &color = doc["starColor"];
-//                    m_starColor.r = color["r"].GetInt();
-//                    m_starColor.g = color["g"].GetInt();
-//                    m_starColor.b = color["b"].GetInt();
-//                    m_starColor.a = color["a"].GetInt();
-//                }
-                
-                
-                if(parsedDoc["feetOffset"] != nil)
-                {
-                    m_feetOffset = parsedDoc["feetOffset"] as! Float
-                }
-                else
-                
-                {
-                    m_feetOffset = 0
-                }
                 
                 if(parsedDoc["actions"] != nil)
                 {
@@ -305,7 +257,7 @@ class JSONSprite: SKSpriteNode {
         var filename : String
         
         filename = String(format: "%@%04d.png",m_name,action.frameStart)
-        if(m_name == "guac")
+        if(m_name == "guac" || m_name == "freds")
         {
             filename = String(format: "%@%03d.png",m_name,action.frameStart)
         }
@@ -342,7 +294,7 @@ class JSONSprite: SKSpriteNode {
             for var i=action.frameEnd; i>=action.frameStart; i--
             {
                 filename = String(format: "%@%04d",m_name,i)
-                if(m_name == "guac")
+                if(m_name == "guac" || m_name == "freds")
                 {
                     filename = String(format: "%@%03d",m_name,i)
                 }
@@ -356,7 +308,7 @@ class JSONSprite: SKSpriteNode {
             for var i=action.frameStart; i<=action.frameEnd; i++
             {
                 filename = String(format: "%@%04d",m_name,i)
-                if(m_name == "guac")
+                if(m_name == "guac" || m_name == "freds")
                 {
                     filename = String(format: "%@%03d",m_name,i)
                 }
@@ -454,7 +406,7 @@ class JSONSprite: SKSpriteNode {
         let fileName : String = String(format: "actors/%@/%@.png",actorName,actionName)
         let texture : SKTexture = SKTexture(imageNamed: fileName)
         var image : String = String(format: "%@%04d.png",actorName,start)
-        if(actorName == "guac")
+        if(actorName == "guac" || m_name == "freds")
         {
             image = String(format: "%@%03d.png",actorName,start)
         }
@@ -467,10 +419,12 @@ class JSONSprite: SKSpriteNode {
         let actor : SKSpriteNode = SKSpriteNode(imageNamed: image)
         actor.position = CGPoint(x: 0, y: 0)
         actor.name = TILE_INNER_ACTOR_TAG as String
+//        actor.setScale(3.0)
         
         actorHolder.addChild(actor)
         actorHolder.hidden=true
         actorHolder.position = CGPoint(x: 0, y: 0)
+        actorHolder.setScale(1.0)
         
         addChild(actorHolder)
         
