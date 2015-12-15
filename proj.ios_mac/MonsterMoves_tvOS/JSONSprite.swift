@@ -326,8 +326,8 @@ class JSONSprite: SKSpriteNode {
                 spriteFrames.addObject(texture)
             }
         }
-    
-        let animation = SKAction.animateWithTextures(spriteFrames as NSArray as! [SKTexture], timePerFrame: 1/15)
+       
+        let animation = SKAction.animateWithTextures(spriteFrames as NSArray as! [SKTexture], timePerFrame: 1/15, resize: true, restore: false)
         
         if(action.repeatagain <= 0)
         {

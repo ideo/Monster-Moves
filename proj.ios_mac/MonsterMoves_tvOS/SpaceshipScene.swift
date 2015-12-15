@@ -22,6 +22,12 @@ struct ActorData {
     var currentSequenceIndex:Int;
 }
 
+struct GlobalConstants {
+    static let dropzoneScale : CGFloat = 0.9
+    static let tileScale : CGFloat = 0.9
+    static let scaledTileScale : CGFloat = 1.1
+}
+
 
 class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
@@ -69,7 +75,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
 
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        //characters = ["Freds"]
+        characters = ["Pom"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -315,7 +321,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             let tileSprite : TileSprite = m_tiles[i] as! TileSprite
             if(tileSprite.xScale != 0)
             {
-                tileSprite.runAction(SKAction.scaleTo(1.0, duration: 0.1))
+                tileSprite.runAction(SKAction.scaleTo(GlobalConstants.tileScale, duration: 0.1))
                 tileSprite.removeCircle()
             }
         }
@@ -324,7 +330,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         let tileSprite : TileSprite = m_tiles[m_focusedTileIndex] as! TileSprite
         if(tileSprite.xScale != 0)
         {
-            tileSprite.runAction(SKAction.scaleTo(1.2, duration: 0.1))
+            tileSprite.runAction(SKAction.scaleTo(GlobalConstants.scaledTileScale, duration: 0.1))
             tileSprite.showCircle(m_actor.m_name)
         }
         
@@ -390,7 +396,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             let startSound : NSArray = NSArray(objects: "OnYourMark.mp3","ReadySet.mp3")
             let randomStart = randomSequenceGenerator(0, max: startSound.count-1)
             
-            self.runAction(SKAction.sequence([SKAction.playSoundFileNamed(startSound[randomStart()] as! String, waitForCompletion: true),SKAction.runBlock({self.prepareToPlay()})]))
+            self.runAction(SKAction.sequence([SKAction.waitForDuration(2),SKAction.playSoundFileNamed(startSound[randomStart()] as! String, waitForCompletion: true),SKAction.runBlock({self.prepareToPlay()})]))
         }
     }
     
@@ -635,7 +641,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         m_actor.runAction(SKAction.sequence([
             SKAction.group([SKAction.runBlock({self.m_actor.playAction("moveForward")}),SKAction.moveTo(CGPoint(
             x: CGRectGetMidX(scene!.frame),
-                y: CGRectGetMidY(scene!.frame)+100), duration: 1.0),SKAction.scaleTo(1.2, duration: 1.0)]),SKAction.runBlock({self.m_actor.removeAllActions(); self.m_actor.playAction("idle")})]))
+                y: CGRectGetMidY(scene!.frame)+100), duration: 1.0),SKAction.scaleTo(1.5, duration: 1.0)]),SKAction.runBlock({self.m_actor.removeAllActions(); self.m_actor.playAction("idle")})]))
         
     }
     
@@ -657,7 +663,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             dropzone.zPosition = 1
             addChild(dropzone)
             
-            dropzone.runAction(SKAction.scaleTo(1.0, duration: 1.0))
+            dropzone.runAction(SKAction.scaleTo(GlobalConstants.dropzoneScale, duration: 1.0))
             minTileGenY = Float(dropzone.position.y + dropzone.size.height/2)
             
             let dropBody : SKPhysicsBody = SKPhysicsBody(circleOfRadius: 132)
@@ -797,7 +803,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         tile.physicsBody = tile.attachPhysics()
         self.addChild(tile)
         
-        tile.runAction(SKAction.scaleTo(1.0, duration: 1.0))
+        tile.runAction(SKAction.scaleTo(GlobalConstants.tileScale, duration: 1.0))
         tile.physicsBody?.applyImpulse(CGVectorMake(150.0, -50.0))
         
         m_tiles.addObject(tile)
