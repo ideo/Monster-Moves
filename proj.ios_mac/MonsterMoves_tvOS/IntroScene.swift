@@ -11,6 +11,7 @@ import AVFoundation
 
 private var video: SKVideoNode!
 private var player: AVPlayer!
+private var tutorialplayer: AVPlayer!
 private var introFrame: SKSpriteNode!
 private var playButton: SKSpriteNode!
 private var grownUpButton: SKSpriteNode!
@@ -97,12 +98,24 @@ class IntroScene: SKScene {
         self.view?.addGestureRecognizer(swipeDown)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoEndedPlaying", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
+        
+//        let tutorialvideo : SKVideoNode
+//        let fileUrls = NSBundle.mainBundle().URLForResource("IntroMovie",
+//            withExtension: "mp4")!
+//        tutorialplayer = AVPlayer(URL: fileUrls)
+//        tutorialvideo = SKVideoNode(AVPlayer: tutorialplayer)
+//        tutorialvideo.size = CGSizeMake(100, 100)
+//        tutorialvideo.position = center
+//        scene!.addChild(tutorialvideo)
+//        tutorialvideo.play()
+        
+        
     }
     
     func videoEndedPlaying(){
         
 //        backgroundAudioPlayer.pause()
-        danceStamp.runAction(SKAction.group([SKAction.playSoundFileNamed("stamp.mp3", waitForCompletion: false),SKAction.scaleTo(1.0, duration: 0.1),SKAction.unhide()]))
+        danceStamp.runAction(SKAction.group([SKAction.playSoundFileNamed("dancestamp.mp3", waitForCompletion: false),SKAction.scaleTo(1.0, duration: 0.1),SKAction.unhide()]))
         playButton.hidden = false
         grownUpButton.hidden = false
         NSNotificationCenter.defaultCenter().removeObserver(self)

@@ -140,6 +140,7 @@
 		685E08641C0FAE5900B5CCCF /* config in Resources */ = {isa = PBXBuildFile; fileRef = 1947820F1A6E7A26007B2696 /* config */; };
 		685F40841C1F8C4A00A31226 /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 685F40821C1F8C4A00A31226 /* Snow.sks */; };
 		685F40851C1F8C4A00A31226 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 685F40831C1F8C4A00A31226 /* spark.png */; };
+		685F408A1C20C07600A31226 /* dancestamp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 685F40891C20C07600A31226 /* dancestamp.mp3 */; };
 		68781D6B1C10D2370087457A /* IntroMovie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 68781D6A1C10D2370087457A /* IntroMovie.mp4 */; };
 		68781D781C115BFC0087457A /* Guac.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D721C115BFC0087457A /* Guac.json */; };
 		68781D791C115BFC0087457A /* LeBlob.json in Resources */ = {isa = PBXBuildFile; fileRef = 68781D731C115BFC0087457A /* LeBlob.json */; };
@@ -150,7 +151,6 @@
 		687823DC1C13CBB70087457A /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 1947821F1A6F8825007B2696 /* sound */; };
 		68E59AEE1C15F66B0087BF13 /* DropzoneSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E59AED1C15F66B0087BF13 /* DropzoneSprite.swift */; };
 		68E59AF01C15F6B20087BF13 /* TileSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E59AEF1C15F6B20087BF13 /* TileSprite.swift */; };
-		68ED10551C1A55BA007282F7 /* stamp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68ED10541C1A55BA007282F7 /* stamp.mp3 */; };
 		A0C4286F1ABBCCFF00803D3C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4286E1ABBCCFF00803D3C /* CoreData.framework */; };
 		A0C428711ABBCD1000803D3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428701ABBCD1000803D3C /* SystemConfiguration.framework */; };
 		A0C428731ABBCD1D00803D3C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C428721ABBCD1D00803D3C /* CoreGraphics.framework */; };
@@ -390,6 +390,7 @@
 		685E085E1C0E712100B5CCCF /* JSONSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSprite.swift; sourceTree = "<group>"; };
 		685F40821C1F8C4A00A31226 /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		685F40831C1F8C4A00A31226 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		685F40891C20C07600A31226 /* dancestamp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dancestamp.mp3; sourceTree = "<group>"; };
 		68781D6A1C10D2370087457A /* IntroMovie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IntroMovie.mp4; sourceTree = "<group>"; };
 		68781D721C115BFC0087457A /* Guac.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Guac.json; sourceTree = "<group>"; };
 		68781D731C115BFC0087457A /* LeBlob.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LeBlob.json; sourceTree = "<group>"; };
@@ -399,7 +400,6 @@
 		68781D7D1C115C6C0087457A /* Freds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Freds.json; sourceTree = "<group>"; };
 		68E59AED1C15F66B0087BF13 /* DropzoneSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropzoneSprite.swift; sourceTree = "<group>"; };
 		68E59AEF1C15F6B20087BF13 /* TileSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSprite.swift; sourceTree = "<group>"; };
-		68ED10541C1A55BA007282F7 /* stamp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stamp.mp3; sourceTree = "<group>"; };
 		A0C4286E1ABBCCFF00803D3C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		A0C428701ABBCD1000803D3C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		A0C428721ABBCD1D00803D3C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -996,7 +996,7 @@
 		685E08601C0F787200B5CCCF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				68ED10541C1A55BA007282F7 /* stamp.mp3 */,
+				685F40891C20C07600A31226 /* dancestamp.mp3 */,
 				684367851C17FC7E001AE5F4 /* Vocals */,
 				68781D6A1C10D2370087457A /* IntroMovie.mp4 */,
 				681164FF1C1E3C4C007D4505 /* click.mov */,
@@ -1210,6 +1210,7 @@
 				681164AB1C1E177E007D4505 /* WayToGo.mp3 in Resources */,
 				681164DF1C1E1879007D4505 /* meep_act_dance8.mp3 in Resources */,
 				681164CC1C1E1873007D4505 /* leblob_act_dance4.mp3 in Resources */,
+				685F408A1C20C07600A31226 /* dancestamp.mp3 in Resources */,
 				681164C91C1E1873007D4505 /* leblob_act_dance1.mp3 in Resources */,
 				681164DB1C1E1879007D4505 /* meep_act_dance4.mp3 in Resources */,
 				685E084E1C0E452C00B5CCCF /* Assets.xcassets in Resources */,
@@ -1240,7 +1241,6 @@
 				685F40851C1F8C4A00A31226 /* spark.png in Resources */,
 				681164B31C1E17D8007D4505 /* freds_act_dance2.mp3 in Resources */,
 				681164E81C1E1882007D4505 /* pom_act_dance1.mp3 in Resources */,
-				68ED10551C1A55BA007282F7 /* stamp.mp3 in Resources */,
 				681164A31C1E1776007D4505 /* Woohoo.mp3 in Resources */,
 				681164FE1C1E18BA007D4505 /* ReadySet.mp3 in Resources */,
 				685E08641C0FAE5900B5CCCF /* config in Resources */,
