@@ -13,7 +13,7 @@ private var video: SKVideoNode!
 private var player: AVPlayer!
 private var introFrame: SKSpriteNode!
 private var playButton: SKSpriteNode!
-private var grownsUpButton: SKSpriteNode!
+private var grownUpButton: SKSpriteNode!
 private var danceStamp: SKSpriteNode!
 private var activateButtonIndex : Int = 0 // 0 for playButton 1 for grownUpButton
 private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
@@ -73,10 +73,10 @@ class IntroScene: SKScene {
             SKAction.scaleTo(0.8, duration: 1.0)
             ])))
         
-        grownsUpButton = SKSpriteNode(imageNamed: "grownup")
-        grownsUpButton.hidden = true
-        grownsUpButton.position = CGPoint(x: scene!.frame.size.width-250, y: scene!.frame.size.height-100)
-        self.addChild(grownsUpButton)
+        grownUpButton = SKSpriteNode(imageNamed: "grownup")
+        grownUpButton.hidden = true
+        grownUpButton.position = CGPoint(x: scene!.frame.size.width-250, y: scene!.frame.size.height-100)
+        self.addChild(grownUpButton)
         
         
         danceStamp = SKSpriteNode(imageNamed: "DanceStamp")
@@ -102,9 +102,13 @@ class IntroScene: SKScene {
     func videoEndedPlaying(){
         
 //        backgroundAudioPlayer.pause()
-        danceStamp.runAction(SKAction.group([SKAction.scaleTo(1.0, duration: 0.1),SKAction.unhide()]))
+        danceStamp.runAction(SKAction.group([SKAction.playSoundFileNamed("stamp.mp3", waitForCompletion: false),SKAction.scaleTo(1.0, duration: 0.1),SKAction.unhide()]))
         playButton.hidden = false
-        grownsUpButton.hidden = false
+        grownUpButton.hidden = false
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+        
+        
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
@@ -151,7 +155,7 @@ class IntroScene: SKScene {
         print("User Swiped Up")
         playButton.removeAllActions()
         activateButtonIndex = 1
-        grownsUpButton.runAction(SKAction.repeatActionForever(SKAction.sequence([
+        grownUpButton.runAction(SKAction.repeatActionForever(SKAction.sequence([
             SKAction.scaleTo(1.3, duration: 1.0),
             SKAction.scaleTo(1.0, duration: 1.0)
             ])))
@@ -161,7 +165,7 @@ class IntroScene: SKScene {
     func userSwipedDown()
     {
         print("User Swiped Down")
-        grownsUpButton.removeAllActions()
+        grownUpButton.removeAllActions()
         activateButtonIndex = 0
         playButton.runAction(SKAction.repeatActionForever(SKAction.sequence([
             SKAction.scaleTo(1.1, duration: 1.0),
@@ -208,6 +212,10 @@ class IntroScene: SKScene {
     /// GrownUp Button pressed - Show Grownup Section
     func grownUpButtonPressed()
     {
+        if(backgroundAudioPlayer.playing)
+        {
+            backgroundAudioPlayer.pause()
+        }
         // Transition to GrownUp Section
         let grownup :GrownsUpController = GrownsUpController()
         

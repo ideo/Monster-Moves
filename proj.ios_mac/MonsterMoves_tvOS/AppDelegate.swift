@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Start Crashlytics
         Fabric.with([Crashlytics.self])
         
-        
+        // Get notification for controllers
         let center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "setupControllers:", name: GCControllerDidConnectNotification, object: nil)
         center.addObserver(self, selector: "setupControllers:", name: GCControllerDidDisconnectNotification, object: nil)
@@ -63,8 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    /// Sets Motion Delegate on Controller - connection
     func setupControllers(notif: NSNotification) {
-        print("controller connection")
+        print("controller conneciton - establisted/lost")
         let controllers = GCController.controllers()
         for controller in controllers {
             controller.motion?.valueChangedHandler = { (motion: GCMotion)->() in
