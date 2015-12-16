@@ -60,6 +60,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
     private var m_danceLoopCount : Int = 0
     
+    // ParticleEffect
+    private var particleEmmiter : SKEmitterNode!
+    
     
     
     
@@ -119,6 +122,13 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             self.spaceshipFlyInAndDropEggs()
         }
         self.runAction(SKAction.sequence([wait,run,wait,]))
+        
+        
+        
+        particleEmmiter = SKEmitterNode(fileNamed: "Snow.sks")
+        particleEmmiter.position = CGPoint(x: 0, y: self.frame.size.height)
+        particleEmmiter.particleBirthRate = 0
+        addChild(particleEmmiter)
         
     }
     
@@ -186,9 +196,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             }
             else if(leblob.m_currentActionName == "idle")
             {
-                m_eggReady = false
-                leblob.removeAllActions()
-                self.getReadyForDanceScene()
+//                m_eggReady = false
+//                leblob.removeAllActions()
+//                self.getReadyForDanceScene()
                 
             }
         }
@@ -432,14 +442,15 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         if(index != -1)
         {
+            tile.removeCircle()
             m_actor.playAction(tile.m_actionName!)
-            tile.setScale(1.0)
+            tile.setScale(GlobalConstants.tileScale)
             tile.position = m_dropzoneBodies[index].position
             tile.physicsBody = nil
             
             let dropZoneSprite : DropzoneSprite = m_dropzoneBodies[index] as! DropzoneSprite
             self.runAction(SKAction.playSoundFileNamed("sound/common/TileTap1.mp3", waitForCompletion: false))
-            tile.runAction(SKAction.group([SKAction.scaleTo(1.0, duration: 0.3),SKAction.moveTo(dropZoneSprite.position, duration: 0.3)]))
+            tile.runAction(SKAction.group([SKAction.scaleTo(GlobalConstants.tileScale, duration: 0.3),SKAction.moveTo(dropZoneSprite.position, duration: 0.3)]))
             
             tile.m_dropzoneIndex = index
             dropZoneSprite.m_tile = tile
@@ -490,6 +501,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     func timeToTransitionToNextCharacter()
     {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.motionDelegate = self
+        
+        
         let spaceship = self.childNodeWithName("spaceship")
         let background = self.childNodeWithName("background") as! SKSpriteNode
         background.runAction(SKAction.group([SKAction.colorizeWithColor(UIColor.whiteColor(), colorBlendFactor: 1.0, duration: 1.0),SKAction.setTexture(getRandomBackground())]))
@@ -516,6 +531,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         m_eggReady = false
         m_readyToDance = false
         m_dancePreloadedCount=0
+        particleEmmiter.particleBirthRate = 0
         backgroundAudioPlayer.stop()
         
         
@@ -961,8 +977,13 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     func actionStopped(sprite: JSONSprite)
     {
         if(sprite.m_currentActionName == "crackEntrance")
-        {
-            sprite.playAction("idle")
+    {
+        //            sprite.playAction("idle")
+        
+        m_eggReady = false
+        m_actor.removeAllActions()
+        self.getReadyForDanceScene()
+        
         }
     }
     
@@ -975,12 +996,15 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         if(m > 4)
         {
             print("Swing detected")
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            appDelegate.motionDelegate = nil
-            putRandomTilesInDropZone()
-            
+            if(!dropzoneIsFull() && m_readyToDance)
+            {
+                 putRandomTilesInDropZone()
+            }
+            if(m_isPlaying)
+            {
+                particleEmmiter.particleBirthRate = CGFloat(m)
+            }
         }
-        
     }
     
     
