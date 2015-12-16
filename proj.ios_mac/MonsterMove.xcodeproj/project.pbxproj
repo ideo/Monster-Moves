@@ -109,7 +109,6 @@
 		681164DE1C1E1879007D4505 /* meep_act_dance7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D61C1E1879007D4505 /* meep_act_dance7.mp3 */; };
 		681164DF1C1E1879007D4505 /* meep_act_dance8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D71C1E1879007D4505 /* meep_act_dance8.mp3 */; };
 		681164E81C1E1882007D4505 /* pom_act_dance1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E01C1E1882007D4505 /* pom_act_dance1.mp3 */; };
-		681164E91C1E1882007D4505 /* pom_act_dance2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E11C1E1882007D4505 /* pom_act_dance2.mp3 */; };
 		681164EA1C1E1882007D4505 /* pom_act_dance3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E21C1E1882007D4505 /* pom_act_dance3.mp3 */; };
 		681164EB1C1E1882007D4505 /* pom_act_dance4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E31C1E1882007D4505 /* pom_act_dance4.mp3 */; };
 		681164EC1C1E1882007D4505 /* pom_act_dance5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E41C1E1882007D4505 /* pom_act_dance5.mp3 */; };
@@ -150,6 +149,7 @@
 		687823DC1C13CBB70087457A /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 1947821F1A6F8825007B2696 /* sound */; };
 		68966E671C20D5B40026A2E4 /* shake.mov in Resources */ = {isa = PBXBuildFile; fileRef = 68966E651C20D5B40026A2E4 /* shake.mov */; };
 		68966E681C20D5B40026A2E4 /* tap.mov in Resources */ = {isa = PBXBuildFile; fileRef = 68966E661C20D5B40026A2E4 /* tap.mov */; };
+		68966E6A1C20E9BF0026A2E4 /* pom_act_dance2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68966E691C20E9BF0026A2E4 /* pom_act_dance2.mp3 */; };
 		68E59AEE1C15F66B0087BF13 /* DropzoneSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E59AED1C15F66B0087BF13 /* DropzoneSprite.swift */; };
 		68E59AF01C15F6B20087BF13 /* TileSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E59AEF1C15F6B20087BF13 /* TileSprite.swift */; };
 		A0C4286F1ABBCCFF00803D3C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4286E1ABBCCFF00803D3C /* CoreData.framework */; };
@@ -359,7 +359,6 @@
 		681164D61C1E1879007D4505 /* meep_act_dance7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance7.mp3; sourceTree = "<group>"; };
 		681164D71C1E1879007D4505 /* meep_act_dance8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance8.mp3; sourceTree = "<group>"; };
 		681164E01C1E1882007D4505 /* pom_act_dance1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance1.mp3; sourceTree = "<group>"; };
-		681164E11C1E1882007D4505 /* pom_act_dance2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance2.mp3; sourceTree = "<group>"; };
 		681164E21C1E1882007D4505 /* pom_act_dance3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance3.mp3; sourceTree = "<group>"; };
 		681164E31C1E1882007D4505 /* pom_act_dance4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance4.mp3; sourceTree = "<group>"; };
 		681164E41C1E1882007D4505 /* pom_act_dance5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance5.mp3; sourceTree = "<group>"; };
@@ -400,6 +399,7 @@
 		68781D7D1C115C6C0087457A /* Freds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Freds.json; sourceTree = "<group>"; };
 		68966E651C20D5B40026A2E4 /* shake.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = shake.mov; sourceTree = "<group>"; };
 		68966E661C20D5B40026A2E4 /* tap.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = tap.mov; sourceTree = "<group>"; };
+		68966E691C20E9BF0026A2E4 /* pom_act_dance2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance2.mp3; sourceTree = "<group>"; };
 		68E59AED1C15F66B0087BF13 /* DropzoneSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropzoneSprite.swift; sourceTree = "<group>"; };
 		68E59AEF1C15F6B20087BF13 /* TileSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSprite.swift; sourceTree = "<group>"; };
 		A0C4286E1ABBCCFF00803D3C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
@@ -939,8 +939,8 @@
 		6843679F1C17FC95001AE5F4 /* Pom */ = {
 			isa = PBXGroup;
 			children = (
+				68966E691C20E9BF0026A2E4 /* pom_act_dance2.mp3 */,
 				681164E01C1E1882007D4505 /* pom_act_dance1.mp3 */,
-				681164E11C1E1882007D4505 /* pom_act_dance2.mp3 */,
 				681164E21C1E1882007D4505 /* pom_act_dance3.mp3 */,
 				681164E31C1E1882007D4505 /* pom_act_dance4.mp3 */,
 				681164E41C1E1882007D4505 /* pom_act_dance5.mp3 */,
@@ -1240,7 +1240,6 @@
 				681164ED1C1E1882007D4505 /* pom_act_dance6.mp3 in Resources */,
 				687823DC1C13CBB70087457A /* sound in Resources */,
 				681164FD1C1E18BA007D4505 /* OnYourMark.mp3 in Resources */,
-				681164E91C1E1882007D4505 /* pom_act_dance2.mp3 in Resources */,
 				681164BF1C1E186A007D4505 /* guac_act_dance5.mp3 in Resources */,
 				685F40851C1F8C4A00A31226 /* spark.png in Resources */,
 				68966E671C20D5B40026A2E4 /* shake.mov in Resources */,
@@ -1250,6 +1249,7 @@
 				681164FE1C1E18BA007D4505 /* ReadySet.mp3 in Resources */,
 				685E08641C0FAE5900B5CCCF /* config in Resources */,
 				68781D7B1C115BFC0087457A /* Pom.json in Resources */,
+				68966E6A1C20E9BF0026A2E4 /* pom_act_dance2.mp3 in Resources */,
 				681164EC1C1E1882007D4505 /* pom_act_dance5.mp3 in Resources */,
 				681164F81C1E1889007D4505 /* sausalito_act_dance6.mp3 in Resources */,
 				681164EF1C1E1882007D4505 /* pom_act_dance8.mp3 in Resources */,

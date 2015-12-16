@@ -41,6 +41,7 @@ class IntroScene: SKScene {
         video.size = scene!.size
         video.position = center
         video.zPosition = 0
+        
         scene!.addChild(video)
         player.addObserver(self, forKeyPath: "status", options: .New, context: nil)
         
@@ -62,8 +63,8 @@ class IntroScene: SKScene {
 
         playButton = SKSpriteNode(imageNamed: "YayButton")
         playButton.position = CGPoint(
-            x: CGRectGetMidX(scene!.frame)+400,
-            y: CGRectGetMidY(scene!.frame))
+            x: CGRectGetMidX(scene!.frame),
+            y: CGRectGetMidY(scene!.frame)-200)
         playButton.name = "playButtonNode"
         playButton.hidden = true
         playButton.setScale(0.8)
@@ -81,7 +82,9 @@ class IntroScene: SKScene {
         
         
         danceStamp = SKSpriteNode(imageNamed: "DanceStamp")
-        danceStamp.position = center
+        danceStamp.position = CGPoint(
+            x: CGRectGetMidX(scene!.frame)+35,
+            y: CGRectGetMidY(scene!.frame)+90)
         danceStamp.name = "DanceStamp"
         danceStamp.setScale(10)
         danceStamp.hidden = true
@@ -115,7 +118,13 @@ class IntroScene: SKScene {
     func videoEndedPlaying(){
         
 //        backgroundAudioPlayer.pause()
-        danceStamp.runAction(SKAction.group([SKAction.playSoundFileNamed("dancestamp.mp3", waitForCompletion: false),SKAction.scaleTo(1.0, duration: 0.1),SKAction.unhide()]))
+        danceStamp.runAction(SKAction.sequence([
+            
+            SKAction.group([SKAction.playSoundFileNamed("dancestamp.mp3", waitForCompletion: false),SKAction.scaleTo(1.7, duration: 0.1),SKAction.unhide()]),
+            SKAction.waitForDuration(0.5),
+            SKAction.scaleTo(2.0, duration: 0.2),
+            SKAction.scaleTo(1.7, duration: 0.2)
+            ]))
         playButton.hidden = false
         grownUpButton.hidden = false
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -131,7 +140,7 @@ class IntroScene: SKScene {
             {
                 print("Ready to Play")
                 video.play()
-                introFrame.hidden=true
+               // introFrame.hidden=true
             }
             else
             {
