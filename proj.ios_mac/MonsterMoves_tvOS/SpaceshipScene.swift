@@ -27,6 +27,7 @@ struct GlobalConstants {
     static let tileScale : CGFloat = 0.9
     static let scaledTileScale : CGFloat = 1.1
     static let currentMONSTER : String = "MONSTER"
+    static let automateSelection : String = "automateSelection"
 }
 
 
@@ -256,6 +257,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         {
             if(m_focusedTileIndex > -1)
             {
+                self.removeActionForKey(GlobalConstants.automateSelection)
+                self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.putRandomTilesInDropZone()})]), withKey: GlobalConstants.automateSelection)
                 self.putTileInDropZone(m_tiles[m_focusedTileIndex] as! TileSprite)
             }
         }
@@ -488,12 +491,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         self.setupCentralCircle()
         self.startIdle()
         
-        //        self.runAction(SKAction.sequence([SKAction.waitForDuration(8),SKAction.runBlock({self.putRandomTilesInDropZone()})]))
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.putRandomTilesInDropZone()})]), withKey: GlobalConstants.automateSelection)
     }
-    
-    
-    
-    
+
     
     
     /// Picks a random tile and focuses on it
@@ -524,6 +524,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     func putRandomTilesInDropZone()
     {
+        self.removeActionForKey(GlobalConstants.automateSelection)
         for var i=0; i < m_dropzoneBodies.count ; i++
         {
             let dropzoneSprite = m_dropzoneBodies[i] as! DropzoneSprite
@@ -579,6 +580,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     {
         if(self.dropzoneIsFull())
         {
+            self.removeActionForKey(GlobalConstants.automateSelection)
             removeShakeTutorial()
             m_readyToDance = false
             removeFloatingTiles()
