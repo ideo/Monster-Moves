@@ -26,6 +26,7 @@ struct GlobalConstants {
     static let dropzoneScale : CGFloat = 0.9
     static let tileScale : CGFloat = 0.9
     static let scaledTileScale : CGFloat = 1.1
+    static let currentMONSTER : String = "MONSTER"
 }
 
 
@@ -38,8 +39,14 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     private var m_eggCrackSoundId : Int = -1
     private var m_circle : SKSpriteNode = SKSpriteNode()
     private var m_actor : JSONSprite = JSONSprite()
-    private var m_currentBackground : Int?
+    private var m_currentBackground : Int = 0
+    private var m_currentStamp : String = "space"
+    private var m_previousActor : Int = 0
+    
     private var tutorialvideo: SKVideoNode!
+    
+    private var tapSprite : SKSpriteNode?
+    private var shakeSprite : SKSpriteNode?
     
     
     // MARK: - DanceAct
@@ -59,6 +66,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     private var m_currentSequenceIndex : Int = 0
     private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
     private var m_danceLoopCount : Int = 0
+    private var readyCountLabel : SKLabelNode?
     
     // ParticleEffect
     private var particleEmmiter : SKEmitterNode!
@@ -79,7 +87,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        //     characters = ["Pom"]
+        characters = ["Meep"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -88,10 +96,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         let background = SKSpriteNode(texture: getRandomBackground())
         background.name = "background"
         background.position = center
-        background.zPosition = -1
+        background.zPosition = -2
         scene?.addChild(background)
         
-        let backgroundSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(String(format: "sound/beats/01_Select/01_%@",backgroundArray[m_currentBackground!] as! String), ofType: "mp3")!)
+        let backgroundSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(String(format: "sound/beats/01_Select/01_%@",backgroundArray[m_currentBackground] as! String), ofType: "mp3")!)
         do{
             backgroundAudioPlayer = try AVAudioPlayer(contentsOfURL:backgroundSound)
             backgroundAudioPlayer.prepareToPlay()
@@ -100,18 +108,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         }catch {
             print("Error getting the audio file")
         }
-        
-        //        let fileUrl = NSBundle.mainBundle().URLForResource("Intro",
-        //            withExtension: "mp4")!
-        //        tutorialplayer = AVPlayer(URL: fileUrl)
-        //        tutorialvideo = SKVideoNode(AVPlayer: tutorialplayer)
-        //        tutorialvideo.size = CGSizeMake(100, 100)
-        //        tutorialvideo.position = CGPoint(
-        //            x: CGRectGetMidX(scene!.frame),
-        //            y: CGRectGetMidY(scene!.frame))
-        //        tutorialvideo.zPosition = 10
-        //        scene!.addChild(tutorialvideo)
-        //        tutorialvideo.play()
         
         let tapgesture = UITapGestureRecognizer(target: self, action: "touchpadTapped")
         tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
@@ -125,11 +121,20 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         
         
+        readyCountLabel = SKLabelNode(text: "0")
+        readyCountLabel?.position = CGPoint(x: 1600, y: 700)
+        readyCountLabel?.color = UIColor.redColor()
+        readyCountLabel?.fontColor = UIColor.redColor()
+        readyCountLabel?.fontSize = 300
+        readyCountLabel?.fontName = "SF UI Display Regular"
+        readyCountLabel?.hidden = true
+        addChild(readyCountLabel!)
+            
+        
         particleEmmiter = SKEmitterNode(fileNamed: "Snow.sks")
         particleEmmiter.position = CGPoint(x: 0, y: self.frame.size.height)
         particleEmmiter.particleBirthRate = 0
         addChild(particleEmmiter)
-        
     }
     
     // MARK: - Interactions
@@ -137,22 +142,73 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         if(m_readyToDance)
         {
             pickRandomTile()
-        }    }
-    
-    
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event:
-        UIEvent?) {
-            if(m_isPlaying)
-            {
-                for touch in touches {
-                    let location = touch.locationInNode(self)
-                    addStamp(location)
-                }
-                
-                
-            }
+        }
     }
+    
+    
+    
+    func addTutorialForTap()
+    {
+        let textureAtlas = SKTextureAtlas(named: "Tapgesture")
+        let spritesArray : NSMutableArray = NSMutableArray()
+        let numImages = textureAtlas.textureNames.count
+        
+        for var i=0; i < numImages ; i++
+        {
+            spritesArray.addObject(textureAtlas.textureNamed(String(format: "tap_%05d", i)))
+        }
+        
+        tapSprite = SKSpriteNode(texture: spritesArray[0] as! SKTexture)
+        tapSprite!.setScale(0.85)
+        tapSprite!.alpha = 0.9
+        tapSprite!.position = CGPoint(
+            x: scene!.frame.size.width-100,
+            y: 280)
+        self.addChild(tapSprite!)
+        let animateArray : NSArray = spritesArray
+        tapSprite!.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(animateArray as! [SKTexture], timePerFrame: 1/15, resize: false, restore: false)))
+    }
+    
+    func removeTapTutorial()
+    {
+        if(tapSprite?.parent != nil)
+        {
+            tapSprite?.runAction(SKAction.sequence([SKAction.fadeOutWithDuration(0.5),SKAction.removeFromParent()]))
+        }
+    }
+    
+    func removeShakeTutorial()
+    {
+        if(shakeSprite?.parent != nil)
+    {
+        shakeSprite?.runAction(SKAction.sequence([SKAction.fadeOutWithDuration(0.5),SKAction.removeFromParent()]))
+        }
+    }
+    
+    
+    
+    func addTutorialforShake()
+    {
+        let textureAtlas = SKTextureAtlas(named: "Shakegesture")
+        let spritesArray : NSMutableArray = NSMutableArray()
+        let numImages = textureAtlas.textureNames.count
+        
+        for var i=0; i < numImages ; i++
+        {
+            spritesArray.addObject(textureAtlas.textureNamed(String(format: "shake_%05d", i+27)))
+        }
+        shakeSprite = SKSpriteNode(texture: spritesArray[0] as! SKTexture)
+        shakeSprite!.setScale(0.85)
+        shakeSprite!.alpha = 0.9
+        shakeSprite!.position = CGPoint(
+            x: scene!.frame.size.width-100,
+            y: 280)
+        self.addChild(shakeSprite!)
+        let animateArray : NSArray = spritesArray
+        shakeSprite!.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(animateArray as! [SKTexture], timePerFrame: 1/15, resize: false, restore: false)))
+    }
+    
+    
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event:
         UIEvent?) {
@@ -175,31 +231,25 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         if(m_eggReady)
         {
-            var leblob : JSONSprite
-            leblob = self.childNodeWithName("leblob") as! JSONSprite
-            if(leblob.m_currentActionName.isEmpty || leblob.m_currentActionName == "eggIdle")
+            var actor : JSONSprite
+            actor = self.childNodeWithName(GlobalConstants.currentMONSTER) as! JSONSprite
+            if(actor.m_currentActionName.isEmpty || actor.m_currentActionName == "eggIdle")
             {
-                leblob.removeAllActions()
+                self.removeTapTutorial()
+                actor.removeAllActions()
                 playEggCrackSound()
-                leblob.playAction("eggCrack0")
+                actor.playAction("eggCrack0")
             }
-            else if(leblob.m_currentActionName == "eggCrack0")
+            else if(actor.m_currentActionName == "eggCrack0")
             {
-                leblob.removeAllActions()
+                actor.removeAllActions()
                 playEggCrackSound()
-                leblob.playAction("eggCrack1")
+                actor.playAction("eggCrack1")
             }
-            else if(leblob.m_currentActionName == "eggCrack1")
+            else if(actor.m_currentActionName == "eggCrack1")
             {
-                leblob.removeAllActions()
-                leblob.playAction("crackEntrance")
-            }
-            else if(leblob.m_currentActionName == "idle")
-            {
-//                m_eggReady = false
-//                leblob.removeAllActions()
-//                self.getReadyForDanceScene()
-                
+                actor.removeAllActions()
+                actor.playAction("crackEntrance")
             }
         }
         else if(m_readyToDance)
@@ -218,14 +268,14 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     func addStamp(point : CGPoint)
     {
-        let Stamp : SKSpriteNode = SKSpriteNode(imageNamed: "Space1")
+        let Stamp : SKSpriteNode = SKSpriteNode(imageNamed: m_currentStamp)
         if(point == CGPointZero)
         {
-            Stamp.position = point
+            Stamp.position = CGPoint(x:Int(arc4random_uniform(UInt32(1920))) , y: Int(arc4random_uniform(UInt32(1080))))
         }
         else
         {
-            Stamp.position = CGPoint(x:Int(arc4random_uniform(UInt32(1920))) , y: Int(arc4random_uniform(UInt32(1080))))
+                            Stamp.position = point
         }
         Stamp.zPosition = 0
         Stamp.setScale(CGFloat((125.0 - Double(random() % 51)) / 100.0))
@@ -234,7 +284,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         playStampSound();
         
         self.addChild(Stamp)
-        Stamp.runAction(SKAction.sequence([SKAction.waitForDuration(1.0),SKAction.fadeOutWithDuration(1.0),SKAction.removeFromParent()]))
+        Stamp.runAction(SKAction.sequence([SKAction.waitForDuration(0.5),SKAction.fadeOutWithDuration(0.8),SKAction.removeFromParent()]))
     }
     
     
@@ -251,8 +301,55 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     func getRandomBackground() -> SKTexture
     {
         let randomBackgroundGenerator = randomSequenceGenerator(0, max: backgroundArray.count-1)
-        m_currentBackground = randomBackgroundGenerator()
-        return SKTexture(imageNamed: backgroundArray[m_currentBackground!] as! String)
+        var temp = randomBackgroundGenerator()
+        if(temp == m_currentBackground)
+        {
+            temp = randomBackgroundGenerator()
+        }
+        m_currentBackground = temp
+        // ["Cowboy","Cumbia","Funk","Hiphop","Latin","Space"]
+        var stamps : NSArray = NSArray()
+        
+        switch(m_currentBackground)
+            {
+        case 0:
+            stamps = ["Cowboy1","Cowboy2","Cowboy3"]
+            m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            break;
+            
+        case 1:
+                stamps = ["Cumbia1","Cumbia2","Cumbia3"]
+            m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            break;
+            
+        case 2:
+                stamps = ["Funk1","Funk2","Funk3","Funk4"]
+            m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            break;
+            
+        case 3:
+                stamps = ["Hiphop1","Hiphop2"]
+            m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            break;
+            
+        case 4:
+                stamps = ["Latin1","Latin2","Latin3","Latin4"]
+            m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            break;
+            
+        case 5:
+                stamps = ["Space1","Space2"]
+            m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            break;
+            
+            
+        default:
+                break;
+            
+        }
+        
+        
+        return SKTexture(imageNamed: backgroundArray[m_currentBackground] as! String)
     }
     
     
@@ -347,15 +444,22 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     func dropEggs()
     {
         let center = CGPoint(
-            x: CGRectGetMidX(scene!.frame),
-            y: CGRectGetMidY(scene!.frame))
+        x: CGRectGetMidX(scene!.frame),
+        y: CGRectGetMidY(scene!.frame))
         
         
         let getRandomCharacter = randomSequenceGenerator(0, max: characters.count-1)
-        let actor = JSONSprite.init(fileNamed: characters[getRandomCharacter()] as! String)
+        var temp = getRandomCharacter()
+        if(temp == m_previousActor)
+        {
+            temp = getRandomCharacter()
+        }
+        m_previousActor = temp
+        
+        let actor = JSONSprite.init(fileNamed: characters[m_previousActor] as! String)
         actor.m_delegate = self
         actor.position = center
-        actor.name = "leblob"
+        actor.name = GlobalConstants.currentMONSTER
         actor.setScale(1.20)
         actor.preloadActions(["eggCrack0", "eggCrack1", "crackEntrance","moveForward", "idle","exit"])
         addChild(actor)
@@ -368,15 +472,17 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     func eggsReady()
     {
-        let actor = self.childNodeWithName("leblob") as! JSONSprite
+        let actor = self.childNodeWithName(GlobalConstants.currentMONSTER) as! JSONSprite
         actor.playAction("eggIdle")
         //m_eggReady = true
+        addTutorialForTap()
     }
     
     // MARK: - Dance Scene Methods
     
     func getReadyForDanceScene()
     {
+        self.removeTapTutorial()
         self.setupPhysics()
         self.sizeAndGrow()
         self.setupCentralCircle()
@@ -384,6 +490,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         //        self.runAction(SKAction.sequence([SKAction.waitForDuration(8),SKAction.runBlock({self.putRandomTilesInDropZone()})]))
     }
+    
+    
+    
+    
     
     
     /// Picks a random tile and focuses on it
@@ -406,9 +516,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         {
             tileSprite.runAction(SKAction.scaleTo(GlobalConstants.scaledTileScale, duration: 0.1))
             tileSprite.showCircle(m_actor.m_name)
+             print("Tile highlighted should be ",m_focusedTileIndex)
         }
         
-        //        print("Tile highlighted should be ",randomMoves())
     }
     
     
@@ -469,13 +579,17 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     {
         if(self.dropzoneIsFull())
         {
+            removeShakeTutorial()
             m_readyToDance = false
             removeFloatingTiles()
             
             let startSound : NSArray = NSArray(objects: "OnYourMark.mp3","ReadySet.mp3")
             let randomStart = randomSequenceGenerator(0, max: startSound.count-1)
-            
-            self.runAction(SKAction.sequence([SKAction.waitForDuration(2),SKAction.playSoundFileNamed(startSound[randomStart()] as! String, waitForCompletion: true),SKAction.runBlock({self.prepareToPlay()})]))
+        
+        
+        let waitReadyTimer : SKAction = SKAction.repeatAction(SKAction.sequence([SKAction.runBlock({self.readyCountTimer()}),SKAction.waitForDuration(1.0)]), count: 4)
+        
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(2),SKAction.group([waitReadyTimer,SKAction.playSoundFileNamed(startSound[randomStart()] as! String, waitForCompletion: true)]),SKAction.runBlock({self.prepareToPlay()})]))
         }
     }
     
@@ -498,6 +612,28 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         }
     }
     
+    
+    func readyCountTimer()
+    {
+        if(readyCountLabel?.text == "0")
+    {
+        readyCountLabel?.text = "3"
+        readyCountLabel?.hidden = false
+    }
+        else if(readyCountLabel?.text == "3")
+    {
+        readyCountLabel?.text = "2"
+    }
+        else if(readyCountLabel?.text == "2")
+    {
+        readyCountLabel?.text = "1"
+    }
+        else
+    {
+        readyCountLabel?.hidden = true
+        readyCountLabel?.text = "0"
+        }
+    }
     
     func timeToTransitionToNextCharacter()
     {
@@ -535,7 +671,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         backgroundAudioPlayer.stop()
         
         
-        let backgroundSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(String(format: "sound/beats/01_Select/01_%@",backgroundArray[m_currentBackground!] as! String), ofType: "mp3")!)
+        let backgroundSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(String(format: "sound/beats/01_Select/01_%@",backgroundArray[m_currentBackground] as! String), ofType: "mp3")!)
         do{
             backgroundAudioPlayer = try AVAudioPlayer(contentsOfURL:backgroundSound)
             backgroundAudioPlayer.prepareToPlay()
@@ -549,22 +685,27 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     func prepareToPlay()
     {
+        readyCountLabel?.hidden = true
         m_currentSequenceIndex = 0;
         
-        let backgroundSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(String(format: "sound/beats/03_Play/03_%@",backgroundArray[m_currentBackground!] as! String), ofType: "mp3")!)
+        let backgroundSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(String(format: "sound/beats/03_Play/03_%@",backgroundArray[m_currentBackground] as! String), ofType: "mp3")!)
         do{
             backgroundAudioPlayer = try AVAudioPlayer(contentsOfURL:backgroundSound)
             backgroundAudioPlayer.prepareToPlay()
-            backgroundAudioPlayer.play()
+            
             backgroundAudioPlayer.numberOfLoops = -1
+            backgroundAudioPlayer.volume = 0.8
         }catch {
             print("Error getting the audio file")
         }
         
-        
         m_pace = 0
         m_danceLoopCount = 0
         m_isPlaying = true
+        
+        
+        backgroundAudioPlayer.play()
+        
         self.runAction(SKAction.repeatAction(SKAction.sequence([SKAction.runBlock({self.playNextDance(0)}),SKAction.waitForDuration(2.509)]), count: 4))
         
         
@@ -603,7 +744,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             let encourageSound : NSArray = NSArray(objects: "Dance.mp3","Groove.mp3","LetsMove.mp3","OhYeah.mp3","ThatsRight.mp3","WereGroovin.mp3","Woo.mp3","Woohoo.mp3","WootWoot.mp3")
             let randomEncourage = randomSequenceGenerator(0, max: encourageSound.count-1)
             
-            self.runAction(SKAction.playSoundFileNamed(encourageSound[randomEncourage()] as! String, waitForCompletion: true))
+            self.runAction(SKAction.playSoundFileNamed(encourageSound[randomEncourage()] as! String, waitForCompletion: false))
         }
         
         
@@ -616,7 +757,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             
             self.runAction(SKAction.sequence(
                 [
-                    SKAction.waitForDuration(1),
+                    SKAction.waitForDuration(3),
                     SKAction.runBlock({self.m_actor.playAction("exit")}),
                     
                     SKAction.playSoundFileNamed(endSound[endStart()] as! String, waitForCompletion: true),
@@ -677,7 +818,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     {
         //        m_actor.removeAllActions()
         
-        let backgroundSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(String(format: "sound/beats/02_Create/02_%@",backgroundArray[m_currentBackground!] as! String), ofType: "mp3")!)
+        let backgroundSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(String(format: "sound/beats/02_Create/02_%@",backgroundArray[m_currentBackground] as! String), ofType: "mp3")!)
         do{
             backgroundAudioPlayer = try AVAudioPlayer(contentsOfURL:backgroundSound)
             backgroundAudioPlayer.prepareToPlay()
@@ -699,6 +840,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             break;
         case "meep":
             m_actor.preloadActions(["dance1","dance2","dance3","dance4","dance5","dance6","dance7","dance8"])
+
             break;
         case "pom":
             m_actor.preloadActions(["dance1","dance2","dance3","dance4","dance5","dance6","dance7","dance8"])
@@ -711,10 +853,15 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             break;
         case "freds":
             m_actor.preloadActions(["dance2","dance4","dance5","dance6","dance7"])
+
+            
+            
             break;
         default:
             break;
         }
+        
+        self.addTutorialforShake()
         
         
         
@@ -723,7 +870,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     func sizeAndGrow()
     {
-        m_actor = self.childNodeWithName("leblob") as! JSONSprite
+        m_actor = self.childNodeWithName(GlobalConstants.currentMONSTER) as! JSONSprite
         m_actor.runAction(SKAction.sequence([
             SKAction.group([SKAction.runBlock({self.m_actor.playAction("moveForward")}),SKAction.moveTo(CGPoint(
                 x: CGRectGetMidX(scene!.frame),
@@ -847,7 +994,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             left = (leftCount < rightCount);
         }
         
-        let subbend : Float =  Float(tile.size.width) + 400.0
+        let subbend : Float =  Float(tile.size.width)
         let randomF : Int = random() % Int(Float((scene?.frame.size.height)!) - minTileGenY - subbend)
         
         let frameWidth : Int = Int((scene?.frame.size.height)!) / 2
@@ -855,7 +1002,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         let leftpoint : Int = random() % Int(frameWidth - leftTile)
         
         let tileY : Float
-        tileY = minTileGenY + Float(tile.size.height / 2) + Float(randomF)
+        tileY = minTileGenY + Float(tile.size.height / 2) + Float(randomF) + 90
         
         var p : CGPoint
         
@@ -888,10 +1035,18 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         tile.physicsBody = tile.attachPhysics()
         self.addChild(tile)
         
+        if(m_tiles.count == 3)
+        {
+            self.runAction(SKAction.sequence([SKAction.waitForDuration(2.0),SKAction.runBlock({self.pickRandomTile()})]))
+        }
+        
         tile.runAction(SKAction.scaleTo(GlobalConstants.tileScale, duration: 1.0))
         tile.physicsBody?.applyImpulse(CGVectorMake(150.0, -50.0))
         
         m_tiles.addObject(tile)
+        
+        
+        
     }
     
     
@@ -959,13 +1114,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         {
             addActionTile(actionName);
             m_dancePreloadedCount++
-            
-            if(m_dancePreloadedCount==1)
-            {
-                pickRandomTile()
-            }
-            
-            if(m_dancePreloadedCount>=4)
+        
+            if(m_dancePreloadedCount==4)
             {
                 m_readyToDance = true
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -993,7 +1143,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         //        print("x: \(motion.userAcceleration.x)   y: \(motion.userAcceleration.y) z: \(motion.userAcceleration.z)")
         let m = sqrt(pow(motion.userAcceleration.x, 2) + pow(motion.userAcceleration.y,2) + pow(motion.userAcceleration.z,2))
         // print("magnitude",m)
-        if(m > 4)
+        if(m > 2)
         {
             print("Swing detected")
             if(!dropzoneIsFull() && m_readyToDance)

@@ -102,17 +102,6 @@ class IntroScene: SKScene {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoEndedPlaying", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
         
-//        let tutorialvideo : SKVideoNode
-//        let fileUrls = NSBundle.mainBundle().URLForResource("IntroMovie",
-//            withExtension: "mp4")!
-//        tutorialplayer = AVPlayer(URL: fileUrls)
-//        tutorialvideo = SKVideoNode(AVPlayer: tutorialplayer)
-//        tutorialvideo.size = CGSizeMake(100, 100)
-//        tutorialvideo.position = center
-//        scene!.addChild(tutorialvideo)
-//        tutorialvideo.play()
-        
-        
     }
     
     func videoEndedPlaying(){
@@ -174,18 +163,17 @@ class IntroScene: SKScene {
     
     func userSwipedUp()
     {
-        print("User Swiped Up")
         playButton.removeAllActions()
         activateButtonIndex = 1
         grownUpButton.runAction(SKAction.repeatActionForever(SKAction.sequence([
             SKAction.scaleTo(1.3, duration: 1.0),
             SKAction.scaleTo(1.0, duration: 1.0)
             ])))
-        
     }
     
     func userSwipedDown()
     {
+        
         print("User Swiped Down")
         grownUpButton.removeAllActions()
         activateButtonIndex = 0
@@ -198,7 +186,7 @@ class IntroScene: SKScene {
     
     // MARK: Button Interaction Methods
     func buttonPressed(){
-        
+        print("button pressed")
         switch(activateButtonIndex)
         {
         case 0:
@@ -250,6 +238,17 @@ class IntroScene: SKScene {
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
         player.removeObserver(self, forKeyPath: "status")
+    }
+    
+    
+    override func willMoveFromView(view: SKView) {
+        if view.gestureRecognizers != nil {
+            for gesture in view.gestureRecognizers! {
+                if let recognizer = gesture as? UISwipeGestureRecognizer {
+                    view.removeGestureRecognizer(recognizer)
+                }
+            }
+        }
     }
 
     
