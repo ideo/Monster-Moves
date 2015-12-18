@@ -84,11 +84,17 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWillResignActive", name: UIApplicationWillResignActiveNotification, object: nil)
         
         
+        particleEmmiter = SKEmitterNode(fileNamed: "Snow.sks")
+        particleEmmiter.position = CGPoint(x: 0, y: self.frame.size.height)
+        particleEmmiter.particleBirthRate = 2
         
         
+        
+        
+     //  backgroundArray = ["Space"]
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        characters = ["Meep"]
+     //   characters = ["Meep"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -132,9 +138,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         addChild(readyCountLabel!)
             
         
-        particleEmmiter = SKEmitterNode(fileNamed: "Snow.sks")
-        particleEmmiter.position = CGPoint(x: 0, y: self.frame.size.height)
-        particleEmmiter.particleBirthRate = 0
         addChild(particleEmmiter)
     }
     
@@ -318,31 +321,38 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         case 0:
             stamps = ["Cowboy1","Cowboy2","Cowboy3"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            particleEmmiter.particleTexture = SKTexture(imageNamed: "ParticleEffects/Cowboy")
             break;
             
         case 1:
-                stamps = ["Cumbia1","Cumbia2","Cumbia3"]
+            stamps = ["Cumbia1","Cumbia2","Cumbia3"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            particleEmmiter.particleTexture = SKTexture(imageNamed: "ParticleEffects/Cumbia")
             break;
             
         case 2:
-                stamps = ["Funk1","Funk2","Funk3","Funk4"]
+            stamps = ["Funk1","Funk2","Funk3","Funk4"]
+            let particles : NSArray = NSArray(objects: "ParticleEffects/Funk1","ParticleEffects/Funk2")
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            particleEmmiter.particleTexture = SKTexture(imageNamed: particles[Int(arc4random_uniform(UInt32(particles.count)))] as! String)
             break;
             
         case 3:
                 stamps = ["Hiphop1","Hiphop2"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            particleEmmiter.particleTexture = SKTexture(imageNamed: "ParticleEffects/Hiphop")
             break;
             
         case 4:
                 stamps = ["Latin1","Latin2","Latin3","Latin4"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            particleEmmiter.particleTexture = SKTexture(imageNamed: "ParticleEffects/Latin")
             break;
             
         case 5:
                 stamps = ["Space1","Space2"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
+            particleEmmiter.particleTexture = SKTexture(imageNamed: "ParticleEffects/Space")
             break;
             
             

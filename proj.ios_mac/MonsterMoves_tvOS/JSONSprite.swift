@@ -113,7 +113,6 @@ class JSONSprite: SKSpriteNode {
                 m_name = parsedDoc["name"] as! String
                 print(m_name)
                 
-                let basePath = "actors/" + m_name + "/"
                 var loadAction = defaultAction
                 if(loadAction.isEmpty && parsedDoc["defaultAction"] != nil)
                 {
@@ -144,10 +143,10 @@ class JSONSprite: SKSpriteNode {
                 
                 if(parsedDoc["actions"] != nil)
                 {
-                    var actionDocArray : NSArray = parsedDoc["actions"] as! NSArray
+                    let actionDocArray : NSArray = parsedDoc["actions"] as! NSArray
                     for var j=0; j < actionDocArray.count; j++
                     {
-                        var actionDoc = actionDocArray[j] as! NSDictionary
+                        let actionDoc = actionDocArray[j] as! NSDictionary
                         var ad: ActionData = ActionData(actionaName: "", realName: "", filePrefix: "" , frameStart: 0, frameEnd: 0, frameRate: 0, repeatagain: 0, type: 0, soundEffect: "", followedAction: "")
                         ad.actionaName = actionDoc["name"] as! String
                         
