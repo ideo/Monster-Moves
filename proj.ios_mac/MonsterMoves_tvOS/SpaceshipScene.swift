@@ -86,7 +86,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         particleEmmiter = SKEmitterNode(fileNamed: "Snow.sks")
         particleEmmiter.position = CGPoint(x: 0, y: self.frame.size.height)
-        particleEmmiter.particleBirthRate = 2
+        particleEmmiter.particleBirthRate = 0
         
         
         
@@ -140,6 +140,22 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         addChild(particleEmmiter)
     }
+    
+    
+    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+        for press in presses {
+            switch press.type {
+            case .Menu:
+                print("Menu")
+                break;
+                
+            default:
+                break;
+                
+            }
+        }
+    }
+    
     
     // MARK: - Interactions
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -261,7 +277,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             if(m_focusedTileIndex > -1)
             {
                 self.removeActionForKey(GlobalConstants.automateSelection)
-                self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.putRandomTilesInDropZone()})]), withKey: GlobalConstants.automateSelection)
+                self.runAction(SKAction.sequence([SKAction.waitForDuration(10),SKAction.runBlock({self.putRandomTilesInDropZone()})]), withKey: GlobalConstants.automateSelection)
                 self.putTileInDropZone(m_tiles[m_focusedTileIndex] as! TileSprite)
             }
         }
@@ -313,11 +329,16 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             temp = randomBackgroundGenerator()
         }
         m_currentBackground = temp
+        return SKTexture(imageNamed: backgroundArray[m_currentBackground] as! String)
+    }
+    
+    func setCurrentParticleEmitter()
+    {
         // ["Cowboy","Cumbia","Funk","Hiphop","Latin","Space"]
         var stamps : NSArray = NSArray()
         
         switch(m_currentBackground)
-            {
+        {
         case 0:
             stamps = ["Cowboy1","Cowboy2","Cowboy3"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
@@ -338,31 +359,28 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             break;
             
         case 3:
-                stamps = ["Hiphop1","Hiphop2"]
+            stamps = ["Hiphop1","Hiphop2"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
             particleEmmiter.particleTexture = SKTexture(imageNamed: "ParticleEffects/Hiphop")
             break;
             
         case 4:
-                stamps = ["Latin1","Latin2","Latin3","Latin4"]
+            stamps = ["Latin1","Latin2","Latin3","Latin4"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
             particleEmmiter.particleTexture = SKTexture(imageNamed: "ParticleEffects/Latin")
             break;
             
         case 5:
-                stamps = ["Space1","Space2"]
+            stamps = ["Space1","Space2"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
             particleEmmiter.particleTexture = SKTexture(imageNamed: "ParticleEffects/Space")
             break;
             
             
         default:
-                break;
+            break;
             
         }
-        
-        
-        return SKTexture(imageNamed: backgroundArray[m_currentBackground] as! String)
     }
     
     
@@ -501,7 +519,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         self.setupCentralCircle()
         self.startIdle()
         
-        self.runAction(SKAction.sequence([SKAction.waitForDuration(5),SKAction.runBlock({self.putRandomTilesInDropZone()})]), withKey: GlobalConstants.automateSelection)
+        self.runAction(SKAction.sequence([SKAction.waitForDuration(10),SKAction.runBlock({self.putRandomTilesInDropZone()})]), withKey: GlobalConstants.automateSelection)
     }
 
     
@@ -714,7 +732,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         m_pace = 0
         m_danceLoopCount = 0
         m_isPlaying = true
-        
+        setCurrentParticleEmitter()
         
         backgroundAudioPlayer.play()
         
@@ -1112,10 +1130,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     func appWillResignActive()
     {
-        //        let introscene : IntroScene = IntroScene(size:CGSize(width: 1920, height: 1080))
-        //        /* Set the scale mode to scale to fit the window */
-        //        introscene.scaleMode = .AspectFill
-        //        view?.presentScene(introscene)
+//                let introscene : IntroScene = IntroScene(size:CGSize(width: 1920, height: 1080))
+//                /* Set the scale mode to scale to fit the window */
+//                introscene.scaleMode = .AspectFill
+//                view?.presentScene(introscene)
     }
     
     
@@ -1164,7 +1182,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             }
             if(m_isPlaying)
             {
-                particleEmmiter.particleBirthRate = CGFloat(m)
+                particleEmmiter.particleBirthRate = CGFloat(m*8)
             }
         }
     }
