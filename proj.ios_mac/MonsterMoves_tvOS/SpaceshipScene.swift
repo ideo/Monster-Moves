@@ -736,7 +736,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         backgroundAudioPlayer.play()
         
-        self.runAction(SKAction.repeatAction(SKAction.sequence([SKAction.runBlock({self.playNextDance(0)}),SKAction.waitForDuration(2.509)]), count: 4))
+        self.runAction(SKAction.repeatAction(SKAction.sequence([SKAction.runBlock({self.playNextDance(0)}),SKAction.waitForDuration(2.509)]), count: 12))
         
         
     }
@@ -779,7 +779,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         
         print("dance loop count is ",m_danceLoopCount)
-        if(m_danceLoopCount == 1)
+        if(m_danceLoopCount == 3)
         {
             
             let endSound : NSArray = NSArray(objects: "Nice.mp3","WayToGo.mp3","Yah.mp3","YouDidIt.mp3","sound/common/Hooray_1.mp3","sound/common/Hooray_2.mp3")
