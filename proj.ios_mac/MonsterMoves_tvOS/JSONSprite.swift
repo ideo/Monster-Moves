@@ -323,10 +323,13 @@ class JSONSprite: SKSpriteNode {
                 }
                 let texture : SKTexture = SKTexture(imageNamed: filename)
                 spriteFrames.addObject(texture)
+                innerActor?.size = texture.size()
             }
         }
-       
+        
+        
         let animation = SKAction.animateWithTextures(spriteFrames as NSArray as! [SKTexture], timePerFrame: 1/15, resize: true, restore: false)
+       
         
         if(action.repeatagain <= 0)
         {

@@ -94,7 +94,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
      //  backgroundArray = ["Space"]
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-     //   characters = ["Meep"]
+        characters = ["LeBlob"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -130,8 +130,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         readyCountLabel = SKLabelNode(text: "0")
         readyCountLabel?.position = CGPoint(x: 1600, y: 700)
-        readyCountLabel?.color = UIColor.redColor()
-        readyCountLabel?.fontColor = UIColor.redColor()
+        readyCountLabel?.color = UIColor(red: 229/255, green: 158/255, blue: 41/255, alpha: 1.0)
+        readyCountLabel?.fontColor = UIColor(red: 229/255, green: 158/255, blue: 41/255, alpha: 1.0)
         readyCountLabel?.fontSize = 300
         readyCountLabel?.fontName = "SF UI Display Regular"
         readyCountLabel?.hidden = true
@@ -139,23 +139,17 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             
         
         addChild(particleEmmiter)
+    
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "menuPressed", name: "menuPressed", object: nil)
+        
     }
     
-    
-    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
-        for press in presses {
-            switch press.type {
-            case .Menu:
-                print("Menu")
-                break;
-                
-            default:
-                break;
-                
-            }
-        }
+    func menuPressed()
+    {
+        print("Menu in SpaceShip")
     }
-    
+
     
     // MARK: - Interactions
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -774,7 +768,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             let encourageSound : NSArray = NSArray(objects: "Dance.mp3","Groove.mp3","LetsMove.mp3","OhYeah.mp3","ThatsRight.mp3","WereGroovin.mp3","Woo.mp3","Woohoo.mp3","WootWoot.mp3")
             let randomEncourage = randomSequenceGenerator(0, max: encourageSound.count-1)
             
-            self.runAction(SKAction.playSoundFileNamed(encourageSound[randomEncourage()] as! String, waitForCompletion: false))
+//            self.runAction(SKAction.playSoundFileNamed(encourageSound[randomEncourage()] as! String, waitForCompletion: false))
         }
         
         
@@ -1184,6 +1178,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             {
                 particleEmmiter.particleBirthRate = CGFloat(m*8)
             }
+        }
+        else
+        {
+            particleEmmiter.particleBirthRate = 0
         }
     }
     

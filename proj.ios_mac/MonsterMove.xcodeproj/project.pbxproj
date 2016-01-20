@@ -150,6 +150,7 @@
 		68966E671C20D5B40026A2E4 /* shake.mov in Resources */ = {isa = PBXBuildFile; fileRef = 68966E651C20D5B40026A2E4 /* shake.mov */; };
 		68966E681C20D5B40026A2E4 /* tap.mov in Resources */ = {isa = PBXBuildFile; fileRef = 68966E661C20D5B40026A2E4 /* tap.mov */; };
 		68966E6A1C20E9BF0026A2E4 /* pom_act_dance2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68966E691C20E9BF0026A2E4 /* pom_act_dance2.mp3 */; };
+		68B33B141C42DCC5000B618A /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B33B131C42DCC5000B618A /* GameController.framework */; };
 		68E59AEE1C15F66B0087BF13 /* DropzoneSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E59AED1C15F66B0087BF13 /* DropzoneSprite.swift */; };
 		68E59AF01C15F6B20087BF13 /* TileSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E59AEF1C15F6B20087BF13 /* TileSprite.swift */; };
 		A0C4286F1ABBCCFF00803D3C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4286E1ABBCCFF00803D3C /* CoreData.framework */; };
@@ -400,6 +401,7 @@
 		68966E651C20D5B40026A2E4 /* shake.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = shake.mov; sourceTree = "<group>"; };
 		68966E661C20D5B40026A2E4 /* tap.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = tap.mov; sourceTree = "<group>"; };
 		68966E691C20E9BF0026A2E4 /* pom_act_dance2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance2.mp3; sourceTree = "<group>"; };
+		68B33B131C42DCC5000B618A /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		68E59AED1C15F66B0087BF13 /* DropzoneSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropzoneSprite.swift; sourceTree = "<group>"; };
 		68E59AEF1C15F6B20087BF13 /* TileSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSprite.swift; sourceTree = "<group>"; };
 		A0C4286E1ABBCCFF00803D3C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
@@ -462,6 +464,7 @@
 			files = (
 				684367D41C18AD85001AE5F4 /* Crashlytics.framework in Frameworks */,
 				684367D31C18AD85001AE5F4 /* Fabric.framework in Frameworks */,
+				68B33B141C42DCC5000B618A /* GameController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +716,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68B33B131C42DCC5000B618A /* GameController.framework */,
 				19F7D6CC1AC2EC220019BD0D /* OpenGLES.framework */,
 				19F7D6CA1AC2EC1B0019BD0D /* CoreMotion.framework */,
 				A0C428861ABBCFB300803D3C /* GameController.framework */,
@@ -1092,6 +1096,11 @@
 					685E083D1C0E452C00B5CCCF = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = K3T6UAC5U4;
+						SystemCapabilities = {
+							com.apple.GameControllers.appletvos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

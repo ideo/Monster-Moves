@@ -1,9 +1,9 @@
 {
   "assets" : [
     {
+      "size" : "1280x768",
       "idiom" : "tv",
       "filename" : "App Icon - Large.imagestack",
-      "size" : "1280x768",
       "role" : "primary-app-icon"
     },
     {

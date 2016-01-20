@@ -1,29 +1,23 @@
 {
   "layers" : [
     {
-      "filename" : "Layer 4 - LeBlob.imagestacklayer"
+      "filename" : "Layer-1.imagestacklayer"
     },
     {
-      "filename" : "Layer 3 - Saus.imagestacklayer"
+      "filename" : "Layer.imagestacklayer"
     },
     {
-      "filename" : "Layer 2 - DANCE.imagestacklayer"
+      "filename" : "Front.imagestacklayer"
     },
     {
-      "filename" : "Layer 1 - logo.imagestacklayer"
+      "filename" : "Middle.imagestacklayer"
     },
     {
-      "filename" : "Layer0 - background.imagestacklayer"
+      "filename" : "Back.imagestacklayer"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "canvasSize" : {
-      "width" : 400,
-      "height" : 240
-    }
   }
 }
