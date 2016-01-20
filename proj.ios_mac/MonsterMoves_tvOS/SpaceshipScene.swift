@@ -34,6 +34,7 @@ struct GlobalConstants {
 class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     var backgroundArray : NSArray = ["Cowboy","Cumbia","Funk","Hiphop","Latin","Space"]
+    
     var characters : NSArray = []
     private var tutorialplayer: AVPlayer!
     private var m_eggReady : Bool = false
@@ -88,10 +89,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         particleEmmiter.position = CGPoint(x: 0, y: self.frame.size.height)
         particleEmmiter.particleBirthRate = 0
         
-        
-        
-        
-     //  backgroundArray = ["Space"]
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
         characters = ["LeBlob"]
@@ -310,7 +307,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     func playStampSound()
     {
         let i = random() % 3 + 1
-        self.runAction(SKAction.playSoundFileNamed(String(format: "sound/common/Tap%d.wav",i), waitForCompletion: false))
+        self.runAction(SKAction.playSoundFileNamed(String(format: "NewTap%d.wav",i), waitForCompletion: false))
     }
     
     
@@ -323,6 +320,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             temp = randomBackgroundGenerator()
         }
         m_currentBackground = temp
+        
+        // for testing background
+        //m_currentBackground = 2
+        
         return SKTexture(imageNamed: backgroundArray[m_currentBackground] as! String)
     }
     
@@ -350,6 +351,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             let particles : NSArray = NSArray(objects: "ParticleEffects/Funk1","ParticleEffects/Funk2")
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
             particleEmmiter.particleTexture = SKTexture(imageNamed: particles[Int(arc4random_uniform(UInt32(particles.count)))] as! String)
+            particleEmmiter.particleScale = 1.0
             break;
             
         case 3:
@@ -362,6 +364,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             stamps = ["Latin1","Latin2","Latin3","Latin4"]
             m_currentStamp = stamps[Int(arc4random_uniform(UInt32(stamps.count)))] as! String
             particleEmmiter.particleTexture = SKTexture(imageNamed: "ParticleEffects/Latin")
+            particleEmmiter.particleScale = 1.0
             break;
             
         case 5:
@@ -692,6 +695,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         m_readyToDance = false
         m_dancePreloadedCount=0
         particleEmmiter.particleBirthRate = 0
+        particleEmmiter.particleScale = 0.231
         backgroundAudioPlayer.stop()
         
         
