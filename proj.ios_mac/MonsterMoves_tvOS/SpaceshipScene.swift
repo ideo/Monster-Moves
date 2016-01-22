@@ -28,6 +28,7 @@ struct GlobalConstants {
     static let scaledTileScale : CGFloat = 1.1
     static let currentMONSTER : String = "MONSTER"
     static let automateSelection : String = "automateSelection"
+    static let transitionNotification : String = "transitionedToView"
 }
 
 
@@ -64,6 +65,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     private var m_dancePreloadedCount : Int = 0
     private var m_readyToDance : Bool = false
     private var m_isPlaying : Bool = false
+    private var m_isRandomTriggered : Bool = false
     private var m_pace : Int = 0
     private var m_currentSequenceIndex : Int = 0
     private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
@@ -82,7 +84,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         /* Setup your scene here */
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWillResignActive", name: UIApplicationWillResignActiveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.transitionNotification, object:self,userInfo: ["scenename":"Spaceship","scene":self] )
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWillResignActive", name: UIApplicationWillResignActiveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "needToGoToHome", name: "needToGoToHome", object: nil)
+        
         
         
         particleEmmiter = SKEmitterNode(fileNamed: "Snow.sks")
@@ -91,7 +96,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        characters = ["LeBlob"]
+//        characters = ["Freds"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -136,17 +141,27 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             
         
         addChild(particleEmmiter)
-    
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "menuPressed", name: "menuPressed", object: nil)
         
     }
     
-    func menuPressed()
-    {
-        print("Menu in SpaceShip")
+    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+     
+    
     }
 
+    
+    
+    func needToGoToHome()
+    {
+        let introscene = IntroScene(size:size)
+        introscene.name = "Home"
+        introscene.scaleMode = scaleMode
+        
+        
+        let reveal = SKTransition.crossFadeWithDuration(0.5) // Transition with CrossFade - to avoid huge pixel change
+        self.view?.presentScene(introscene, transition: reveal)
+    }
+    
     
     // MARK: - Interactions
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -552,6 +567,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         self.removeActionForKey(GlobalConstants.automateSelection)
         for var i=0; i < m_dropzoneBodies.count ; i++
         {
+            
+            m_isRandomTriggered = true
             let dropzoneSprite = m_dropzoneBodies[i] as! DropzoneSprite
             if(dropzoneSprite.m_tile == nil)
             {
@@ -579,7 +596,14 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         if(index != -1)
         {
             tile.removeCircle()
-            m_actor.playAction(tile.m_actionName!)
+            if(m_isRandomTriggered)
+            {
+                
+            }
+            else
+            {
+                m_actor.playAction(tile.m_actionName!)
+            }
             tile.setScale(GlobalConstants.tileScale)
             tile.position = m_dropzoneBodies[index].position
             tile.physicsBody = nil
@@ -610,7 +634,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             m_readyToDance = false
             removeFloatingTiles()
             
-            let startSound : NSArray = NSArray(objects: "OnYourMark.mp3","ReadySet.mp3")
+            let startSound : NSArray = NSArray(objects: "OnYourMark.wav","ReadySet.wav")
             let randomStart = randomSequenceGenerator(0, max: startSound.count-1)
         
         
@@ -693,6 +717,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         m_eggReady = false
         m_readyToDance = false
+        m_isRandomTriggered = false
         m_dancePreloadedCount=0
         particleEmmiter.particleBirthRate = 0
         particleEmmiter.particleScale = 0.231
@@ -769,7 +794,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             m_currentSequenceIndex = 0;
             
             m_danceLoopCount++
-            let encourageSound : NSArray = NSArray(objects: "Dance.mp3","Groove.mp3","LetsMove.mp3","OhYeah.mp3","ThatsRight.mp3","WereGroovin.mp3","Woo.mp3","Woohoo.mp3","WootWoot.mp3")
+            let encourageSound : NSArray = NSArray(objects: "Dance.wav","Groove.wav","LetsMove.wav","OhYeah.wav","ThatsRight.wav","WereGroovin.wav","Woo.wav","Woohoo.wav","WootWoot.wav")
             let randomEncourage = randomSequenceGenerator(0, max: encourageSound.count-1)
             
 //            self.runAction(SKAction.playSoundFileNamed(encourageSound[randomEncourage()] as! String, waitForCompletion: false))
@@ -780,7 +805,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         if(m_danceLoopCount == 3)
         {
             
-            let endSound : NSArray = NSArray(objects: "Nice.mp3","WayToGo.mp3","Yah.mp3","YouDidIt.mp3","sound/common/Hooray_1.mp3","sound/common/Hooray_2.mp3")
+            let endSound : NSArray = NSArray(objects: "Nice.wav","WayToGo.wav","Yah.wav","YouDidIt.wav","Woohoo.wav")
             let endStart = randomSequenceGenerator(0, max: endSound.count-1)
             
             self.runAction(SKAction.sequence(

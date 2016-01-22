@@ -8,14 +8,19 @@
 
 import UIKit
 import SpriteKit
+import GameController
 
-class GameViewController: UIViewController {
+class GameViewController: GCEventViewController {
     
     private var introscene : IntroScene?
+    internal var m_isHomeScreen : Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "transitionedToView:", name: GlobalConstants.transitionNotification, object: nil)
+        
         introscene = IntroScene(size:CGSize(width: 1920, height: 1080))
         introscene?.name = "Home"
         // Configure the view.
@@ -26,9 +31,43 @@ class GameViewController: UIViewController {
         
         /* Set the scale mode to scale to fit the window */
         introscene!.scaleMode = .AspectFill
+
+        controllerUserInteractionEnabled = true
         
         skView.presentScene(introscene)
         
+        
+    }
+    
+    
+    func transitionedToView(notification : NSNotification)
+    {
+        
+        if let info = notification.userInfo as? Dictionary<String,AnyObject> {
+            // Check if value present before using it
+            if let scene = info["scenename"] {
+                print(scene)
+                if(scene as! String == "Spaceship")
+                                {
+                                    m_isHomeScreen = false
+                                    print("Spaceship scene. Controller user interaction enabled - false")
+                                    controllerUserInteractionEnabled = false
+                                }
+                                else if(scene as! String == "Intro")
+                                {
+                                    m_isHomeScreen = true
+                                    print("Intro scene. Controller user interaction enabled - true")
+                                    controllerUserInteractionEnabled = true
+//                                    introscene = info["scene"] as? IntroScene
+                                }
+            }
+            else {
+                print("no value for key\n")
+            }
+        }
+        else {
+            print("wrong userInfo type")
+        }
     }
     
 
@@ -38,42 +77,26 @@ class GameViewController: UIViewController {
     }
     
     
-//    override func pressesBegan(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
-//        // Detect a remote button press
-//        
-//        if presses.first?.type == .Menu { // Detect the menu button
-//            print("Menu button pressed")
-//        }
-//        else { // Pass it to 'super' to allow it to do what it's supposed to do if it's not a menu press
-//            super.pressesBegan(presses, withEvent: event)
-//        }
-//    }
-
-    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
-//        for press in presses {
-//            switch press.type {
-//            case .Menu:
-//                if("hi"==="hi")
-//                {
-//                    //intro
-//                    super.pressesEnded(presses, withEvent: event)
-//                }
-//                else
-//                {
-//                    let gameScene = SpaceshipScene(size:CGSize(width: 1920, height: 1080))
-//                    let skView = self.view as! SKView
-//                    skView.presentScene(gameScene)
-//                    //play
-//                }
-//                print("Menu pressed")
-//                break;
-//            default:
-                 introscene?.pressesEnded(presses, withEvent: event)
-//            }
-//        }
-       
+    deinit {
+        // perform the deinitialization
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    
+    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+        for press in presses {
+            switch press.type {
+            case .Menu:
+                if(!m_isHomeScreen)
+                {
+                    NSNotificationCenter.defaultCenter().postNotificationName("needToGoToHome", object: nil)
+                }
+                break;
+            default:
+                introscene!.pressesEnded(presses, withEvent: event)
+            }
+        }
+    }
     
     
     

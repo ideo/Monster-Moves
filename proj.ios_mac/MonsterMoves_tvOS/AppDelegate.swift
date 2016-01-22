@@ -33,9 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GCController.startWirelessControllerDiscoveryWithCompletionHandler { () -> Void in
             
         }
-        
-        
-        
         return true
     }
     

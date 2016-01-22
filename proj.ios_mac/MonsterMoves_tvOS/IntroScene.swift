@@ -26,8 +26,7 @@ class IntroScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        
-        //nextButtonPressed()
+        NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.transitionNotification, object:self,userInfo: ["scenename":"Intro","scene":self] )
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -216,7 +215,7 @@ class IntroScene: SKScene {
                 spaceShipScene.scaleMode = scaleMode
         
                 let reveal = SKTransition.crossFadeWithDuration(0.5) // Transition with CrossFade - to avoid huge pixel change
-                view?.presentScene(spaceShipScene, transition: reveal)
+                self.view?.presentScene(spaceShipScene, transition: reveal)
     }
     
     /// GrownUp Button pressed - Show Grownup Section
@@ -237,7 +236,14 @@ class IntroScene: SKScene {
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        player.removeObserver(self, forKeyPath: "status")
+        do {
+             player.removeObserver(self, forKeyPath: "status")
+        } catch {
+            print("No observer for player")
+        }
+        
+        
+       
     }
     
     

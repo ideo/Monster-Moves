@@ -70,64 +70,17 @@
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
 		503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
-		6811649C1C1E1776007D4505 /* Dance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164931C1E1776007D4505 /* Dance.mp3 */; };
-		6811649D1C1E1776007D4505 /* Groove.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164941C1E1776007D4505 /* Groove.mp3 */; };
-		6811649E1C1E1776007D4505 /* LetsMove.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164951C1E1776007D4505 /* LetsMove.mp3 */; };
-		6811649F1C1E1776007D4505 /* OhYeah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164961C1E1776007D4505 /* OhYeah.mp3 */; };
-		681164A01C1E1776007D4505 /* ThatsRight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164971C1E1776007D4505 /* ThatsRight.mp3 */; };
-		681164A11C1E1776007D4505 /* WereGroovin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164981C1E1776007D4505 /* WereGroovin.mp3 */; };
-		681164A21C1E1776007D4505 /* Woo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164991C1E1776007D4505 /* Woo.mp3 */; };
-		681164A31C1E1776007D4505 /* Woohoo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6811649A1C1E1776007D4505 /* Woohoo.mp3 */; };
-		681164A41C1E1776007D4505 /* WootWoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6811649B1C1E1776007D4505 /* WootWoot.mp3 */; };
-		681164AA1C1E177E007D4505 /* Nice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164A61C1E177E007D4505 /* Nice.mp3 */; };
-		681164AB1C1E177E007D4505 /* WayToGo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164A71C1E177E007D4505 /* WayToGo.mp3 */; };
-		681164AC1C1E177E007D4505 /* Yah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164A81C1E177E007D4505 /* Yah.mp3 */; };
-		681164AD1C1E177E007D4505 /* YouDidIt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164A91C1E177E007D4505 /* YouDidIt.mp3 */; };
-		681164B31C1E17D8007D4505 /* freds_act_dance2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164AE1C1E17D8007D4505 /* freds_act_dance2.mp3 */; };
-		681164B41C1E17D8007D4505 /* freds_act_dance4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164AF1C1E17D8007D4505 /* freds_act_dance4.mp3 */; };
-		681164B51C1E17D8007D4505 /* freds_act_dance5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164B01C1E17D8007D4505 /* freds_act_dance5.mp3 */; };
-		681164B61C1E17D8007D4505 /* freds_act_dance6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164B11C1E17D8007D4505 /* freds_act_dance6.mp3 */; };
-		681164B71C1E17D8007D4505 /* freds_act_dance7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164B21C1E17D8007D4505 /* freds_act_dance7.mp3 */; };
-		681164BD1C1E186A007D4505 /* guac_act_dance1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164B81C1E186A007D4505 /* guac_act_dance1.mp3 */; };
-		681164BE1C1E186A007D4505 /* guac_act_dance4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164B91C1E186A007D4505 /* guac_act_dance4.mp3 */; };
-		681164BF1C1E186A007D4505 /* guac_act_dance5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164BA1C1E186A007D4505 /* guac_act_dance5.mp3 */; };
-		681164C01C1E186A007D4505 /* guac_act_dance6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164BB1C1E186A007D4505 /* guac_act_dance6.mp3 */; };
-		681164C11C1E186A007D4505 /* guac_act_dance8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164BC1C1E186A007D4505 /* guac_act_dance8.mp3 */; };
-		681164C91C1E1873007D4505 /* leblob_act_dance1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164C21C1E1873007D4505 /* leblob_act_dance1.mp3 */; };
-		681164CA1C1E1873007D4505 /* leblob_act_dance2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164C31C1E1873007D4505 /* leblob_act_dance2.mp3 */; };
-		681164CB1C1E1873007D4505 /* leblob_act_dance3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164C41C1E1873007D4505 /* leblob_act_dance3.mp3 */; };
-		681164CC1C1E1873007D4505 /* leblob_act_dance4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164C51C1E1873007D4505 /* leblob_act_dance4.mp3 */; };
-		681164CD1C1E1873007D4505 /* leblob_act_dance5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164C61C1E1873007D4505 /* leblob_act_dance5.mp3 */; };
-		681164CE1C1E1873007D4505 /* leblob_act_dance6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164C71C1E1873007D4505 /* leblob_act_dance6.mp3 */; };
-		681164CF1C1E1873007D4505 /* leblob_act_dance7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164C81C1E1873007D4505 /* leblob_act_dance7.mp3 */; };
-		681164D81C1E1879007D4505 /* meep_act_dance1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D01C1E1879007D4505 /* meep_act_dance1.mp3 */; };
-		681164D91C1E1879007D4505 /* meep_act_dance2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D11C1E1879007D4505 /* meep_act_dance2.mp3 */; };
-		681164DA1C1E1879007D4505 /* meep_act_dance3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D21C1E1879007D4505 /* meep_act_dance3.mp3 */; };
-		681164DB1C1E1879007D4505 /* meep_act_dance4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D31C1E1879007D4505 /* meep_act_dance4.mp3 */; };
-		681164DC1C1E1879007D4505 /* meep_act_dance5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D41C1E1879007D4505 /* meep_act_dance5.mp3 */; };
-		681164DD1C1E1879007D4505 /* meep_act_dance6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D51C1E1879007D4505 /* meep_act_dance6.mp3 */; };
-		681164DE1C1E1879007D4505 /* meep_act_dance7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D61C1E1879007D4505 /* meep_act_dance7.mp3 */; };
-		681164DF1C1E1879007D4505 /* meep_act_dance8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164D71C1E1879007D4505 /* meep_act_dance8.mp3 */; };
-		681164E81C1E1882007D4505 /* pom_act_dance1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E01C1E1882007D4505 /* pom_act_dance1.mp3 */; };
-		681164EA1C1E1882007D4505 /* pom_act_dance3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E21C1E1882007D4505 /* pom_act_dance3.mp3 */; };
-		681164EB1C1E1882007D4505 /* pom_act_dance4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E31C1E1882007D4505 /* pom_act_dance4.mp3 */; };
-		681164EC1C1E1882007D4505 /* pom_act_dance5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E41C1E1882007D4505 /* pom_act_dance5.mp3 */; };
-		681164ED1C1E1882007D4505 /* pom_act_dance6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E51C1E1882007D4505 /* pom_act_dance6.mp3 */; };
-		681164EE1C1E1882007D4505 /* pom_act_dance7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E61C1E1882007D4505 /* pom_act_dance7.mp3 */; };
-		681164EF1C1E1882007D4505 /* pom_act_dance8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164E71C1E1882007D4505 /* pom_act_dance8.mp3 */; };
-		681164F51C1E1889007D4505 /* sausalito_act_dance1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164F01C1E1889007D4505 /* sausalito_act_dance1.mp3 */; };
-		681164F61C1E1889007D4505 /* sausalito_act_dance3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164F11C1E1889007D4505 /* sausalito_act_dance3.mp3 */; };
-		681164F71C1E1889007D4505 /* sausalito_act_dance4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164F21C1E1889007D4505 /* sausalito_act_dance4.mp3 */; };
-		681164F81C1E1889007D4505 /* sausalito_act_dance6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164F31C1E1889007D4505 /* sausalito_act_dance6.mp3 */; };
-		681164F91C1E1889007D4505 /* sausalito_act_dance7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164F41C1E1889007D4505 /* sausalito_act_dance7.mp3 */; };
-		681164FD1C1E18BA007D4505 /* OnYourMark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164FB1C1E18BA007D4505 /* OnYourMark.mp3 */; };
-		681164FE1C1E18BA007D4505 /* ReadySet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 681164FC1C1E18BA007D4505 /* ReadySet.mp3 */; };
 		681165041C1E9A1A007D4505 /* ControllerShakeRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681165031C1E9A1A007D4505 /* ControllerShakeRecognizer.swift */; };
 		684367D31C18AD85001AE5F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684367D11C18AD85001AE5F4 /* Fabric.framework */; };
 		684367D41C18AD85001AE5F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684367D21C18AD85001AE5F4 /* Crashlytics.framework */; };
 		684746511C50140000C9D647 /* NewTap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6847464E1C50140000C9D647 /* NewTap1.wav */; };
 		684746521C50140000C9D647 /* NewTap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6847464F1C50140000C9D647 /* NewTap2.wav */; };
 		684746531C50140000C9D647 /* NewTap3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 684746501C50140000C9D647 /* NewTap3.wav */; };
+		684746591C5016DA00C9D647 /* freds_act_dance7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 684746541C5016DA00C9D647 /* freds_act_dance7.wav */; };
+		6847465A1C5016DA00C9D647 /* freds_act_dance6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 684746551C5016DA00C9D647 /* freds_act_dance6.wav */; };
+		6847465B1C5016DA00C9D647 /* freds_act_dance5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 684746561C5016DA00C9D647 /* freds_act_dance5.wav */; };
+		6847465C1C5016DA00C9D647 /* freds_act_dance4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 684746571C5016DA00C9D647 /* freds_act_dance4.wav */; };
+		6847465D1C5016DA00C9D647 /* freds_act_dance2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 684746581C5016DA00C9D647 /* freds_act_dance2.wav */; };
 		6852BEED1C1BEB5400C112E6 /* GrownUpsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6852BEEC1C1BEB5400C112E6 /* GrownUpsView.xib */; };
 		6852BEF01C1BEB7E00C112E6 /* GrownsUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6852BEEF1C1BEB7E00C112E6 /* GrownsUpController.swift */; };
 		685E08491C0E452C00B5CCCF /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685E08481C0E452C00B5CCCF /* Game.xcassets */; };
@@ -152,7 +105,54 @@
 		687823DC1C13CBB70087457A /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 1947821F1A6F8825007B2696 /* sound */; };
 		68966E671C20D5B40026A2E4 /* shake.mov in Resources */ = {isa = PBXBuildFile; fileRef = 68966E651C20D5B40026A2E4 /* shake.mov */; };
 		68966E681C20D5B40026A2E4 /* tap.mov in Resources */ = {isa = PBXBuildFile; fileRef = 68966E661C20D5B40026A2E4 /* tap.mov */; };
-		68966E6A1C20E9BF0026A2E4 /* pom_act_dance2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68966E691C20E9BF0026A2E4 /* pom_act_dance2.mp3 */; };
+		68AD951C1C51D5DF0093449C /* Dance.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95131C51D5DF0093449C /* Dance.wav */; };
+		68AD951D1C51D5DF0093449C /* Groove.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95141C51D5DF0093449C /* Groove.wav */; };
+		68AD951E1C51D5DF0093449C /* LetsMove.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95151C51D5DF0093449C /* LetsMove.wav */; };
+		68AD951F1C51D5DF0093449C /* OhYeah.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95161C51D5DF0093449C /* OhYeah.wav */; };
+		68AD95201C51D5DF0093449C /* ThatsRight.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95171C51D5DF0093449C /* ThatsRight.wav */; };
+		68AD95211C51D5DF0093449C /* WereGroovin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95181C51D5DF0093449C /* WereGroovin.wav */; };
+		68AD95221C51D5DF0093449C /* Woo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95191C51D5DF0093449C /* Woo.wav */; };
+		68AD95231C51D5DF0093449C /* Woohoo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD951A1C51D5DF0093449C /* Woohoo.wav */; };
+		68AD95241C51D5DF0093449C /* WootWoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD951B1C51D5DF0093449C /* WootWoot.wav */; };
+		68AD95271C51D6260093449C /* OnYourMark.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95251C51D6260093449C /* OnYourMark.wav */; };
+		68AD95281C51D6260093449C /* ReadySet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95261C51D6260093449C /* ReadySet.wav */; };
+		68AD952D1C51D6320093449C /* Nice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95291C51D6320093449C /* Nice.wav */; };
+		68AD952E1C51D6320093449C /* WayToGo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD952A1C51D6320093449C /* WayToGo.wav */; };
+		68AD952F1C51D6320093449C /* Yah.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD952B1C51D6320093449C /* Yah.wav */; };
+		68AD95301C51D6320093449C /* YouDidIt.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD952C1C51D6320093449C /* YouDidIt.wav */; };
+		68AD95361C51D6510093449C /* guac_act_dance1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95311C51D6510093449C /* guac_act_dance1.wav */; };
+		68AD95371C51D6510093449C /* guac_act_dance4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95321C51D6510093449C /* guac_act_dance4.wav */; };
+		68AD95381C51D6510093449C /* guac_act_dance5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95331C51D6510093449C /* guac_act_dance5.wav */; };
+		68AD95391C51D6510093449C /* guac_act_dance6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95341C51D6510093449C /* guac_act_dance6.wav */; };
+		68AD953A1C51D6510093449C /* guac_act_dance8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95351C51D6510093449C /* guac_act_dance8.wav */; };
+		68AD95421C51D6920093449C /* leblob_act_dance1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD953B1C51D6920093449C /* leblob_act_dance1.wav */; };
+		68AD95431C51D6920093449C /* leblob_act_dance2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD953C1C51D6920093449C /* leblob_act_dance2.wav */; };
+		68AD95441C51D6920093449C /* leblob_act_dance3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD953D1C51D6920093449C /* leblob_act_dance3.wav */; };
+		68AD95451C51D6920093449C /* leblob_act_dance4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD953E1C51D6920093449C /* leblob_act_dance4.wav */; };
+		68AD95461C51D6920093449C /* leblob_act_dance5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD953F1C51D6920093449C /* leblob_act_dance5.wav */; };
+		68AD95471C51D6920093449C /* leblob_act_dance6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95401C51D6920093449C /* leblob_act_dance6.wav */; };
+		68AD95481C51D6920093449C /* leblob_act_dance7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95411C51D6920093449C /* leblob_act_dance7.wav */; };
+		68AD95511C51D6DB0093449C /* meep_act_dance1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95491C51D6DB0093449C /* meep_act_dance1.wav */; };
+		68AD95521C51D6DB0093449C /* meep_act_dance2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD954A1C51D6DB0093449C /* meep_act_dance2.wav */; };
+		68AD95531C51D6DB0093449C /* meep_act_dance3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD954B1C51D6DB0093449C /* meep_act_dance3.wav */; };
+		68AD95541C51D6DB0093449C /* meep_act_dance4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD954C1C51D6DB0093449C /* meep_act_dance4.wav */; };
+		68AD95551C51D6DB0093449C /* meep_act_dance5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD954D1C51D6DB0093449C /* meep_act_dance5.wav */; };
+		68AD95561C51D6DB0093449C /* meep_act_dance6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD954E1C51D6DB0093449C /* meep_act_dance6.wav */; };
+		68AD95571C51D6DB0093449C /* meep_act_dance7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD954F1C51D6DB0093449C /* meep_act_dance7.wav */; };
+		68AD95581C51D6DB0093449C /* meep_act_dance8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95501C51D6DB0093449C /* meep_act_dance8.wav */; };
+		68AD955E1C51D7250093449C /* sausalito_act_dance1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95591C51D7250093449C /* sausalito_act_dance1.wav */; };
+		68AD955F1C51D7250093449C /* sausalito_act_dance3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD955A1C51D7250093449C /* sausalito_act_dance3.wav */; };
+		68AD95601C51D7250093449C /* sausalito_act_dance4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD955B1C51D7250093449C /* sausalito_act_dance4.wav */; };
+		68AD95611C51D7250093449C /* sausalito_act_dance6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD955C1C51D7250093449C /* sausalito_act_dance6.wav */; };
+		68AD95621C51D7250093449C /* sausalito_act_dance7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD955D1C51D7250093449C /* sausalito_act_dance7.wav */; };
+		68AD956B1C51D75A0093449C /* pom_act_dance1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95631C51D75A0093449C /* pom_act_dance1.wav */; };
+		68AD956C1C51D75A0093449C /* pom_act_dance2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95641C51D75A0093449C /* pom_act_dance2.wav */; };
+		68AD956D1C51D75A0093449C /* pom_act_dance3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95651C51D75A0093449C /* pom_act_dance3.wav */; };
+		68AD956E1C51D75A0093449C /* pom_act_dance4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95661C51D75A0093449C /* pom_act_dance4.wav */; };
+		68AD956F1C51D75A0093449C /* pom_act_dance5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95671C51D75A0093449C /* pom_act_dance5.wav */; };
+		68AD95701C51D75A0093449C /* pom_act_dance6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95681C51D75A0093449C /* pom_act_dance6.wav */; };
+		68AD95711C51D75A0093449C /* pom_act_dance7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD95691C51D75A0093449C /* pom_act_dance7.wav */; };
+		68AD95721C51D75A0093449C /* pom_act_dance8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68AD956A1C51D75A0093449C /* pom_act_dance8.wav */; };
 		68B33B141C42DCC5000B618A /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B33B131C42DCC5000B618A /* GameController.framework */; };
 		68E59AEE1C15F66B0087BF13 /* DropzoneSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E59AED1C15F66B0087BF13 /* DropzoneSprite.swift */; };
 		68E59AF01C15F6B20087BF13 /* TileSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E59AEF1C15F6B20087BF13 /* TileSprite.swift */; };
@@ -324,64 +324,17 @@
 		5087E78817EB974C00C73F5D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		5087E78A17EB975400C73F5D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
-		681164931C1E1776007D4505 /* Dance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dance.mp3; sourceTree = "<group>"; };
-		681164941C1E1776007D4505 /* Groove.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Groove.mp3; sourceTree = "<group>"; };
-		681164951C1E1776007D4505 /* LetsMove.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LetsMove.mp3; sourceTree = "<group>"; };
-		681164961C1E1776007D4505 /* OhYeah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OhYeah.mp3; sourceTree = "<group>"; };
-		681164971C1E1776007D4505 /* ThatsRight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ThatsRight.mp3; sourceTree = "<group>"; };
-		681164981C1E1776007D4505 /* WereGroovin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WereGroovin.mp3; sourceTree = "<group>"; };
-		681164991C1E1776007D4505 /* Woo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Woo.mp3; sourceTree = "<group>"; };
-		6811649A1C1E1776007D4505 /* Woohoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Woohoo.mp3; sourceTree = "<group>"; };
-		6811649B1C1E1776007D4505 /* WootWoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WootWoot.mp3; sourceTree = "<group>"; };
-		681164A61C1E177E007D4505 /* Nice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Nice.mp3; sourceTree = "<group>"; };
-		681164A71C1E177E007D4505 /* WayToGo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WayToGo.mp3; sourceTree = "<group>"; };
-		681164A81C1E177E007D4505 /* Yah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Yah.mp3; sourceTree = "<group>"; };
-		681164A91C1E177E007D4505 /* YouDidIt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = YouDidIt.mp3; sourceTree = "<group>"; };
-		681164AE1C1E17D8007D4505 /* freds_act_dance2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = freds_act_dance2.mp3; sourceTree = "<group>"; };
-		681164AF1C1E17D8007D4505 /* freds_act_dance4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = freds_act_dance4.mp3; sourceTree = "<group>"; };
-		681164B01C1E17D8007D4505 /* freds_act_dance5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = freds_act_dance5.mp3; sourceTree = "<group>"; };
-		681164B11C1E17D8007D4505 /* freds_act_dance6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = freds_act_dance6.mp3; sourceTree = "<group>"; };
-		681164B21C1E17D8007D4505 /* freds_act_dance7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = freds_act_dance7.mp3; sourceTree = "<group>"; };
-		681164B81C1E186A007D4505 /* guac_act_dance1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guac_act_dance1.mp3; sourceTree = "<group>"; };
-		681164B91C1E186A007D4505 /* guac_act_dance4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guac_act_dance4.mp3; sourceTree = "<group>"; };
-		681164BA1C1E186A007D4505 /* guac_act_dance5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guac_act_dance5.mp3; sourceTree = "<group>"; };
-		681164BB1C1E186A007D4505 /* guac_act_dance6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guac_act_dance6.mp3; sourceTree = "<group>"; };
-		681164BC1C1E186A007D4505 /* guac_act_dance8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guac_act_dance8.mp3; sourceTree = "<group>"; };
-		681164C21C1E1873007D4505 /* leblob_act_dance1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = leblob_act_dance1.mp3; sourceTree = "<group>"; };
-		681164C31C1E1873007D4505 /* leblob_act_dance2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = leblob_act_dance2.mp3; sourceTree = "<group>"; };
-		681164C41C1E1873007D4505 /* leblob_act_dance3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = leblob_act_dance3.mp3; sourceTree = "<group>"; };
-		681164C51C1E1873007D4505 /* leblob_act_dance4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = leblob_act_dance4.mp3; sourceTree = "<group>"; };
-		681164C61C1E1873007D4505 /* leblob_act_dance5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = leblob_act_dance5.mp3; sourceTree = "<group>"; };
-		681164C71C1E1873007D4505 /* leblob_act_dance6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = leblob_act_dance6.mp3; sourceTree = "<group>"; };
-		681164C81C1E1873007D4505 /* leblob_act_dance7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = leblob_act_dance7.mp3; sourceTree = "<group>"; };
-		681164D01C1E1879007D4505 /* meep_act_dance1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance1.mp3; sourceTree = "<group>"; };
-		681164D11C1E1879007D4505 /* meep_act_dance2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance2.mp3; sourceTree = "<group>"; };
-		681164D21C1E1879007D4505 /* meep_act_dance3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance3.mp3; sourceTree = "<group>"; };
-		681164D31C1E1879007D4505 /* meep_act_dance4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance4.mp3; sourceTree = "<group>"; };
-		681164D41C1E1879007D4505 /* meep_act_dance5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance5.mp3; sourceTree = "<group>"; };
-		681164D51C1E1879007D4505 /* meep_act_dance6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance6.mp3; sourceTree = "<group>"; };
-		681164D61C1E1879007D4505 /* meep_act_dance7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance7.mp3; sourceTree = "<group>"; };
-		681164D71C1E1879007D4505 /* meep_act_dance8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meep_act_dance8.mp3; sourceTree = "<group>"; };
-		681164E01C1E1882007D4505 /* pom_act_dance1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance1.mp3; sourceTree = "<group>"; };
-		681164E21C1E1882007D4505 /* pom_act_dance3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance3.mp3; sourceTree = "<group>"; };
-		681164E31C1E1882007D4505 /* pom_act_dance4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance4.mp3; sourceTree = "<group>"; };
-		681164E41C1E1882007D4505 /* pom_act_dance5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance5.mp3; sourceTree = "<group>"; };
-		681164E51C1E1882007D4505 /* pom_act_dance6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance6.mp3; sourceTree = "<group>"; };
-		681164E61C1E1882007D4505 /* pom_act_dance7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance7.mp3; sourceTree = "<group>"; };
-		681164E71C1E1882007D4505 /* pom_act_dance8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance8.mp3; sourceTree = "<group>"; };
-		681164F01C1E1889007D4505 /* sausalito_act_dance1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sausalito_act_dance1.mp3; sourceTree = "<group>"; };
-		681164F11C1E1889007D4505 /* sausalito_act_dance3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sausalito_act_dance3.mp3; sourceTree = "<group>"; };
-		681164F21C1E1889007D4505 /* sausalito_act_dance4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sausalito_act_dance4.mp3; sourceTree = "<group>"; };
-		681164F31C1E1889007D4505 /* sausalito_act_dance6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sausalito_act_dance6.mp3; sourceTree = "<group>"; };
-		681164F41C1E1889007D4505 /* sausalito_act_dance7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sausalito_act_dance7.mp3; sourceTree = "<group>"; };
-		681164FB1C1E18BA007D4505 /* OnYourMark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OnYourMark.mp3; sourceTree = "<group>"; };
-		681164FC1C1E18BA007D4505 /* ReadySet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ReadySet.mp3; sourceTree = "<group>"; };
 		681165031C1E9A1A007D4505 /* ControllerShakeRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerShakeRecognizer.swift; sourceTree = "<group>"; };
 		684367D11C18AD85001AE5F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		684367D21C18AD85001AE5F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		6847464E1C50140000C9D647 /* NewTap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = NewTap1.wav; sourceTree = "<group>"; };
 		6847464F1C50140000C9D647 /* NewTap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = NewTap2.wav; sourceTree = "<group>"; };
 		684746501C50140000C9D647 /* NewTap3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = NewTap3.wav; sourceTree = "<group>"; };
+		684746541C5016DA00C9D647 /* freds_act_dance7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = freds_act_dance7.wav; sourceTree = "<group>"; };
+		684746551C5016DA00C9D647 /* freds_act_dance6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = freds_act_dance6.wav; sourceTree = "<group>"; };
+		684746561C5016DA00C9D647 /* freds_act_dance5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = freds_act_dance5.wav; sourceTree = "<group>"; };
+		684746571C5016DA00C9D647 /* freds_act_dance4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = freds_act_dance4.wav; sourceTree = "<group>"; };
+		684746581C5016DA00C9D647 /* freds_act_dance2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = freds_act_dance2.wav; sourceTree = "<group>"; };
 		6852BEEC1C1BEB5400C112E6 /* GrownUpsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrownUpsView.xib; sourceTree = "<group>"; };
 		6852BEEF1C1BEB7E00C112E6 /* GrownsUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrownsUpController.swift; sourceTree = "<group>"; };
 		685E083E1C0E452C00B5CCCF /* MonsterMoves_tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterMoves_tvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -406,7 +359,54 @@
 		68781D7D1C115C6C0087457A /* Freds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Freds.json; sourceTree = "<group>"; };
 		68966E651C20D5B40026A2E4 /* shake.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = shake.mov; sourceTree = "<group>"; };
 		68966E661C20D5B40026A2E4 /* tap.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = tap.mov; sourceTree = "<group>"; };
-		68966E691C20E9BF0026A2E4 /* pom_act_dance2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pom_act_dance2.mp3; sourceTree = "<group>"; };
+		68AD95131C51D5DF0093449C /* Dance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Dance.wav; sourceTree = "<group>"; };
+		68AD95141C51D5DF0093449C /* Groove.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Groove.wav; sourceTree = "<group>"; };
+		68AD95151C51D5DF0093449C /* LetsMove.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LetsMove.wav; sourceTree = "<group>"; };
+		68AD95161C51D5DF0093449C /* OhYeah.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = OhYeah.wav; sourceTree = "<group>"; };
+		68AD95171C51D5DF0093449C /* ThatsRight.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ThatsRight.wav; sourceTree = "<group>"; };
+		68AD95181C51D5DF0093449C /* WereGroovin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WereGroovin.wav; sourceTree = "<group>"; };
+		68AD95191C51D5DF0093449C /* Woo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Woo.wav; sourceTree = "<group>"; };
+		68AD951A1C51D5DF0093449C /* Woohoo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Woohoo.wav; sourceTree = "<group>"; };
+		68AD951B1C51D5DF0093449C /* WootWoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WootWoot.wav; sourceTree = "<group>"; };
+		68AD95251C51D6260093449C /* OnYourMark.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = OnYourMark.wav; sourceTree = "<group>"; };
+		68AD95261C51D6260093449C /* ReadySet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ReadySet.wav; sourceTree = "<group>"; };
+		68AD95291C51D6320093449C /* Nice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Nice.wav; sourceTree = "<group>"; };
+		68AD952A1C51D6320093449C /* WayToGo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WayToGo.wav; sourceTree = "<group>"; };
+		68AD952B1C51D6320093449C /* Yah.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Yah.wav; sourceTree = "<group>"; };
+		68AD952C1C51D6320093449C /* YouDidIt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = YouDidIt.wav; sourceTree = "<group>"; };
+		68AD95311C51D6510093449C /* guac_act_dance1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = guac_act_dance1.wav; sourceTree = "<group>"; };
+		68AD95321C51D6510093449C /* guac_act_dance4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = guac_act_dance4.wav; sourceTree = "<group>"; };
+		68AD95331C51D6510093449C /* guac_act_dance5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = guac_act_dance5.wav; sourceTree = "<group>"; };
+		68AD95341C51D6510093449C /* guac_act_dance6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = guac_act_dance6.wav; sourceTree = "<group>"; };
+		68AD95351C51D6510093449C /* guac_act_dance8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = guac_act_dance8.wav; sourceTree = "<group>"; };
+		68AD953B1C51D6920093449C /* leblob_act_dance1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leblob_act_dance1.wav; sourceTree = "<group>"; };
+		68AD953C1C51D6920093449C /* leblob_act_dance2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leblob_act_dance2.wav; sourceTree = "<group>"; };
+		68AD953D1C51D6920093449C /* leblob_act_dance3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leblob_act_dance3.wav; sourceTree = "<group>"; };
+		68AD953E1C51D6920093449C /* leblob_act_dance4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leblob_act_dance4.wav; sourceTree = "<group>"; };
+		68AD953F1C51D6920093449C /* leblob_act_dance5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leblob_act_dance5.wav; sourceTree = "<group>"; };
+		68AD95401C51D6920093449C /* leblob_act_dance6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leblob_act_dance6.wav; sourceTree = "<group>"; };
+		68AD95411C51D6920093449C /* leblob_act_dance7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leblob_act_dance7.wav; sourceTree = "<group>"; };
+		68AD95491C51D6DB0093449C /* meep_act_dance1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meep_act_dance1.wav; sourceTree = "<group>"; };
+		68AD954A1C51D6DB0093449C /* meep_act_dance2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meep_act_dance2.wav; sourceTree = "<group>"; };
+		68AD954B1C51D6DB0093449C /* meep_act_dance3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meep_act_dance3.wav; sourceTree = "<group>"; };
+		68AD954C1C51D6DB0093449C /* meep_act_dance4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meep_act_dance4.wav; sourceTree = "<group>"; };
+		68AD954D1C51D6DB0093449C /* meep_act_dance5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meep_act_dance5.wav; sourceTree = "<group>"; };
+		68AD954E1C51D6DB0093449C /* meep_act_dance6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meep_act_dance6.wav; sourceTree = "<group>"; };
+		68AD954F1C51D6DB0093449C /* meep_act_dance7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meep_act_dance7.wav; sourceTree = "<group>"; };
+		68AD95501C51D6DB0093449C /* meep_act_dance8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meep_act_dance8.wav; sourceTree = "<group>"; };
+		68AD95591C51D7250093449C /* sausalito_act_dance1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sausalito_act_dance1.wav; sourceTree = "<group>"; };
+		68AD955A1C51D7250093449C /* sausalito_act_dance3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sausalito_act_dance3.wav; sourceTree = "<group>"; };
+		68AD955B1C51D7250093449C /* sausalito_act_dance4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sausalito_act_dance4.wav; sourceTree = "<group>"; };
+		68AD955C1C51D7250093449C /* sausalito_act_dance6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sausalito_act_dance6.wav; sourceTree = "<group>"; };
+		68AD955D1C51D7250093449C /* sausalito_act_dance7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sausalito_act_dance7.wav; sourceTree = "<group>"; };
+		68AD95631C51D75A0093449C /* pom_act_dance1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pom_act_dance1.wav; sourceTree = "<group>"; };
+		68AD95641C51D75A0093449C /* pom_act_dance2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pom_act_dance2.wav; sourceTree = "<group>"; };
+		68AD95651C51D75A0093449C /* pom_act_dance3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pom_act_dance3.wav; sourceTree = "<group>"; };
+		68AD95661C51D75A0093449C /* pom_act_dance4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pom_act_dance4.wav; sourceTree = "<group>"; };
+		68AD95671C51D75A0093449C /* pom_act_dance5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pom_act_dance5.wav; sourceTree = "<group>"; };
+		68AD95681C51D75A0093449C /* pom_act_dance6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pom_act_dance6.wav; sourceTree = "<group>"; };
+		68AD95691C51D75A0093449C /* pom_act_dance7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pom_act_dance7.wav; sourceTree = "<group>"; };
+		68AD956A1C51D75A0093449C /* pom_act_dance8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pom_act_dance8.wav; sourceTree = "<group>"; };
 		68B33B131C42DCC5000B618A /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		68E59AED1C15F66B0087BF13 /* DropzoneSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropzoneSprite.swift; sourceTree = "<group>"; };
 		68E59AEF1C15F6B20087BF13 /* TileSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSprite.swift; sourceTree = "<group>"; };
@@ -842,15 +842,15 @@
 		681164921C1E1776007D4505 /* Encouragement */ = {
 			isa = PBXGroup;
 			children = (
-				681164931C1E1776007D4505 /* Dance.mp3 */,
-				681164941C1E1776007D4505 /* Groove.mp3 */,
-				681164951C1E1776007D4505 /* LetsMove.mp3 */,
-				681164961C1E1776007D4505 /* OhYeah.mp3 */,
-				681164971C1E1776007D4505 /* ThatsRight.mp3 */,
-				681164981C1E1776007D4505 /* WereGroovin.mp3 */,
-				681164991C1E1776007D4505 /* Woo.mp3 */,
-				6811649A1C1E1776007D4505 /* Woohoo.mp3 */,
-				6811649B1C1E1776007D4505 /* WootWoot.mp3 */,
+				68AD95131C51D5DF0093449C /* Dance.wav */,
+				68AD95141C51D5DF0093449C /* Groove.wav */,
+				68AD95151C51D5DF0093449C /* LetsMove.wav */,
+				68AD95161C51D5DF0093449C /* OhYeah.wav */,
+				68AD95171C51D5DF0093449C /* ThatsRight.wav */,
+				68AD95181C51D5DF0093449C /* WereGroovin.wav */,
+				68AD95191C51D5DF0093449C /* Woo.wav */,
+				68AD951A1C51D5DF0093449C /* Woohoo.wav */,
+				68AD951B1C51D5DF0093449C /* WootWoot.wav */,
 			);
 			path = Encouragement;
 			sourceTree = "<group>";
@@ -858,10 +858,10 @@
 		681164A51C1E177E007D4505 /* End Dance */ = {
 			isa = PBXGroup;
 			children = (
-				681164A61C1E177E007D4505 /* Nice.mp3 */,
-				681164A71C1E177E007D4505 /* WayToGo.mp3 */,
-				681164A81C1E177E007D4505 /* Yah.mp3 */,
-				681164A91C1E177E007D4505 /* YouDidIt.mp3 */,
+				68AD95291C51D6320093449C /* Nice.wav */,
+				68AD952A1C51D6320093449C /* WayToGo.wav */,
+				68AD952B1C51D6320093449C /* Yah.wav */,
+				68AD952C1C51D6320093449C /* YouDidIt.wav */,
 			);
 			name = "End Dance";
 			path = "Sausalito/End Dance";
@@ -870,8 +870,8 @@
 		681164FA1C1E18BA007D4505 /* Start Dance */ = {
 			isa = PBXGroup;
 			children = (
-				681164FB1C1E18BA007D4505 /* OnYourMark.mp3 */,
-				681164FC1C1E18BA007D4505 /* ReadySet.mp3 */,
+				68AD95251C51D6260093449C /* OnYourMark.wav */,
+				68AD95261C51D6260093449C /* ReadySet.wav */,
 			);
 			path = "Start Dance";
 			sourceTree = "<group>";
@@ -896,11 +896,11 @@
 		684367871C17FC95001AE5F4 /* Freds */ = {
 			isa = PBXGroup;
 			children = (
-				681164AE1C1E17D8007D4505 /* freds_act_dance2.mp3 */,
-				681164AF1C1E17D8007D4505 /* freds_act_dance4.mp3 */,
-				681164B01C1E17D8007D4505 /* freds_act_dance5.mp3 */,
-				681164B11C1E17D8007D4505 /* freds_act_dance6.mp3 */,
-				681164B21C1E17D8007D4505 /* freds_act_dance7.mp3 */,
+				684746541C5016DA00C9D647 /* freds_act_dance7.wav */,
+				684746551C5016DA00C9D647 /* freds_act_dance6.wav */,
+				684746561C5016DA00C9D647 /* freds_act_dance5.wav */,
+				684746571C5016DA00C9D647 /* freds_act_dance4.wav */,
+				684746581C5016DA00C9D647 /* freds_act_dance2.wav */,
 			);
 			path = Freds;
 			sourceTree = "<group>";
@@ -908,11 +908,11 @@
 		6843678C1C17FC95001AE5F4 /* Guac */ = {
 			isa = PBXGroup;
 			children = (
-				681164B81C1E186A007D4505 /* guac_act_dance1.mp3 */,
-				681164B91C1E186A007D4505 /* guac_act_dance4.mp3 */,
-				681164BA1C1E186A007D4505 /* guac_act_dance5.mp3 */,
-				681164BB1C1E186A007D4505 /* guac_act_dance6.mp3 */,
-				681164BC1C1E186A007D4505 /* guac_act_dance8.mp3 */,
+				68AD95311C51D6510093449C /* guac_act_dance1.wav */,
+				68AD95321C51D6510093449C /* guac_act_dance4.wav */,
+				68AD95331C51D6510093449C /* guac_act_dance5.wav */,
+				68AD95341C51D6510093449C /* guac_act_dance6.wav */,
+				68AD95351C51D6510093449C /* guac_act_dance8.wav */,
 			);
 			path = Guac;
 			sourceTree = "<group>";
@@ -920,13 +920,13 @@
 		6843678E1C17FC95001AE5F4 /* LeBlob */ = {
 			isa = PBXGroup;
 			children = (
-				681164C21C1E1873007D4505 /* leblob_act_dance1.mp3 */,
-				681164C31C1E1873007D4505 /* leblob_act_dance2.mp3 */,
-				681164C41C1E1873007D4505 /* leblob_act_dance3.mp3 */,
-				681164C51C1E1873007D4505 /* leblob_act_dance4.mp3 */,
-				681164C61C1E1873007D4505 /* leblob_act_dance5.mp3 */,
-				681164C71C1E1873007D4505 /* leblob_act_dance6.mp3 */,
-				681164C81C1E1873007D4505 /* leblob_act_dance7.mp3 */,
+				68AD953B1C51D6920093449C /* leblob_act_dance1.wav */,
+				68AD953C1C51D6920093449C /* leblob_act_dance2.wav */,
+				68AD953D1C51D6920093449C /* leblob_act_dance3.wav */,
+				68AD953E1C51D6920093449C /* leblob_act_dance4.wav */,
+				68AD953F1C51D6920093449C /* leblob_act_dance5.wav */,
+				68AD95401C51D6920093449C /* leblob_act_dance6.wav */,
+				68AD95411C51D6920093449C /* leblob_act_dance7.wav */,
 			);
 			path = LeBlob;
 			sourceTree = "<group>";
@@ -934,14 +934,14 @@
 		684367961C17FC95001AE5F4 /* Meep */ = {
 			isa = PBXGroup;
 			children = (
-				681164D01C1E1879007D4505 /* meep_act_dance1.mp3 */,
-				681164D11C1E1879007D4505 /* meep_act_dance2.mp3 */,
-				681164D21C1E1879007D4505 /* meep_act_dance3.mp3 */,
-				681164D31C1E1879007D4505 /* meep_act_dance4.mp3 */,
-				681164D41C1E1879007D4505 /* meep_act_dance5.mp3 */,
-				681164D51C1E1879007D4505 /* meep_act_dance6.mp3 */,
-				681164D61C1E1879007D4505 /* meep_act_dance7.mp3 */,
-				681164D71C1E1879007D4505 /* meep_act_dance8.mp3 */,
+				68AD95491C51D6DB0093449C /* meep_act_dance1.wav */,
+				68AD954A1C51D6DB0093449C /* meep_act_dance2.wav */,
+				68AD954B1C51D6DB0093449C /* meep_act_dance3.wav */,
+				68AD954C1C51D6DB0093449C /* meep_act_dance4.wav */,
+				68AD954D1C51D6DB0093449C /* meep_act_dance5.wav */,
+				68AD954E1C51D6DB0093449C /* meep_act_dance6.wav */,
+				68AD954F1C51D6DB0093449C /* meep_act_dance7.wav */,
+				68AD95501C51D6DB0093449C /* meep_act_dance8.wav */,
 			);
 			path = Meep;
 			sourceTree = "<group>";
@@ -949,14 +949,14 @@
 		6843679F1C17FC95001AE5F4 /* Pom */ = {
 			isa = PBXGroup;
 			children = (
-				68966E691C20E9BF0026A2E4 /* pom_act_dance2.mp3 */,
-				681164E01C1E1882007D4505 /* pom_act_dance1.mp3 */,
-				681164E21C1E1882007D4505 /* pom_act_dance3.mp3 */,
-				681164E31C1E1882007D4505 /* pom_act_dance4.mp3 */,
-				681164E41C1E1882007D4505 /* pom_act_dance5.mp3 */,
-				681164E51C1E1882007D4505 /* pom_act_dance6.mp3 */,
-				681164E61C1E1882007D4505 /* pom_act_dance7.mp3 */,
-				681164E71C1E1882007D4505 /* pom_act_dance8.mp3 */,
+				68AD95631C51D75A0093449C /* pom_act_dance1.wav */,
+				68AD95641C51D75A0093449C /* pom_act_dance2.wav */,
+				68AD95651C51D75A0093449C /* pom_act_dance3.wav */,
+				68AD95661C51D75A0093449C /* pom_act_dance4.wav */,
+				68AD95671C51D75A0093449C /* pom_act_dance5.wav */,
+				68AD95681C51D75A0093449C /* pom_act_dance6.wav */,
+				68AD95691C51D75A0093449C /* pom_act_dance7.wav */,
+				68AD956A1C51D75A0093449C /* pom_act_dance8.wav */,
 			);
 			path = Pom;
 			sourceTree = "<group>";
@@ -964,11 +964,11 @@
 		684367A81C17FC95001AE5F4 /* Sausalito */ = {
 			isa = PBXGroup;
 			children = (
-				681164F01C1E1889007D4505 /* sausalito_act_dance1.mp3 */,
-				681164F11C1E1889007D4505 /* sausalito_act_dance3.mp3 */,
-				681164F21C1E1889007D4505 /* sausalito_act_dance4.mp3 */,
-				681164F31C1E1889007D4505 /* sausalito_act_dance6.mp3 */,
-				681164F41C1E1889007D4505 /* sausalito_act_dance7.mp3 */,
+				68AD95591C51D7250093449C /* sausalito_act_dance1.wav */,
+				68AD955A1C51D7250093449C /* sausalito_act_dance3.wav */,
+				68AD955B1C51D7250093449C /* sausalito_act_dance4.wav */,
+				68AD955C1C51D7250093449C /* sausalito_act_dance6.wav */,
+				68AD955D1C51D7250093449C /* sausalito_act_dance7.wav */,
 			);
 			path = Sausalito;
 			sourceTree = "<group>";
@@ -1213,80 +1213,80 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				681164CA1C1E1873007D4505 /* leblob_act_dance2.mp3 in Resources */,
-				681164F51C1E1889007D4505 /* sausalito_act_dance1.mp3 in Resources */,
-				681164DE1C1E1879007D4505 /* meep_act_dance7.mp3 in Resources */,
+				68AD95621C51D7250093449C /* sausalito_act_dance7.wav in Resources */,
 				68781D791C115BFC0087457A /* LeBlob.json in Resources */,
+				68AD95431C51D6920093449C /* leblob_act_dance2.wav in Resources */,
 				68966E681C20D5B40026A2E4 /* tap.mov in Resources */,
+				68AD952E1C51D6320093449C /* WayToGo.wav in Resources */,
+				68AD95391C51D6510093449C /* guac_act_dance6.wav in Resources */,
+				68AD95531C51D6DB0093449C /* meep_act_dance3.wav in Resources */,
+				68AD95471C51D6920093449C /* leblob_act_dance6.wav in Resources */,
 				685E084C1C0E452C00B5CCCF /* Main.storyboard in Resources */,
-				681164AD1C1E177E007D4505 /* YouDidIt.mp3 in Resources */,
+				68AD95461C51D6920093449C /* leblob_act_dance5.wav in Resources */,
+				68AD95581C51D6DB0093449C /* meep_act_dance8.wav in Resources */,
+				68AD95541C51D6DB0093449C /* meep_act_dance4.wav in Resources */,
+				68AD95211C51D5DF0093449C /* WereGroovin.wav in Resources */,
+				68AD95711C51D75A0093449C /* pom_act_dance7.wav in Resources */,
+				68AD956E1C51D75A0093449C /* pom_act_dance4.wav in Resources */,
+				68AD95561C51D6DB0093449C /* meep_act_dance6.wav in Resources */,
+				68AD953A1C51D6510093449C /* guac_act_dance8.wav in Resources */,
+				68AD95601C51D7250093449C /* sausalito_act_dance4.wav in Resources */,
 				684746531C50140000C9D647 /* NewTap3.wav in Resources */,
-				681164D81C1E1879007D4505 /* meep_act_dance1.mp3 in Resources */,
-				681164B41C1E17D8007D4505 /* freds_act_dance4.mp3 in Resources */,
-				681164CE1C1E1873007D4505 /* leblob_act_dance6.mp3 in Resources */,
-				681164A01C1E1776007D4505 /* ThatsRight.mp3 in Resources */,
-				681164EA1C1E1882007D4505 /* pom_act_dance3.mp3 in Resources */,
-				681164EE1C1E1882007D4505 /* pom_act_dance7.mp3 in Resources */,
-				681164CF1C1E1873007D4505 /* leblob_act_dance7.mp3 in Resources */,
-				681164DD1C1E1879007D4505 /* meep_act_dance6.mp3 in Resources */,
-				681164B61C1E17D8007D4505 /* freds_act_dance6.mp3 in Resources */,
-				681164AB1C1E177E007D4505 /* WayToGo.mp3 in Resources */,
-				681164DF1C1E1879007D4505 /* meep_act_dance8.mp3 in Resources */,
-				681164CC1C1E1873007D4505 /* leblob_act_dance4.mp3 in Resources */,
+				68AD956F1C51D75A0093449C /* pom_act_dance5.wav in Resources */,
+				68AD95231C51D5DF0093449C /* Woohoo.wav in Resources */,
+				68AD95481C51D6920093449C /* leblob_act_dance7.wav in Resources */,
+				68AD956B1C51D75A0093449C /* pom_act_dance1.wav in Resources */,
+				68AD951C1C51D5DF0093449C /* Dance.wav in Resources */,
 				685F408A1C20C07600A31226 /* dancestamp.mp3 in Resources */,
-				681164C91C1E1873007D4505 /* leblob_act_dance1.mp3 in Resources */,
-				681164DB1C1E1879007D4505 /* meep_act_dance4.mp3 in Resources */,
 				685E084E1C0E452C00B5CCCF /* Assets.xcassets in Resources */,
-				681164A11C1E1776007D4505 /* WereGroovin.mp3 in Resources */,
+				68AD95451C51D6920093449C /* leblob_act_dance4.wav in Resources */,
+				68AD951D1C51D5DF0093449C /* Groove.wav in Resources */,
 				68781D7A1C115BFC0087457A /* Meep.json in Resources */,
-				681164A21C1E1776007D4505 /* Woo.mp3 in Resources */,
-				6811649F1C1E1776007D4505 /* OhYeah.mp3 in Resources */,
 				68781D781C115BFC0087457A /* Guac.json in Resources */,
-				681164B51C1E17D8007D4505 /* freds_act_dance5.mp3 in Resources */,
-				681164BD1C1E186A007D4505 /* guac_act_dance1.mp3 in Resources */,
-				681164B71C1E17D8007D4505 /* freds_act_dance7.mp3 in Resources */,
+				68AD952D1C51D6320093449C /* Nice.wav in Resources */,
+				68AD95361C51D6510093449C /* guac_act_dance1.wav in Resources */,
+				68AD951E1C51D5DF0093449C /* LetsMove.wav in Resources */,
+				6847465D1C5016DA00C9D647 /* freds_act_dance2.wav in Resources */,
+				684746591C5016DA00C9D647 /* freds_act_dance7.wav in Resources */,
+				68AD956D1C51D75A0093449C /* pom_act_dance3.wav in Resources */,
+				68AD95521C51D6DB0093449C /* meep_act_dance2.wav in Resources */,
+				68AD95611C51D7250093449C /* sausalito_act_dance6.wav in Resources */,
+				68AD95441C51D6920093449C /* leblob_act_dance3.wav in Resources */,
+				68AD955E1C51D7250093449C /* sausalito_act_dance1.wav in Resources */,
+				68AD95281C51D6260093449C /* ReadySet.wav in Resources */,
+				68AD952F1C51D6320093449C /* Yah.wav in Resources */,
+				68AD95301C51D6320093449C /* YouDidIt.wav in Resources */,
+				68AD951F1C51D5DF0093449C /* OhYeah.wav in Resources */,
+				68AD95511C51D6DB0093449C /* meep_act_dance1.wav in Resources */,
+				68AD95721C51D75A0093449C /* pom_act_dance8.wav in Resources */,
 				684746511C50140000C9D647 /* NewTap1.wav in Resources */,
-				681164DA1C1E1879007D4505 /* meep_act_dance3.mp3 in Resources */,
+				68AD95571C51D6DB0093449C /* meep_act_dance7.wav in Resources */,
+				68AD956C1C51D75A0093449C /* pom_act_dance2.wav in Resources */,
+				68AD95701C51D75A0093449C /* pom_act_dance6.wav in Resources */,
+				68AD95241C51D5DF0093449C /* WootWoot.wav in Resources */,
+				68AD95271C51D6260093449C /* OnYourMark.wav in Resources */,
+				6847465C1C5016DA00C9D647 /* freds_act_dance4.wav in Resources */,
 				68781D7C1C115BFC0087457A /* Sausalito.json in Resources */,
-				6811649D1C1E1776007D4505 /* Groove.mp3 in Resources */,
-				681164BE1C1E186A007D4505 /* guac_act_dance4.mp3 in Resources */,
+				68AD95381C51D6510093449C /* guac_act_dance5.wav in Resources */,
 				685F40841C1F8C4A00A31226 /* Snow.sks in Resources */,
-				6811649E1C1E1776007D4505 /* LetsMove.mp3 in Resources */,
-				681164C01C1E186A007D4505 /* guac_act_dance6.mp3 in Resources */,
-				681164CB1C1E1873007D4505 /* leblob_act_dance3.mp3 in Resources */,
-				681164AC1C1E177E007D4505 /* Yah.mp3 in Resources */,
+				6847465A1C5016DA00C9D647 /* freds_act_dance6.wav in Resources */,
 				6852BEED1C1BEB5400C112E6 /* GrownUpsView.xib in Resources */,
-				681164CD1C1E1873007D4505 /* leblob_act_dance5.mp3 in Resources */,
-				681164ED1C1E1882007D4505 /* pom_act_dance6.mp3 in Resources */,
+				68AD95551C51D6DB0093449C /* meep_act_dance5.wav in Resources */,
 				687823DC1C13CBB70087457A /* sound in Resources */,
-				681164FD1C1E18BA007D4505 /* OnYourMark.mp3 in Resources */,
-				681164BF1C1E186A007D4505 /* guac_act_dance5.mp3 in Resources */,
+				68AD95371C51D6510093449C /* guac_act_dance4.wav in Resources */,
 				685F40851C1F8C4A00A31226 /* spark.png in Resources */,
+				68AD95421C51D6920093449C /* leblob_act_dance1.wav in Resources */,
 				68966E671C20D5B40026A2E4 /* shake.mov in Resources */,
-				681164B31C1E17D8007D4505 /* freds_act_dance2.mp3 in Resources */,
-				681164E81C1E1882007D4505 /* pom_act_dance1.mp3 in Resources */,
-				681164A31C1E1776007D4505 /* Woohoo.mp3 in Resources */,
-				681164FE1C1E18BA007D4505 /* ReadySet.mp3 in Resources */,
+				68AD95221C51D5DF0093449C /* Woo.wav in Resources */,
 				685E08641C0FAE5900B5CCCF /* config in Resources */,
 				68781D7B1C115BFC0087457A /* Pom.json in Resources */,
-				68966E6A1C20E9BF0026A2E4 /* pom_act_dance2.mp3 in Resources */,
-				681164EC1C1E1882007D4505 /* pom_act_dance5.mp3 in Resources */,
-				681164F81C1E1889007D4505 /* sausalito_act_dance6.mp3 in Resources */,
-				681164EF1C1E1882007D4505 /* pom_act_dance8.mp3 in Resources */,
 				68781D7E1C115C6C0087457A /* Freds.json in Resources */,
 				684746521C50140000C9D647 /* NewTap2.wav in Resources */,
-				681164F71C1E1889007D4505 /* sausalito_act_dance4.mp3 in Resources */,
-				681164AA1C1E177E007D4505 /* Nice.mp3 in Resources */,
-				681164F61C1E1889007D4505 /* sausalito_act_dance3.mp3 in Resources */,
-				681164C11C1E186A007D4505 /* guac_act_dance8.mp3 in Resources */,
-				681164EB1C1E1882007D4505 /* pom_act_dance4.mp3 in Resources */,
+				68AD95201C51D5DF0093449C /* ThatsRight.wav in Resources */,
+				68AD955F1C51D7250093449C /* sausalito_act_dance3.wav in Resources */,
 				685E08491C0E452C00B5CCCF /* Game.xcassets in Resources */,
-				681164DC1C1E1879007D4505 /* meep_act_dance5.mp3 in Resources */,
-				681164A41C1E1776007D4505 /* WootWoot.mp3 in Resources */,
-				681164F91C1E1889007D4505 /* sausalito_act_dance7.mp3 in Resources */,
-				6811649C1C1E1776007D4505 /* Dance.mp3 in Resources */,
+				6847465B1C5016DA00C9D647 /* freds_act_dance5.wav in Resources */,
 				68781D6B1C10D2370087457A /* IntroMovie.mp4 in Resources */,
-				681164D91C1E1879007D4505 /* meep_act_dance2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
