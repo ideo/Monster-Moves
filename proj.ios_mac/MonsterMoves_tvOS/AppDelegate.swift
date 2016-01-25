@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    /// Sets Motion Delegate on Controller - connection
+    /** Sets Motion Delegate on Controller - connection */
     func setupControllers(notif: NSNotification) {
         print("controller conneciton - establisted/lost")
         let controllers = GCController.controllers()

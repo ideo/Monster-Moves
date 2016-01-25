@@ -14,17 +14,17 @@ import GameController
 
 class GrownsUpController: UIViewController{
     
+    /** scrollview to hold image for grownup text */
     var scrollView : UIScrollView = UIScrollView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.redColor()
-      
+        self.view.backgroundColor = UIColor.clearColor()
         
         
         scrollView.frame = view.bounds
-        scrollView.backgroundColor = UIColor.blueColor()
-        scrollView.panGestureRecognizer.allowedTouchTypes = [0,1]
+        scrollView.backgroundColor = UIColor.clearColor()
+        scrollView.panGestureRecognizer.allowedTouchTypes = [0,1]       // To allow scrolling with tv remote
         self.view.addSubview(scrollView)
         
         
@@ -32,20 +32,12 @@ class GrownsUpController: UIViewController{
         imageView.image = UIImage.init(named: "grownupscroll")
         scrollView.addSubview(imageView)
         
-
-        
-        
         scrollView.contentSize = imageView.bounds.size
-
     }
     
     
     override func viewDidLayoutSubviews() {
         scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
     }
     
     override weak var preferredFocusedView: UIView? { return self.scrollView }
@@ -56,27 +48,18 @@ class GrownsUpController: UIViewController{
     }
     
     deinit {
-        // perform the deinitialization
+        
     }
-    
-    
-    override func pressesBegan(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
-        for press in presses {
-            switch press.type {
-            case .Menu:
-                self.dismissViewControllerAnimated(true, completion: nil)
-                break;
-                default:
-                    break;
-            }
-        }
-    }
-    
 }
+
+
 
 extension UIScrollView {
     public override func canBecomeFocused() -> Bool {
         return true
     }
 }
+
+
+
 

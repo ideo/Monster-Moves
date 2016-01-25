@@ -9,7 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-private var video: SKVideoNode!  //
+private var video: SKVideoNode!  // Intro video
 private var player: AVPlayer!
 private var tutorialplayer: AVPlayer!
 private var introFrame: SKSpriteNode!
@@ -25,7 +25,10 @@ class IntroScene: SKScene {
     
     
     override func didMoveToView(view: SKView) {
+        
         /* Setup your scene here */
+        
+        // Inform the gameviewcontroller that intro scene is presented
         NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.transitionNotification, object:self,userInfo: ["scenename":"Intro","scene":self] )
         
         let center = CGPoint(
@@ -122,6 +125,12 @@ class IntroScene: SKScene {
         }
     }
     
+    
+    // Need to remove player observer
+    func removePlayerObserver() throws {
+        try! player.removeObserver(self, forKeyPath: "status")
+    }
+    
     func videoEndedPlaying(){
 //        backgroundAudioPlayer.pause()
         danceStamp.runAction(SKAction.sequence([
@@ -216,7 +225,7 @@ class IntroScene: SKScene {
         }
     }
     
-    /// Play Button pressed - Start the Game
+    /** Play Button pressed - Start the Game */
     func playButtonPressed()
     {
                 self.runAction(SKAction.stop())
@@ -234,7 +243,7 @@ class IntroScene: SKScene {
                 self.view?.presentScene(spaceShipScene, transition: reveal)
     }
     
-    /// GrownUp Button pressed - Show Grownup Section
+    /** GrownUp Button pressed - Show Grownup Section */
     func grownUpButtonPressed()
     {
         if(backgroundAudioPlayer.playing)
@@ -242,9 +251,7 @@ class IntroScene: SKScene {
             backgroundAudioPlayer.pause()
         }
         // Transition to GrownUp Section
-        
         NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.transitionNotification, object:self,userInfo: ["scenename":"Grownup","scene":self])
-
     }
     
     
@@ -253,10 +260,7 @@ class IntroScene: SKScene {
         
     }
     
-    // Need to remove player observer
-    func removePlayerObserver() throws {
-        try! player.removeObserver(self, forKeyPath: "status")
-    }
+
 
 
     

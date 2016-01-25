@@ -22,6 +22,7 @@ struct ActorData {
     var currentSequenceIndex:Int;
 }
 
+
 struct GlobalConstants {
     static let dropzoneScale : CGFloat = 0.9
     static let tileScale : CGFloat = 0.9
@@ -85,7 +86,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         /* Setup your scene here */
         
         NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.transitionNotification, object:self,userInfo: ["scenename":"Spaceship","scene":self] )
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWillResignActive", name: UIApplicationWillResignActiveNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "needToGoToHome", name: "needToGoToHome", object: nil)
         
         
@@ -96,7 +96,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        characters = ["LeBlob"]
+        characters = ["Sausalito"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -150,7 +150,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     }
 
     
-    
+    /** Transition back from Game Scene to Home Scene */
     func needToGoToHome()
     {
         backgroundAudioPlayer.stop()
@@ -170,7 +170,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             pickRandomTile()
         }
     }
-    
     
     
     func addTutorialForTap()
@@ -294,6 +293,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
     }
     
+    
+    // MARK: - Stamp
     func addStamp(point : CGPoint)
     {
         let Stamp : SKSpriteNode = SKSpriteNode(imageNamed: m_currentStamp)
@@ -342,6 +343,8 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         return SKTexture(imageNamed: backgroundArray[m_currentBackground] as! String)
     }
     
+    
+    // MARK: - Particle Effects
     func setCurrentParticleEmitter()
     {
         // ["Cowboy","Cumbia","Funk","Hiphop","Latin","Space"]
@@ -777,7 +780,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         //          //  m_actor.m_silenceMode = true;
         //
         //
-        self.runAction(SKAction.playSoundFileNamed(String(format: "%@_act_%@.mp3", m_actor.m_name,tile.m_actionName!), waitForCompletion: false))
+        self.runAction(SKAction.playSoundFileNamed(String(format: "%@_act_%@.wav", m_actor.m_name,tile.m_actionName!), waitForCompletion: false))
         //        }
         //        else
         //        {
@@ -1150,14 +1153,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         }
     }
     
-    
-    func appWillResignActive()
-    {
-//                let introscene : IntroScene = IntroScene(size:CGSize(width: 1920, height: 1080))
-//                /* Set the scale mode to scale to fit the window */
-//                introscene.scaleMode = .AspectFill
-//                view?.presentScene(introscene)
-    }
     
     
     // MARK: - Delegate methods
