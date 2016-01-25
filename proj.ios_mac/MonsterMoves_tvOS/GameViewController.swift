@@ -66,8 +66,8 @@ class GameViewController: GCEventViewController {
                                 else if(scene as! String == "Grownup")
                 {
                     let grownup :GrownsUpController = GrownsUpController()
-                    self.navigationController?.pushViewController(grownup, animated: true)
-                    //self.presentViewController(grownup, animated: true, completion: nil)
+                  //  self.navigationController?.pushViewController(grownup, animated: true)
+                    self.presentViewController(grownup, animated: true, completion: nil)
                 }
             }
             else {
