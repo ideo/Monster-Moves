@@ -96,7 +96,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-        characters = ["Sausalito"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -699,8 +698,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         let background = self.childNodeWithName("background") as! SKSpriteNode
         background.runAction(SKAction.group([SKAction.colorizeWithColor(UIColor.whiteColor(), colorBlendFactor: 1.0, duration: 1.0),SKAction.setTexture(getRandomBackground())]))
         
+
         
-        m_actor.runAction(SKAction.sequence([SKAction.moveTo((spaceship?.position)!, duration: 0.5),SKAction.removeFromParent()]))
+        
+        m_actor.runAction(SKAction.sequence([SKAction.moveTo(        CGPoint(x: (spaceship?.position.x)!, y: (spaceship?.position.y)!-100), duration: 0.5),SKAction.removeFromParent()]))
         
         self.removeAllActions()
         for sprites in m_dropzoneBodies
