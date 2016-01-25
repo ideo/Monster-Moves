@@ -40,6 +40,10 @@ class GameViewController: GCEventViewController {
     }
     
     
+    override func viewDidAppear(animated: Bool) {
+        
+    }
+    
     func transitionedToView(notification : NSNotification)
     {
         
@@ -58,8 +62,13 @@ class GameViewController: GCEventViewController {
                                     m_isHomeScreen = true
                                     print("Intro scene. Controller user interaction enabled - true")
                                     controllerUserInteractionEnabled = true
-//                                    introscene = info["scene"] as? IntroScene
                                 }
+                                else if(scene as! String == "Grownup")
+                {
+                    let grownup :GrownsUpController = GrownsUpController()
+                    self.navigationController?.pushViewController(grownup, animated: true)
+                    //self.presentViewController(grownup, animated: true, completion: nil)
+                }
             }
             else {
                 print("no value for key\n")

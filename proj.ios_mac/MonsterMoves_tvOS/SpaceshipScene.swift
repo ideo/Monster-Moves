@@ -96,7 +96,7 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         
         characters = ["Freds","Guac","LeBlob","Meep","Pom","Sausalito"]
-//        characters = ["Freds"]
+        characters = ["LeBlob"]
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
@@ -153,10 +153,10 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
     
     func needToGoToHome()
     {
+        backgroundAudioPlayer.stop()
         let introscene = IntroScene(size:size)
         introscene.name = "Home"
         introscene.scaleMode = scaleMode
-        
         
         let reveal = SKTransition.crossFadeWithDuration(0.5) // Transition with CrossFade - to avoid huge pixel change
         self.view?.presentScene(introscene, transition: reveal)

@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 import SpriteKit
 
-class GrownsUpController: UIViewController {
+import GameController
+
+class GrownsUpController: UIViewController{
     
     var scrollView : UIScrollView = UIScrollView()
     
@@ -31,7 +33,10 @@ class GrownsUpController: UIViewController {
         scrollView.addSubview(imageView)
         
 
+        
+        
         scrollView.contentSize = imageView.bounds.size
+
     }
     
     
@@ -50,7 +55,23 @@ class GrownsUpController: UIViewController {
         // Release any cached data, images, etc that aren't in use.
     }
     
-   
+    deinit {
+        // perform the deinitialization
+    }
+    
+    
+    override func pressesBegan(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+        for press in presses {
+            switch press.type {
+            case .Menu:
+                self.dismissViewControllerAnimated(true, completion: nil)
+                break;
+                default:
+                    break;
+            }
+        }
+    }
+    
 }
 
 extension UIScrollView {

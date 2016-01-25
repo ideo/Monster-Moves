@@ -9,7 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-private var video: SKVideoNode!
+private var video: SKVideoNode!  //
 private var player: AVPlayer!
 private var tutorialplayer: AVPlayer!
 private var introFrame: SKSpriteNode!
@@ -99,12 +99,30 @@ class IntroScene: SKScene {
         swipeDown.direction = .Down
         self.view?.addGestureRecognizer(swipeDown)
         
+        
+        let tap = UITapGestureRecognizer(target: self, action: "buttonPressed")
+        tap.allowedPressTypes = [NSNumber(integer: UIPressType.Select.rawValue)]
+        self.view?.addGestureRecognizer(tap)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoEndedPlaying", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
+        
+        
         
     }
     
+    
+    // Called when scene is removed from view. Need to remove observers
+    override func willMoveFromView(view: SKView) {
+        do {
+            NSNotificationCenter.defaultCenter().removeObserver(self)
+            print("removing observer for player in intro scene")
+            try removePlayerObserver()
+        } catch {
+            print("No observer for player")
+        }
+    }
+    
     func videoEndedPlaying(){
-        
 //        backgroundAudioPlayer.pause()
         danceStamp.runAction(SKAction.sequence([
             
@@ -116,9 +134,6 @@ class IntroScene: SKScene {
         playButton.hidden = false
         grownUpButton.hidden = false
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        
-        
-        
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
@@ -151,7 +166,8 @@ class IntroScene: SKScene {
                     case .RightArrow:
                         print("Right arrow")
                     case .Select:
-                        buttonPressed()
+                    //    buttonPressed()
+                        break;
                     case .Menu:
                         print("Menu")
                     case .PlayPause:
@@ -226,36 +242,22 @@ class IntroScene: SKScene {
             backgroundAudioPlayer.pause()
         }
         // Transition to GrownUp Section
-        let grownup :GrownsUpController = GrownsUpController()
         
-        let rootVC : UIViewController = (UIApplication.sharedApplication().keyWindow?.rootViewController)!
-        rootVC.presentViewController(grownup, animated: true, completion: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.transitionNotification, object:self,userInfo: ["scenename":"Grownup","scene":self])
+
     }
     
     
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-        do {
-             player.removeObserver(self, forKeyPath: "status")
-        } catch {
-            print("No observer for player")
-        }
         
-        
-       
     }
     
-    
-    override func willMoveFromView(view: SKView) {
-        if view.gestureRecognizers != nil {
-            for gesture in view.gestureRecognizers! {
-                if let recognizer = gesture as? UISwipeGestureRecognizer {
-                    view.removeGestureRecognizer(recognizer)
-                }
-            }
-        }
+    // Need to remove player observer
+    func removePlayerObserver() throws {
+        try! player.removeObserver(self, forKeyPath: "status")
     }
+
 
     
 }
