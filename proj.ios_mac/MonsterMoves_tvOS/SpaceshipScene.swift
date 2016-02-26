@@ -88,8 +88,6 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.transitionNotification, object:self,userInfo: ["scenename":"Spaceship","scene":self] )
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "needToGoToHome", name: "needToGoToHome", object: nil)
         
-        
-        
         particleEmmiter = SKEmitterNode(fileNamed: "Snow.sks")
         particleEmmiter.position = CGPoint(x: 0, y: self.frame.size.height)
         particleEmmiter.particleBirthRate = 0
@@ -141,6 +139,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         addChild(particleEmmiter)
         
+        Flurry.logEvent("Dance Session", timed: true)
+        
+        
     }
     
     override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
@@ -159,6 +160,9 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
         
         let reveal = SKTransition.crossFadeWithDuration(0.5) // Transition with CrossFade - to avoid huge pixel change
         self.view?.presentScene(introscene, transition: reveal)
+        
+        Flurry.endTimedEvent("Dance Session", withParameters: nil)
+        
     }
     
     
@@ -1201,11 +1205,13 @@ class SpaceshipScene: SKScene,JSONSpriteDelegate, ReactToMotionEvents {
             }
             if(m_isPlaying)
             {
+                Flurry.logEvent("Dance ParticleEffect Started", timed: true)
                 particleEmmiter.particleBirthRate = CGFloat(m*8)
             }
         }
         else
         {
+            Flurry.endTimedEvent("Dance ParticleEffect Started", withParameters: nil)
             particleEmmiter.particleBirthRate = 0
         }
     }

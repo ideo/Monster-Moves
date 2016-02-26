@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Start Crashlytics. Dont add this because of privacy issues.
         // Fabric.with([Crashlytics.self])
         
+        
+        // Start Flurry
+        Flurry.startSession("JT57FSP25FR6TB9P27RJ")
+        
         // Get notification for controllers
         let center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "setupControllers:", name: GCControllerDidConnectNotification, object: nil)

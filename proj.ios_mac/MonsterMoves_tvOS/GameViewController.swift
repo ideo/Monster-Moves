@@ -21,24 +21,41 @@ class GameViewController: GCEventViewController {
         
         // To keep track of navigation around the game.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "transitionedToView:", name: GlobalConstants.transitionNotification, object: nil)
+        self.view.backgroundColor = UIColor.whiteColor()
         
-        introscene = IntroScene(size:CGSize(width: 1920, height: 1080))
-        introscene?.name = "Home"
+        let splashImageView : UIImageView = UIImageView(image: UIImage(named: "LaunchImage"))
+        splashImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+        self.view.addSubview(splashImageView)
+        splashImageView.backgroundColor = UIColor.clearColor()
         
-        // Configure the view.
-        let skView = self.view as! SKView
-        
-        /* Sprite Kit applies additional optimizations to improve rendering performance */
-        skView.ignoresSiblingOrder = true
-        
-        /* Set the scale mode to scale to fit the window */
-        introscene!.scaleMode = .AspectFill
-
+        UIView.animateWithDuration(0.5, delay: 0.1, options: [], animations: { () -> Void in
+            
+            splashImageView.alpha = 0;
+            
+            
+            }) { (finished) -> Void in
+                if(finished)
+                {
+                    self.introscene = IntroScene(size:CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
+                    self.introscene?.name = "Home"
+                    
+                    // Configure the view.
+                    let skView = self.view as! SKView
+                    
+                    /* Sprite Kit applies additional optimizations to improve rendering performance */
+                    skView.ignoresSiblingOrder = true
+                    
+                    /* Set the scale mode to scale to fit the window */
+                    self.introscene!.scaleMode = .AspectFill
+                      skView.presentScene(self.introscene)
+                    
+                    splashImageView.removeFromSuperview()
+                }
+        }
         controllerUserInteractionEnabled = true
-        
-        skView.presentScene(introscene)
     }
 
+    
     /**
      It keeps track of what scene the game is currently on.
       
@@ -70,6 +87,7 @@ class GameViewController: GCEventViewController {
                 {
                     let grownup :GrownsUpController = GrownsUpController()
                     self.presentViewController(grownup, animated: true, completion: nil)
+                    Flurry.logEvent("In GrownUp Section")
                 }
             }
             else {

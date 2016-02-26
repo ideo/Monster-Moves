@@ -241,6 +241,8 @@ class IntroScene: SKScene {
         
                 let reveal = SKTransition.crossFadeWithDuration(0.5) // Transition with CrossFade - to avoid huge pixel change
                 self.view?.presentScene(spaceShipScene, transition: reveal)
+        
+                Flurry.logEvent("Start Game")
     }
     
     /** GrownUp Button pressed - Show Grownup Section */
