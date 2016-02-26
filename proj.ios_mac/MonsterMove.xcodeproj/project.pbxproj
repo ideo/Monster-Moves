@@ -71,8 +71,6 @@
 		503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		681165041C1E9A1A007D4505 /* ControllerShakeRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681165031C1E9A1A007D4505 /* ControllerShakeRecognizer.swift */; };
-		684367D31C18AD85001AE5F4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684367D11C18AD85001AE5F4 /* Fabric.framework */; };
-		684367D41C18AD85001AE5F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684367D21C18AD85001AE5F4 /* Crashlytics.framework */; };
 		684746511C50140000C9D647 /* NewTap1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6847464E1C50140000C9D647 /* NewTap1.wav */; };
 		684746521C50140000C9D647 /* NewTap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6847464F1C50140000C9D647 /* NewTap2.wav */; };
 		684746531C50140000C9D647 /* NewTap3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 684746501C50140000C9D647 /* NewTap3.wav */; };
@@ -325,8 +323,6 @@
 		5087E78A17EB975400C73F5D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		681165031C1E9A1A007D4505 /* ControllerShakeRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerShakeRecognizer.swift; sourceTree = "<group>"; };
-		684367D11C18AD85001AE5F4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
-		684367D21C18AD85001AE5F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		6847464E1C50140000C9D647 /* NewTap1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = NewTap1.wav; sourceTree = "<group>"; };
 		6847464F1C50140000C9D647 /* NewTap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = NewTap2.wav; sourceTree = "<group>"; };
 		684746501C50140000C9D647 /* NewTap3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = NewTap3.wav; sourceTree = "<group>"; };
@@ -468,8 +464,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				684367D41C18AD85001AE5F4 /* Crashlytics.framework in Frameworks */,
-				684367D31C18AD85001AE5F4 /* Fabric.framework in Frameworks */,
 				68B33B141C42DCC5000B618A /* GameController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -983,8 +977,6 @@
 		685E083F1C0E452C00B5CCCF /* MonsterMoves_tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				684367D11C18AD85001AE5F4 /* Fabric.framework */,
-				684367D21C18AD85001AE5F4 /* Crashlytics.framework */,
 				68E59AEC1C15F6520087BF13 /* Sprites */,
 				68781D701C115BEF0087457A /* Config */,
 				685E08601C0F787200B5CCCF /* Resources */,
@@ -1304,7 +1296,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run e749ea3a342fc3d257fd2ab90c4955e3c65b017c ce041a27e56f2449bcdf52df854639335f58b58c928aa2fde061fc4c40a2bc74";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1510,7 +1502,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Poojan jhaveri (M8WC2ETC2Q)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1535,7 +1527,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideo.MonsterMovesTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5d6d13a2-8fc5-4341-96f6-8384e1bf1e63";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1562,7 +1554,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: IDEO LP (K3T6UAC5U4)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1583,7 +1575,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ideo.MonsterMovesTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cdeb39ec-2ab4-4197-b176-2d509b0d72d3";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;

@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 import GameController
 
 @UIApplicationMain
@@ -23,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Start Crashlytics
-        Fabric.with([Crashlytics.self])
+        // Start Crashlytics. Dont add this because of privacy issues.
+        // Fabric.with([Crashlytics.self])
         
         // Get notification for controllers
         let center = NSNotificationCenter.defaultCenter()
