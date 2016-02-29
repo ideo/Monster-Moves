@@ -10,46 +10,73 @@
 import UIKit
 import SpriteKit
 import GameController
+import AVKit
 
 class GameViewController: GCEventViewController {
     
     private var introscene : IntroScene?
     internal var m_isHomeScreen : Bool = true
     
+    private var backgroundPlayer : AVPlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // To keep track of navigation around the game.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "transitionedToView:", name: GlobalConstants.transitionNotification, object: nil)
         self.view.backgroundColor = UIColor.whiteColor()
         
+        
+        let fileUrl = NSBundle.mainBundle().URLForResource("ideoko",
+            withExtension: "mp4")!
+        backgroundPlayer = AVPlayer(URL: fileUrl)
+        
+        
+        
         let splashImageView : UIImageView = UIImageView(image: UIImage(named: "LaunchImage"))
         splashImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
         self.view.addSubview(splashImageView)
-        splashImageView.backgroundColor = UIColor.clearColor()
         
-        UIView.animateWithDuration(0.5, delay: 0.1, options: [], animations: { () -> Void in
+        
+        let logo : UIImageView = UIImageView(image: UIImage(named: "logo"))
+        logo.frame = CGRectMake((self.view.frame.size.width-378)/2, (self.view.frame.size.height-68)/2, 378, 68)
+        logo.alpha = 0
+        splashImageView.addSubview(logo)
+        
+        
+        UIView.animateWithDuration(1.0, delay: 0.0, options:UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
             
-            splashImageView.alpha = 0;
+            logo.alpha = 1.0
             
             
             }) { (finished) -> Void in
                 if(finished)
                 {
-                    self.introscene = IntroScene(size:CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
-                    self.introscene?.name = "Home"
-                    
-                    // Configure the view.
-                    let skView = self.view as! SKView
-                    
-                    /* Sprite Kit applies additional optimizations to improve rendering performance */
-                    skView.ignoresSiblingOrder = true
-                    
-                    /* Set the scale mode to scale to fit the window */
-                    self.introscene!.scaleMode = .AspectFill
-                      skView.presentScene(self.introscene)
-                    
-                    splashImageView.removeFromSuperview()
+                    self.backgroundPlayer.play()
+                    UIView.animateWithDuration(1.0, delay: 1.5, options:UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                        
+                        logo.alpha = 0.0
+                        
+                        }) { (finished) -> Void in
+                            if(finished)
+                            {
+                                splashImageView.removeFromSuperview()
+                                
+                                self.introscene = IntroScene(size:CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height))
+                                self.introscene?.name = "Home"
+                                
+                                // Configure the view.
+                                let skView = self.view as! SKView
+                                
+                                /* Sprite Kit applies additional optimizations to improve rendering performance */
+                                skView.ignoresSiblingOrder = true
+                                
+                                /* Set the scale mode to scale to fit the window */
+                                self.introscene!.scaleMode = .AspectFill
+                                skView.presentScene(self.introscene)
+                            }
+                    }
                 }
         }
         controllerUserInteractionEnabled = true
