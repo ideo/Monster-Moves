@@ -7,17 +7,38 @@
 //
 
 import UIKit
+import GameController
 
 @UIApplicationMain
+
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var motionDelegate: ReactToMotionEvents? = nil
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Start Crashlytics. Dont add this because of privacy issues.
+        // Fabric.with([Crashlytics.self])
+        
+        
+        // Start Flurry
+        Flurry.startSession("JT57FSP25FR6TB9P27RJ")
+        
+        // Get notification for controllers
+        let center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "setupControllers:", name: GCControllerDidConnectNotification, object: nil)
+        center.addObserver(self, selector: "setupControllers:", name: GCControllerDidDisconnectNotification, object: nil)
+        GCController.startWirelessControllerDiscoveryWithCompletionHandler { () -> Void in
+            
+        }
         return true
     }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -41,6 +62,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    /** Sets Motion Delegate on Controller - connection */
+    func setupControllers(notif: NSNotification) {
+        print("controller conneciton - establisted/lost")
+        let controllers = GCController.controllers()
+        for controller in controllers {
+            controller.motion?.valueChangedHandler = { (motion: GCMotion)->() in
+                if let delegate = self.motionDelegate {
+                    delegate.motionUpdate(motion)
+                }
+            }
+        }
+    }
+}
 
+protocol ReactToMotionEvents {
+    func motionUpdate(motion: GCMotion) -> Void
 }
 

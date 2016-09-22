@@ -9,31 +9,40 @@
 import SpriteKit
 import AVFoundation
 
-private var video: SKVideoNode!
+private var video: SKVideoNode!  // Intro video
 private var player: AVPlayer!
+private var tutorialplayer: AVPlayer!
 private var introFrame: SKSpriteNode!
 private var playButton: SKSpriteNode!
+private var grownUpButton: SKSpriteNode!
+private var danceStamp: SKSpriteNode!
+private var activateButtonIndex : Int = 0 // 0 for playButton 1 for grownUpButton
+private var backgroundAudioPlayer: AVAudioPlayer = AVAudioPlayer();
 
 
 
 class IntroScene: SKScene {
+    
     override func didMoveToView(view: SKView) {
+        
         /* Setup your scene here */
         
-      //  nextButtonPressed()
+        // Inform the gameviewcontroller that intro scene is presented
+        NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.transitionNotification, object:self,userInfo: ["scenename":"Intro","scene":self] )
         
         let center = CGPoint(
             x: CGRectGetMidX(scene!.frame),
             y: CGRectGetMidY(scene!.frame))
         
         
-        let fileUrl = NSBundle.mainBundle().URLForResource("splash16x9",
+        let fileUrl = NSBundle.mainBundle().URLForResource("IntroMovie",
             withExtension: "mp4")!
         player = AVPlayer(URL: fileUrl)
         video = SKVideoNode(AVPlayer: player)
         video.size = scene!.size
         video.position = center
         video.zPosition = 0
+        
         scene!.addChild(video)
         player.addObserver(self, forKeyPath: "status", options: .New, context: nil)
         
@@ -43,22 +52,59 @@ class IntroScene: SKScene {
         scene?.addChild(introFrame)
         
         
-        let introsound = SKAction.playSoundFileNamed("sound/common/IntroFinalAssetwithextralooping.mp3", waitForCompletion: false);
-        self.runAction(introsound);
-        
+        let introSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sound/common/IntroFinalAssetwithextralooping", ofType: "mp3")!)
+        do{
+            backgroundAudioPlayer = try AVAudioPlayer(contentsOfURL:introSound)
+            backgroundAudioPlayer.numberOfLoops = -1
+            backgroundAudioPlayer.prepareToPlay()
+            backgroundAudioPlayer.play()
+        }catch {
+            print("Error getting the audio file")
+        }
+
         playButton = SKSpriteNode(imageNamed: "YayButton")
-        playButton.position = center
+        playButton.position = CGPoint(
+            x: CGRectGetMidX(scene!.frame),
+            y: CGRectGetMidY(scene!.frame)-200)
         playButton.name = "playButtonNode"
         playButton.hidden = true
-        playButton.zPosition = 2
+        playButton.setScale(0.8)
+        playButton.zPosition = 3
         scene?.addChild(playButton)
+        playButton.runAction(SKAction.repeatActionForever(SKAction.sequence([
+            SKAction.scaleTo(1.1, duration: 1.0),
+            SKAction.scaleTo(0.8, duration: 1.0)
+            ])))
+        
+        grownUpButton = SKSpriteNode(imageNamed: "grownup")
+        grownUpButton.hidden = true
+        grownUpButton.position = CGPoint(x: scene!.frame.size.width-250, y: scene!.frame.size.height-100)
+        self.addChild(grownUpButton)
         
         
-        let tapgesture = UITapGestureRecognizer(target: self, action: "nextButtonPressed")
-        tapgesture.allowedPressTypes = [NSNumber (integer: UIPressType.Select.rawValue)]
-        self.view?.addGestureRecognizer(tapgesture)
+        danceStamp = SKSpriteNode(imageNamed: "DanceStamp")
+        danceStamp.position = CGPoint(
+            x: CGRectGetMidX(scene!.frame)+35,
+            y: CGRectGetMidY(scene!.frame)+90)
+        danceStamp.name = "DanceStamp"
+        danceStamp.setScale(10)
+        danceStamp.hidden = true
+        danceStamp.zPosition = 2
+        scene?.addChild(danceStamp)
         
         
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: "userSwipedUp")
+        swipeUp.direction = .Up
+        self.view?.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: "userSwipedDown")
+        swipeDown.direction = .Down
+        self.view?.addGestureRecognizer(swipeDown)
+        
+        
+        let tap = UITapGestureRecognizer(target: self, action: "buttonPressed")
+        tap.allowedPressTypes = [NSNumber(integer: UIPressType.Select.rawValue)]
+        self.view?.addGestureRecognizer(tap)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoEndedPlaying", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
         
@@ -66,9 +112,36 @@ class IntroScene: SKScene {
         
     }
     
+    
+    // Called when scene is removed from view. Need to remove observers
+    override func willMoveFromView(view: SKView) {
+        do {
+            NSNotificationCenter.defaultCenter().removeObserver(self)
+            print("removing observer for player in intro scene")
+            try removePlayerObserver()
+        } catch {
+            print("No observer for player")
+        }
+    }
+    
+    
+    // Need to remove player observer
+    func removePlayerObserver() throws {
+        try! player.removeObserver(self, forKeyPath: "status")
+    }
+    
     func videoEndedPlaying(){
-        
+//        backgroundAudioPlayer.pause()
+        danceStamp.runAction(SKAction.sequence([
+            
+            SKAction.group([SKAction.playSoundFileNamed("dancestamp.mp3", waitForCompletion: false),SKAction.scaleTo(1.7, duration: 0.1),SKAction.unhide()]),
+            SKAction.waitForDuration(0.5),
+            SKAction.scaleTo(2.0, duration: 0.2),
+            SKAction.scaleTo(1.7, duration: 0.2)
+            ]))
         playButton.hidden = false
+        grownUpButton.hidden = false
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
@@ -78,37 +151,118 @@ class IntroScene: SKScene {
             {
                 print("Ready to Play")
                 video.play()
-                introFrame.hidden=true
+               // introFrame.hidden=true
             }
             else
             {
-
+                
             }
         }
     }
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    // MARK: Remote Interactions
+    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+                for press in presses {
+                    switch press.type {
+                    case .UpArrow:
+                        userSwipedUp()
+                    case .DownArrow:
+                        userSwipedDown()
+                    case .LeftArrow:
+                        print("Left arrow")
+                    case .RightArrow:
+                        print("Right arrow")
+                    case .Select:
+                    //    buttonPressed()
+                        break;
+                    case .Menu:
+                        print("Menu")
+                    case .PlayPause:
+                        print("Play/Pause")
+                    }
+                }
+    }
+    
+    func userSwipedUp()
+    {
+        playButton.removeAllActions()
+        activateButtonIndex = 1
+        grownUpButton.runAction(SKAction.repeatActionForever(SKAction.sequence([
+            SKAction.scaleTo(1.3, duration: 1.0),
+            SKAction.scaleTo(1.0, duration: 1.0)
+            ])))
+    }
+    
+    func userSwipedDown()
+    {
         
-       // nextButtonPressed()
+        print("User Swiped Down")
+        grownUpButton.removeAllActions()
+        activateButtonIndex = 0
+        playButton.runAction(SKAction.repeatActionForever(SKAction.sequence([
+            SKAction.scaleTo(1.1, duration: 1.0),
+            SKAction.scaleTo(0.8, duration: 1.0)
+            ])))
+
     }
     
-    override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+    // MARK: Button Interaction Methods
+    func buttonPressed(){
+        print("button pressed")
+        switch(activateButtonIndex)
+        {
+        case 0:
+            playButtonPressed()
+            break
+        case 1:
+            grownUpButtonPressed()
+            break
+        default:
+            playButtonPressed()
+            break
+        }
     }
     
-    func nextButtonPressed(){
-        print("touched Button Pressed")
-        let spaceShipScene = SpaceshipScene(size: size)
-        spaceShipScene.scaleMode = scaleMode
-        // 2
-        let reveal = SKTransition.crossFadeWithDuration(0.5)       // 3
-        view?.presentScene(spaceShipScene, transition: reveal)
+    /** Play Button pressed - Start the Game */
+    func playButtonPressed()
+    {
+                self.runAction(SKAction.stop())
+        
+                if(backgroundAudioPlayer.playing)
+                {
+                    backgroundAudioPlayer.stop()
+                }
+        
+                // Transition to Main game - Spaceship scene
+                let spaceShipScene = SpaceshipScene(size: size)
+                spaceShipScene.scaleMode = scaleMode
+        
+                let reveal = SKTransition.crossFadeWithDuration(0.5) // Transition with CrossFade - to avoid huge pixel change
+                self.view?.presentScene(spaceShipScene, transition: reveal)
+        
+                Flurry.logEvent("Start Game")
     }
+    
+    /** GrownUp Button pressed - Show Grownup Section */
+    func grownUpButtonPressed()
+    {
+        if(backgroundAudioPlayer.playing)
+        {
+            backgroundAudioPlayer.pause()
+        }
+        // Transition to GrownUp Section
+        NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.transitionNotification, object:self,userInfo: ["scenename":"Grownup","scene":self])
+    }
+    
+    
     
     deinit {
-            NSNotificationCenter.defaultCenter().removeObserver(self)
-            player.removeObserver(self, forKeyPath: "status")
+        
     }
+    
+
+
+
     
 }
